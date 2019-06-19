@@ -115,27 +115,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\all.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Bellman_Ford.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\cinvec.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Combination.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\coutans.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\CumulativeSum.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Dijkstra.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\divisor.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\forn.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\func.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Modint.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\nforvec.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\modpow.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Prime.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Randnum.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\sizet2int.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\template.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\UnionFind.snippet" />
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\unique.snippet" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Bellman_Ford.cpp" />
     <ClCompile Include="Combination.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
@@ -145,6 +124,28 @@
     <ClCompile Include="Prime.cpp" />
     <ClCompile Include="Randnum.cpp" />
     <ClCompile Include="UnionFind.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\snippet\all.snippet" />
+    <None Include="..\snippet\Bellman_Ford.snippet" />
+    <None Include="..\snippet\cinvec.snippet" />
+    <None Include="..\snippet\Combination.snippet" />
+    <None Include="..\snippet\coutans.snippet" />
+    <None Include="..\snippet\CumulativeSum.snippet" />
+    <None Include="..\snippet\digit.snippet" />
+    <None Include="..\snippet\Dijkstra.snippet" />
+    <None Include="..\snippet\divisor.snippet" />
+    <None Include="..\snippet\forn.snippet" />
+    <None Include="..\snippet\func.snippet" />
+    <None Include="..\snippet\Modint.snippet" />
+    <None Include="..\snippet\modpow.snippet" />
+    <None Include="..\snippet\nforvec.snippet" />
+    <None Include="..\snippet\Prime.snippet" />
+    <None Include="..\snippet\Randnum.snippet" />
+    <None Include="..\snippet\sizet2int.snippet" />
+    <None Include="..\snippet\template.snippet" />
+    <None Include="..\snippet\UnionFind.snippet" />
+    <None Include="..\snippet\unique.snippet" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

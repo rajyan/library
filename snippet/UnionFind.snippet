@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>UnionFind</Title>
+      <Shortcut>myunif</Shortcut>
+      <Description>Union find tree class</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false"></Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[class UnionFind {
+private:
+	vector<int> data;
+	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
+
+public:
+	UnionFind(int size) : data(size, -1) { }
+	bool is_same(int x, int y) { return root(x) == root(y); }
+	int size(int x) { return -data[root(x)]; }
+
+	void unify(int x, int y) {
+		x = root(x); y = root(y);
+		if (x != y) {
+			if (data[y] < data[x]) swap(x, y);
+			data[x] += data[y]; data[y] = x;
+		}
+	}
+};
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

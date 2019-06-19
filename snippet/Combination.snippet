@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>combination</Title>
+      <Shortcut>mycombi</Shortcut>
+      <Description>combination class</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false"></Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[class Combi {
+private:
+	vector<lint> fac, inv, finv;
+
+	void init(int N) {
+		fac[0] = fac[1] = 1; inv[1] = 1; finv[0] = finv[1] = 1;
+
+		for (int i = 2; i < N; i++) {
+			fac[i] = fac[i - 1] * i % MOD;
+			inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;
+			finv[i] = finv[i - 1] * inv[i] % MOD;
+		}
+	}
+
+public:
+	Combi(int N = 100000) : fac(N+1), inv(N+1), finv(N+1) { init(N+1); }
+
+	lint Cmod(int n, int k) {
+		if (n < k) return 0;
+		if (n < 0 || k < 0) return 0;
+		return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
+	}
+
+	lint Pmod(int n, int k) {
+		if (n < k) return 0;
+		if (n < 0 || k < 0) return 0;
+		return fac[n] * finv[n - k] % MOD;
+	}
+};$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

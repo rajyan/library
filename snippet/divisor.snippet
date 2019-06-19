@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>divisor</Title>
+      <Shortcut>mydivisor</Shortcut>
+      <Description>return a vector of all divisors</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false"></Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[template<class T>
+vector<T> divisor(T n) {
+	vector<T> res;
+	for (T i = 1; i * i <= n; i++) {
+		if (n % i == 0) {
+			res.emplace_back(i);
+			if (i * i != n) res.emplace_back(n / i);
+		}
+	}
+	sort(res.begin(), res.end());
+	return res;
+}
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

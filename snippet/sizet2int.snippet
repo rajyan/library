@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>size</Title>
+      <Shortcut>sz</Shortcut>
+      <Description>size of vector to int</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <Default> </Default>
+          <ToolTip>vector name</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[(int)($name$$selected$.size())$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

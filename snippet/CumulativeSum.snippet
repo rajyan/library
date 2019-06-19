@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Cumulative Sum</Title>
+      <Shortcut>mycusum</Shortcut>
+      <Description>make cumulative sum vector</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false"></Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[template <class T = int>
+class CuSum {
+private:
+	vector<T> cusum;
+
+public:
+	CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
+		for (int i = 0; i < (int)(vec.size()); i++) cusum[i + 1] = cusum[i] + vec[i]; 
+	}
+
+	CuSum(int N) : cusum(N + 1) {}
+	void add(int i, T x) { cusum[i + 1] += x; }
+	void init() { for (int i = 0; i < (int)(cusum.size()); i++) cusum[i + 1] += cusum[i]; }
+
+	T sum(int l, int r) { cusum[r + 1] - cusum[l]; } // partial sum of 0-indexed [r, l] 
+};$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

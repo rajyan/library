@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>forn</Title>
+			<Shortcut>forn</Shortcut>
+			<Description> for with no brackets</Description>
+			<Author>Yohta Kimura</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <!--<Literal>
+					<ID>type</ID>
+					<Default>size_t</Default>
+					<ToolTip>コントロール変数型</ToolTip>
+				</Literal>-->
+        <Literal>
+          <ID>index</ID>
+          <Default>i</Default>
+          <ToolTip>インデックス</ToolTip>
+        </Literal>
+        <!--<Literal>
+          <ID>start</ID>
+          <Default>0</Default>
+          <ToolTip>インデックスの初期値</ToolTip>
+        </Literal>-->
+        <Literal>
+          <ID>max</ID>
+          <Default>N</Default>
+          <ToolTip>インデックスの最大値</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[for (int $index$ = 0; $index$ < $max$; $index$++) $selected$ $end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>randnum</Title>
+      <Shortcut>myrandnum</Shortcut>
+      <Description>Random number class</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID></ID>
+          <Default></Default>
+          <ToolTip></ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[#include <random>
+#include <chrono>
+
+$selected$
+
+struct RandNum {
+
+	mt19937 mt;
+	RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
+
+	lint operator()(lint a, lint b) {
+		uniform_int_distribution<lint> dist(a, b);
+		return dist(mt);
+	}
+	lint operator() (lint b) { return (*this)(0LL, b);}
+
+	template<class Ite>
+	void shuf(Ite first, Ite last) { shuffle(first, last, mt);}
+
+};$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
