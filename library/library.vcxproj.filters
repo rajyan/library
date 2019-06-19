@@ -1,17 +1,95 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="snippet">
+      <UniqueIdentifier>{24af3858-66e4-45dd-90ea-a38c105bbaf8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="library">
+      <UniqueIdentifier>{3506a839-e964-481f-abd9-675adbea9f7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Combination.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\CumulativeSum.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Dijkstra.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\divisor.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\forn.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\func.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\nforvec.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\sizet2int.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\template.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\UnionFind.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\unique.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\all.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Bellman_Ford.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\cinvec.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\coutans.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\modpow.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Randnum.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Modint.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Prime.snippet">
+      <Filter>snippet</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dijkstra.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Bellman_Ford.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Combination.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Modint.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="divisor.cpp" />
+    <ClCompile Include="Prime.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="modpow.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Randnum.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="UnionFind.cpp" />
   </ItemGroup>
 </Project>

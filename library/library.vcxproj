@@ -115,6 +115,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\all.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Bellman_Ford.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\cinvec.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Combination.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\coutans.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\CumulativeSum.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Dijkstra.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\divisor.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\forn.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\func.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Modint.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\nforvec.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\modpow.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Prime.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Randnum.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\sizet2int.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\template.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\UnionFind.snippet" />
+    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\unique.snippet" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bellman_Ford.cpp" />
+    <ClCompile Include="Combination.cpp" />
+    <ClCompile Include="Dijkstra.cpp" />
+    <ClCompile Include="divisor.cpp" />
+    <ClCompile Include="Modint.cpp" />
+    <ClCompile Include="modpow.cpp" />
+    <ClCompile Include="Prime.cpp" />
+    <ClCompile Include="Randnum.cpp" />
+    <ClCompile Include="UnionFind.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
