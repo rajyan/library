@@ -5,13 +5,15 @@ using lint = long long;
 
 class Prime {
 private:
+	vector<int> Ptb;
+
 	void Eratos(lint N) {
 		for (lint i = 2; i * i < N; i++) {
 			if (Ptb[i]) for (int j = 0; i * (j + 2) < N; j++) Ptb[i *(j + 2)] = 0;
 		}
 	}
+
 public:
-	vector<int> Ptb;
 	Prime(lint N) : Ptb(N + 1, 1) { Eratos(N + 1); }
 
 	vector<pair<lint, int>> Pfact(lint num) {
