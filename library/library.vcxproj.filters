@@ -38,6 +38,78 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\snippet\do.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\else.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\enum.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\enumclass.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\for.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\forn.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\forr.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\func.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\if.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Modint.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\modpow.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\namespace.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\nforvec.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Prime.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Randnum.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\rfor.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\sizet2int.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\struct.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\switch.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\template.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\UnionFind.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\unique.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\while.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\~.snippet">
+      <Filter>snippet</Filter>
+    </None>
     <None Include="..\snippet\all.snippet">
       <Filter>snippet</Filter>
     </None>
@@ -47,10 +119,16 @@
     <None Include="..\snippet\cinvec.snippet">
       <Filter>snippet</Filter>
     </None>
+    <None Include="..\snippet\class.snippet">
+      <Filter>snippet</Filter>
+    </None>
     <None Include="..\snippet\Combination.snippet">
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\coutans.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\ctor.snippet">
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\CumulativeSum.snippet">
@@ -63,144 +141,6 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\divisor.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\forn.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\func.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\Modint.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\modpow.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\nforvec.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\Prime.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\Randnum.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\sizet2int.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\template.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\UnionFind.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\unique.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Dijkstra.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\divisor.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\do.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\else.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\enum.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\enumclass.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\for.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\forn.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\forr.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\func.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\if.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Modint.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\modpow.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\namespace.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\nforvec.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Prime.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Randnum.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\rfor.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\sizet2int.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\struct.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\switch.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\template.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\UnionFind.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\unique.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\while.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\~.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\all.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Bellman_Ford.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\cinvec.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\class.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\Combination.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\coutans.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\ctor.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\CumulativeSum.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\..\..\Code Snippets\Visual C++\My Code Snippets\digit.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>
