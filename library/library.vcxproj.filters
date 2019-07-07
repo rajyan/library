@@ -74,9 +74,6 @@
     <None Include="..\snippet\namespace.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\nforvec.snippet">
-      <Filter>snippet</Filter>
-    </None>
     <None Include="..\snippet\Prime.snippet">
       <Filter>snippet</Filter>
     </None>
@@ -141,6 +138,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\divisor.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\rforvec.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

@@ -149,7 +149,7 @@
     <None Include="..\snippet\Modint.snippet" />
     <None Include="..\snippet\modpow.snippet" />
     <None Include="..\snippet\namespace.snippet" />
-    <None Include="..\snippet\nforvec.snippet" />
+    <None Include="..\snippet\rforvec.snippet" />
     <None Include="..\snippet\Prime.snippet" />
     <None Include="..\snippet\Randnum.snippet" />
     <None Include="..\snippet\rfor.snippet" />
