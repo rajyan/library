@@ -16,21 +16,30 @@
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[template <class T = int>
+        <![CDATA[template <class T>
 class CuSum {
 private:
 	vector<T> cusum;
-
 public:
+	// Constructors 
 	CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
-		for (int i = 0; i < (int)(vec.size()); i++) cusum[i + 1] = cusum[i] + vec[i]; 
+		for (int i = 0; i < (int)(vec.size()); i++) cusum[i + 1] = cusum[i] + vec[i];
 	}
-
 	CuSum(int N) : cusum(N + 1) {}
 	void add(int i, T x) { cusum[i + 1] += x; }
 	void init() { for (int i = 0; i < (int)(cusum.size()); i++) cusum[i + 1] += cusum[i]; }
 
-	T sum(int l, int r) { cusum[r + 1] - cusum[l]; } // partial sum of 0-indexed [r, l] 
+	// partial sum of 0-indexed [l, r] 
+	T operator()(int l, int r) {
+		if (r < l || r < 0) { 
+			assert(0);
+			return T(0); 
+		}
+		else return cusum[r + 1] - cusum[l];
+	}
+	// 0-indexed
+	T operator[](int i) { return cusum[i + 1]; }
+	T back() { return cusum.back(); }
 };$end$]]>
       </Code>
     </Snippet>
