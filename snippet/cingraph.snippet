@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>cin graph</Title>
+      <Shortcut>cingraph</Shortcut>
+      <Description>cin for graph</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>max</ID>
+          <Default>N</Default>
+          <ToolTip>iteration</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[
+int u, v, len;
+vector<vector<Edge<int>>> edges($max$);
+for (int i = 0; i < $max$; i++) {
+	cin >> u >> v >> len;
+	edges[u - 1].emplace_back(v - 1, len);
+	edges[v - 1].emplace_back(u - 1, len);
+}$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

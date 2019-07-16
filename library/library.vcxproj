@@ -128,6 +128,8 @@
   <ItemGroup>
     <None Include="..\snippet\all.snippet" />
     <None Include="..\snippet\Bellman_Ford.snippet" />
+    <None Include="..\snippet\cingraph.snippet" />
+    <None Include="..\snippet\cinpair.snippet" />
     <None Include="..\snippet\cinvec.snippet" />
     <None Include="..\snippet\class.snippet" />
     <None Include="..\snippet\Combination.snippet" />
@@ -141,10 +143,12 @@
     <None Include="..\snippet\else.snippet" />
     <None Include="..\snippet\enum.snippet" />
     <None Include="..\snippet\enumclass.snippet" />
+    <None Include="..\snippet\enumcombi.snippet" />
     <None Include="..\snippet\for.snippet" />
     <None Include="..\snippet\forn.snippet" />
     <None Include="..\snippet\forr.snippet" />
     <None Include="..\snippet\func.snippet" />
+    <None Include="..\snippet\gcd.snippet" />
     <None Include="..\snippet\if.snippet" />
     <None Include="..\snippet\Modint.snippet" />
     <None Include="..\snippet\modpow.snippet" />
@@ -159,6 +163,7 @@
     <None Include="..\snippet\template.snippet" />
     <None Include="..\snippet\UnionFind.snippet" />
     <None Include="..\snippet\unique.snippet" />
+    <None Include="..\snippet\vector2d.snippet" />
     <None Include="..\snippet\while.snippet" />
     <None Include="..\snippet\~.snippet" />
   </ItemGroup>

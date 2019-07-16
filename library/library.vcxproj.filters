@@ -143,5 +143,20 @@
     <None Include="..\snippet\rforvec.snippet">
       <Filter>snippet</Filter>
     </None>
+    <None Include="..\snippet\cinpair.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\cingraph.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\enumcombi.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\gcd.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\vector2d.snippet">
+      <Filter>snippet</Filter>
+    </None>
   </ItemGroup>
 </Project>

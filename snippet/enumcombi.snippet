@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>enumcombi</Title>
+      <Shortcut>myenumcombi</Shortcut>
+      <Description>Enumeration of combinations</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>N</ID>
+          <Default>N</Default>
+          <ToolTip></ToolTip>
+        </Literal>
+        <Literal>
+          <ID>K</ID>
+          <Default>K</Default>
+          <ToolTip>chooses K elements from N</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[	vector<int> use($N$);
+	fill(use.end() - $K$, use.end(), 1);
+	do {
+
+		for (int i = 0; i < $N$; i++) {
+			if(use[i]) $selected$$end$
+		}
+
+	} while (next_permutation(use.begin(), use.end()));]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

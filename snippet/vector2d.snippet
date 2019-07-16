@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>vector2d</Title>
+      <Shortcut>vecc</Shortcut>
+      <Description>initialize 2d vector</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <Default>vec</Default>
+          <ToolTip>vector name</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>type</ID>
+          <Default>int</Default>
+          <ToolTip>type</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>val</ID>
+          <Default>, 1</Default>
+          <ToolTip>initial value</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>row</ID>
+          <Default>N</Default>
+          <ToolTip>num of rows</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>col</ID>
+          <Default>M</Default>
+          <ToolTip>num of cols</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[vector<$type$> $name$($row$, vector<$type$>($col$$val$))]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
