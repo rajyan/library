@@ -11,18 +11,13 @@
       <Declarations>
         <Literal>
           <ID>name</ID>
-          <Default>vec</Default>
+          <Default>grid</Default>
           <ToolTip>vector name</ToolTip>
         </Literal>
         <Literal>
           <ID>type</ID>
           <Default>int</Default>
           <ToolTip>type</ToolTip>
-        </Literal>
-        <Literal>
-          <ID>val</ID>
-          <Default>, 1</Default>
-          <ToolTip>initial value</ToolTip>
         </Literal>
         <Literal>
           <ID>row</ID>
@@ -36,7 +31,7 @@
         </Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[vector<vector<$type$>> $name$($row$, vector<$type$>($col$$val$));$end$]]>
+        <![CDATA[vector<vector<$type$>> $name$($row$, vector<$type$>($col$));$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
