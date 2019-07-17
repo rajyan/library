@@ -27,17 +27,15 @@ private:
 	}
 
 public:
-	Combi(int N = 100000) : fac(N+1), inv(N+1), finv(N+1) { init(N+1); }
+	Combi(int N = 100000) : fac(N + 1), inv(N + 1), finv(N + 1) { init(N + 1); }
 
-	lint Cmod(int n, int k) {
-		if (n < k) return 0;
-		if (n < 0 || k < 0) return 0;
+	lint operator() (int n, int k) {
+		if (n < k || k < 0) return 0LL;
 		return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 	}
 
 	lint Pmod(int n, int k) {
-		if (n < k) return 0;
-		if (n < 0 || k < 0) return 0;
+		if (n < k || k < 0) return 0LL;
 		return fac[n] * finv[n - k] % MOD;
 	}
 };$end$]]>
