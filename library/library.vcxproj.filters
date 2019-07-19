@@ -36,6 +36,9 @@
     <ClCompile Include="UnionFind.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="BinarySearch.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -156,6 +159,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\vector2d.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\BinarySearch.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

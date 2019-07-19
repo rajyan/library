@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bellman_Ford.cpp" />
+    <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="Combination.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="divisor.cpp" />
@@ -128,6 +129,7 @@
   <ItemGroup>
     <None Include="..\snippet\all.snippet" />
     <None Include="..\snippet\Bellman_Ford.snippet" />
+    <None Include="..\snippet\BinarySearch.snippet" />
     <None Include="..\snippet\cingraph.snippet" />
     <None Include="..\snippet\cinpair.snippet" />
     <None Include="..\snippet\cinvec.snippet" />
@@ -163,7 +165,9 @@
     <None Include="..\snippet\template.snippet" />
     <None Include="..\snippet\UnionFind.snippet" />
     <None Include="..\snippet\unique.snippet" />
-    <None Include="..\snippet\vector2d.snippet" />
+    <None Include="..\snippet\vector2d.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="..\snippet\while.snippet" />
     <None Include="..\snippet\~.snippet" />
   </ItemGroup>
