@@ -39,6 +39,9 @@
     <ClCompile Include="BinarySearch.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="CumulativeSum.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -162,6 +165,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\BinarySearch.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\coutyesno.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

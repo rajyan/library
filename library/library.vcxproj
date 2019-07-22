@@ -118,6 +118,7 @@
     <ClCompile Include="Bellman_Ford.cpp" />
     <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="Combination.cpp" />
+    <ClCompile Include="CumulativeSum.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="divisor.cpp" />
     <ClCompile Include="Modint.cpp" />
@@ -136,6 +137,7 @@
     <None Include="..\snippet\class.snippet" />
     <None Include="..\snippet\Combination.snippet" />
     <None Include="..\snippet\coutans.snippet" />
+    <None Include="..\snippet\coutyesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
     <None Include="..\snippet\CumulativeSum.snippet" />
     <None Include="..\snippet\digit.snippet" />
