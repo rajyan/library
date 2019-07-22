@@ -125,6 +125,7 @@
     <ClCompile Include="modpow.cpp" />
     <ClCompile Include="Prime.cpp" />
     <ClCompile Include="Randnum.cpp" />
+    <ClCompile Include="template.cpp" />
     <ClCompile Include="UnionFind.cpp" />
   </ItemGroup>
   <ItemGroup>
