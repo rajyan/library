@@ -20,15 +20,14 @@
 class CuSum {
 private:
 	vector<T> cusum;
-	int len = 0;
 public:
 	// Constructors 
-	CuSum(vector<T> const &vec) : len(vec.size()), cusum(len + 1) {
-		for (int i = 0; i < len; i++) cusum[i + 1] = cusum[i] + vec[i];
+	CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
+		for (int i = 0; i < vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
 	}
-	CuSum(int N) : len(N), cusum(N + 1) {}
+	CuSum(int N) : cusum(N + 1) {}
 	void add(int i, T x) { cusum[i + 1] += x; }
-	void init() { for (int i = 0; i < len; i++) cusum[i + 1] += cusum[i]; }
+	void init() { for (int i = 0; i < N; i++) cusum[i + 1] += cusum[i]; }
 
 	// partial sum of 0-indexed [l, r] 
 	T operator()(int l, int r) {
