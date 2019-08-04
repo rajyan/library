@@ -40,7 +40,7 @@ vector<T> Dijkstra(vector<vector<Edge<T>>> &edges, int st) {
 		}
 	}
 
-	return cost; // min costance to vertex idx from st
+	return cost; // min cost to vertex idx from st
 }
 
 // example input (undirected graph)

@@ -27,7 +27,7 @@ public:
 	}
 	CuSum(int N) : cusum(N + 1) {}
 	void add(int i, T x) { cusum[i + 1] += x; }
-	void init() { for (int i = 0; i < N; i++) cusum[i + 1] += cusum[i]; }
+	void init() { for (int i = 0; i < cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 
 	// partial sum of 0-indexed [l, r] 
 	T operator()(int l, int r) {

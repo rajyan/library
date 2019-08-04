@@ -11,7 +11,7 @@ public:
 	}
 	CuSum(int N) : cusum(N + 1) {}
 	void add(int i, T x) { cusum[i + 1] += x; }
-	void init() { for (int i = 0; i < N; i++) cusum[i + 1] += cusum[i]; }
+	void init() { for (int i = 0; i < cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 
 	// partial sum of 0-indexed [l, r] 
 	T operator()(int l, int r) {
@@ -33,7 +33,8 @@ private:
 	vector<vector<T>> data;
 	int H = 0, W = 0;
 public:
-	RecSum(vector<vector<T>> const &vec) : H(vec.size()), W(vec[0].size()), data(H + 1, vector<T>(W + 1, 0)) {
+	RecSum(vector<vector<T>> const &vec) : H(vec.size()), W(vec[0].size()) {
+		data.resize(H + 1, vector<T>(W + 1, 0));
 		for (int row = 0; row <= H; row++) {
 			for (int col = 0; col <= W; col++) {
 				data[row + 1][col + 1] += data[row + 1][col] + data[row][col + 1] - data[row][col] + vec[row][col];
