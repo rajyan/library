@@ -14,19 +14,24 @@ struct Edge {
 
 template<class T>
 vector<T> Bellman_Ford(vector<Edge<T>> &edges, int V, int st) {
-	const T INF = numeric_limits<T>::max();
-	vector<T> dist(V, INF);
+
+	const T inf = numeric_limits<T>::max(); // different from INF!!!
+	vector<T> dist(V, inf);
 	dist[st] = 0;
 	for (int i = 0; i < V - 1; i++) {
-		for (const auto &ele : edges) {
-			if (dist[ele.from] == INF) continue;
-			dist[ele.to] = min(dist[ele.to], dist[ele.from] + ele.cost);
+		for (const auto &e : edges) {
+			if (dist[e.from] == inf) continue;
+			dist[e.to] = min(dist[e.to], dist[e.from] + e.cost);
 		}
 	}
-	for (const auto &ele : edges) { // finding negative loop
-		if (dist[ele.from] == INF) continue;
-		if (dist[ele.from] == INF - 1) dist[ele.to] = INF - 1; // src is nloop -> dst is nloop
-		if (dist[ele.to] > dist[ele.from] + ele.cost) dist[ele.to] = INF - 1; // chmin is possible -> nloop
+
+	for (int i = 0; i < V - 1; i++) {
+		for (const auto &e : edges) { // finding negative loop
+			if (dist[e.from] == inf) continue;
+			if (dist[e.from] == -inf) dist[e.to] = -inf; // src is nloop -> dst is nloop
+			else if (dist[e.to] > dist[e.from] + e.cost) dist[e.to] = -inf; // chmin is possible -> nloop
+		}
 	}
+
 	return dist;
 }
