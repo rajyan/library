@@ -45,6 +45,9 @@
     <ClCompile Include="template.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="chminmax.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -171,6 +174,12 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\coutyesno.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\chmax.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\chmin.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>
