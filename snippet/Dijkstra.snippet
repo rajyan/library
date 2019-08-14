@@ -20,7 +20,14 @@
         </Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[template<class T = lint>
+        <![CDATA[#include <vector>
+#include <algorithm>
+#include <queue>
+
+using namespace std;
+using lint = long long;
+
+template<class T = lint>
 struct Edge {
 	int to;
 	T cost;
@@ -33,7 +40,7 @@ template<class T>
 vector<T> Dijkstra(vector<vector<Edge<T>>> &edges, int st) {
 
 	int V = (int)edges.size();
-	const int INF = numeric_limits<T>::max();
+	const T INF = numeric_limits<T>::max();
 	vector<T> cost(V, INF);
 	cost[st] = 0;
 
@@ -56,8 +63,7 @@ vector<T> Dijkstra(vector<vector<Edge<T>>> &edges, int st) {
 	}
 
 	return cost; // min cost to vertex idx from st
-}
-]]>
+}]]>
       </Code>
     </Snippet>
   </CodeSnippet>

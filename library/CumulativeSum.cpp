@@ -13,13 +13,13 @@ public:
 	void add(int i, T x) { cusum[i + 1] += x; }
 	void init() { for (int i = 0; i < cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 
-	// partial sum of 0-indexed [l, r] 
+	// partial sum of 0-indexed [l, r)
 	T operator()(int l, int r) {
 		if (r < l || r < 0) {
 			assert(0);
 			return T(0);
 		}
-		else return cusum[r + 1] - cusum[l];
+		else return cusum[r] - cusum[l];
 	}
 	// 0-indexed
 	T operator[](int i) { return cusum[i + 1]; }

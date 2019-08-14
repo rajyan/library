@@ -37,7 +37,7 @@ vector<T> Bellman_Ford(vector<Edge<T>> &edges, int V, int st) {
 		}
 	}
 
-	for (int i = 0; i < V - 1; i++) {
+	for (int i = 0; i < V; i++) {
 		for (const auto &e : edges) { // finding negative loop
 			if (dist[e.from] == inf) continue;
 			if (dist[e.from] == -inf) dist[e.to] = -inf; // src is nloop -> dst is nloop
