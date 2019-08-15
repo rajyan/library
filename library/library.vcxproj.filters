@@ -185,5 +185,8 @@
     <None Include="..\snippet\chmin.snippet">
       <Filter>snippet</Filter>
     </None>
+    <None Include="Warshal_Floyd.snippet">
+      <Filter>snippet</Filter>
+    </None>
   </ItemGroup>
 </Project>

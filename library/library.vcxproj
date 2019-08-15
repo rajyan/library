@@ -177,6 +177,7 @@
     </None>
     <None Include="..\snippet\while.snippet" />
     <None Include="..\snippet\~.snippet" />
+    <None Include="Warshal_Floyd.snippet" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
