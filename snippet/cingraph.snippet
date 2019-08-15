@@ -14,16 +14,19 @@
     <Snippet>
       <Declarations>
         <Literal>
-          <ID>max</ID>
+          <ID>V</ID>
           <Default>N</Default>
-          <ToolTip>iteration</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>E</ID>
+          <Default>M</Default>
         </Literal>
       </Declarations>
       <Code Language="cpp">
         <![CDATA[
 int u, v, len;
-vector<vector<Edge<int>>> edges($max$);
-for (int i = 0; i < $max$; i++) {
+vector<vector<Edge<int>>> edges($V$);
+for (int i = 0; i < $E$; i++) {
 	cin >> u >> v >> len;
   u--, v--;
 	edges[u].emplace_back(v, len);
