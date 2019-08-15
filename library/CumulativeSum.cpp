@@ -7,11 +7,11 @@ private:
 public:
 	// Constructors 
 	CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
-		for (int i = 0; i < vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
+		for (int i = 0; i < (int)vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
 	}
 	CuSum(int N) : cusum(N + 1) {}
 	void add(int i, T x) { cusum[i + 1] += x; }
-	void init() { for (int i = 0; i < cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
+	void init() { for (int i = 0; i < (int)cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 
 	// partial sum of 0-indexed [l, r)
 	T operator()(int l, int r) {
