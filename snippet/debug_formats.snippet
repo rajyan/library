@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Debug fromat</Title>
+      <Shortcut>mydebug</Shortcut>
+      <Description></Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID></ID>
+          <Default></Default>
+          <ToolTip></ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[ostream &operator<<(ostream &os, const set<T> &st) {
+	for (const auto &e : st) os << e << " ";
+	return os;
+}
+
+template <class T1, class T2>
+ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+	os << "(" << p.first << "," << p.second << ")";
+	return os;
+}
+
+template <class T1, class T2>
+ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
+	for (const auto &e : mp) os << e << " ";
+	return os;
+}$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

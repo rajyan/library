@@ -120,6 +120,7 @@
     <ClCompile Include="chminmax.cpp" />
     <ClCompile Include="Combination.cpp" />
     <ClCompile Include="CumulativeSum.cpp" />
+    <ClCompile Include="debug_formats.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="divisor.cpp" />
     <ClCompile Include="Modint.cpp" />
@@ -140,11 +141,14 @@
     <None Include="..\snippet\cinpair.snippet" />
     <None Include="..\snippet\cinvec.snippet" />
     <None Include="..\snippet\class.snippet" />
-    <None Include="..\snippet\Combination.snippet" />
+    <None Include="..\snippet\Combination.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="..\snippet\coutans.snippet" />
     <None Include="..\snippet\coutyesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
     <None Include="..\snippet\CumulativeSum.snippet" />
+    <None Include="..\snippet\debug_formats.snippet" />
     <None Include="..\snippet\digit.snippet" />
     <None Include="..\snippet\Dijkstra.snippet" />
     <None Include="..\snippet\divisor.snippet" />

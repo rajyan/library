@@ -51,6 +51,7 @@
     <ClCompile Include="Warshal_Folyd.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="debug_formats.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -186,6 +187,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="Warshal_Floyd.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\debug_formats.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>
