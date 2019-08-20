@@ -186,10 +186,13 @@
     <None Include="..\snippet\chmin.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="Warshal_Floyd.snippet">
+    <None Include="..\snippet\debug_formats.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\debug_formats.snippet">
+    <None Include="..\snippet\edge.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Warshal_Floyd.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>
