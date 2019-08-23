@@ -25,30 +25,29 @@
         </Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[vector<vector<int>> d($V$, vector<int>($V$, INF));
-for (int i = 0; i < $V$; i++) d[i][i] = 0;
+        <![CDATA[	int $V$, $E$;
+	cin >> $V$ >> $E$;
 
-for (int i = 0; i < M; i++) {
-	int a, b, c;
-	cin >> a >> b >> c;
-	a--, b--;
-	d[a][b] = c;
-	d[b][a] = c;
-}
+	vector<vector<int>> d($V$, vector<int>($V$, INF));
+	for (int i = 0; i < $V$; i++) d[i][i] = 0;
+	
+	for (int i = 0; i < $E$; i++) {
+		int a, b, c;
+		cin >> a >> b >> c;
+		a--, b--;
+		d[a][b] = c;
+		d[b][a] = c;
+	}
 
-auto Warshal_Floyd = [&](int N, vector<vector<int>> &d) {
-
-	for (int k = 0; k < N; k++) {
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++) {
+	for (int k = 0; k < $V$; k++) {
+		for (int i = 0; i < $V$; i++) {
+			for (int j = 0; j < $V$; j++) {
 				if (d[i][k] != INF && d[k][j] != INF) {
 					d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
 				}
 			}
 		}
-	}
-	return d;
-}$end$]]>
+	}$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
