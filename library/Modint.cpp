@@ -30,9 +30,9 @@ template<int Modulo = MOD> struct Mint {
 		return *this;
 	}
 	constexpr Mint& operator /= (const Mint& r) noexcept {
-		lint a = r.val, b = Modulo, u = 1, v = 0, t;
+		lint a = r.val, b = Modulo, u = 1, v = 0;
 		while (b) {
-			t = a / b;
+			lint t = a / b;
 			a -= t * b; swap(a, b);
 			u -= t * v; swap(u, v);
 		}
@@ -65,4 +65,4 @@ template<int Modulo = MOD> struct Mint {
 	}
 };
 
-using mint = Mint<>
+using mint = Mint<>;
