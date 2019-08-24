@@ -4,7 +4,7 @@ using namespace std;
 using lint = long long;
 const int MOD = 1000000007;
 
-class Combi {
+class Factorial {
 private:
 	vector<lint> fac, inv, finv;
 
@@ -19,7 +19,7 @@ private:
 	}
 
 public:
-	Combi(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { init(N + 1); }
+	Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { init(N + 1); }
 
 	lint operator() (int n, int k) {
 		if (n < k || k < 0) return 0LL;
