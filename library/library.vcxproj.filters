@@ -52,6 +52,9 @@
       <Filter>library</Filter>
     </ClCompile>
     <ClCompile Include="debug_formats.cpp" />
+    <ClCompile Include="makevec.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -193,6 +196,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\Warshal_Floyd.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\makevec.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

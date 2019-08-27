@@ -123,6 +123,7 @@
     <ClCompile Include="debug_formats.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="divisor.cpp" />
+    <ClCompile Include="makevec.cpp" />
     <ClCompile Include="Modint.cpp" />
     <ClCompile Include="modpow.cpp" />
     <ClCompile Include="Prime.cpp" />
@@ -164,6 +165,7 @@
     <None Include="..\snippet\func.snippet" />
     <None Include="..\snippet\gcd.snippet" />
     <None Include="..\snippet\if.snippet" />
+    <None Include="..\snippet\makevec.snippet" />
     <None Include="..\snippet\Modint.snippet" />
     <None Include="..\snippet\modpow.snippet" />
     <None Include="..\snippet\namespace.snippet" />
