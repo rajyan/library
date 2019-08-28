@@ -21,10 +21,10 @@
       </Declarations>
       <Code Language="cpp">
         <![CDATA[template<int Modulo = MOD> struct Mint {
+
 	lint val;
 	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
-	constexpr int getmod() { return Modulo; }
-	constexpr Mint operator - () const noexcept { return val ? Modulo - val : 0; }
+
 	constexpr Mint& operator += (const Mint &r) noexcept {
 		val += r.val;
 		if (val >= Modulo) val -= Modulo;
@@ -50,12 +50,18 @@
 		if (val < 0) val += Modulo;
 		return *this;
 	}
+
 	constexpr Mint operator + (const Mint &r) const noexcept { return Mint(*this) += r; }
 	constexpr Mint operator - (const Mint &r) const noexcept { return Mint(*this) -= r; }
 	constexpr Mint operator * (const Mint &r) const noexcept { return Mint(*this) *= r; }
 	constexpr Mint operator / (const Mint &r) const noexcept { return Mint(*this) /= r; }
+
+	constexpr int getmod() { return Modulo; }
+	constexpr Mint operator - () const noexcept { return val ? Modulo - val : 0; }
+
 	constexpr bool operator == (const Mint &r) const noexcept { return val == r.val; }
 	constexpr bool operator != (const Mint &r) const noexcept { return val != r.val; }
+
 	friend ostream &operator << (ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
 	friend istream &operator >> (istream &is, Mint<Modulo> &x) noexcept {
 		lint tmp; is >> tmp;
