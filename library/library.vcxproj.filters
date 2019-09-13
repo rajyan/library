@@ -51,7 +51,6 @@
     <ClCompile Include="Warshal_Folyd.cpp">
       <Filter>library</Filter>
     </ClCompile>
-    <ClCompile Include="debug_formats.cpp" />
     <ClCompile Include="makevec.cpp">
       <Filter>library</Filter>
     </ClCompile>
