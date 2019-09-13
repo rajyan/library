@@ -70,7 +70,7 @@ public:
 
 	int longest_path() {
 		if (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();
-		return *max_element(used.begin(), used.end());
+		return *max_element(used.begin(), used.end()) - 1;
 	}
 
 };
