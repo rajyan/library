@@ -30,10 +30,10 @@ class topological_sort {
 private:
 	int V;
 	vector<vector<int>> edges;
-	vector<int> in;
+	vector<int> used;
 public:
-	topological_sort(int n) :V(n), edges(n), in(n) {}
-	topological_sort(vector<vector<int>> &edges) :V(edges.size()), in(edges.size()) { this->edges = edges; }
+	topological_sort(int n) :V(n), edges(n), used(n) {}
+	topological_sort(vector<vector<int>> &edges) :V(edges.size()), used(edges.size()) { this->edges = edges; }
 
 	void add_edge(int from, int to) { edges[from].emplace_back(to); }
 
@@ -41,7 +41,7 @@ public:
 
 		for (int i = 0; i < V; i++) for (const auto &e : edges[i]) in[e]++;
 
-		vector<int> used(V), res;
+		vector<int> res, in(V);
 		res.reserve(V);
 		queue<int> que;
 
@@ -61,13 +61,18 @@ public:
 				in[e]--;
 				if (in[e] == 0) {
 					if (used[e]) return vector<int>(); // unable to sort
-					used[e] = 1;
+					used[e] = used[now] + 1;
 					que.emplace(e);
 				}
 			}
 		}
 
 		return res;
+	}
+
+	int longest_path() {
+		if (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();
+		return *max_element(used.begin(), used.end());
 	}
 
 };
