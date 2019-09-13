@@ -129,6 +129,7 @@
     <ClCompile Include="Prime.cpp" />
     <ClCompile Include="Randnum.cpp" />
     <ClCompile Include="template.cpp" />
+    <ClCompile Include="TopologicalSort.cpp" />
     <ClCompile Include="UnionFind.cpp" />
     <ClCompile Include="Warshal_Folyd.cpp" />
   </ItemGroup>
@@ -177,6 +178,7 @@
     <None Include="..\snippet\struct.snippet" />
     <None Include="..\snippet\switch.snippet" />
     <None Include="..\snippet\template.snippet" />
+    <None Include="..\snippet\TopologicalSort.snippet" />
     <None Include="..\snippet\UnionFind.snippet" />
     <None Include="..\snippet\unique.snippet" />
     <None Include="..\snippet\vector2d.snippet">
