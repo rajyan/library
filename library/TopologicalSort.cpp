@@ -40,26 +40,29 @@ public:
 	vector<int> build() {
 
 		for (int i = 0; i < V; i++) for (const auto &e : edges[i]) in[e]++;
+
 		vector<int> used(V), res;
 		res.reserve(V);
+		queue<int> que;
+
 		for (int i = 0; i < V; i++) {
 			if (in[i] == 0 && !used[i]) {
 				used[i] = 1;
-				queue<int> que;
 				que.emplace(i);
-				while (!que.empty()) {
-					int now = que.front();
-					DMP(now, in);
-					que.pop();
-					res.emplace_back(now);
-					for (const auto &e : edges[now]) {
-						in[e]--;
-						if (in[e] == 0) {
-							if (used[e]) return vector<int>(); // unable to sort
-							used[e] = 1;
-							que.emplace(e);
-						}
-					}
+			}
+		}
+
+		while (!que.empty()) {
+			int now = que.front();
+			DMP(now, in);
+			que.pop();
+			res.emplace_back(now);
+			for (const auto &e : edges[now]) {
+				in[e]--;
+				if (in[e] == 0) {
+					if (used[e]) return vector<int>(); // unable to sort
+					used[e] = 1;
+					que.emplace(e);
 				}
 			}
 		}

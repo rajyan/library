@@ -20,7 +20,8 @@
         </Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[ostream &operator<<(ostream &os, const set<T> &st) {
+        <![CDATA[template <class T>
+        ostream &operator<<(ostream &os, const set<T> &st) {
 	for (const auto &e : st) os << e << " ";
 	return os;
 }
