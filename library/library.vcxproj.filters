@@ -57,6 +57,9 @@
     <ClCompile Include="TopologicalSort.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="slide_minmax.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -204,6 +207,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\TopologicalSort.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\slide_minmax.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

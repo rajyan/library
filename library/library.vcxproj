@@ -127,6 +127,7 @@
     <ClCompile Include="modpow.cpp" />
     <ClCompile Include="Prime.cpp" />
     <ClCompile Include="Randnum.cpp" />
+    <ClCompile Include="slide_minmax.cpp" />
     <ClCompile Include="template.cpp" />
     <ClCompile Include="TopologicalSort.cpp" />
     <ClCompile Include="UnionFind.cpp" />
@@ -174,6 +175,7 @@
     <None Include="..\snippet\Randnum.snippet" />
     <None Include="..\snippet\rfor.snippet" />
     <None Include="..\snippet\sizet2int.snippet" />
+    <None Include="..\snippet\slide_minmax.snippet" />
     <None Include="..\snippet\struct.snippet" />
     <None Include="..\snippet\switch.snippet" />
     <None Include="..\snippet\template.snippet" />
