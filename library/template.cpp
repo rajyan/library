@@ -18,7 +18,7 @@ constexpr lint LINF = 1LL << 60;
 
 template <class T>
 ostream &operator<<(ostream &os, const vector<T> &vec) {
-	for (const auto &e : vec) os << e << (&e == &vec.back() ? "" : " ");
+	for (const auto &e : vec) os << e << (&e == &vec.back() ? "\n" : " ");
 	return os;
 }
 

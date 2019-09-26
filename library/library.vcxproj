@@ -147,7 +147,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="..\snippet\coutans.snippet" />
-    <None Include="..\snippet\coutyesno.snippet" />
+    <None Include="..\snippet\yesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
     <None Include="..\snippet\CumulativeSum.snippet" />
     <None Include="..\snippet\debug_formats.snippet" />

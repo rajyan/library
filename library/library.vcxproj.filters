@@ -185,9 +185,6 @@
     <None Include="..\snippet\BinarySearch.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\coutyesno.snippet">
-      <Filter>snippet</Filter>
-    </None>
     <None Include="..\snippet\chmax.snippet">
       <Filter>snippet</Filter>
     </None>
@@ -210,6 +207,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\slide_minmax.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\yesno.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>
