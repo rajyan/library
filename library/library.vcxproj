@@ -127,6 +127,10 @@
     <ClCompile Include="modpow.cpp" />
     <ClCompile Include="Prime.cpp" />
     <ClCompile Include="Randnum.cpp" />
+    <ClCompile Include="rolling_hash.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="slide_minmax.cpp" />
     <ClCompile Include="template.cpp" />
     <ClCompile Include="TopologicalSort.cpp" />
@@ -147,6 +151,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="..\snippet\coutans.snippet" />
+    <None Include="..\snippet\rolling_hash.snippet" />
     <None Include="..\snippet\yesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
     <None Include="..\snippet\CumulativeSum.snippet" />
