@@ -60,7 +60,9 @@
     <ClCompile Include="slide_minmax.cpp">
       <Filter>library</Filter>
     </ClCompile>
-    <ClCompile Include="rolling_hash.cpp" />
+    <ClCompile Include="rolling_hash.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">

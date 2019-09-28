@@ -93,7 +93,6 @@ private:
 	int sz;
 
 public:
-	RollingHash() {}
 	RollingHash(const string &s) :sz(s.size()) {
 
 		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
