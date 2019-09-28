@@ -216,5 +216,8 @@
     <None Include="..\snippet\rolling_hash.snippet">
       <Filter>snippet</Filter>
     </None>
+    <None Include="..\snippet\capyesno.snippet">
+      <Filter>snippet</Filter>
+    </None>
   </ItemGroup>
 </Project>

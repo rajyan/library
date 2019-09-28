@@ -141,6 +141,7 @@
     <None Include="..\snippet\all.snippet" />
     <None Include="..\snippet\Bellman_Ford.snippet" />
     <None Include="..\snippet\BinarySearch.snippet" />
+    <None Include="..\snippet\capyesno.snippet" />
     <None Include="..\snippet\chmax.snippet" />
     <None Include="..\snippet\chmin.snippet" />
     <None Include="..\snippet\cingraph.snippet" />
