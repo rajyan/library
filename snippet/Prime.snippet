@@ -14,40 +14,68 @@
       <Code Language="cpp">
         <![CDATA[class Prime {
 private:
-	vector<int> Ptb;
+	vector<int> min_pf; // min_pf[i] = minimum prime factor of i
+	vector<int> prime;
 
-	void Eratos(lint N) {
-		for (lint i = 2; i * i < N; i++) {
-			if (Ptb[i]) for (int j = 0; i * (j + 2) < N; j++) Ptb[i *(j + 2)] = 0;
+	// linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html
+	void sieve(int N) {
+		min_pf[0] = min_pf[1] = -1;
+		for (int i = 2; i < N; i++) {
+			if (min_pf[i] == 0) {
+				prime.push_back(i);
+				min_pf[i] = i;
+			}
+			for (int j = 0; j < (int)(prime.size()); ++j) {
+				if (prime[j] > min_pf[i] || i * prime[j] >= N) break;
+				min_pf[i * prime[j]] = prime[j];
+			}
 		}
 	}
 
 public:
-	Prime(lint N) : Ptb(N + 1, 1) { Eratos(N + 1); }
+	Prime(int N = 110000000) : min_pf(N + 1) {
+		assert(3 <= N);
+		sieve(N + 1);
+	}
 
-	vector<pair<lint, int>> Pfact(lint num) {
+	vector<pair<lint, int>> factorize(lint n) {
+
 		vector<pair<lint, int>> res;
-		for (lint i = 2; i * i <= num; i++) {
+		for (lint i = 2; i * i <= n; i++) {
+			if (n < (lint)min_pf.size()) break;
 			int cnt = 0;
-			while (num % i == 0) {
+			while (n % i == 0) {
 				cnt++;
-				num /= i;
+				n /= i;
 			}
 			if (cnt) res.emplace_back(i, cnt);
 		}
-		if (num != 1) res.emplace_back(make_pair(num, 1));
+
+		if (n >= (lint)min_pf.size()) res.emplace_back(n, 1);
+		else {
+			int prev = min_pf[n], cnt = 0;
+			while (n != 1) {
+				int now = min_pf[n];
+				n /= now;
+				cnt++;
+				if (prev != now) {
+					res.emplace_back(prev, cnt);
+					prev = now;
+					cnt = 0;
+				}
+			}
+		}
 		return res;
 	}
 
-	bool isPrime(lint num) {
-		if (num < 2) return false;
-		else if (num < (int)(Ptb.size())) return (bool)(Ptb[num]);
-		else if (num == 2 || num == 3) return true;
-		else if (num % 2 == 0 || num % 3 == 0) return false;
-		else if (num % 6 != 1 && num % 6 != 5) return false;
-		for (lint i = 5; i * i <= num; i += 6) {
-			if (num % i == 0) return false;
-			if (num % (i + 2) == 0) return false;
+	// verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu
+	bool isPrime(lint n) {
+		if (n < (int)(min_pf.size())) return min_pf[n] == n;
+		else if (n % 2 == 0 || n % 3 == 0) return false;
+		else if (n % 6 != 1 && n % 6 != 5) return false;
+		for (lint i = 5; i * i <= n; i += 6) {
+			if (n % i == 0) return false;
+			if (n % (i + 2) == 0) return false;
 		}
 		return true;
 	}
