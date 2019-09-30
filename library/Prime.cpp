@@ -1,5 +1,4 @@
 #include <vector>
-#include <cassert>
 
 using namespace std;
 using lint = long long;
@@ -14,7 +13,7 @@ private:
 		min_pf[0] = min_pf[1] = -1;
 		for (int i = 2; i < N; i++) {
 			if (min_pf[i] == 0) {
-				prime.push_back(i);
+				prime.emplace_back(i);
 				min_pf[i] = i;
 			}
 			for (int j = 0; j < (int)(prime.size()); ++j) {
@@ -25,15 +24,12 @@ private:
 	}
 
 public:
-	Prime(int N = 110000000) : min_pf(N + 1) {
-		assert(3 <= N);
-		sieve(N + 1);
-	}
+	Prime(int N = 110000000) : min_pf(N + 1) { sieve(N + 1); }
 
 	vector<pair<lint, int>> factorize(lint n) {
 		vector<pair<lint, int>> res;
-		for (lint i = 2; i * i <= n; i++) {
-			if (n < (lint)min_pf.size()) break;
+		for (lint i = 2, sz = (lint)min_pf.size(); i * i <= n; i++) {
+			if (n < sz) break;
 			int cnt = 0;
 			while (n % i == 0) {
 				cnt++;
@@ -62,6 +58,7 @@ public:
 	// verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu
 	bool isPrime(lint n) {
 		if (n < (int)(min_pf.size())) return min_pf[n] == n;
+		else if (n == 2 || n == 3) return true;
 		else if (n % 2 == 0 || n % 3 == 0) return false;
 		else if (n % 6 != 1 && n % 6 != 5) return false;
 		for (lint i = 5; i * i <= n; i += 6) {
