@@ -15,7 +15,7 @@ struct Edge {
 template<class T>
 vector<T> Bellman_Ford(vector<Edge<T>> &edges, int V, int st) {
 
-	const T inf = numeric_limits<T>::max(); // different from INF!!!
+	const T inf = numeric_limits<T>::max() / 2; // different from INF!!!
 	vector<T> dist(V, inf);
 	dist[st] = 0;
 	for (int i = 0; i < V - 1; i++) {

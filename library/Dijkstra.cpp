@@ -18,8 +18,8 @@ template<class T>
 vector<T> Dijkstra(vector<vector<Edge<T>>> &edges, int st) {
 
 	int V = (int)edges.size();
-	const T INF = numeric_limits<T>::max();
-	vector<T> cost(V, INF);
+	const T inf = numeric_limits<T>::max() / 2;
+	vector<T> cost(V, inf);
 	cost[st] = 0;
 
 	priority_queue<Edge<T>, vector<Edge<T>>, greater<Edge<T>>> p_que;
@@ -42,12 +42,3 @@ vector<T> Dijkstra(vector<vector<Edge<T>>> &edges, int st) {
 
 	return cost; // min cost to vertex idx from st
 }
-
-// example input (undirected graph)
-//int u, v, len;
-//vector<vector<Edge<int>>> edges(N);
-//for (int i = 0; i < M; i++) {
-//	cin >> u >> v >> len;
-//	edges[u - 1].emplace_back(v - 1, len);
-//	edges[v - 1].emplace_back(u - 1, len);
-//

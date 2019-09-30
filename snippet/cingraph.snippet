@@ -24,9 +24,9 @@
       </Declarations>
       <Code Language="cpp">
         <![CDATA[
-int u, v, len;
 vector<vector<Edge<int>>> edges($V$);
 for (int i = 0; i < $E$; i++) {
+  int u, v, len;
 	cin >> u >> v >> len;
   u--, v--;
 	edges[u].emplace_back(v, len);
