@@ -28,7 +28,9 @@ public:
 
 	vector<pair<lint, int>> factorize(lint n) {
 		vector<pair<lint, int>> res;
-		for (lint i = 2, sz = (lint)min_pf.size(); i * i <= n; i++) {
+		lint sz = (lint)min_pf.size();
+
+		for (lint i = 2; i * i <= n; i++) {
 			if (n < sz) break;
 			int cnt = 0;
 			while (n % i == 0) {
@@ -38,7 +40,7 @@ public:
 			if (cnt) res.emplace_back(i, cnt);
 		}
 
-		if (n >= (lint)min_pf.size()) res.emplace_back(n, 1);
+		if (n >= sz) res.emplace_back(n, 1);
 		else {
 			int prev = min_pf[n], cnt = -1;
 			while (n > 0) {
@@ -52,6 +54,7 @@ public:
 				}
 			}
 		}
+
 		return res;
 	}
 
