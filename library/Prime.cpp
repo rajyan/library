@@ -40,8 +40,8 @@ public:
 
 		if (n >= (lint)min_pf.size()) res.emplace_back(n, 1);
 		else {
-			int prev = min_pf[n], cnt = 0;
-			while (n != 1) {
+			int prev = min_pf[n], cnt = -1;
+			while (n > 0) {
 				int now = min_pf[n];
 				n /= now;
 				cnt++;
