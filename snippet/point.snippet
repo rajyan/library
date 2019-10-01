@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>2dpoint</Title>
+      <Shortcut>mypoint</Shortcut>
+      <Description>2dpoint struct</Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[struct pnt {
+	int r, c;
+	pnt(int r = 0, int c = 0) :r(r), c(c) {};
+	bool operator==(const pnt &rhs) const { return r == rhs.r && c == rhs.c; }
+	bool operator<(const pnt & rhs) const { return r < rhs.r || r == rhs.r && c < rhs.c; }
+	const pnt operator+(const pnt &rhs) { return pnt(r + rhs.r, c + rhs.c); }
+	friend istream& operator>>(istream& is, pnt &p) { is >> p.c >> p.r; p.r--, p.c--; return is; }
+	template<class T> T& operator[](vector<vector<T>> &v) { return v[r][c]; }
+};$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

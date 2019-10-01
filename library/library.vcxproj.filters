@@ -63,6 +63,9 @@
     <ClCompile Include="rolling_hash.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="point.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -219,6 +222,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\capyesno.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\point.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

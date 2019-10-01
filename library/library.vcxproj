@@ -132,6 +132,7 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="slide_minmax.cpp" />
+    <ClCompile Include="point.cpp" />
     <ClCompile Include="template.cpp" />
     <ClCompile Include="TopologicalSort.cpp" />
     <ClCompile Include="UnionFind.cpp" />
@@ -152,6 +153,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="..\snippet\coutans.snippet" />
+    <None Include="..\snippet\point.snippet" />
     <None Include="..\snippet\rolling_hash.snippet" />
     <None Include="..\snippet\yesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
