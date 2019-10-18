@@ -7,7 +7,7 @@
 
 バグや改善点などありましたら、[@unagiunag](https://twitter.com/unagiunag)まで指摘していただけるとありがたいです。
 
-[verifyに使用した問題一覧](\verify.md)
+[verifyに使用した問題一覧](verify.md)
 
 ## snippet
 
