@@ -5,7 +5,7 @@
 
 # UnionFind
 
-<https://judge.yosupo.jp/submission/952>
-<https://atcoder.jp/contests/atc001/submissions/8011113>
-<https://atcoder.jp/contests/abc049/submissions/8011202>
+<https://judge.yosupo.jp/submission/952>  
+<https://atcoder.jp/contests/atc001/submissions/8011113>  
+<https://atcoder.jp/contests/abc049/submissions/8011202>  
 <https://atcoder.jp/contests/abc120/submissions/8011411>
