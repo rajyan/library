@@ -119,6 +119,7 @@
     <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="chminmax.cpp" />
     <ClCompile Include="Combination.cpp" />
+    <ClCompile Include="Compress.cpp" />
     <ClCompile Include="CumulativeSum.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="divisor.cpp" />
@@ -196,6 +197,7 @@
     <None Include="..\snippet\Warshal_Floyd.snippet" />
     <None Include="..\snippet\while.snippet" />
     <None Include="..\snippet\~.snippet" />
+    <None Include="Compress.snippet" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
