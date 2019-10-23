@@ -13,7 +13,7 @@ struct pnt {
 	constexpr pnt operator-() const noexcept { return pnt(-x, -y); }
 	constexpr int operator*(const pnt &rhs) const noexcept { return x * rhs.x + y * rhs.y; }
 	friend istream& operator>>(istream& is, pnt &p) { return is >> p.x >> p.y; }
-	friend ostream& operator<<(ostream& os, pnt &p) { return os << p.x << " " << p.y; }
+	friend ostream& operator<<(ostream& os, const pnt &p) { return os << p.x << " " << p.y << "\n"; }
 	constexpr pnt nor(const pnt &rhs) const noexcept { return pnt(rhs.y, -rhs.x); }
 	template<class T> T& operator[](vector<vector<T>> &v) { return v[x][y]; }
 };
