@@ -153,8 +153,11 @@
     <None Include="..\snippet\Combination.snippet">
       <SubType>Designer</SubType>
     </None>
+    <None Include="..\snippet\Compress.snippet" />
     <None Include="..\snippet\coutans.snippet" />
-    <None Include="..\snippet\point.snippet" />
+    <None Include="..\snippet\point.snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="..\snippet\rolling_hash.snippet" />
     <None Include="..\snippet\yesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
@@ -197,7 +200,6 @@
     <None Include="..\snippet\Warshal_Floyd.snippet" />
     <None Include="..\snippet\while.snippet" />
     <None Include="..\snippet\~.snippet" />
-    <None Include="Compress.snippet" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

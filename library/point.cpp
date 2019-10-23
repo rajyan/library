@@ -4,11 +4,16 @@
 using namespace std;
 
 struct pnt {
-	int r, c;
-	pnt(int r = 0, int c = 0) :r(r), c(c) {};
-	bool operator==(const pnt &rhs) const { return r == rhs.r && c == rhs.c; }
-	bool operator<(const pnt & rhs) const { return r < rhs.r || r == rhs.r && c < rhs.c; }
-	const pnt operator+(const pnt &rhs) { return pnt(r + rhs.r, c + rhs.c); }
-	friend istream& operator>>(istream& is, pnt &p) { is >> p.c >> p.r; p.r--, p.c--; return is; }
-	template<class T> T& operator[](vector<vector<T>> &v) { return v[r][c]; }
+	int x, y;
+	constexpr pnt(int x = 0, int y = 0) noexcept : x(x), y(y) {};
+	constexpr bool operator==(const pnt &rhs) const noexcept { return x == rhs.x && y == rhs.y; }
+	constexpr bool operator<(const pnt & rhs) const noexcept { return x < rhs.x || x == rhs.x && y < rhs.y; }
+	constexpr pnt operator+(const pnt &rhs) const noexcept { return pnt(x + rhs.x, y + rhs.y); }
+	constexpr pnt operator-(const pnt &rhs) const noexcept { return pnt(x - rhs.x, y - rhs.y); }
+	constexpr pnt operator-() const noexcept { return pnt(-x, -y); }
+	constexpr int operator*(const pnt &rhs) const noexcept { return x * rhs.x + y * rhs.y; }
+	friend istream& operator>>(istream& is, pnt &p) { return is >> p.x >> p.y; }
+	friend ostream& operator<<(ostream& os, pnt &p) { return os << p.x << " " << p.y; }
+	constexpr pnt nor(const pnt &rhs) const noexcept { return pnt(rhs.y, -rhs.x); }
+	template<class T> T& operator[](vector<vector<T>> &v) { return v[x][y]; }
 };

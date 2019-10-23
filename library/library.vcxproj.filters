@@ -230,7 +230,7 @@
     <None Include="..\snippet\point.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="Compress.snippet">
+    <None Include="..\snippet\Compress.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>
