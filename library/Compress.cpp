@@ -1,3 +1,4 @@
+
 template<class T>
 class Compress {
 private:
@@ -5,11 +6,11 @@ private:
 
 public:
 	Compress() {}
-	Compress(const vector< T > &vec) : comp(vec) { init(); }
+	Compress(const vector<T> &vec) : comp(vec) { build(); }
 
 	void add(const T &x) { comp.emplace_back(x); }
 
-	void init() {
+	void build() {
 		sort(begin(comp), end(comp));
 		comp.erase(unique(begin(comp), end(comp)), end(comp));
 	}
@@ -23,5 +24,5 @@ public:
 	}
 	int get(const T &x) const { return lower_bound(begin(comp), end(comp), x) - begin(comp); }
 
-	const T &operator[](int k) const { return comp[k]; }
+	const T &operator[](const int k) const { return comp[k]; }
 };

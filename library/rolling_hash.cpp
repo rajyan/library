@@ -4,10 +4,11 @@
 using namespace std;
 using lint = long long; 
 
-template<int Modulo> struct Mint {
+template<int Modulo> 
+struct Mint {
 
 	lint val;
-	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
+	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) val += Modulo; }
 
 	constexpr Mint& operator += (const Mint &r) noexcept {
 		val += r.val;
@@ -64,7 +65,7 @@ template<int Modulo> struct Mint {
 };
 
 //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-class RollingHash {
+class Rolling_hash {
 
 private:
 	using Mint1 = Mint<2147483647>;
@@ -77,7 +78,7 @@ private:
 	int sz;
 
 public:
-	RollingHash(const string &s) :sz(s.size()) {
+	Rolling_hash(const string &s) :sz(s.size()) {
 
 		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
 		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);

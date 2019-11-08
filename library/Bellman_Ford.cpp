@@ -2,9 +2,8 @@
 #include <algorithm>
 
 using namespace std;
-using lint = long long;
 
-template<class T = lint>
+template<class T>
 struct Edge {
 	int from, to;
 	T cost;
@@ -13,25 +12,25 @@ struct Edge {
 };
 
 template<class T>
-vector<T> Bellman_Ford(vector<Edge<T>> &edges, int V, int st) {
+vector<T> Bellman_Ford(const vector<Edge<T>> &edges, const int V, const int st) {
 
-	const T inf = numeric_limits<T>::max() / 2; // different from INF!!!
-	vector<T> dist(V, inf);
-	dist[st] = 0;
+	const T inf = numeric_limits<T>::max() / 2;
+	vector<T> cost(V, inf);
+	cost[st] = 0;
 	for (int i = 0; i < V - 1; i++) {
 		for (const auto &e : edges) {
-			if (dist[e.from] == inf) continue;
-			dist[e.to] = min(dist[e.to], dist[e.from] + e.cost);
+			if (cost[e.from] == inf) continue;
+			cost[e.to] = min(cost[e.to], cost[e.from] + e.cost);
 		}
 	}
 
 	for (int i = 0; i < V; i++) {
 		for (const auto &e : edges) { // finding negative loop
-			if (dist[e.from] == inf) continue;
-			if (dist[e.from] == -inf) dist[e.to] = -inf; // src is nloop -> dst is nloop
-			else if (dist[e.to] > dist[e.from] + e.cost) dist[e.to] = -inf; // chmin is possible -> nloop
+			if (cost[e.from] == inf) continue;
+			if (cost[e.from] == -inf) cost[e.to] = -inf; // src is nloop -> dst is nloop
+			else if (cost[e.to] > cost[e.from] + e.cost) cost[e.to] = -inf; // chmin is possible -> nloop
 		}
 	}
 
-	return dist;
+	return cost;
 }

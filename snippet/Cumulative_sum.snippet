@@ -20,14 +20,14 @@
 class CuSum {
 private:
 	vector<T> cusum;
+
 public:
-	// Constructors 
 	CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
 		for (int i = 0; i < (int)vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
 	}
-	CuSum(int N) : cusum(N + 1) {}
-	void add(int i, T x) { cusum[i + 1] += x; }
-	void init() { for (int i = 0; i < (int)cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
+	CuSum(const int N) : cusum(N + 1) {}
+	void add(const int i, const T &x) { cusum[i + 1] += x; }
+	void build() { for (int i = 0; i < (int)cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 
 	// partial sum of 0-indexed [l, r)
 	T operator()(int l, int r) {
@@ -38,7 +38,7 @@ public:
 		else return cusum[r] - cusum[l];
 	}
 	// 0-indexed
-	T operator[](int i) { return cusum[i + 1]; }
+	const T &operator[](int i) { return cusum[i + 1]; }
 	T back() { return cusum.back(); }
 };$end$]]>
       </Code>

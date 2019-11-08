@@ -4,10 +4,11 @@ using namespace std;
 using lint = long long;
 const int MOD = 1000000007;
 
-template<int Modulo = MOD> struct Mint {
+template<int Modulo = MOD> 
+struct Mint {
 
 	lint val;
-	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) v += Modulo; }
+	constexpr Mint(lint v = 0) noexcept : val(v % Modulo) { if (val < 0) val += Modulo; }
 
 	constexpr Mint& operator += (const Mint &r) noexcept {
 		val += r.val;

@@ -4,10 +4,10 @@
 using namespace std;
 using lint = long long;
 
-struct RandNum {
+struct Rand_num {
 
 	mt19937 mt;
-	RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
+	Rand_num() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
 
 	lint operator()(lint a, lint b) {
 		uniform_int_distribution<lint> dist(a, b);

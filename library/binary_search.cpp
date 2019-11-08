@@ -1,10 +1,12 @@
-auto judge = [&](int idx, int key) {
+
+auto judge = [&](auto idx, auto key) {
 	return idx >= key;
 };
 
-auto biSearch = [&](auto f, int key) {
-	int ng = -1;
-	int ok = (int)S.size();
+auto binary_search = [&](auto f, auto key) {
+	
+	auto ng = -1;
+	auto ok = ;
 
 	while (abs(ok - ng) > 1) {
 		int mid = (ok + ng) / 2;

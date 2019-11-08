@@ -15,9 +15,6 @@
     <ClCompile Include="Bellman_Ford.cpp">
       <Filter>library</Filter>
     </ClCompile>
-    <ClCompile Include="Combination.cpp">
-      <Filter>library</Filter>
-    </ClCompile>
     <ClCompile Include="Modint.cpp">
       <Filter>library</Filter>
     </ClCompile>
@@ -27,19 +24,10 @@
     <ClCompile Include="modpow.cpp">
       <Filter>library</Filter>
     </ClCompile>
-    <ClCompile Include="Randnum.cpp">
-      <Filter>library</Filter>
-    </ClCompile>
     <ClCompile Include="divisor.cpp">
       <Filter>library</Filter>
     </ClCompile>
     <ClCompile Include="UnionFind.cpp">
-      <Filter>library</Filter>
-    </ClCompile>
-    <ClCompile Include="BinarySearch.cpp">
-      <Filter>library</Filter>
-    </ClCompile>
-    <ClCompile Include="CumulativeSum.cpp">
       <Filter>library</Filter>
     </ClCompile>
     <ClCompile Include="template.cpp">
@@ -54,19 +42,31 @@
     <ClCompile Include="makevec.cpp">
       <Filter>library</Filter>
     </ClCompile>
-    <ClCompile Include="TopologicalSort.cpp">
-      <Filter>library</Filter>
-    </ClCompile>
     <ClCompile Include="slide_minmax.cpp">
-      <Filter>library</Filter>
-    </ClCompile>
-    <ClCompile Include="rolling_hash.cpp">
       <Filter>library</Filter>
     </ClCompile>
     <ClCompile Include="point.cpp">
       <Filter>library</Filter>
     </ClCompile>
     <ClCompile Include="Compress.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_search.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Factorial.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Cumulative_sum.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Rolling_hash.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Rand_num.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="Topological_sort.cpp">
       <Filter>library</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,16 +152,10 @@
     <None Include="..\snippet\class.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\Combination.snippet">
-      <Filter>snippet</Filter>
-    </None>
     <None Include="..\snippet\coutans.snippet">
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\ctor.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\CumulativeSum.snippet">
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\digit.snippet">
@@ -191,9 +185,6 @@
     <None Include="..\snippet\vector2d.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\BinarySearch.snippet">
-      <Filter>snippet</Filter>
-    </None>
     <None Include="..\snippet\chmax.snippet">
       <Filter>snippet</Filter>
     </None>
@@ -212,16 +203,10 @@
     <None Include="..\snippet\makevec.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\TopologicalSort.snippet">
-      <Filter>snippet</Filter>
-    </None>
     <None Include="..\snippet\slide_minmax.snippet">
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\yesno.snippet">
-      <Filter>snippet</Filter>
-    </None>
-    <None Include="..\snippet\rolling_hash.snippet">
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\capyesno.snippet">
@@ -231,6 +216,21 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\Compress.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\binary_search.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Factorial.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Cumulative_sum.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Rolling_hash.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\Topological_sort.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

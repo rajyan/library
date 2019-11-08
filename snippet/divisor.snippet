@@ -13,7 +13,7 @@
       </Declarations>
       <Code Language="cpp">
         <![CDATA[template<class T>
-vector<T> divisor(T n) {
+vector<T> divisor(const T n) {
 	vector<T> res;
 	for (T i = 1; i * i <= n; i++) {
 		if (n % i == 0) {
@@ -23,8 +23,7 @@ vector<T> divisor(T n) {
 	}
 	sort(res.begin(), res.end());
 	return res;
-}
-$end$]]>
+}$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>

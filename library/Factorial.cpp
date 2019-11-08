@@ -8,7 +8,7 @@ class Factorial {
 private:
 	vector<lint> fac, inv, finv;
 
-	void init(int N) {
+	void build(int N) {
 		fac[0] = fac[1] = 1; inv[1] = 1; finv[0] = finv[1] = 1;
 
 		for (int i = 2; i < N; i++) {
@@ -19,7 +19,7 @@ private:
 	}
 
 public:
-	Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { init(N + 1); }
+	Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
 
 	lint operator() (int n, int k) {
 		if (n < k || k < 0) return 0LL;
