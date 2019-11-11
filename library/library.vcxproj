@@ -158,6 +158,7 @@
     <None Include="..\snippet\point.snippet">
       <SubType>Designer</SubType>
     </None>
+    <None Include="..\snippet\RectangularSum.snippet" />
     <None Include="..\snippet\Rolling_hash.snippet" />
     <None Include="..\snippet\yesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
