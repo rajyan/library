@@ -26,3 +26,4 @@
   - point classの整理（template化，cross, dotなど）
   - 二項係数template版で分ける（modint, doubleを引数に想定）
   - n進数列挙テンプレ
+  - Primeライブラリ編集、素因数分解だけ分離
