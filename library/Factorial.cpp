@@ -21,7 +21,7 @@ private:
 public:
 	Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
 
-	lint operator() (int n, int k) {
+	lint Cmod (int n, int k) {
 		if (n < k || k < 0) return 0LL;
 		return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 	}
