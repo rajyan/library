@@ -4,7 +4,7 @@ using namespace std;
 using lint = long long;
 const int MOD = 1000000007;
 
-template<int Modulo = MOD> 
+template<int Modulo = MOD>
 struct Mint {
 
 	lint val;
@@ -50,11 +50,12 @@ struct Mint {
 	friend ostream &operator << (ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
 	friend istream &operator >> (istream &is, Mint<Modulo> &x) noexcept {
 		lint tmp; is >> tmp;
-		x = Mint<Modulo>(tmp);
+		x = Mint(tmp);
 		return is;
 	}
-	friend constexpr Mint<Modulo> modpow(const Mint<Modulo> &a, lint n) noexcept {
-		Mint res(1), tmp = a;
+
+	constexpr Mint pow(lint n) noexcept {
+		Mint res{ 1 }, tmp{ val };
 		while (n > 0) {
 			if (n & 1) res *= tmp;
 			tmp *= tmp;
