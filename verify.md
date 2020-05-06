@@ -29,3 +29,14 @@
 
 1. <https://atcoder.jp/contests/abc019/submissions/12887637>
 1. <>
+
+## popcount
+
+1. <https://wandbox.org/permlink/mhfpmkk5AyJYpjHV>
+
+高速なビットカウントアルゴリズム
+
+参考
+- <http://www.nminoru.jp/~nminoru/programming/bitcount.html>
+- <https://w.atwiki.jp/projectpn/pages/35.html>
+- <https://precure-3dprinter.hatenablog.jp/entry/2017/03/31/%E8%89%B2%E3%82%93%E3%81%AA%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A7%E3%83%93%E3%83%83%E3%83%88%E6%95%B0%E3%82%92%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%97%E3%81%A6>
