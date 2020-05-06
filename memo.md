@@ -3,10 +3,10 @@
 
 - スネークケース統一、クラス名、人名 大文字
 - class private public で統一　変数はできる限りprivate
-- for文はint, size()のキャストは徹底（static_castをちゃんとするかどうか？）
+- for文はint, size()のキャストは徹底
 - 半開区間
-- assertをもっと使う
+- DMP, assertをライブラリ内でもっと使う
 - class のメンバ初期化方法の統一（メンバイニシャライザ）
-- constの徹底？（ライブラリだけやるのもどうか）
 - グラフはV,E,cost, inf
-
+- 初期化関数の名前はbuildで統一
+- 

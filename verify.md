@@ -16,11 +16,16 @@
 1. <https://yukicoder.me/submissions/476992>
 1. <https://atcoder.jp/contests/abc141/submissions/12883059>
 
-参考：
 なお、このRollingHashは悪意のある入力を想定していません。
+
+参考：
 - <http://hos.ac/blog/#blog0003>
 - <https://yukicoder.me/problems/no/3014/editorial>
 - <https://www.slideshare.net/nagisaeto/rolling-hash-149990902>
 - <https://snuke.hatenablog.com/entry/2017/02/03/035524>
 - <https://qiita.com/keymoon/items/11fac5627672a6d6a9f6>
 
+## run length
+
+1. <https://atcoder.jp/contests/abc019/submissions/12887637>
+1. <>
