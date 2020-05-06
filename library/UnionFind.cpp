@@ -4,10 +4,9 @@ using namespace std;
 class UnionFind {
 private:
 	vector<int> data;
-	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
-
 public:
 	UnionFind(int size) : data(size, -1) { }
+	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
 	bool is_same(int x, int y) { return root(x) == root(y); }
 	int size(int x) { return -data[root(x)]; }
 
