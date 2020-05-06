@@ -69,6 +69,9 @@
     <ClCompile Include="Topological_sort.cpp">
       <Filter>library</Filter>
     </ClCompile>
+    <ClCompile Include="debug_template.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\snippet\do.snippet">
@@ -191,9 +194,6 @@
     <None Include="..\snippet\chmin.snippet">
       <Filter>snippet</Filter>
     </None>
-    <None Include="..\snippet\debug_formats.snippet">
-      <Filter>snippet</Filter>
-    </None>
     <None Include="..\snippet\edge.snippet">
       <Filter>snippet</Filter>
     </None>
@@ -234,6 +234,9 @@
       <Filter>snippet</Filter>
     </None>
     <None Include="..\snippet\RectangularSum.snippet">
+      <Filter>snippet</Filter>
+    </None>
+    <None Include="..\snippet\debug_template.snippet">
       <Filter>snippet</Filter>
     </None>
   </ItemGroup>

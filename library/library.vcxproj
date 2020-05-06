@@ -118,6 +118,7 @@
     <ClCompile Include="Bellman_Ford.cpp" />
     <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="chminmax.cpp" />
+    <ClCompile Include="debug_template.cpp" />
     <ClCompile Include="Factorial.cpp" />
     <ClCompile Include="Compress.cpp" />
     <ClCompile Include="Cumulative_sum.cpp" />
@@ -163,7 +164,7 @@
     <None Include="..\snippet\yesno.snippet" />
     <None Include="..\snippet\ctor.snippet" />
     <None Include="..\snippet\Cumulative_sum.snippet" />
-    <None Include="..\snippet\debug_formats.snippet" />
+    <None Include="..\snippet\debug_template.snippet" />
     <None Include="..\snippet\digit.snippet" />
     <None Include="..\snippet\Dijkstra.snippet" />
     <None Include="..\snippet\divisor.snippet" />
