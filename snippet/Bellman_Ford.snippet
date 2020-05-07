@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Bellman-Ford</Title>
-      <Shortcut>mybellmanford</Shortcut>
-      <Description>Bellman-Ford algorithm</Description>
+      <Title>Bellman_Ford</Title>
+      <Shortcut>mybellman_ford</Shortcut>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -14,9 +14,11 @@
     <Snippet>
       <Declarations>
         <Literal Editable="false"></Literal>
-      </Declarations>
+      </Declaratiods>
       <Code Language="cpp">
-        <![CDATA[template<class T>
+        <![CDATA[
+
+template<class T>
 struct Edge {
 	int from, to;
 	T cost;
@@ -46,7 +48,8 @@ vector<T> Bellman_Ford(const vector<Edge<T>> &edges, const int V, const int st) 
 	}
 
 	return cost;
-}$end$]]>
+}
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
