@@ -1,6 +1,6 @@
 
 using lint = long long;
-const int MOD = 1000000007;
+constexpr int MOD = 1000000007;
 
 lint modpow(lint a, lint n, lint mod = MOD) {
 	lint res = 1;

@@ -2,7 +2,7 @@
 
 using namespace std;
 using lint = long long;
-const int MOD = 1000000007;
+constexpr int MOD = 1000000007;
 
 template<int Modulo = MOD>
 struct Mint {

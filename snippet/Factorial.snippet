@@ -4,8 +4,12 @@
     <Header>
       <Title>Factorial</Title>
       <Shortcut>myfactorial</Shortcut>
-      <Description>factorial class</Description>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
+      </SnippetTypes>
     </Header>
     <Snippet>
       <Declarations>
@@ -38,7 +42,8 @@ public:
 		if (n < k || k < 0) return 0LL;
 		return fac[n] * finv[n - k] % MOD;
 	}
-};$end$]]>
+};
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
