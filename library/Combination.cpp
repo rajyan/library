@@ -1,22 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-  <CodeSnippet Format="1.0.0">
-    <Header>
-      <Title>rolling_hash</Title>
-      <Shortcut>myrolling_hash</Shortcut>
-      <Description></Description>
-      <Author>Yohta Kimura id:rajyan</Author>
-      <SnippetTypes>
-        <SnippetType>Expansion</SnippetType>
-        <!--<SnippetType>SurroundsWith</SnippetType>-->
-      </SnippetTypes>
-    </Header>
-    <Snippet>
-      <Declarations>
-        <Literal Editable="false"></Literal>
-      </Declarations>
-      <Code Language="cpp">
-        <![CDATA[template<int Modulo = MOD>
+#include <vector>
+
+using namespace std;
+using lint = long long;
+const int MOD = 1000000007;
+
+template<int Modulo = MOD>
 struct Mint {
 
 	lint val;
@@ -77,41 +65,29 @@ struct Mint {
 	}
 };
 
+using mint = Mint<>;
 
-//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-class Rolling_hash {
-
+template<class T = mint>
+class Combination {
 private:
-	using Mod = Mint<2147483647>;
+	vector<T> fac, inv, finv;
 
-	vector<Mod> hash1, pow1;
-	vector<Mod> hash2, pow2;
-	const int base1 = 2147483634;
-	const int base2 = 2147483627;
-	int sz;
+	void build(int N) {
+		fac[0] = fac[1] = 1; inv[1] = 1; finv[0] = finv[1] = 1;
 
-public:
-	Rolling_hash(const string &s) :sz(s.size()) {
-
-		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
-		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
-
-		for (int i = 0; i < sz; i++) {
-			hash1[i + 1] = hash1[i] * base1 + s[i];
-			pow1[i + 1] = pow1[i] * base1;
-			hash2[i + 1] = hash2[i] * base2 + s[i];
-			pow2[i + 1] = pow2[i] * base2;
+		for (int i = 2; i < N; i++) {
+			fac[i] = fac[i - 1] * i;
+			inv[i] = -inv[MOD % i] * (MOD / i);
+			finv[i] = finv[i - 1] * inv[i];
 		}
 	}
 
-	pair<int, int> get(int l, int r) {
-		int res1 = (hash1[r] - hash1[l] * pow1[r - l]).val;
-		int res2 = (hash2[r] - hash2[l] * pow2[r - l]).val;
-		return { res1, res2 };
+public:
+	Combination(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
+
+	T operator()(int n, int k) {
+		if (n < k || k < 0) return 0LL;
+		return fac[n] * (finv[k] * finv[n - k]);
 	}
+
 };
-$end$]]>
-      </Code>
-    </Snippet>
-  </CodeSnippet>
-</CodeSnippets>

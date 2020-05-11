@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>fnv1a</Title>
+      <Shortcut>myfnv1a</Shortcut>
+      <Description></Description>
+      <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false"></Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[inline string fnv1a_64(string data) {
+
+	uint64_t hash = 0xcbf29ce484222325;
+	uint64_t prime = 0x100000001b3;
+
+	for (int i = 0; i < (int)data.size(); ++i) {
+		hash = hash ^ data[i];
+		hash *= prime;
+	}
+
+	std::stringstream to_hex;
+	to_hex << std::hex << hash;
+
+	return to_hex.str();
+
+}
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
