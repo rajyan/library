@@ -16,7 +16,8 @@
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[const int MOD = 1000000007;
+        <![CDATA[using lint = long long;
+const int MOD = 1000000007;
 
 template<int Modulo = MOD>
 struct Mint {
@@ -79,6 +80,7 @@ struct Mint {
 	}
 };
 
+using mint = Mint<>;
 
 template<class T = mint>
 class Combination {

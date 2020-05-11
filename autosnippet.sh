@@ -7,7 +7,7 @@ do
 	if echo "$cppfile" | grep -q template; then
 		content=$(sed  -e '/[^\r\n]/,$!d' -e 's/[\&/]/\\&/g' -e 's/$/\\n/' $cppfile | tr -d '\n')
 	else
-		content=$(sed -e '/^#include/d' -e '/^using/d' -e '/^constexpr/d' -e '/[^\r\n]/,$!d' \
+		content=$(sed -e '/^#include/d' -e '/^using\ namespace/d' -e '/^constexpr/d' -e '/[^\r\n]/,$!d' \
 			      -e 's/[\&/]/\\&/g' -e 's/$/\\n/' $cppfile | tr -d '\n')
 	fi
 	
