@@ -12,7 +12,6 @@ private:
 	void build(const vector<vector<int>> &graph, int root) {
 
 		auto dfs = [&](auto &&f, int now) -> void {
-
 			for (const auto &next : graph[now]) {
 				if (par[0][next] == -1) {
 					par[0][next] = now;
@@ -20,7 +19,6 @@ private:
 					f(f, next);
 				}
 			}
-
 		};
 
 		par[0][root] = root;
