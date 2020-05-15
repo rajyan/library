@@ -34,8 +34,6 @@
 
 1. <https://wandbox.org/permlink/mhfpmkk5AyJYpjHV>
 
-高速なビットカウントアルゴリズム
-
 参考
 - [ビットを数える・探すアルゴリズム](http://www.nminoru.jp/~nminoru/programming/bitcount.html)
 - [超高速ビットカウント](https://w.atwiki.jp/projectpn/pages/35.html)
@@ -44,4 +42,5 @@
 ## LCA
 
 1. <https://atcoder.jp/contests/abc014/submissions/13159621>
+1. <https://atcoder.jp/contests/abc133/submissions/13218521>
 
