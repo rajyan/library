@@ -1,10 +1,11 @@
+#include <cmath>
 #include <iostream>
 #include <vector>
 
 using namespace std;
 using lint = long long;
 
-template<class T = int, class U = lint>
+template<class T>
 struct Point2D {
 	T x, y;
 	constexpr Point2D(T x = 0, T y = 0) noexcept : x(x), y(y) {};
@@ -29,8 +30,7 @@ struct Point2D {
 	constexpr long double hypot() const noexcept { return ::hypotl(x, y); }
 	friend istream& operator>>(istream& is, Point2D &p) { return is >> p.x >> p.y; }
 	friend ostream& operator<<(ostream& os, const Point2D &p) { return os << p.x << " " << p.y << "\n"; }
-	U& operator[](vector<vector<U>> &v) { return v[x][y]; }
+	template<class U> U& operator[](vector<vector<U>> &v) { return v[x][y]; }
 };
 
-using pnt = Point2D<>;
-
+using pnt = Point2D<lint>;
