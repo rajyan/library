@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Warshal Folyd</Title>
-      <Shortcut>myWarshal</Shortcut>
-      <Description>Warshal Floyd algorithm</Description>
+      <Title>Warshal_Floyd</Title>
+      <Shortcut>mywarshal_floyd</Shortcut>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -13,25 +13,23 @@
     </Header>
     <Snippet>
       <Declarations>
-        <Literal>
-          <ID>V</ID>
-          <Default>N</Default>
-          <ToolTip></ToolTip>
-        </Literal>
-        <Literal>
-          <ID>E</ID>
-          <Default>M</Default>
-          <ToolTip></ToolTip>
-        </Literal>
+        <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[	int $V$, $E$;
-	cin >> $V$ >> $E$;
+        <![CDATA[const int INF = 1010101010;
 
-	vector<vector<int>> d($V$, vector<int>($V$, INF));
-	for (int i = 0; i < $V$; i++) d[i][i] = 0;
+template<class T>
+inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
+
+int main() {
+
+	int N, M;
+	cin >> N >> M;
+
+	vector<vector<int>> d(N, vector<int>(N, INF));
+	for (int i = 0; i < N; i++) d[i][i] = 0;
 	
-	for (int i = 0; i < $E$; i++) {
+	for (int i = 0; i < M; i++) {
 		int a, b, c;
 		cin >> a >> b >> c;
 		a--, b--;
@@ -39,13 +37,16 @@
 		d[b][a] = c;
 	}
 
-	for (int k = 0; k < $V$; k++) {
-		for (int i = 0; i < $V$; i++) {
-			for (int j = 0; j < $V$; j++) {
+	for (int k = 0; k < N; k++) {
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
 				chmin(d[i][j], d[i][k] + d[k][j]);
 			}
 		}
-	}$end$]]>
+	}
+
+}
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>

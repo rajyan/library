@@ -30,17 +30,17 @@ public:
 		vector<pair<lint, int>> res;
 		lint sz = (lint)min_pf.size();
 
-		for (lint i = 2; i * i <= n; i++) {
-			if (n < sz) break;
-			int cnt = 0;
-			while (n % i == 0) {
-				cnt++;
-				n /= i;
+		if (n >= sz) {
+			for (lint i = 2; i * i <= n; i++) {
+				int cnt = 0;
+				while (n % i == 0) {
+					cnt++;
+					n /= i;
+				}
+				if (cnt) res.emplace_back(i, cnt);
 			}
-			if (cnt) res.emplace_back(i, cnt);
+			res.emplace_back(n, 1);
 		}
-
-		if (n >= sz) res.emplace_back(n, 1);
 		else {
 			int prev = min_pf[n], cnt = -1;
 			while (n > 0) {

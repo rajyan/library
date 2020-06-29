@@ -2,22 +2,21 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>prime</Title>
+      <Title>Prime</Title>
       <Shortcut>myprime</Shortcut>
-      <Description>prime class</Description>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
+      </SnippetTypes>
     </Header>
     <Snippet>
       <Declarations>
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[#include <vector>
-
-using namespace std;
-using lint = long long;
-
-class Prime {
+        <![CDATA[class Prime {
 private:
 	vector<int> min_pf; // min_pf[i] = minimum prime factor of i
 	vector<int> prime;
@@ -44,17 +43,17 @@ public:
 		vector<pair<lint, int>> res;
 		lint sz = (lint)min_pf.size();
 
-		for (lint i = 2; i * i <= n; i++) {
-			if (n < sz) break;
-			int cnt = 0;
-			while (n % i == 0) {
-				cnt++;
-				n /= i;
+		if (n >= sz) {
+			for (lint i = 2; i * i <= n; i++) {
+				int cnt = 0;
+				while (n % i == 0) {
+					cnt++;
+					n /= i;
+				}
+				if (cnt) res.emplace_back(i, cnt);
 			}
-			if (cnt) res.emplace_back(i, cnt);
+			res.emplace_back(n, 1);
 		}
-
-		if (n >= sz) res.emplace_back(n, 1);
 		else {
 			int prev = min_pf[n], cnt = -1;
 			while (n > 0) {
@@ -84,7 +83,8 @@ public:
 		}
 		return true;
 	}
-};]]>
+};
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
