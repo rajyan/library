@@ -1,0 +1,4 @@
+#! /bin/bash
+git diff --cached --name-only --diff-filter=D | grep '\.cpp$' | sed -e 's/library/snippet/g' -e 's/cpp$/snippet/g' | xargs rm -f
+git diff --cached --name-only --diff-filter=d | grep '\.cpp$'| xargs ./autosnippet.sh
+
