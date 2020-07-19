@@ -4,7 +4,7 @@
     <Header>
       <Title>template</Title>
       <Shortcut>mytemplate</Shortcut>
-      <Description>template for competive programming</Description>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -12,6 +12,9 @@
       </SnippetTypes>
     </Header>
     <Snippet>
+      <Declarations>
+        <Literal Editable="false"></Literal>
+      </Declarations>
       <Code Language="cpp">
         <![CDATA[#include <cassert>
 #include <cstdio>
@@ -32,7 +35,7 @@ constexpr int MOD = 1000000007, INF = 1010101010;
 constexpr lint LINF = 1LL << 60;
 
 #ifdef _DEBUG
-#include "../../../library/library/debug_template.cpp"
+#include "../..library/library/debug_template.cpp"
 #define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 #else 
 #define DMP(...) ((void)0)
@@ -48,10 +51,9 @@ struct init {
 int main() {
 
   $end$
-  
+
 	return 0;
 }
-
 ]]>
       </Code>
     </Snippet>
