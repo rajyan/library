@@ -1,12 +1,12 @@
 
-auto judge = [&](auto idx) {
-	return idx;
+auto judge = [&](auto key) {
+	return key;
 };
 
 auto binary_search = [&](auto f) {
 	
 	auto ng = -1;
-	auto ok = ;
+	auto ok = INF;
 
 	while (abs(ok - ng) > 1) {
 		auto mid = (ok + ng) / 2;

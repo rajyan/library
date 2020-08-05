@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>BinarySearch</Title>
-      <Shortcut>mybisearch</Shortcut>
-      <Description>Binary search template</Description>
+      <Title>binary_search</Title>
+      <Shortcut>mybinary_search</Shortcut>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -13,32 +13,28 @@
     </Header>
     <Snippet>
       <Declarations>
-        <Literal>
-          <ID></ID>
-          <Default></Default>
-          <ToolTip></ToolTip>
-        </Literal>
+        <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[
-auto judge = [&](auto idx, auto key) {
-	return idx;
+        <![CDATA[auto judge = [&](auto key) {
+	return key;
 };
 
 auto binary_search = [&](auto f) {
 	
 	auto ng = -1;
-	auto ok = ;
+	auto ok = INF;
 
 	while (abs(ok - ng) > 1) {
 		auto mid = (ok + ng) / 2;
 
-		if (f(mid)) ok = mid;
+		if (f(mid, key)) ok = mid;
 		else ng = mid;
 	}
 
 	return ok;
-};$end$]]>
+};
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
