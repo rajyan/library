@@ -40,7 +40,7 @@ struct Point2D {
 	constexpr Point2D nor() const noexcept { return { y, -x }; }
 	constexpr long double hypot() const noexcept { return ::hypotl(x, y); }
 	friend istream& operator>>(istream& is, Point2D &p) { return is >> p.x >> p.y; }
-	friend ostream& operator<<(ostream& os, const Point2D &p) { return os << p.x << " " << p.y << "\n"; }
+	friend ostream& operator<<(ostream& os, const Point2D &p) { return os << p.x << " " << p.y; }
 	template<class U> U& operator[](vector<vector<U>> &v) { return v[x][y]; }
 };
 
