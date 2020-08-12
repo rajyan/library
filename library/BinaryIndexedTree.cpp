@@ -2,7 +2,7 @@
 
 using namespace std;
 
-template< typename T >
+template<typename T = lint>
 class BinaryIndexedTree {
 private:
 	vector<T> data;
