@@ -2,30 +2,21 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>randnum</Title>
+      <Title>RandNum</Title>
       <Shortcut>myrandnum</Shortcut>
-      <Description>Random number class</Description>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
-        <SnippetType>SurroundsWith</SnippetType>
+        <!--<SnippetType>SurroundsWith</SnippetType>-->
       </SnippetTypes>
     </Header>
     <Snippet>
       <Declarations>
-        <Literal>
-          <ID></ID>
-          <Default></Default>
-          <ToolTip></ToolTip>
-        </Literal>
+        <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[#include <random>
-#include <chrono>
-
-$selected$
-
-struct RandNum {
+        <![CDATA[struct RandNum {
 
 	mt19937 mt;
 	RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
@@ -34,12 +25,13 @@ struct RandNum {
 		uniform_int_distribution<lint> dist(a, b);
 		return dist(mt);
 	}
-	lint operator() (lint b) { return (*this)(0LL, b);}
+	lint operator() (lint b) { return (*this)(0LL, b); }
 
 	template<class Ite>
-	void shuf(Ite first, Ite last) { shuffle(first, last, mt);}
+	void shuf(Ite first, Ite last) { shuffle(first, last, mt); }
 
-};$end$]]>
+};
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>

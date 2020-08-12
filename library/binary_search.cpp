@@ -6,7 +6,7 @@ auto judge = [&](auto key) {
 auto binary_search = [&](auto f) {
 	
 	auto ng = -1;
-	auto ok = INF;
+	auto ok = LINF;
 
 	while (abs(ok - ng) > 1) {
 		auto mid = (ok + ng) / 2;

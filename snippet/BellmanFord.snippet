@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Bellman_Ford</Title>
-      <Shortcut>mybellman_ford</Shortcut>
+      <Title>BellmanFord</Title>
+      <Shortcut>mybellmanford</Shortcut>
       <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
@@ -16,9 +16,7 @@
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[
-
-template<class T>
+        <![CDATA[template<class T>
 struct Edge {
 	int from, to;
 	T cost;
@@ -27,7 +25,7 @@ struct Edge {
 };
 
 template<class T>
-vector<T> Bellman_Ford(const vector<Edge<T>> &edges, const int V, const int st) {
+vector<T> BellmanFord(const vector<Edge<T>> &edges, const int V, const int st) {
 
 	const T inf = numeric_limits<T>::max() / 2;
 	vector<T> cost(V, inf);

@@ -1,20 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-  <CodeSnippet Format="1.0.0">
-    <Header>
-      <Title>topolpgical sort</Title>
-      <Shortcut>mytopo</Shortcut>
-      <Description>topological sort</Description>
-      <Author>Yohta Kimura id:rajyan</Author>
-    </Header>
-    <Snippet>
-      <Code Language="cpp">
-        <![CDATA[class Topological_sort {
+#include <cassert>
+#include <cstdio>
+#include <cmath>
+#include <iostream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+class Topological_sort {
 private:
 	int V;
 	vector<vector<int>> edges;
 	vector<int> used;
-  
+
 public:
 	Topological_sort(int n) :V(n), edges(n), used(n) {}
 	Topological_sort(vector<vector<int>> &edges) :V(edges.size()), used(edges.size()) { this->edges = edges; }
@@ -57,8 +55,4 @@ public:
 		return *max_element(used.begin(), used.end()) - 1;
 	}
 
-};$end$]]>
-      </Code>
-    </Snippet>
-  </CodeSnippet>
-</CodeSnippets>
+};

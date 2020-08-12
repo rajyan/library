@@ -1,22 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-  <CodeSnippet Format="1.0.0">
-    <Header>
-      <Title>rolling_hash</Title>
-      <Shortcut>myrolling_hash</Shortcut>
-      <Description></Description>
-      <Author>Yohta Kimura id:rajyan</Author>
-      <SnippetTypes>
-        <SnippetType>Expansion</SnippetType>
-        <!--<SnippetType>SurroundsWith</SnippetType>-->
-      </SnippetTypes>
-    </Header>
-    <Snippet>
-      <Declarations>
-        <Literal Editable="false"></Literal>
-      </Declarations>
-      <Code Language="cpp">
-        <![CDATA[template<int Modulo = MOD>
+#include <vector>
+#include <string>
+
+using namespace std;
+using lint = long long; 
+
+template<int Modulo = MOD>
 struct Mint {
 
 	lint val;
@@ -77,9 +65,10 @@ struct Mint {
 	}
 };
 
+using mint = Mint<>;
 
 //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-class Rolling_hash {
+class RollingHash {
 
 private:
 	using Mod = Mint<2147483647>;
@@ -91,7 +80,7 @@ private:
 	int sz;
 
 public:
-	Rolling_hash(const string &s) :sz(s.size()) {
+	RollingHash(const string &s) :sz(s.size()) {
 
 		hash1.assign(sz + 1, 0); pow1.assign(sz + 1, 1);
 		hash2.assign(sz + 1, 0); pow2.assign(sz + 1, 1);
@@ -110,8 +99,3 @@ public:
 		return { res1, res2 };
 	}
 };
-$end$]]>
-      </Code>
-    </Snippet>
-  </CodeSnippet>
-</CodeSnippets>

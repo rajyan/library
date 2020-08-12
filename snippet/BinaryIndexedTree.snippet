@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>binary_search</Title>
-      <Shortcut>mybinary_search</Shortcut>
+      <Title>BinaryIndexedTree</Title>
+      <Shortcut>mybinaryindexedtree</Shortcut>
       <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
@@ -16,23 +16,23 @@
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[auto judge = [&](auto key) {
-	return key;
-};
+        <![CDATA[template< typename T >
+class BinaryIndexedTree {
+private:
+	vector<T> data;
 
-auto binary_search = [&](auto f) {
-	
-	auto ng = -1;
-	auto ok = LINF;
+public:
+	BinaryIndexedTree(int sz) : data(sz + 1) {}
 
-	while (abs(ok - ng) > 1) {
-		auto mid = (ok + ng) / 2;
-
-		if (f(mid, key)) ok = mid;
-		else ng = mid;
+	T sum(int k) {
+		T res = 0;
+		for (++k; k > 0; k -= k & -k) res += data[k];
+		return res;
 	}
 
-	return ok;
+	void add(int k, T x) {
+		for (++k; k < data.size(); k += k & -k) data[k] += x;
+	}
 };
 $end$]]>
       </Code>
