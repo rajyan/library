@@ -3,12 +3,12 @@
 using namespace std;
 
 template<typename T = lint>
-class BinaryIndexedTree {
+class FenwickTree {
 private:
 	vector<T> data;
 
 public:
-	BinaryIndexedTree(int sz) : data(sz + 1) {}
+	FenwickTree(int sz) : data(sz + 1) {}
 
 	T sum(int k) {
 		T res = 0;

@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>BinaryIndexedTree</Title>
-      <Shortcut>mybinaryindexedtree</Shortcut>
+      <Title>FenwickTree</Title>
+      <Shortcut>myfenwicktree</Shortcut>
       <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
@@ -17,12 +17,12 @@
       </Declarations>
       <Code Language="cpp">
         <![CDATA[template<typename T = lint>
-class BinaryIndexedTree {
+class FenwickTree {
 private:
 	vector<T> data;
 
 public:
-	BinaryIndexedTree(int sz) : data(sz + 1) {}
+	FenwickTree(int sz) : data(sz + 1) {}
 
 	T sum(int k) {
 		T res = 0;
