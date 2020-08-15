@@ -14,7 +14,7 @@ public:
 
 	T sum(int k) const {
 		T res = 0;
-		for (k = k - 1; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];
+		for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];
 		return res;
 	}
 	T sum(int l, int r) const { return sum(r) - sum(l); }
