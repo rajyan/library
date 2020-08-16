@@ -13,3 +13,19 @@
 
 競技プログラミングの Visual Studio用のスニペットです。  
 ライブラリの内容は全てスニペットになっているのに加えて、競技プログラミングでよく使うコードの断片をスニペット化しています。
+
+## autosnippet
+
+libraryの修正・追加のたびにsnippetも変更するのは面倒なので、Git hooksを使ってスニペットの生成を自動化しています。
+
+### autosnippet.sh
+
+スニペットのテンプレートをもとに、cppファイルからVisual Studio用スニペットの作成をする。
+
+### pre-commit
+
+.git/hooksへのsymlinkを張っている。libraryのcppファイルが削除・リネームされたときには対応するsnippetを削除、変更や追加の際にはautosnippet.shを実行してスニペットを生成する。
+
+### post-commit
+
+.git/hooksへのsymlinkを張っている。pre-commitで追加されたsnippetをamend commitする。
