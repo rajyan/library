@@ -1,5 +1,7 @@
 # README
 
+[![Actions Status](https://github.com/rajyan/library/workflows/verify/badge.svg)](https://github.com/rajyan/library/actions) 
+
 ## library
 
 競技プログラミング用のライブラリです。  
