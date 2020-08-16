@@ -28,7 +28,7 @@ auto binary_search = [&](auto f) {
 	while (abs(ok - ng) > 1) {
 		auto mid = (ok + ng) / 2;
 
-		if (f(mid, key)) ok = mid;
+		if (f(mid)) ok = mid;
 		else ng = mid;
 	}
 
