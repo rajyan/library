@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Debug template</Title>
-      <Shortcut>mydebug</Shortcut>
+      <Title>debug_template</Title>
+      <Shortcut>mydebug_template</Shortcut>
       <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
@@ -13,14 +13,12 @@
     </Header>
     <Snippet>
       <Declarations>
-        <Literal>
-          <ID></ID>
-          <Default></Default>
-          <ToolTip></ToolTip>
-        </Literal>
+        <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[// for MSVC++
+        <![CDATA[#pragma once
+
+// for MSVC++
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -32,17 +30,17 @@ using namespace std;
 
 template <class T>
 ostream &operator<<(ostream &os, const vector<T> &vec) {
-	cout << "[ ";
+	os << "[ ";
 	for (const auto &e : vec) os << e << " ";
-	cout << "]\n";
+	os << "]\n";
 	return os;
 }
 
 template <class T>
 ostream &operator<<(ostream &os, const set<T> &st) {
-	cout << "[ ";
+	os << "[ ";
 	for (const auto &e : st) os << e << " ";
-	cout << "]\n";
+	os << "]\n";
 	return os;
 }
 
@@ -54,9 +52,9 @@ ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
 
 template <class T1, class T2>
 ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
-	cout << "[ ";
+	os << "[ ";
 	for (const auto &e : mp) os << e << " ";
-	cout << "]\n";
+	os << "]\n";
 	return os;
 }
 
@@ -66,7 +64,8 @@ template <class Head, class... Tail>
 void dump(const char* str, Head &&h, Tail &&... t) {
 	while (*str != ',') cerr << *str++; cerr << " = " << h << "\n";
 	dump(str + (*(str + 1) == ' ' ? 2 : 1), t...);
-}$end$]]>
+}
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>

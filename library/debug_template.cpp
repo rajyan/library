@@ -12,17 +12,17 @@ using namespace std;
 
 template <class T>
 ostream &operator<<(ostream &os, const vector<T> &vec) {
-	cout << "[ ";
+	os << "[ ";
 	for (const auto &e : vec) os << e << " ";
-	cout << "]\n";
+	os << "]\n";
 	return os;
 }
 
 template <class T>
 ostream &operator<<(ostream &os, const set<T> &st) {
-	cout << "[ ";
+	os << "[ ";
 	for (const auto &e : st) os << e << " ";
-	cout << "]\n";
+	os << "]\n";
 	return os;
 }
 
@@ -34,9 +34,9 @@ ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
 
 template <class T1, class T2>
 ostream &operator<<(ostream &os, const map<T1, T2> &mp) {
-	cout << "[ ";
+	os << "[ ";
 	for (const auto &e : mp) os << e << " ";
-	cout << "]\n";
+	os << "]\n";
 	return os;
 }
 
