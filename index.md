@@ -44,7 +44,7 @@ layout: default
 * :warning: <a href="library/library/CumulativeSum.cpp.html">library/CumulativeSum.cpp</a>
 * :warning: <a href="library/library/Dijkstra.cpp.html">library/Dijkstra.cpp</a>
 * :warning: <a href="library/library/Factorial.cpp.html">library/Factorial.cpp</a>
-* :warning: <a href="library/library/FenwickTree.cpp.html">library/FenwickTree.cpp</a>
+* :heavy_check_mark: <a href="library/library/FenwickTree.cpp.html">library/FenwickTree.cpp</a>
 * :warning: <a href="library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
 * :warning: <a href="library/library/Modint.cpp.html">library/Modint.cpp</a>
 * :warning: <a href="library/library/Point2D.cpp.html">library/Point2D.cpp</a>
@@ -67,5 +67,10 @@ layout: default
 * :warning: <a href="library/library/run_length.cpp.html">library/run_length.cpp</a>
 * :warning: <a href="library/library/slide_minmax.cpp.html">library/slide_minmax.cpp</a>
 * :warning: <a href="library/library/template.cpp.html">library/template.cpp</a>
+
+
+## Verify Files
+
+* :heavy_check_mark: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
 
 
