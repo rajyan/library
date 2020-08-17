@@ -55,6 +55,7 @@ layout: default
 * :warning: <a href="library/library/TopologicalSort.cpp.html">library/TopologicalSort.cpp</a>
 * :heavy_check_mark: <a href="library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
 * :warning: <a href="library/library/WarshalFloyd.cpp.html">library/WarshalFloyd.cpp</a>
+* :warning: <a href="library/library/bisearch.cpp.html">library/bisearch.cpp</a>
 * :warning: <a href="library/library/chminmax.cpp.html">library/chminmax.cpp</a>
 * :warning: <a href="library/library/debug_template.cpp.html">library/debug_template.cpp</a>
 * :warning: <a href="library/library/divisor.cpp.html">library/divisor.cpp</a>
