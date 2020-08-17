@@ -2,9 +2,9 @@
 
 # delete snippets
 ## deleted files
-git diff --cached --name-only --diff-filter=D | grep "\.cpp$" | sed -e "s/library/snippet/g" -e "s/cpp$/snippet/g" | xargs rm -f
+git diff --cached --name-only --diff-filter=D | grep -v "\.test" | grep "\.cpp$" | sed -e "s/library/snippet/g" -e "s/cpp$/snippet/g" | xargs rm -f
 ## renamed files
-git diff --cached | grep "rename from.*\.cpp$" | sed -e "s/rename from //g" -e "s/library/snippet/g" -e "s/cpp$/snippet/g" | xargs rm -f
+git diff --cached | grep -v "\.test" | grep "rename from.*\.cpp$" | sed -e "s/rename from //g" -e "s/library/snippet/g" -e "s/cpp$/snippet/g" | xargs rm -f
 
 # generate snippets
-git diff --cached --name-only --diff-filter=d | grep "\.cpp$" | xargs ./autosnippet/autosnippet.sh
+git diff --cached --name-only --diff-filter=d | grep -v "\.test" | grep "\.cpp$" | xargs ./autosnippet/autosnippet.sh
