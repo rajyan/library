@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/binary_search.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 11:36:25+09:00
+    - Last commit date: 2020-08-17 21:38:23+09:00
 
 
 
@@ -46,7 +46,7 @@ auto judge = [&](auto key) {
 	return key;
 };
 
-auto binary_search = [&](auto f) {
+auto bisearch = [&](auto f) {
 	
 	auto ng = -1;
 	auto ok = LINF;
@@ -73,7 +73,7 @@ auto judge = [&](auto key) {
 	return key;
 };
 
-auto binary_search = [&](auto f) {
+auto bisearch = [&](auto f) {
 	
 	auto ng = -1;
 	auto ok = LINF;
