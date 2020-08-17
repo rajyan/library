@@ -3,7 +3,7 @@ auto judge = [&](auto key) {
 	return key;
 };
 
-auto binary_search = [&](auto f) {
+auto bisearch = [&](auto f) {
 	
 	auto ng = -1;
 	auto ok = LINF;
