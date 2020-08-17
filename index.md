@@ -53,7 +53,7 @@ layout: default
 * :warning: <a href="library/library/RectangleSum.cpp.html">library/RectangleSum.cpp</a>
 * :warning: <a href="library/library/RollingHash.cpp.html">library/RollingHash.cpp</a>
 * :warning: <a href="library/library/TopologicalSort.cpp.html">library/TopologicalSort.cpp</a>
-* :warning: <a href="library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
+* :heavy_check_mark: <a href="library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
 * :warning: <a href="library/library/WarshalFloyd.cpp.html">library/WarshalFloyd.cpp</a>
 * :warning: <a href="library/library/binary_search.cpp.html">library/binary_search.cpp</a>
 * :warning: <a href="library/library/chminmax.cpp.html">library/chminmax.cpp</a>
@@ -73,5 +73,6 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
 
 
