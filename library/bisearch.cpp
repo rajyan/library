@@ -5,7 +5,7 @@ auto judge = [&](auto key) {
 
 auto bisearch = [&](auto f) {
 	
-	auto ng = -1;
+	auto ng = -1LL;
 	auto ok = LINF;
 
 	while (abs(ok - ng) > 1) {
