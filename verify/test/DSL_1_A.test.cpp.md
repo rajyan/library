@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: library/UnionFind.cpp
+# :heavy_check_mark: test/DSL_1_A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
-* <a href="{{ site.github.repository_url }}/blob/master/library/UnionFind.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 15:17:57+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-18 09:48:00+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A</a>
 
 
-## Verified with
+## Depends on
 
-* :heavy_check_mark: <a href="../../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
+* :heavy_check_mark: <a href="../../library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
 
 
 ## Code
@@ -47,28 +47,37 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+
+#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'
+
+#include <iostream>
 #include <vector>
+
+#include "../../library/library/UnionFind.cpp"
+
 using namespace std;
+using lint = long long;
 
-class UnionFind {
-private:
-	vector<int> data;
-public:
-	UnionFind(int size) : data(size, -1) { }
-	int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
-	bool is_same(int x, int y) { return root(x) == root(y); }
-	int size(int x) { return -data[root(x)]; }
+int main() {
 
-	bool unify(int x, int y) {
-		x = root(x); y = root(y);
-		if (x != y) {
-			if (data[y] < data[x]) swap(x, y);
-			data[x] += data[y]; data[y] = x;
-			return true;
+	int n, q;
+	cin >> n >> q;
+
+	UnionFind uf(n);
+	for (int i = 0; i < q; i++) {
+		int c, x, y;
+		cin >> c >> x >> y;
+
+		if (c) {
+			cout << uf.is_same(x, y) << "\n";
 		}
-		return false;
+		else {
+			uf.unify(x, y);
+		}
 	}
-};
+
+	return 0;
+}
 
 ```
 {% endraw %}
@@ -76,8 +85,14 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "library/UnionFind.cpp"
+#line 1 "test/DSL_1_A.test.cpp"
+
+#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'
+
+#include <iostream>
 #include <vector>
+
+#line 2 "library/UnionFind.cpp"
 using namespace std;
 
 class UnionFind {
@@ -99,6 +114,31 @@ public:
 		return false;
 	}
 };
+#line 8 "test/DSL_1_A.test.cpp"
+
+using namespace std;
+using lint = long long;
+
+int main() {
+
+	int n, q;
+	cin >> n >> q;
+
+	UnionFind uf(n);
+	for (int i = 0; i < q; i++) {
+		int c, x, y;
+		cin >> c >> x >> y;
+
+		if (c) {
+			cout << uf.is_same(x, y) << "\n";
+		}
+		else {
+			uf.unify(x, y);
+		}
+	}
+
+	return 0;
+}
 
 ```
 {% endraw %}
