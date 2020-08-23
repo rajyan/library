@@ -2,6 +2,7 @@
 "test/DSL_1_A.test.cpp": "2020-08-18 09:48:00 +0900",
 "test/aoj/DSL_2_B.test.cpp": "2020-08-16 21:34:31 +0900",
 "test/yosupo/associative_array.test.cpp": "2020-08-23 20:53:37 +0900",
+"test/yosupo/lca.test.cpp": "2020-08-23 21:22:52 +0900",
 "test/yosupo/point_add_range_sum.test.cpp": "2020-08-16 22:33:12 +0900",
 "test/yosupo/unionfind.test.cpp": "2020-08-17 10:59:31 +0900"
 }
