@@ -9,10 +9,10 @@ private:
 	vector<int> depth;
 	vector<vector<int>> par;
 
-	void build(const vector<vector<int>> &graph, int root) {
+	void build(const vector<vector<int>> &tree, int root) {
 
 		auto dfs = [&](auto &&f, int now) -> void {
-			for (const auto &next : graph[now]) {
+			for (const auto &next : tree[now]) {
 				if (par[0][next] == -1) {
 					par[0][next] = now;
 					depth[next] = depth[now] + 1;
@@ -50,7 +50,7 @@ private:
 	}
 
 public:
-	LCA(const vector<vector<int>> &edges, int root = 0) : N(edges.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N, -1)) { build(edges, root); }
+	LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
 
 	int get_lca(int u, int v) {
 
