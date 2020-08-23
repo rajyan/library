@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/fnv1a.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-11 21:00:57+09:00
+    - Last commit date: 2020-08-23 11:44:21+09:00
 
 
 
@@ -42,25 +42,20 @@ layout: default
 {% raw %}
 ```cpp
 #include <iostream>
-#include <sstream>
 
 using namespace std;
 
-inline string fnv1a_64(string data) {
+inline uint64_t fnv1a_64(string data) {
 
 	uint64_t hash = 0xcbf29ce484222325;
-	uint64_t prime = 0x100000001b3;
+	constexpr uint64_t prime = 0x100000001b3;
 
 	for (int i = 0; i < (int)data.size(); ++i) {
 		hash = hash ^ data[i];
 		hash *= prime;
 	}
 
-	std::stringstream to_hex;
-	to_hex << std::hex << hash;
-
-	return to_hex.str();
-
+	return hash;
 }
 ```
 {% endraw %}
@@ -70,25 +65,20 @@ inline string fnv1a_64(string data) {
 ```cpp
 #line 1 "library/fnv1a.cpp"
 #include <iostream>
-#include <sstream>
 
 using namespace std;
 
-inline string fnv1a_64(string data) {
+inline uint64_t fnv1a_64(string data) {
 
 	uint64_t hash = 0xcbf29ce484222325;
-	uint64_t prime = 0x100000001b3;
+	constexpr uint64_t prime = 0x100000001b3;
 
 	for (int i = 0; i < (int)data.size(); ++i) {
 		hash = hash ^ data[i];
 		hash *= prime;
 	}
 
-	std::stringstream to_hex;
-	to_hex << std::hex << hash;
-
-	return to_hex.str();
-
+	return hash;
 }
 
 ```
