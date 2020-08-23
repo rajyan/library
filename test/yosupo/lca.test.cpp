@@ -2,6 +2,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include "../../library/makevec.cpp"
+#include "../../library/nlz.cpp"
 #include "../../library/LowestCommonAncestor.cpp"
 
 #include <iostream>
