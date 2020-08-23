@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: library/LowestCommonAncestor.cpp
+# :heavy_check_mark: library/LowestCommonAncestor.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/LowestCommonAncestor.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-13 05:43:48+09:00
+    - Last commit date: 2020-08-23 21:22:52+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 
 
 ## Code
@@ -52,10 +57,10 @@ private:
 	vector<int> depth;
 	vector<vector<int>> par;
 
-	void build(const vector<vector<int>> &graph, int root) {
+	void build(const vector<vector<int>> &tree, int root) {
 
 		auto dfs = [&](auto &&f, int now) -> void {
-			for (const auto &next : graph[now]) {
+			for (const auto &next : tree[now]) {
 				if (par[0][next] == -1) {
 					par[0][next] = now;
 					depth[next] = depth[now] + 1;
@@ -93,7 +98,7 @@ private:
 	}
 
 public:
-	LCA(const vector<vector<int>> &edges, int root = 0) : N(edges.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N, -1)) { build(edges, root); }
+	LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
 
 	int get_lca(int u, int v) {
 
@@ -133,10 +138,10 @@ private:
 	vector<int> depth;
 	vector<vector<int>> par;
 
-	void build(const vector<vector<int>> &graph, int root) {
+	void build(const vector<vector<int>> &tree, int root) {
 
 		auto dfs = [&](auto &&f, int now) -> void {
-			for (const auto &next : graph[now]) {
+			for (const auto &next : tree[now]) {
 				if (par[0][next] == -1) {
 					par[0][next] = now;
 					depth[next] = depth[now] + 1;
@@ -174,7 +179,7 @@ private:
 	}
 
 public:
-	LCA(const vector<vector<int>> &edges, int root = 0) : N(edges.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N, -1)) { build(edges, root); }
+	LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
 
 	int get_lca(int u, int v) {
 
