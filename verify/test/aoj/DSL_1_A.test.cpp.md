@@ -21,17 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DSL_1_A.test.cpp
+# :heavy_check_mark: test/aoj/DSL_1_A.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-18 09:48:00+09:00
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_1_A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-23 21:27:08+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
+* :heavy_check_mark: <a href="../../../library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
 
 
 ## Code
@@ -50,13 +50,23 @@ layout: default
 
 #define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'
 
-#include <iostream>
-#include <vector>
+#include "../../library/UnionFind.cpp"
 
-#include "../../library/library/UnionFind.cpp"
+#include <iostream>
+#include <iomanip>
+#include <vector>
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 int main() {
 
@@ -85,14 +95,12 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/DSL_1_A.test.cpp"
+#line 1 "test/aoj/DSL_1_A.test.cpp"
 
 #define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'
 
-#include <iostream>
+#line 1 "library/UnionFind.cpp"
 #include <vector>
-
-#line 2 "library/UnionFind.cpp"
 using namespace std;
 
 class UnionFind {
@@ -114,10 +122,23 @@ public:
 		return false;
 	}
 };
-#line 8 "test/DSL_1_A.test.cpp"
+#line 5 "test/aoj/DSL_1_A.test.cpp"
+
+#include <iostream>
+#include <iomanip>
+#line 9 "test/aoj/DSL_1_A.test.cpp"
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 int main() {
 
@@ -143,5 +164,5 @@ int main() {
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

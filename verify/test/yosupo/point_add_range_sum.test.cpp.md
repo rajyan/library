@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/point_add_range_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:33:12+09:00
+    - Last commit date: 2020-08-23 21:27:08+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
@@ -52,10 +52,20 @@ layout: default
 #include "../../library/FenwickTree.cpp"
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 int main() {
 
@@ -122,10 +132,20 @@ public:
 #line 4 "test/yosupo/point_add_range_sum.test.cpp"
 
 #include <iostream>
-#line 7 "test/yosupo/point_add_range_sum.test.cpp"
+#include <iomanip>
+#line 8 "test/yosupo/point_add_range_sum.test.cpp"
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 int main() {
 

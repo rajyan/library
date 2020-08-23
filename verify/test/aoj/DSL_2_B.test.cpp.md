@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/DSL_2_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 21:34:31+09:00
+    - Last commit date: 2020-08-23 21:27:08+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
@@ -53,10 +53,20 @@ layout: default
 #include "../../library/FenwickTree.cpp"
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 int main() {
 
@@ -122,10 +132,20 @@ public:
 #line 5 "test/aoj/DSL_2_B.test.cpp"
 
 #include <iostream>
-#line 8 "test/aoj/DSL_2_B.test.cpp"
+#include <iomanip>
+#line 9 "test/aoj/DSL_2_B.test.cpp"
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 int main() {
 

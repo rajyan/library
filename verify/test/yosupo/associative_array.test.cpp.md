@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/associative_array.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-23 20:53:37+09:00
+    - Last commit date: 2020-08-23 21:27:08+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/associative_array">https://judge.yosupo.jp/problem/associative_array</a>
@@ -53,11 +53,21 @@ layout: default
 #include "../../library/fnv1a.cpp"
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <unordered_map>
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 struct test {
 	lint i;
@@ -128,11 +138,21 @@ inline uint64_t fnv1a_64(string data) {
 #line 5 "test/yosupo/associative_array.test.cpp"
 
 #line 7 "test/yosupo/associative_array.test.cpp"
+#include <iomanip>
 #include <string>
 #include <unordered_map>
 
 using namespace std;
 using lint = long long;
+constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr lint LINF = 1LL << 60;
+
+struct init {
+	init() {
+		cin.tie(nullptr); ios::sync_with_stdio(false);
+		cout << fixed << setprecision(10);
+	}
+} init_;
 
 struct test {
 	lint i;
