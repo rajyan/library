@@ -62,7 +62,7 @@ layout: default
 * :heavy_check_mark: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
 * :heavy_check_mark: <a href="library/library/makevec.cpp.html">library/makevec.cpp</a>
 * :warning: <a href="library/library/modpow.cpp.html">library/modpow.cpp</a>
-* :warning: <a href="library/library/nlz.cpp.html">library/nlz.cpp</a>
+* :heavy_check_mark: <a href="library/library/nlz.cpp.html">library/nlz.cpp</a>
 * :warning: <a href="library/library/popcount.cpp.html">library/popcount.cpp</a>
 * :warning: <a href="library/library/run_length.cpp.html">library/run_length.cpp</a>
 * :warning: <a href="library/library/slide_minmax.cpp.html">library/slide_minmax.cpp</a>

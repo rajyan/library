@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-23 21:22:52+09:00
+    - Last commit date: 2020-08-23 21:37:16+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/lca">https://judge.yosupo.jp/problem/lca</a>
@@ -41,6 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
 * :heavy_check_mark: <a href="../../../library/library/makevec.cpp.html">library/makevec.cpp</a>
+* :heavy_check_mark: <a href="../../../library/library/nlz.cpp.html">library/nlz.cpp</a>
 
 
 ## Code
@@ -52,6 +53,7 @@ layout: default
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include "../../library/makevec.cpp"
+#include "../../library/nlz.cpp"
 #include "../../library/LowestCommonAncestor.cpp"
 
 #include <iostream>
@@ -113,6 +115,16 @@ vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
 template<class... Size>
 auto make_vec(size_t s, Size... tail) {
 	return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+}
+#line 1 "library/nlz.cpp"
+int nlz(unsigned int x) {
+	union {
+		unsigned int as_uint32;
+		float        as_float;
+	} data;
+	data.as_float = (float)x + 0.5;
+	int n = 158 - (data.as_uint32 >> 23);
+	return n;
 }
 #line 2 "library/LowestCommonAncestor.cpp"
 
@@ -187,11 +199,11 @@ public:
 		return depth[u] + depth[v] - 2 * depth[get_lca(u, v)];
 	}
 };
-#line 6 "test/yosupo/lca.test.cpp"
+#line 7 "test/yosupo/lca.test.cpp"
 
 #include <iostream>
 #include <iomanip>
-#line 10 "test/yosupo/lca.test.cpp"
+#line 11 "test/yosupo/lca.test.cpp"
 
 using namespace std;
 using lint = long long;
