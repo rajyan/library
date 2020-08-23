@@ -59,7 +59,7 @@ layout: default
 * :warning: <a href="library/library/chminmax.cpp.html">library/chminmax.cpp</a>
 * :warning: <a href="library/library/debug_template.cpp.html">library/debug_template.cpp</a>
 * :warning: <a href="library/library/divisor.cpp.html">library/divisor.cpp</a>
-* :warning: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
+* :heavy_check_mark: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
 * :warning: <a href="library/library/makevec.cpp.html">library/makevec.cpp</a>
 * :warning: <a href="library/library/modpow.cpp.html">library/modpow.cpp</a>
 * :warning: <a href="library/library/nlz.cpp.html">library/nlz.cpp</a>
@@ -73,6 +73,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo/associative_array.test.cpp.html">test/yosupo/associative_array.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
 
