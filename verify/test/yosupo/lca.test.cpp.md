@@ -25,15 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/yosupo/lca.test.cpp
+# :heavy_check_mark: test/yosupo/lca.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 1970-01-01 00:00:00+00:00
+    - Last commit date: 2020-08-23 21:37:16+09:00
 
 
+* see: <a href="https://judge.yosupo.jp/problem/lca">https://judge.yosupo.jp/problem/lca</a>
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../../../library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
+* :heavy_check_mark: <a href="../../../library/library/makevec.cpp.html">library/makevec.cpp</a>
+* :heavy_check_mark: <a href="../../../library/library/nlz.cpp.html">library/nlz.cpp</a>
 
 
 ## Code
