@@ -43,7 +43,7 @@ layout: default
 * :warning: <a href="library/library/Compress.cpp.html">library/Compress.cpp</a>
 * :warning: <a href="library/library/CumulativeSum.cpp.html">library/CumulativeSum.cpp</a>
 * :warning: <a href="library/library/Dijkstra.cpp.html">library/Dijkstra.cpp</a>
-* :warning: <a href="library/library/Factorial.cpp.html">library/Factorial.cpp</a>
+* :heavy_check_mark: <a href="library/library/Factorial.cpp.html">library/Factorial.cpp</a>
 * :heavy_check_mark: <a href="library/library/FenwickTree.cpp.html">library/FenwickTree.cpp</a>
 * :heavy_check_mark: <a href="library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
 * :warning: <a href="library/library/Modint.cpp.html">library/Modint.cpp</a>
@@ -57,7 +57,7 @@ layout: default
 * :warning: <a href="library/library/WarshalFloyd.cpp.html">library/WarshalFloyd.cpp</a>
 * :warning: <a href="library/library/bisearch.cpp.html">library/bisearch.cpp</a>
 * :warning: <a href="library/library/chminmax.cpp.html">library/chminmax.cpp</a>
-* :warning: <a href="library/library/debug_template.cpp.html">library/debug_template.cpp</a>
+* :heavy_check_mark: <a href="library/library/debug_template.cpp.html">library/debug_template.cpp</a>
 * :warning: <a href="library/library/divisor.cpp.html">library/divisor.cpp</a>
 * :heavy_check_mark: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
 * :heavy_check_mark: <a href="library/library/makevec.cpp.html">library/makevec.cpp</a>
@@ -77,5 +77,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/184.test.cpp.html">test/yukicoder/184.test.cpp</a>
 
 

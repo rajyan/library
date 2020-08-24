@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: library/Factorial.cpp
+# :heavy_check_mark: library/Factorial.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/Factorial.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-11 21:11:50+09:00
+    - Last commit date: 2020-08-25 01:20:16+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/yukicoder/184.test.cpp.html">test/yukicoder/184.test.cpp</a>
 
 
 ## Code
@@ -73,6 +78,12 @@ public:
 		if (n < k || k < 0) return 0LL;
 		return fac[n] * finv[n - k] % MOD;
 	}
+
+	lint Hmod(int n, int k) {
+		if (n < 0 || k < 0) return 0LL;
+		return k == 0 ? 1 : Cmod(n + k - 1, k);
+	}
+
 };
 
 ```
@@ -114,6 +125,12 @@ public:
 		if (n < k || k < 0) return 0LL;
 		return fac[n] * finv[n - k] % MOD;
 	}
+
+	lint Hmod(int n, int k) {
+		if (n < 0 || k < 0) return 0LL;
+		return k == 0 ? 1 : Cmod(n + k - 1, k);
+	}
+
 };
 
 ```
