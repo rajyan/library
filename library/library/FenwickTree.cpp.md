@@ -25,21 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: library/FenwickTree.cpp
+# :warning: library/FenwickTree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/FenwickTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 00:20:23+09:00
+    - Last commit date: 1970-01-01 00:00:00+00:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
 
 
 ## Code

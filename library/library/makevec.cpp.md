@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: library/makevec.cpp
+# :warning: library/makevec.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/makevec.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-06 15:17:57+09:00
+    - Last commit date: 1970-01-01 00:00:00+00:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 
 
 ## Code

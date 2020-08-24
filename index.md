@@ -44,8 +44,8 @@ layout: default
 * :warning: <a href="library/library/CumulativeSum.cpp.html">library/CumulativeSum.cpp</a>
 * :warning: <a href="library/library/Dijkstra.cpp.html">library/Dijkstra.cpp</a>
 * :warning: <a href="library/library/Factorial.cpp.html">library/Factorial.cpp</a>
-* :heavy_check_mark: <a href="library/library/FenwickTree.cpp.html">library/FenwickTree.cpp</a>
-* :heavy_check_mark: <a href="library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
+* :warning: <a href="library/library/FenwickTree.cpp.html">library/FenwickTree.cpp</a>
+* :warning: <a href="library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
 * :warning: <a href="library/library/Modint.cpp.html">library/Modint.cpp</a>
 * :warning: <a href="library/library/Point2D.cpp.html">library/Point2D.cpp</a>
 * :warning: <a href="library/library/Prime.cpp.html">library/Prime.cpp</a>
@@ -53,16 +53,16 @@ layout: default
 * :warning: <a href="library/library/RectangleSum.cpp.html">library/RectangleSum.cpp</a>
 * :warning: <a href="library/library/RollingHash.cpp.html">library/RollingHash.cpp</a>
 * :warning: <a href="library/library/TopologicalSort.cpp.html">library/TopologicalSort.cpp</a>
-* :heavy_check_mark: <a href="library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
+* :warning: <a href="library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
 * :warning: <a href="library/library/WarshalFloyd.cpp.html">library/WarshalFloyd.cpp</a>
 * :warning: <a href="library/library/bisearch.cpp.html">library/bisearch.cpp</a>
 * :warning: <a href="library/library/chminmax.cpp.html">library/chminmax.cpp</a>
 * :warning: <a href="library/library/debug_template.cpp.html">library/debug_template.cpp</a>
 * :warning: <a href="library/library/divisor.cpp.html">library/divisor.cpp</a>
-* :heavy_check_mark: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
-* :heavy_check_mark: <a href="library/library/makevec.cpp.html">library/makevec.cpp</a>
+* :warning: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
+* :warning: <a href="library/library/makevec.cpp.html">library/makevec.cpp</a>
 * :warning: <a href="library/library/modpow.cpp.html">library/modpow.cpp</a>
-* :heavy_check_mark: <a href="library/library/nlz.cpp.html">library/nlz.cpp</a>
+* :warning: <a href="library/library/nlz.cpp.html">library/nlz.cpp</a>
 * :warning: <a href="library/library/popcount.cpp.html">library/popcount.cpp</a>
 * :warning: <a href="library/library/run_length.cpp.html">library/run_length.cpp</a>
 * :warning: <a href="library/library/slide_minmax.cpp.html">library/slide_minmax.cpp</a>
@@ -71,11 +71,11 @@ layout: default
 
 ## Verify Files
 
-* :heavy_check_mark: <a href="verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/associative_array.test.cpp.html">test/yosupo/associative_array.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
+* :x: <a href="verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
+* :x: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
+* :x: <a href="verify/test/yosupo/associative_array.test.cpp.html">test/yosupo/associative_array.test.cpp</a>
+* :x: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
+* :x: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
+* :x: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
 
 

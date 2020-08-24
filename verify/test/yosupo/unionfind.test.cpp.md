@@ -25,21 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo/unionfind.test.cpp
+# :x: test/yosupo/unionfind.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0b58406058f6619a0f31a172defc0230">test/yosupo</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo/unionfind.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-23 21:27:08+09:00
+    - Last commit date: 1970-01-01 00:00:00+00:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../../../library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
 
 
 ## Code
