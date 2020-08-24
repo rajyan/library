@@ -77,6 +77,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
+* :x: <a href="verify/test/yukicoder/1081.test.cpp.html">test/yukicoder/1081.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/184.test.cpp.html">test/yukicoder/184.test.cpp</a>
 
 
