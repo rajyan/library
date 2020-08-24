@@ -39,7 +39,7 @@ layout: default
 ### library
 
 * :warning: <a href="library/library/BellmanFord.cpp.html">library/BellmanFord.cpp</a>
-* :warning: <a href="library/library/Combination.cpp.html">library/Combination.cpp</a>
+* :heavy_check_mark: <a href="library/library/Combination.cpp.html">library/Combination.cpp</a>
 * :warning: <a href="library/library/Compress.cpp.html">library/Compress.cpp</a>
 * :warning: <a href="library/library/CumulativeSum.cpp.html">library/CumulativeSum.cpp</a>
 * :warning: <a href="library/library/Dijkstra.cpp.html">library/Dijkstra.cpp</a>
@@ -77,7 +77,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
-* :x: <a href="verify/test/yukicoder/1081.test.cpp.html">test/yukicoder/1081.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yukicoder/1081.test.cpp.html">test/yukicoder/1081.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yukicoder/184.test.cpp.html">test/yukicoder/184.test.cpp</a>
 
 
