@@ -30,4 +30,10 @@ public:
 		if (n < k || k < 0) return 0LL;
 		return fac[n] * finv[n - k] % MOD;
 	}
+
+	lint Hmod(int n, int k) {
+		if (n < 0 || k < 0) return 0LL;
+		return k == 0 ? 1 : Cmod(n + k - 1, k);
+	}
+
 };
