@@ -1,10 +1,6 @@
 
 #define PROBLEM "https://yukicoder.me/problems/no/1081"
 
-#ifdef FOR_TEST
-#include "../../library/Modint.cpp"
-#endif
-
 #include "../../library/Combination.cpp"
 
 #include <iostream>
