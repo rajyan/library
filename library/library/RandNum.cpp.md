@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/RandNum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-13 05:43:48+09:00
+    - Last commit date: 2020-08-26 09:53:12+09:00
 
 
 
@@ -43,6 +43,8 @@ layout: default
 ```cpp
 #include <random>
 #include <chrono>
+#include <vector>
+#include <unordered_map>
 
 using namespace std;
 using lint = long long;
@@ -52,11 +54,36 @@ struct RandNum {
 	mt19937 mt;
 	RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
 
-	lint operator()(lint a, lint b) {
-		uniform_int_distribution<lint> dist(a, b);
+	lint operator() (const lint& rand_min, const lint& rand_max) {
+		uniform_int_distribution<lint> dist(rand_min, rand_max);
 		return dist(mt);
 	}
-	lint operator() (lint b) { return (*this)(0LL, b); }
+	lint operator() (lint rand_max) { return (*this)(0LL, rand_max); }
+
+	vector<lint> uniq_vec(const int& sz, const lint& rand_min, lint rand_max) {
+
+		vector<lint> res(sz);
+		unordered_map<lint, lint> memo;
+		for (int i = 0; i < sz; i++, rand_max--) {
+
+			lint rand_val = (*this)(rand_min, rand_max);
+
+			// If rand_max hasn't been replaced yet, fill it with rand_max
+			if (memo.find(rand_max) == memo.end()) memo[rand_max] = rand_max;
+
+			auto val_itr = memo.find(rand_val);
+			if (val_itr == memo.end()) { // If rand_val has already been replaced
+				memo[rand_val] = memo[rand_max];
+			}
+			else {
+				rand_val = val_itr->second;
+				val_itr->second = memo[rand_max];
+			}
+
+			res[i] = rand_val;
+		}
+		return res;
+	}
 
 	template<class Ite>
 	void shuf(Ite first, Ite last) { shuffle(first, last, mt); }
@@ -72,6 +99,8 @@ struct RandNum {
 #line 1 "library/RandNum.cpp"
 #include <random>
 #include <chrono>
+#include <vector>
+#include <unordered_map>
 
 using namespace std;
 using lint = long long;
@@ -81,11 +110,36 @@ struct RandNum {
 	mt19937 mt;
 	RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
 
-	lint operator()(lint a, lint b) {
-		uniform_int_distribution<lint> dist(a, b);
+	lint operator() (const lint& rand_min, const lint& rand_max) {
+		uniform_int_distribution<lint> dist(rand_min, rand_max);
 		return dist(mt);
 	}
-	lint operator() (lint b) { return (*this)(0LL, b); }
+	lint operator() (lint rand_max) { return (*this)(0LL, rand_max); }
+
+	vector<lint> uniq_vec(const int& sz, const lint& rand_min, lint rand_max) {
+
+		vector<lint> res(sz);
+		unordered_map<lint, lint> memo;
+		for (int i = 0; i < sz; i++, rand_max--) {
+
+			lint rand_val = (*this)(rand_min, rand_max);
+
+			// If rand_max hasn't been replaced yet, fill it with rand_max
+			if (memo.find(rand_max) == memo.end()) memo[rand_max] = rand_max;
+
+			auto val_itr = memo.find(rand_val);
+			if (val_itr == memo.end()) { // If rand_val has already been replaced
+				memo[rand_val] = memo[rand_max];
+			}
+			else {
+				rand_val = val_itr->second;
+				val_itr->second = memo[rand_max];
+			}
+
+			res[i] = rand_val;
+		}
+		return res;
+	}
 
 	template<class Ite>
 	void shuf(Ite first, Ite last) { shuffle(first, last, mt); }

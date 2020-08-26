@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-13 05:43:48+09:00
+    - Last commit date: 2020-08-26 09:52:42+09:00
 
 
 
@@ -57,9 +57,11 @@ layout: default
 #include <vector>
 #include <set>
 #include <map>
+#include <unordered_map>
 #include <queue>
 #include <numeric>
 #include <algorithm>
+#include <bitset>
 
 using namespace std;
 using lint = long long;
