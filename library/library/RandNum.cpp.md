@@ -58,7 +58,7 @@ struct RandNum {
 		uniform_int_distribution<lint> dist(rand_min, rand_max);
 		return dist(mt);
 	}
-	lint operator() (lint rand_max) { return (*this)(0LL, rand_max); }
+	lint operator() (const lint &rand_max) { return (*this)(0LL, rand_max); }
 
 	vector<lint> uniq_vec(const int& sz, const lint& rand_min, lint rand_max) {
 
@@ -114,7 +114,7 @@ struct RandNum {
 		uniform_int_distribution<lint> dist(rand_min, rand_max);
 		return dist(mt);
 	}
-	lint operator() (lint rand_max) { return (*this)(0LL, rand_max); }
+	lint operator() (const lint &rand_max) { return (*this)(0LL, rand_max); }
 
 	vector<lint> uniq_vec(const int& sz, const lint& rand_min, lint rand_max) {
 
