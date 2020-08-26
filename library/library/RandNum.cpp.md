@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d521f765a49c72507257a2620612ee96">library</a>
 * <a href="{{ site.github.repository_url }}/blob/master/library/RandNum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-26 09:53:12+09:00
+    - Last commit date: 2020-08-26 09:58:06+09:00
 
 
 
@@ -72,10 +72,10 @@ struct RandNum {
 			if (memo.find(rand_max) == memo.end()) memo[rand_max] = rand_max;
 
 			auto val_itr = memo.find(rand_val);
-			if (val_itr == memo.end()) { // If rand_val has already been replaced
+			if (val_itr == memo.end()) { // replace rand_val with rand_max
 				memo[rand_val] = memo[rand_max];
 			}
-			else {
+			else { // If rand_val has already been replaced
 				rand_val = val_itr->second;
 				val_itr->second = memo[rand_max];
 			}
@@ -128,10 +128,10 @@ struct RandNum {
 			if (memo.find(rand_max) == memo.end()) memo[rand_max] = rand_max;
 
 			auto val_itr = memo.find(rand_val);
-			if (val_itr == memo.end()) { // If rand_val has already been replaced
+			if (val_itr == memo.end()) { // replace rand_val with rand_max
 				memo[rand_val] = memo[rand_max];
 			}
-			else {
+			else { // If rand_val has already been replaced
 				rand_val = val_itr->second;
 				val_itr->second = memo[rand_max];
 			}
