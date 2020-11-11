@@ -69,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/fnv1a.cpp
       title: library/fnv1a.cpp
+    - icon: ':warning:'
+      path: library/in_grid.cpp
+      title: library/in_grid.cpp
     - icon: ':heavy_check_mark:'
       path: library/makevec.cpp
       title: library/makevec.cpp
