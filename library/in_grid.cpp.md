@@ -9,11 +9,11 @@ data:
     links: []
   bundledCode: '#line 1 "library/in_grid.cpp"
 
-    bool in_grid = [&](pnt p) {return 0 <= p.x && p.x < H && 0 <= p.y && p.y < W;
+    bool in_grid = [&](pnt p) { return 0 <= p.x && p.x < H && 0 <= p.y && p.y < W;
     };
 
     '
-  code: 'bool in_grid = [&](pnt p) {return 0 <= p.x && p.x < H && 0 <= p.y && p.y
+  code: 'bool in_grid = [&](pnt p) { return 0 <= p.x && p.x < H && 0 <= p.y && p.y
     < W; };
 
     '
@@ -21,7 +21,7 @@ data:
   isVerificationFile: false
   path: library/in_grid.cpp
   requiredBy: []
-  timestamp: '2020-11-11 23:16:43+09:00'
+  timestamp: '2020-11-11 23:17:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/in_grid.cpp
