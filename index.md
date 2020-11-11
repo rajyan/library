@@ -1,83 +1,125 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: library
+    pages:
+    - icon: ':warning:'
+      path: library/BellmanFord.cpp
+      title: library/BellmanFord.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/Combination.cpp
+      title: library/Combination.cpp
+    - icon: ':warning:'
+      path: library/Compress.cpp
+      title: library/Compress.cpp
+    - icon: ':warning:'
+      path: library/CumulativeSum.cpp
+      title: library/CumulativeSum.cpp
+    - icon: ':warning:'
+      path: library/Dijkstra.cpp
+      title: library/Dijkstra.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/Factorial.cpp
+      title: library/Factorial.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/FenwickTree.cpp
+      title: library/FenwickTree.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/LowestCommonAncestor.cpp
+      title: library/LowestCommonAncestor.cpp
+    - icon: ':warning:'
+      path: library/Modint.cpp
+      title: library/Modint.cpp
+    - icon: ':warning:'
+      path: library/Point2D.cpp
+      title: library/Point2D.cpp
+    - icon: ':warning:'
+      path: library/Prime.cpp
+      title: library/Prime.cpp
+    - icon: ':warning:'
+      path: library/RandNum.cpp
+      title: library/RandNum.cpp
+    - icon: ':warning:'
+      path: library/RectangleSum.cpp
+      title: library/RectangleSum.cpp
+    - icon: ':warning:'
+      path: library/RollingHash.cpp
+      title: library/RollingHash.cpp
+    - icon: ':warning:'
+      path: library/TopologicalSort.cpp
+      title: library/TopologicalSort.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/UnionFind.cpp
+      title: library/UnionFind.cpp
+    - icon: ':warning:'
+      path: library/WarshalFloyd.cpp
+      title: library/WarshalFloyd.cpp
+    - icon: ':warning:'
+      path: library/bisearch.cpp
+      title: library/bisearch.cpp
+    - icon: ':warning:'
+      path: library/chminmax.cpp
+      title: library/chminmax.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/debug_template.cpp
+      title: library/debug_template.cpp
+    - icon: ':warning:'
+      path: library/divisor.cpp
+      title: library/divisor.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/fnv1a.cpp
+      title: library/fnv1a.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/makevec.cpp
+      title: library/makevec.cpp
+    - icon: ':warning:'
+      path: library/modpow.cpp
+      title: library/modpow.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/nlz.cpp
+      title: library/nlz.cpp
+    - icon: ':warning:'
+      path: library/popcount.cpp
+      title: library/popcount.cpp
+    - icon: ':warning:'
+      path: library/run_length.cpp
+      title: library/run_length.cpp
+    - icon: ':warning:'
+      path: library/slide_minmax.cpp
+      title: library/slide_minmax.cpp
+    - icon: ':warning:'
+      path: library/template.cpp
+      title: library/template.cpp
+  verificationCategories:
+  - name: test/aoj
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_1_A.test.cpp
+      title: test/aoj/DSL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_2_B.test.cpp
+      title: test/aoj/DSL_2_B.test.cpp
+  - name: test/yosupo
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/associative_array.test.cpp
+      title: test/yosupo/associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/lca.test.cpp
+      title: test/yosupo/lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/point_add_range_sum.test.cpp
+      title: test/yosupo/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/unionfind.test.cpp
+      title: test/yosupo/unionfind.test.cpp
+  - name: test/yukicoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1081.test.cpp
+      title: test/yukicoder/1081.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/184.test.cpp
+      title: test/yukicoder/184.test.cpp
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.github.project_tagline %}{{ site.github.project_tagline }}{% else %}This documentation is automatically generated by <a href="https://github.com/online-judge-tools/verification-helper">online-judge-tools/verification-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="d521f765a49c72507257a2620612ee96"></div>
-
-### library
-
-* :warning: <a href="library/library/BellmanFord.cpp.html">library/BellmanFord.cpp</a>
-* :heavy_check_mark: <a href="library/library/Combination.cpp.html">library/Combination.cpp</a>
-* :warning: <a href="library/library/Compress.cpp.html">library/Compress.cpp</a>
-* :warning: <a href="library/library/CumulativeSum.cpp.html">library/CumulativeSum.cpp</a>
-* :warning: <a href="library/library/Dijkstra.cpp.html">library/Dijkstra.cpp</a>
-* :heavy_check_mark: <a href="library/library/Factorial.cpp.html">library/Factorial.cpp</a>
-* :heavy_check_mark: <a href="library/library/FenwickTree.cpp.html">library/FenwickTree.cpp</a>
-* :heavy_check_mark: <a href="library/library/LowestCommonAncestor.cpp.html">library/LowestCommonAncestor.cpp</a>
-* :warning: <a href="library/library/Modint.cpp.html">library/Modint.cpp</a>
-* :warning: <a href="library/library/Point2D.cpp.html">library/Point2D.cpp</a>
-* :warning: <a href="library/library/Prime.cpp.html">library/Prime.cpp</a>
-* :warning: <a href="library/library/RandNum.cpp.html">library/RandNum.cpp</a>
-* :warning: <a href="library/library/RectangleSum.cpp.html">library/RectangleSum.cpp</a>
-* :warning: <a href="library/library/RollingHash.cpp.html">library/RollingHash.cpp</a>
-* :warning: <a href="library/library/TopologicalSort.cpp.html">library/TopologicalSort.cpp</a>
-* :heavy_check_mark: <a href="library/library/UnionFind.cpp.html">library/UnionFind.cpp</a>
-* :warning: <a href="library/library/WarshalFloyd.cpp.html">library/WarshalFloyd.cpp</a>
-* :warning: <a href="library/library/bisearch.cpp.html">library/bisearch.cpp</a>
-* :warning: <a href="library/library/chminmax.cpp.html">library/chminmax.cpp</a>
-* :heavy_check_mark: <a href="library/library/debug_template.cpp.html">library/debug_template.cpp</a>
-* :warning: <a href="library/library/divisor.cpp.html">library/divisor.cpp</a>
-* :heavy_check_mark: <a href="library/library/fnv1a.cpp.html">library/fnv1a.cpp</a>
-* :heavy_check_mark: <a href="library/library/makevec.cpp.html">library/makevec.cpp</a>
-* :warning: <a href="library/library/modpow.cpp.html">library/modpow.cpp</a>
-* :heavy_check_mark: <a href="library/library/nlz.cpp.html">library/nlz.cpp</a>
-* :warning: <a href="library/library/popcount.cpp.html">library/popcount.cpp</a>
-* :warning: <a href="library/library/run_length.cpp.html">library/run_length.cpp</a>
-* :warning: <a href="library/library/slide_minmax.cpp.html">library/slide_minmax.cpp</a>
-* :warning: <a href="library/library/template.cpp.html">library/template.cpp</a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/test/aoj/DSL_1_A.test.cpp.html">test/aoj/DSL_1_A.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj/DSL_2_B.test.cpp.html">test/aoj/DSL_2_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/associative_array.test.cpp.html">test/yosupo/associative_array.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/lca.test.cpp.html">test/yosupo/lca.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/point_add_range_sum.test.cpp.html">test/yosupo/point_add_range_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo/unionfind.test.cpp.html">test/yosupo/unionfind.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yukicoder/1081.test.cpp.html">test/yukicoder/1081.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yukicoder/184.test.cpp.html">test/yukicoder/184.test.cpp</a>
-
-

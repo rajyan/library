@@ -1,0 +1,60 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/FenwickTree.cpp
+    title: library/FenwickTree.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+    links:
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+  bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
+    \n\n#line 1 \"library/FenwickTree.cpp\"\n#include <vector>\n\nusing namespace\
+    \ std;\n\ntemplate<class T>\nclass FenwickTree {\nprivate:\n\tint n;\n\tvector<T>\
+    \ bit;\npublic:\n\tFenwickTree(int sz, T&& x = T(0)) : n(sz), bit(n + 1) {\n\t\
+    \tfor (int i = 0; i < n; i++) add(i, x);\n\t}\n\n\tT sum(int k) const {\n\t\t\
+    T res = 0;\n\t\tfor (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];\n\t\t\
+    return res;\n\t}\n\tT sum(int l, int r) const { return sum(r) - sum(l); }\n\n\t\
+    void add(int k, const T& x) {\n\t\tfor (; k < n; k |= k + 1) bit[k] += x;\n\t\
+    }\n\tvoid set(int k, const T& x) { add(k, x - sum(k, k + 1)); }\n};\n#line 5 \"\
+    test/aoj/DSL_2_B.test.cpp\"\n\n#include <iostream>\n#include <iomanip>\n#line\
+    \ 9 \"test/aoj/DSL_2_B.test.cpp\"\n\nusing namespace std;\nusing lint = long long;\n\
+    constexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr lint LINF = 1LL <<\
+    \ 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
+    \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint\
+    \ n, q;\n\tcin >> n >> q;\n\n\tFenwickTree<lint> ft(n, 0);\n\tvector<int> ans;\n\
+    \tfor (int i = 0; i < q; i++) {\n\t\tint c, x, y;\n\t\tcin >> c >> x >> y;\n\t\
+    \tx--;\n\t\tif (c) {\n\t\t\tans.emplace_back(ft.sum(x, y));\n\t\t}\n\t\telse {\n\
+    \t\t\tft.add(x, y);\n\t\t}\n\t}\n\n\tfor (const auto& e : ans) cout << e << \"\
+    \\n\";\n\t\n\treturn 0;\n}\n"
+  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
+    \n\n#include \"../../library/FenwickTree.cpp\"\n\n#include <iostream>\n#include\
+    \ <iomanip>\n#include <vector>\n\nusing namespace std;\nusing lint = long long;\n\
+    constexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr lint LINF = 1LL <<\
+    \ 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
+    \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint\
+    \ n, q;\n\tcin >> n >> q;\n\n\tFenwickTree<lint> ft(n, 0);\n\tvector<int> ans;\n\
+    \tfor (int i = 0; i < q; i++) {\n\t\tint c, x, y;\n\t\tcin >> c >> x >> y;\n\t\
+    \tx--;\n\t\tif (c) {\n\t\t\tans.emplace_back(ft.sum(x, y));\n\t\t}\n\t\telse {\n\
+    \t\t\tft.add(x, y);\n\t\t}\n\t}\n\n\tfor (const auto& e : ans) cout << e << \"\
+    \\n\";\n\t\n\treturn 0;\n}\n"
+  dependsOn:
+  - library/FenwickTree.cpp
+  isVerificationFile: true
+  path: test/aoj/DSL_2_B.test.cpp
+  requiredBy: []
+  timestamp: '2020-08-23 21:27:08+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/aoj/DSL_2_B.test.cpp
+layout: document
+redirect_from:
+- /verify/test/aoj/DSL_2_B.test.cpp
+- /verify/test/aoj/DSL_2_B.test.cpp.html
+title: test/aoj/DSL_2_B.test.cpp
+---
