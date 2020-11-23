@@ -11,6 +11,7 @@
 #include <cmath>
 #include <iostream>
 #include <iomanip>
+#include <string>
 #include <vector>
 #include <set>
 #include <map>
@@ -19,6 +20,7 @@
 #include <numeric>
 #include <algorithm>
 #include <bitset>
+#include <functional>
 
 using namespace std;
 using lint = long long;
