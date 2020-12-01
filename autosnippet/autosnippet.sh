@@ -13,7 +13,9 @@ do
 	
 	filename=${cppfile%.cpp}
 	filename=${filename##*/}
+    shortname=${filename/_/}
+    shortname=${shortname,,}
 
-	sed -e "s/:Name:/$filename/" -e "s/:Shortcut:/my${filename,,}/" \
+	sed -e "s/:Name:/$filename/" -e "s/:Shortcut:/my$shortname/" \
 	    -e "s/:Content:/$content/" $template > "snippet/$filename.snippet"	
 done
