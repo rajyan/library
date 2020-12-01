@@ -3,7 +3,7 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>in_grid</Title>
-      <Shortcut>myin_grid</Shortcut>
+      <Shortcut>myingrid</Shortcut>
       <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
@@ -16,7 +16,7 @@
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[bool in_grid = [&](pnt p) { return 0 <= p.x && p.x < H && 0 <= p.y && p.y < W; };
+        <![CDATA[auto in_grid = [&](pnt p) { return 0 <= p.x && p.x < H && 0 <= p.y && p.y < W; };
 $end$]]>
       </Code>
     </Snippet>
