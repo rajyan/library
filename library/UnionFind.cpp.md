@@ -35,8 +35,8 @@ data:
   timestamp: '2020-05-06 15:17:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/DSL_1_A.test.cpp
   - test/yosupo/unionfind.test.cpp
+  - test/aoj/DSL_1_A.test.cpp
 documentation_of: library/UnionFind.cpp
 layout: document
 redirect_from:
