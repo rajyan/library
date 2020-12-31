@@ -2,9 +2,15 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_B.test.cpp
+    title: test/aoj/DSL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/point_add_range_sum.test.cpp
+    title: test/yosupo/point_add_range_sum.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/FenwickTree.cpp\"\n#include <vector>\n\nusing namespace\
@@ -28,8 +34,10 @@ data:
   path: src/FenwickTree.cpp
   requiredBy: []
   timestamp: '2020-12-31 17:28:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/point_add_range_sum.test.cpp
+  - test/aoj/DSL_2_B.test.cpp
 documentation_of: src/FenwickTree.cpp
 layout: document
 redirect_from:

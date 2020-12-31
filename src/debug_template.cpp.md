@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/184.test.cpp
+    title: test/yukicoder/184.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/debug_template.cpp\"\n\n// for MSVC++\n#define _CRT_SECURE_NO_WARNINGS\n\
@@ -44,8 +47,9 @@ data:
   path: src/debug_template.cpp
   requiredBy: []
   timestamp: '2020-12-31 17:28:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/184.test.cpp
 documentation_of: src/debug_template.cpp
 layout: document
 redirect_from:

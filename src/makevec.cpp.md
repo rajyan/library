@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/lca.test.cpp
+    title: test/yosupo/lca.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/makevec.cpp\"\n#include <vector>\n\nusing namespace\
@@ -20,8 +23,9 @@ data:
   path: src/makevec.cpp
   requiredBy: []
   timestamp: '2020-12-31 17:28:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/lca.test.cpp
 documentation_of: src/makevec.cpp
 layout: document
 redirect_from:

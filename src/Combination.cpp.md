@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1081.test.cpp
+    title: test/yukicoder/1081.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/Combination.cpp\"\n#include <vector>\n#include <iostream>\n\
@@ -81,8 +84,9 @@ data:
   path: src/Combination.cpp
   requiredBy: []
   timestamp: '2020-12-31 17:28:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/1081.test.cpp
 documentation_of: src/Combination.cpp
 layout: document
 redirect_from:
