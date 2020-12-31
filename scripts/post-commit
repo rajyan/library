@@ -1,4 +1,4 @@
 #! /bin/bash
 
-git add 'snippet/*';
+git add 'snippets/*';
 git diff --cached --exit-code --quiet || git commit --amend --no-edit --no-verify

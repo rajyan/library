@@ -1,7 +1,7 @@
 
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
-#include "../../library/FenwickTree.cpp"
+#include "../../src/FenwickTree.cpp"
 
 #include <iostream>
 #include <iomanip>

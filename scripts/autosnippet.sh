@@ -1,6 +1,6 @@
 #! /bin/bash
 
-template="snippet/auto_template.snippet"
+template="snippets/auto_template.snippet"
 
 for cppfile in "$@"
 do	

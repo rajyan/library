@@ -1,6 +1,6 @@
 
 #ifdef _DEBUG
-#include "../../library/library/debug_template.cpp"
+#include "../../src/library/debug_template.cpp"
 #define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define DMP(...) ((void)0)

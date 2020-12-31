@@ -7,4 +7,4 @@ git diff --cached --name-only --diff-filter=D | grep "src/.*\.cpp$" | sed -e "s/
 git diff --cached | grep "rename from src/.*\.cpp$" | sed -e "s/rename from //g" -e "s/src/snippets/g" -e "s/cpp$/snippets/g" | xargs rm -f
 
 # generate snippets
-git diff --cached --name-only --diff-filter=d | grep "src/.*\.cpp$" | xargs ./autosnippet/autosnippet.sh
+git diff --cached --name-only --diff-filter=d | grep "src/.*\.cpp$" | xargs ./scripts/autosnippet.sh

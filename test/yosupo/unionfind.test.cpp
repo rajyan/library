@@ -1,7 +1,7 @@
 
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
-#include "../../library/UnionFind.cpp"
+#include "../../src/UnionFind.cpp"
 
 #include <iostream>
 #include <iomanip>

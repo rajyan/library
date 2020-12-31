@@ -1,9 +1,9 @@
 
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
-#include "../../library/makevec.cpp"
-#include "../../library/nlz.cpp"
-#include "../../library/LowestCommonAncestor.cpp"
+#include "../../src/makevec.cpp"
+#include "../../src/nlz.cpp"
+#include "../../src/LowestCommonAncestor.cpp"
 
 #include <iostream>
 #include <iomanip>
