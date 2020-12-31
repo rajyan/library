@@ -32,5 +32,6 @@ vector<T> BellmanFord(const vector<Edge<T>> &edges, const int V, const int st) {
 		}
 	}
 
+	
 	return cost;
 }

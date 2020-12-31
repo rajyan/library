@@ -17,5 +17,5 @@ do
     shortname=${shortname,,}
 
 	sed -e "s/:Name:/$filename/" -e "s/:Shortcut:/my$shortname/" \
-	    -e "s/:Content:/$content/" $template > "snippet/$filename.snippet"	
+	    -e "s/:Content:/$content/" $template > "snippets/$filename.snippet"
 done
