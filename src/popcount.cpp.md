@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/popcount.cpp\"\n\nusing lint = long long;\n\ninline\
+  bundledCode: "#line 1 \"src/popcount.cpp\"\n\nusing lint = long long;\n\ninline\
     \ int popcount(lint n) {\n\tn = (n & 0x5555555555555555) + (n >> 1 & 0x5555555555555555);\n\
     \tn = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);\n\tn = (n & 0x0f0f0f0f0f0f0f0f)\
     \ + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n\tn = (n & 0x00ff00ff00ff00ff) + (n >> 8 &\
@@ -22,15 +22,15 @@ data:
     \ & 0x00000000ffffffff);\n\treturn n;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/popcount.cpp
+  path: src/popcount.cpp
   requiredBy: []
-  timestamp: '2020-05-06 17:51:16+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/popcount.cpp
+documentation_of: src/popcount.cpp
 layout: document
 redirect_from:
-- /library/library/popcount.cpp
-- /library/library/popcount.cpp.html
-title: library/popcount.cpp
+- /library/src/popcount.cpp
+- /library/src/popcount.cpp.html
+title: src/popcount.cpp
 ---

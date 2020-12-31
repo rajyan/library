@@ -8,7 +8,7 @@ data:
   attributes:
     links:
     - https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
-  bundledCode: "#line 1 \"library/RollingHash.cpp\"\n#include <vector>\n#include <string>\n\
+  bundledCode: "#line 1 \"src/RollingHash.cpp\"\n#include <vector>\n#include <string>\n\
     \nusing namespace std;\nusing lint = long long; \n\ntemplate<int Modulo = MOD>\n\
     struct Mint {\n\n\tlint val;\n\tconstexpr Mint(lint v = 0) noexcept : val(v %\
     \ Modulo) { if (val < 0) val += Modulo; }\n\n\tconstexpr Mint& operator += (const\
@@ -86,15 +86,15 @@ data:
     };\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/RollingHash.cpp
+  path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2020-08-13 05:43:48+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/RollingHash.cpp
+documentation_of: src/RollingHash.cpp
 layout: document
 redirect_from:
-- /library/library/RollingHash.cpp
-- /library/library/RollingHash.cpp.html
-title: library/RollingHash.cpp
+- /library/src/RollingHash.cpp
+- /library/src/RollingHash.cpp.html
+title: src/RollingHash.cpp
 ---

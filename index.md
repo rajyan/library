@@ -1,127 +1,127 @@
 ---
 data:
   libraryCategories:
-  - name: library
+  - name: src
     pages:
     - icon: ':warning:'
-      path: library/BellmanFord.cpp
-      title: library/BellmanFord.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/Combination.cpp
-      title: library/Combination.cpp
+      path: src/BellmanFord.cpp
+      title: src/BellmanFord.cpp
     - icon: ':warning:'
-      path: library/Compress.cpp
-      title: library/Compress.cpp
+      path: src/Combination.cpp
+      title: src/Combination.cpp
     - icon: ':warning:'
-      path: library/CumulativeSum.cpp
-      title: library/CumulativeSum.cpp
+      path: src/Compress.cpp
+      title: src/Compress.cpp
     - icon: ':warning:'
-      path: library/Dijkstra.cpp
-      title: library/Dijkstra.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/Factorial.cpp
-      title: library/Factorial.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/FenwickTree.cpp
-      title: library/FenwickTree.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/LowestCommonAncestor.cpp
-      title: library/LowestCommonAncestor.cpp
+      path: src/CumulativeSum.cpp
+      title: src/CumulativeSum.cpp
     - icon: ':warning:'
-      path: library/Modint.cpp
-      title: library/Modint.cpp
+      path: src/Dijkstra.cpp
+      title: src/Dijkstra.cpp
     - icon: ':warning:'
-      path: library/Point2D.cpp
-      title: library/Point2D.cpp
+      path: src/Factorial.cpp
+      title: src/Factorial.cpp
     - icon: ':warning:'
-      path: library/Prime.cpp
-      title: library/Prime.cpp
+      path: src/FenwickTree.cpp
+      title: src/FenwickTree.cpp
     - icon: ':warning:'
-      path: library/RandNum.cpp
-      title: library/RandNum.cpp
+      path: src/LowestCommonAncestor.cpp
+      title: src/LowestCommonAncestor.cpp
     - icon: ':warning:'
-      path: library/RectangleSum.cpp
-      title: library/RectangleSum.cpp
+      path: src/Modint.cpp
+      title: src/Modint.cpp
     - icon: ':warning:'
-      path: library/RollingHash.cpp
-      title: library/RollingHash.cpp
+      path: src/Point2D.cpp
+      title: src/Point2D.cpp
     - icon: ':warning:'
-      path: library/TopologicalSort.cpp
-      title: library/TopologicalSort.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/UnionFind.cpp
-      title: library/UnionFind.cpp
+      path: src/Prime.cpp
+      title: src/Prime.cpp
     - icon: ':warning:'
-      path: library/WarshalFloyd.cpp
-      title: library/WarshalFloyd.cpp
+      path: src/RandNum.cpp
+      title: src/RandNum.cpp
     - icon: ':warning:'
-      path: library/bisearch.cpp
-      title: library/bisearch.cpp
+      path: src/RectangleSum.cpp
+      title: src/RectangleSum.cpp
     - icon: ':warning:'
-      path: library/chminmax.cpp
-      title: library/chminmax.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/debug_template.cpp
-      title: library/debug_template.cpp
+      path: src/RollingHash.cpp
+      title: src/RollingHash.cpp
     - icon: ':warning:'
-      path: library/divisor.cpp
-      title: library/divisor.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/fnv1a.cpp
-      title: library/fnv1a.cpp
+      path: src/TopologicalSort.cpp
+      title: src/TopologicalSort.cpp
     - icon: ':warning:'
-      path: library/in_grid.cpp
-      title: library/in_grid.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/makevec.cpp
-      title: library/makevec.cpp
+      path: src/UnionFind.cpp
+      title: src/UnionFind.cpp
     - icon: ':warning:'
-      path: library/modpow.cpp
-      title: library/modpow.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/nlz.cpp
-      title: library/nlz.cpp
+      path: src/WarshalFloyd.cpp
+      title: src/WarshalFloyd.cpp
     - icon: ':warning:'
-      path: library/popcount.cpp
-      title: library/popcount.cpp
+      path: src/bisearch.cpp
+      title: src/bisearch.cpp
     - icon: ':warning:'
-      path: library/run_length.cpp
-      title: library/run_length.cpp
+      path: src/chminmax.cpp
+      title: src/chminmax.cpp
     - icon: ':warning:'
-      path: library/slide_minmax.cpp
-      title: library/slide_minmax.cpp
+      path: src/debug_template.cpp
+      title: src/debug_template.cpp
     - icon: ':warning:'
-      path: library/template.cpp
-      title: library/template.cpp
+      path: src/divisor.cpp
+      title: src/divisor.cpp
+    - icon: ':warning:'
+      path: src/fnv1a.cpp
+      title: src/fnv1a.cpp
+    - icon: ':warning:'
+      path: src/in_grid.cpp
+      title: src/in_grid.cpp
+    - icon: ':warning:'
+      path: src/makevec.cpp
+      title: src/makevec.cpp
+    - icon: ':warning:'
+      path: src/modpow.cpp
+      title: src/modpow.cpp
+    - icon: ':warning:'
+      path: src/nlz.cpp
+      title: src/nlz.cpp
+    - icon: ':warning:'
+      path: src/popcount.cpp
+      title: src/popcount.cpp
+    - icon: ':warning:'
+      path: src/run_length.cpp
+      title: src/run_length.cpp
+    - icon: ':warning:'
+      path: src/slide_minmax.cpp
+      title: src/slide_minmax.cpp
+    - icon: ':warning:'
+      path: src/template.cpp
+      title: src/template.cpp
   verificationCategories:
   - name: test/aoj
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_1_A.test.cpp
       title: test/aoj/DSL_1_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
   - name: test/yosupo
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/associative_array.test.cpp
       title: test/yosupo/associative_array.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/unionfind.test.cpp
       title: test/yosupo/unionfind.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/1081.test.cpp
       title: test/yukicoder/1081.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/184.test.cpp
       title: test/yukicoder/184.test.cpp
 layout: toppage

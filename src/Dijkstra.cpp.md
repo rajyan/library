@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/Dijkstra.cpp\"\n#include <vector>\n#include <algorithm>\n\
+  bundledCode: "#line 1 \"src/Dijkstra.cpp\"\n#include <vector>\n#include <algorithm>\n\
     #include <queue>\n\nusing namespace std;\n\ntemplate<class T>\nstruct Edge {\n\
     \tint to;\n\tT cost;\n\tEdge() {}\n\tEdge(int to, T cost) : to(to), cost(cost)\
     \ {}\n\tbool operator>(const Edge &r) const { return this->cost > r.cost; }\n\
@@ -35,15 +35,15 @@ data:
     \ from st\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/Dijkstra.cpp
+  path: src/Dijkstra.cpp
   requiredBy: []
-  timestamp: '2020-05-06 15:17:57+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/Dijkstra.cpp
+documentation_of: src/Dijkstra.cpp
 layout: document
 redirect_from:
-- /library/library/Dijkstra.cpp
-- /library/library/Dijkstra.cpp.html
-title: library/Dijkstra.cpp
+- /library/src/Dijkstra.cpp
+- /library/src/Dijkstra.cpp.html
+title: src/Dijkstra.cpp
 ---

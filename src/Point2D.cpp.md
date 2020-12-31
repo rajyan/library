@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/Point2D.cpp\"\n#include <cmath>\n#include <iostream>\n\
+  bundledCode: "#line 1 \"src/Point2D.cpp\"\n#include <cmath>\n#include <iostream>\n\
     #include <vector>\n\nusing namespace std;\nusing lint = long long;\n\ntemplate<class\
     \ T>\nstruct Point2D {\n\tT x, y;\n\tconstexpr Point2D(T x = 0, T y = 0) noexcept\
     \ : x(x), y(y) {};\n\tconstexpr Point2D(pair<T, T> &p) noexcept : x(p.first),\
@@ -72,15 +72,15 @@ data:
     \ = Point2D<lint>;\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/Point2D.cpp
+  path: src/Point2D.cpp
   requiredBy: []
-  timestamp: '2020-11-11 23:15:46+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/Point2D.cpp
+documentation_of: src/Point2D.cpp
 layout: document
 redirect_from:
-- /library/library/Point2D.cpp
-- /library/library/Point2D.cpp.html
-title: library/Point2D.cpp
+- /library/src/Point2D.cpp
+- /library/src/Point2D.cpp.html
+title: src/Point2D.cpp
 ---

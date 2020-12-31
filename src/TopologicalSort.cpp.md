@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/TopologicalSort.cpp\"\n#include <cassert>\n#include\
+  bundledCode: "#line 1 \"src/TopologicalSort.cpp\"\n#include <cassert>\n#include\
     \ <cstdio>\n#include <cmath>\n#include <iostream>\n#include <vector>\n#include\
     \ <queue>\n\nusing namespace std;\n\nclass Topological_sort {\nprivate:\n\tint\
     \ V;\n\tvector<vector<int>> edges;\n\tvector<int> used;\n\npublic:\n\tTopological_sort(int\
@@ -44,15 +44,15 @@ data:
     \t\treturn *max_element(used.begin(), used.end()) - 1;\n\t}\n\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/TopologicalSort.cpp
+  path: src/TopologicalSort.cpp
   requiredBy: []
-  timestamp: '2020-08-13 05:43:48+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/TopologicalSort.cpp
+documentation_of: src/TopologicalSort.cpp
 layout: document
 redirect_from:
-- /library/library/TopologicalSort.cpp
-- /library/library/TopologicalSort.cpp.html
-title: library/TopologicalSort.cpp
+- /library/src/TopologicalSort.cpp
+- /library/src/TopologicalSort.cpp.html
+title: src/TopologicalSort.cpp
 ---

@@ -2,15 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/184.test.cpp
-    title: test/yukicoder/184.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/Factorial.cpp\"\n#include <vector>\n\nusing namespace\
+  bundledCode: "#line 1 \"src/Factorial.cpp\"\n#include <vector>\n\nusing namespace\
     \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\nclass Factorial\
     \ {\nprivate:\n\tvector<lint> fac, inv, finv;\n\n\tvoid build(int N) {\n\t\tfac[0]\
     \ = fac[1] = 1; inv[1] = 1; finv[0] = finv[1] = 1;\n\n\t\tfor (int i = 2; i <\
@@ -36,16 +33,15 @@ data:
     \ ? 1 : Cmod(n + k - 1, k);\n\t}\n\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/Factorial.cpp
+  path: src/Factorial.cpp
   requiredBy: []
-  timestamp: '2020-08-25 01:20:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yukicoder/184.test.cpp
-documentation_of: library/Factorial.cpp
+  timestamp: '2020-12-31 17:28:17+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: src/Factorial.cpp
 layout: document
 redirect_from:
-- /library/library/Factorial.cpp
-- /library/library/Factorial.cpp.html
-title: library/Factorial.cpp
+- /library/src/Factorial.cpp
+- /library/src/Factorial.cpp.html
+title: src/Factorial.cpp
 ---

@@ -7,9 +7,9 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/CumulativeSum.cpp\"\n#include <vector>\n\nusing\
-    \ namespace std;\n\ntemplate <class T>\nclass CuSum {\nprivate:\n\tvector<T> cusum;\n\
-    \npublic:\n\tCuSum(vector<T> const &vec) : cusum(vec.size() + 1) {\n\t\tfor (int\
+  bundledCode: "#line 1 \"src/CumulativeSum.cpp\"\n#include <vector>\n\nusing namespace\
+    \ std;\n\ntemplate <class T>\nclass CuSum {\nprivate:\n\tvector<T> cusum;\n\n\
+    public:\n\tCuSum(vector<T> const &vec) : cusum(vec.size() + 1) {\n\t\tfor (int\
     \ i = 0; i < (int)vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];\n\t}\n\t\
     CuSum(const int N) : cusum(N + 1) {}\n\tvoid add(const int i, const T &x) { cusum[i\
     \ + 1] += x; }\n\tvoid build() { for (int i = 0; i < (int)cusum.size() - 1; i++)\
@@ -29,15 +29,15 @@ data:
     \ + 1]; }\n\tT back() { return cusum.back(); }\n};\n\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/CumulativeSum.cpp
+  path: src/CumulativeSum.cpp
   requiredBy: []
-  timestamp: '2020-08-13 05:43:48+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/CumulativeSum.cpp
+documentation_of: src/CumulativeSum.cpp
 layout: document
 redirect_from:
-- /library/library/CumulativeSum.cpp
-- /library/library/CumulativeSum.cpp.html
-title: library/CumulativeSum.cpp
+- /library/src/CumulativeSum.cpp
+- /library/src/CumulativeSum.cpp.html
+title: src/CumulativeSum.cpp
 ---

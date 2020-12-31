@@ -2,18 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/DSL_2_B.test.cpp
-    title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/point_add_range_sum.test.cpp
-    title: test/yosupo/point_add_range_sum.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/FenwickTree.cpp\"\n#include <vector>\n\nusing namespace\
+  bundledCode: "#line 1 \"src/FenwickTree.cpp\"\n#include <vector>\n\nusing namespace\
     \ std;\n\ntemplate<class T>\nclass FenwickTree {\nprivate:\n\tint n;\n\tvector<T>\
     \ bit;\npublic:\n\tFenwickTree(int sz, T&& x = T(0)) : n(sz), bit(n + 1) {\n\t\
     \tfor (int i = 0; i < n; i++) add(i, x);\n\t}\n\n\tT sum(int k) const {\n\t\t\
@@ -31,17 +25,15 @@ data:
     \ - sum(k, k + 1)); }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/FenwickTree.cpp
+  path: src/FenwickTree.cpp
   requiredBy: []
-  timestamp: '2020-08-16 00:20:23+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yosupo/point_add_range_sum.test.cpp
-  - test/aoj/DSL_2_B.test.cpp
-documentation_of: library/FenwickTree.cpp
+  timestamp: '2020-12-31 17:28:17+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: src/FenwickTree.cpp
 layout: document
 redirect_from:
-- /library/library/FenwickTree.cpp
-- /library/library/FenwickTree.cpp.html
-title: library/FenwickTree.cpp
+- /library/src/FenwickTree.cpp
+- /library/src/FenwickTree.cpp.html
+title: src/FenwickTree.cpp
 ---

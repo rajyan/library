@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/BellmanFord.cpp\"\n#include <vector>\n#include <algorithm>\n\
+  bundledCode: "#line 1 \"src/BellmanFord.cpp\"\n#include <vector>\n#include <algorithm>\n\
     \nusing namespace std;\n\ntemplate<class T>\nstruct Edge {\n\tint from, to;\n\t\
     T cost;\n\tEdge() {}\n\tEdge(int from, int to, T cost) : from(from), to(to), cost(cost)\
     \ {}\n};\n\ntemplate<class T>\nvector<T> BellmanFord(const vector<Edge<T>> &edges,\
@@ -19,7 +19,7 @@ data:
     \ loop\n\t\t\tif (cost[e.from] == inf) continue;\n\t\t\tif (cost[e.from] == -inf)\
     \ cost[e.to] = -inf; // src is nloop -> dst is nloop\n\t\t\telse if (cost[e.to]\
     \ > cost[e.from] + e.cost) cost[e.to] = -inf; // chmin is possible -> nloop\n\t\
-    \t}\n\t}\n\n\treturn cost;\n}\n"
+    \t}\n\t}\n\n\t\n\treturn cost;\n}\n"
   code: "#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\ntemplate<class\
     \ T>\nstruct Edge {\n\tint from, to;\n\tT cost;\n\tEdge() {}\n\tEdge(int from,\
     \ int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<class T>\n\
@@ -31,19 +31,19 @@ data:
     for (const auto &e : edges) { // finding negative loop\n\t\t\tif (cost[e.from]\
     \ == inf) continue;\n\t\t\tif (cost[e.from] == -inf) cost[e.to] = -inf; // src\
     \ is nloop -> dst is nloop\n\t\t\telse if (cost[e.to] > cost[e.from] + e.cost)\
-    \ cost[e.to] = -inf; // chmin is possible -> nloop\n\t\t}\n\t}\n\n\treturn cost;\n\
-    }\n"
+    \ cost[e.to] = -inf; // chmin is possible -> nloop\n\t\t}\n\t}\n\n\t\n\treturn\
+    \ cost;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/BellmanFord.cpp
+  path: src/BellmanFord.cpp
   requiredBy: []
-  timestamp: '2020-08-13 05:43:48+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/BellmanFord.cpp
+documentation_of: src/BellmanFord.cpp
 layout: document
 redirect_from:
-- /library/library/BellmanFord.cpp
-- /library/library/BellmanFord.cpp.html
-title: library/BellmanFord.cpp
+- /library/src/BellmanFord.cpp
+- /library/src/BellmanFord.cpp.html
+title: src/BellmanFord.cpp
 ---

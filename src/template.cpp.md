@@ -13,7 +13,7 @@ data:
     , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ library/template.cpp: line 3: unable to process #include in #if / #ifdef / #ifndef\
+    \ src/template.cpp: line 3: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
   code: "\n#ifdef _DEBUG\n#include \"../../library/library/debug_template.cpp\"\n\
     #define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)\n#else\n#define DMP(...) ((void)0)\n\
@@ -27,15 +27,15 @@ data:
     return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/template.cpp
+  path: src/template.cpp
   requiredBy: []
-  timestamp: '2020-11-23 16:23:11+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/template.cpp
+documentation_of: src/template.cpp
 layout: document
 redirect_from:
-- /library/library/template.cpp
-- /library/library/template.cpp.html
-title: library/template.cpp
+- /library/src/template.cpp
+- /library/src/template.cpp.html
+title: src/template.cpp
 ---

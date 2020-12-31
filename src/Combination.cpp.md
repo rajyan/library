@@ -2,15 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1081.test.cpp
-    title: test/yukicoder/1081.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/Combination.cpp\"\n#include <vector>\n#include <iostream>\n\
+  bundledCode: "#line 1 \"src/Combination.cpp\"\n#include <vector>\n#include <iostream>\n\
     \nusing namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\
     \ntemplate<int Modulo = MOD>\nstruct Mint {\n\n\tlint val;\n\tconstexpr Mint(lint\
     \ v = 0) noexcept : val(v % Modulo) { if (val < 0) val += Modulo; }\n\n\tconstexpr\
@@ -81,16 +78,15 @@ data:
     \ * finv[n - k]);\n\t}\n\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/Combination.cpp
+  path: src/Combination.cpp
   requiredBy: []
-  timestamp: '2020-08-25 01:44:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yukicoder/1081.test.cpp
-documentation_of: library/Combination.cpp
+  timestamp: '2020-12-31 17:28:17+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: src/Combination.cpp
 layout: document
 redirect_from:
-- /library/library/Combination.cpp
-- /library/library/Combination.cpp.html
-title: library/Combination.cpp
+- /library/src/Combination.cpp
+- /library/src/Combination.cpp.html
+title: src/Combination.cpp
 ---

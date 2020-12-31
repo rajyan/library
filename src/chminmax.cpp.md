@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: '#line 1 "library/chminmax.cpp"
+  bundledCode: '#line 1 "src/chminmax.cpp"
 
 
     template<class T>
@@ -34,15 +34,15 @@ data:
     '
   dependsOn: []
   isVerificationFile: false
-  path: library/chminmax.cpp
+  path: src/chminmax.cpp
   requiredBy: []
-  timestamp: '2020-05-06 15:17:57+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/chminmax.cpp
+documentation_of: src/chminmax.cpp
 layout: document
 redirect_from:
-- /library/library/chminmax.cpp
-- /library/library/chminmax.cpp.html
-title: library/chminmax.cpp
+- /library/src/chminmax.cpp
+- /library/src/chminmax.cpp.html
+title: src/chminmax.cpp
 ---

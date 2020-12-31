@@ -1,37 +1,20 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/FenwickTree.cpp
-    title: library/FenwickTree.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
-    links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
-  bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#line 1 \"library/FenwickTree.cpp\"\n#include <vector>\n\nusing namespace\
-    \ std;\n\ntemplate<class T>\nclass FenwickTree {\nprivate:\n\tint n;\n\tvector<T>\
-    \ bit;\npublic:\n\tFenwickTree(int sz, T&& x = T(0)) : n(sz), bit(n + 1) {\n\t\
-    \tfor (int i = 0; i < n; i++) add(i, x);\n\t}\n\n\tT sum(int k) const {\n\t\t\
-    T res = 0;\n\t\tfor (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];\n\t\t\
-    return res;\n\t}\n\tT sum(int l, int r) const { return sum(r) - sum(l); }\n\n\t\
-    void add(int k, const T& x) {\n\t\tfor (; k < n; k |= k + 1) bit[k] += x;\n\t\
-    }\n\tvoid set(int k, const T& x) { add(k, x - sum(k, k + 1)); }\n};\n#line 5 \"\
-    test/aoj/DSL_2_B.test.cpp\"\n\n#include <iostream>\n#include <iomanip>\n#line\
-    \ 9 \"test/aoj/DSL_2_B.test.cpp\"\n\nusing namespace std;\nusing lint = long long;\n\
-    constexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr lint LINF = 1LL <<\
-    \ 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
-    \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint\
-    \ n, q;\n\tcin >> n >> q;\n\n\tFenwickTree<lint> ft(n, 0);\n\tvector<int> ans;\n\
-    \tfor (int i = 0; i < q; i++) {\n\t\tint c, x, y;\n\t\tcin >> c >> x >> y;\n\t\
-    \tx--;\n\t\tif (c) {\n\t\t\tans.emplace_back(ft.sum(x, y));\n\t\t}\n\t\telse {\n\
-    \t\t\tft.add(x, y);\n\t\t}\n\t}\n\n\tfor (const auto& e : ans) cout << e << \"\
-    \\n\";\n\t\n\treturn 0;\n}\n"
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../library/FenwickTree.cpp:\
+    \ line -1: no such header\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include \"../../library/FenwickTree.cpp\"\n\n#include <iostream>\n#include\
     \ <iomanip>\n#include <vector>\n\nusing namespace std;\nusing lint = long long;\n\
@@ -43,13 +26,12 @@ data:
     \tx--;\n\t\tif (c) {\n\t\t\tans.emplace_back(ft.sum(x, y));\n\t\t}\n\t\telse {\n\
     \t\t\tft.add(x, y);\n\t\t}\n\t}\n\n\tfor (const auto& e : ans) cout << e << \"\
     \\n\";\n\t\n\treturn 0;\n}\n"
-  dependsOn:
-  - library/FenwickTree.cpp
+  dependsOn: []
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2020-08-23 21:27:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp
 layout: document

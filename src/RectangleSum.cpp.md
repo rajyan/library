@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/RectangleSum.cpp\"\n#include <vector>\n\nusing namespace\
+  bundledCode: "#line 1 \"src/RectangleSum.cpp\"\n#include <vector>\n\nusing namespace\
     \ std;\n\n// 2d Cumulative Sum\ntemplate< class T >\nclass RecSum {\nprivate:\n\
     \tint H, W;\n\tvector<vector<T>> data;\n\npublic:\n\tRecSum(vector<vector<T>>\
     \ const& vec) : H(vec.size()), W(vec[0].size()), data(H + 1, vector<T>(W + 1,\
@@ -36,15 +36,15 @@ data:
     \ - data[gx][sy] + data[sx][sy];\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/RectangleSum.cpp
+  path: src/RectangleSum.cpp
   requiredBy: []
-  timestamp: '2020-08-13 05:43:48+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/RectangleSum.cpp
+documentation_of: src/RectangleSum.cpp
 layout: document
 redirect_from:
-- /library/library/RectangleSum.cpp
-- /library/library/RectangleSum.cpp.html
-title: library/RectangleSum.cpp
+- /library/src/RectangleSum.cpp
+- /library/src/RectangleSum.cpp.html
+title: src/RectangleSum.cpp
 ---

@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/RandNum.cpp\"\n#include <random>\n#include <chrono>\n\
+  bundledCode: "#line 1 \"src/RandNum.cpp\"\n#include <random>\n#include <chrono>\n\
     #include <vector>\n#include <unordered_map>\n\nusing namespace std;\nusing lint\
     \ = long long;\n\nstruct RandNum {\n\n\tmt19937 mt;\n\tRandNum() : mt(chrono::steady_clock::now().time_since_epoch().count())\
     \ {}\n\n\tlint operator() (const lint& rand_min, const lint& rand_max) {\n\t\t\
@@ -43,15 +43,15 @@ data:
     \ last) { shuffle(first, last, mt); }\n\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/RandNum.cpp
+  path: src/RandNum.cpp
   requiredBy: []
-  timestamp: '2020-08-26 09:58:06+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/RandNum.cpp
+documentation_of: src/RandNum.cpp
 layout: document
 redirect_from:
-- /library/library/RandNum.cpp
-- /library/library/RandNum.cpp.html
-title: library/RandNum.cpp
+- /library/src/RandNum.cpp
+- /library/src/RandNum.cpp.html
+title: src/RandNum.cpp
 ---

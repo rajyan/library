@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/Compress.cpp\"\n\ntemplate<class T>\nclass Compress\
+  bundledCode: "#line 1 \"src/Compress.cpp\"\n\ntemplate<class T>\nclass Compress\
     \ {\nprivate:\n\tvector<T> comp;\n\npublic:\n\tCompress() {}\n\tCompress(const\
     \ vector<T> &vec) : comp(vec) { build(); }\n\n\tvoid add(const T &x) { comp.emplace_back(x);\
     \ }\n\n\tvoid build() {\n\t\tsort(begin(comp), end(comp));\n\t\tcomp.erase(unique(begin(comp),\
@@ -29,15 +29,15 @@ data:
     \ return comp[k]; }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: library/Compress.cpp
+  path: src/Compress.cpp
   requiredBy: []
-  timestamp: '2020-05-06 15:17:57+09:00'
+  timestamp: '2020-12-31 17:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/Compress.cpp
+documentation_of: src/Compress.cpp
 layout: document
 redirect_from:
-- /library/library/Compress.cpp
-- /library/library/Compress.cpp.html
-title: library/Compress.cpp
+- /library/src/Compress.cpp
+- /library/src/Compress.cpp.html
+title: src/Compress.cpp
 ---
