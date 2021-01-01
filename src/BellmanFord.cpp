@@ -31,7 +31,6 @@ vector<T> BellmanFord(const vector<Edge<T>> &edges, const int V, const int st) {
 			else if (cost[e.to] > cost[e.from] + e.cost) cost[e.to] = -inf; // chmin is possible -> nloop
 		}
 	}
-
 	
 	return cost;
 }

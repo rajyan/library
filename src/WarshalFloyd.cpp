@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-const int INF = 1010101010;
+constexpr int INF = 1010101010;
 
 template<class T>
 inline bool chmin(T &a, T b) { return a > b && (a = b, true); }
