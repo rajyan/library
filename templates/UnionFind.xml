@@ -1,0 +1,8 @@
+<template name="myunionfind" value="class UnionFind {&#10;private:&#10;    vector&lt;int&gt; data;&#10;public:&#10;    UnionFind(int size) : data(size, -1) {}&#10;    int root(int x) { return data[x] &lt; 0 ? x : data[x] = root(data[x]); }&#10;    bool is_same(int x, int y) { return root(x) == root(y); }&#10;    int size(int x) { return -data[root(x)]; }&#10;&#10;    bool unify(int x, int y) {&#10;        x = root(x);&#10;        y = root(y);&#10;        if (x != y) {&#10;            if (data[y] &lt; data[x]) swap(x, y);&#10;            data[x] += data[y];&#10;            data[y] = x;&#10;            return true;&#10;        }&#10;        return false;&#10;    }&#10;};&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>

@@ -1,0 +1,8 @@
+<template name="mytemplate" value="#ifdef _DEBUG&#10;#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)&#10;#else&#10;#define DMP(...) ((void)0)&#10;#endif&#10;&#10;&#10;&#10;struct init {&#10;    init() {&#10;        cin.tie(nullptr);&#10;        ios::sync_with_stdio(false);&#10;        cout &lt;&lt; fixed &lt;&lt; setprecision(10);&#10;    }&#10;} init_;&#10;&#10;int main() {&#10;&#10;&#10;    return 0;&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>

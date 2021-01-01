@@ -1,0 +1,8 @@
+<template name="myingrid" value="auto in_grid = [&amp;](pnt p) { return 0 &lt;= p.x &amp;&amp; p.x &lt; H &amp;&amp; 0 &lt;= p.y &amp;&amp; p.y &lt; W; };&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>

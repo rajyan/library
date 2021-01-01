@@ -1,0 +1,8 @@
+<template name="mydijkstra" value="template&lt;class T&gt;&#10;struct Edge {&#10;    int to;&#10;    T cost;&#10;    Edge() {}&#10;    Edge(int to, T cost) : to(to), cost(cost) {}&#10;    bool operator&gt;(const Edge &amp;r) const { return this-&gt;cost &gt; r.cost; }&#10;};&#10;&#10;template&lt;class T&gt;&#10;vector&lt;T&gt; Dijkstra(const vector&lt;vector&lt;Edge&lt;T&gt;&gt;&gt; &amp;edges, const int st) {&#10;&#10;    const int V = (int)edges.size();&#10;    const T inf = numeric_limits&lt;T&gt;::max() / 2;&#10;    vector&lt;T&gt; cost(V, inf);&#10;    cost[st] = 0;&#10;&#10;    priority_queue &lt;Edge&lt;T&gt;, vector&lt;Edge&lt;T&gt;&gt;, greater&lt;Edge&lt;T&gt;&gt;&gt; pq;&#10;    pq.emplace(st, cost[st]);&#10;&#10;    while (!pq.empty()) {&#10;&#10;        Edge&lt;T&gt; now(pq.top().to, pq.top().cost);&#10;        pq.pop();&#10;&#10;        if (cost[now.to] &lt; now.cost) continue;&#10;        for (const Edge&lt;T&gt; &amp;e : edges[now.to]) {&#10;            T tmp_cost = now.cost + e.cost;&#10;            if (cost[e.to] &gt; tmp_cost) {&#10;                cost[e.to] = tmp_cost;&#10;                pq.emplace(e.to, cost[e.to]);&#10;            }&#10;        }&#10;    }&#10;&#10;    return cost; // min cost to vertex idx from st&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>

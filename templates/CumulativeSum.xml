@@ -1,0 +1,8 @@
+<template name="mycumulativesum" value="template&lt;class T&gt;&#10;class CuSum {&#10;private:&#10;    vector&lt;T&gt; cusum;&#10;&#10;public:&#10;    CuSum(vector&lt;T&gt; const &amp;vec) : cusum(vec.size() + 1) {&#10;        for (int i = 0; i &lt; (int)vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];&#10;    }&#10;    CuSum(const int N) : cusum(N + 1) {}&#10;    void add(const int i, const T &amp;x) { cusum[i + 1] += x; }&#10;    void build() { for (int i = 0; i &lt; (int)cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }&#10;&#10;    // partial sum of 0-indexed [l, r)&#10;    T operator()(int l, int r) {&#10;        if (r &lt; l || r &lt; 0) {&#10;            assert(0);&#10;            return T(0);&#10;        }&#10;        else return cusum[r] - cusum[l];&#10;    }&#10;    // 0-indexed&#10;    const T &amp;operator[](int i) { return cusum[i + 1]; }&#10;    T back() { return cusum.back(); }&#10;};&#10;&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>

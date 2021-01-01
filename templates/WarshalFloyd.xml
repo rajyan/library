@@ -1,0 +1,8 @@
+<template name="mywarshalfloyd" value="template&lt;class T&gt;&#10;inline bool chmin(T &amp;a, T b) { return a &gt; b &amp;&amp; (a = b, true); }&#10;&#10;int main() {&#10;&#10;    int N, M;&#10;    cin &gt;&gt; N &gt;&gt; M;&#10;&#10;    vector&lt;vector&lt;int&gt;&gt; d(N, vector&lt;int&gt;(N, INF));&#10;    for (int i = 0; i &lt; N; i++) d[i][i] = 0;&#10;&#10;    for (int i = 0; i &lt; M; i++) {&#10;        int a, b, c;&#10;        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;&#10;        a--, b--;&#10;        d[a][b] = c;&#10;        d[b][a] = c;&#10;    }&#10;&#10;    for (int k = 0; k &lt; N; k++) {&#10;        for (int i = 0; i &lt; N; i++) {&#10;            for (int j = 0; j &lt; N; j++) {&#10;                chmin(d[i][j], d[i][k] + d[k][j]);&#10;            }&#10;        }&#10;    }&#10;&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>
