@@ -6,38 +6,38 @@ using namespace std;
 
 template<class T>
 struct Edge {
-	int to;
-	T cost;
-	Edge() {}
-	Edge(int to, T cost) : to(to), cost(cost) {}
-	bool operator>(const Edge &r) const { return this->cost > r.cost; }
+    int to;
+    T cost;
+    Edge() {}
+    Edge(int to, T cost) : to(to), cost(cost) {}
+    bool operator>(const Edge &r) const { return this->cost > r.cost; }
 };
 
 template<class T>
 vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {
 
-	const int V = (int)edges.size();
-	const T inf = numeric_limits<T>::max() / 2;
-	vector<T> cost(V, inf);
-	cost[st] = 0;
+    const int V = (int)edges.size();
+    const T inf = numeric_limits<T>::max() / 2;
+    vector<T> cost(V, inf);
+    cost[st] = 0;
 
-	priority_queue<Edge<T>, vector<Edge<T>>, greater<Edge<T>>> pq;
-	pq.emplace(st, cost[st]);
+    priority_queue <Edge<T>, vector<Edge<T>>, greater<Edge<T>>> pq;
+    pq.emplace(st, cost[st]);
 
-	while (!pq.empty()) {
+    while (!pq.empty()) {
 
-		Edge<T> now(pq.top().to, pq.top().cost);
-		pq.pop();
+        Edge<T> now(pq.top().to, pq.top().cost);
+        pq.pop();
 
-		if (cost[now.to] < now.cost) continue;
-		for (const Edge<T> &e : edges[now.to]) {
-			T tmp_cost = now.cost + e.cost;
-			if (cost[e.to] > tmp_cost) {
-				cost[e.to] = tmp_cost;
-				pq.emplace(e.to, cost[e.to]);
-			}
-		}
-	}
+        if (cost[now.to] < now.cost) continue;
+        for (const Edge<T> &e : edges[now.to]) {
+            T tmp_cost = now.cost + e.cost;
+            if (cost[e.to] > tmp_cost) {
+                cost[e.to] = tmp_cost;
+                pq.emplace(e.to, cost[e.to]);
+            }
+        }
+    }
 
-	return cost; // min cost to vertex idx from st
+    return cost; // min cost to vertex idx from st
 }

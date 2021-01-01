@@ -4,7 +4,7 @@
     <Header>
       <Title>makevec</Title>
       <Shortcut>mymakevec</Shortcut>
-      <Description>make N-dimension vector</Description>
+      <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -19,9 +19,10 @@
         <![CDATA[template<class T>
 vector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }
 template<class... Size>
-auto make_vec(size_t s, Size... tail) { 
-	return vector<decltype(make_vec(tail...))> (s, make_vec(tail...));
-}$end$]]>
+auto make_vec(size_t s, Size... tail) {
+    return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));
+}
+$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>

@@ -1,19 +1,19 @@
 
 auto judge = [&](auto key) {
-	return key;
+    return key;
 };
 
 auto bisearch = [&](auto f) {
-	
-	auto ng = -1LL;
-	auto ok = LINF;
 
-	while (abs(ok - ng) > 1) {
-		auto mid = (ok + ng) / 2;
+    auto ng = -1LL;
+    auto ok = LINF;
 
-		if (f(mid)) ok = mid;
-		else ng = mid;
-	}
+    while (abs(ok - ng) > 1) {
+        auto mid = (ok + ng) / 2;
 
-	return ok;
+        if (f(mid)) ok = mid;
+        else ng = mid;
+    }
+
+    return ok;
 };
