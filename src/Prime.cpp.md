@@ -10,56 +10,67 @@ data:
     - https://cp-algorithms.com/algebra/prime-sieve-linear.html
     - https://wandbox.org/permlink/6YepW3J9SQNFwWxu
   bundledCode: "#line 1 \"src/Prime.cpp\"\n#include <vector>\n\nusing namespace std;\n\
-    using lint = long long;\n\nclass Prime {\nprivate:\n\tvector<int> min_pf; // min_pf[i]\
-    \ = minimum prime factor of i\n\tvector<int> prime;\n\n\t// linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
-    \tvoid sieve(int N) {\n\t\tmin_pf[0] = min_pf[1] = -1;\n\t\tfor (int i = 2; i\
-    \ < N; i++) {\n\t\t\tif (min_pf[i] == 0) {\n\t\t\t\tprime.emplace_back(i);\n\t\
-    \t\t\tmin_pf[i] = i;\n\t\t\t}\n\t\t\tfor (int j = 0; j < (int)(prime.size());\
-    \ ++j) {\n\t\t\t\tif (prime[j] > min_pf[i] || i * prime[j] >= N) break;\n\t\t\t\
-    \tmin_pf[i * prime[j]] = prime[j];\n\t\t\t}\n\t\t}\n\t}\n\npublic:\n\tPrime(int\
-    \ N = 1100000) : min_pf(N + 1) { sieve(N + 1); }\n\n\tvector<pair<lint, int>>\
-    \ factorize(lint n) {\n\t\tvector<pair<lint, int>> res;\n\t\tlint sz = (lint)min_pf.size();\n\
-    \n\t\tif (n >= sz) {\n\t\t\tfor (lint i = 2; i * i <= n; i++) {\n\t\t\t\tint cnt\
-    \ = 0;\n\t\t\t\twhile (n % i == 0) {\n\t\t\t\t\tcnt++;\n\t\t\t\t\tn /= i;\n\t\t\
-    \t\t}\n\t\t\t\tif (cnt) res.emplace_back(i, cnt);\n\t\t\t}\n\t\t\tres.emplace_back(n,\
-    \ 1);\n\t\t}\n\t\telse {\n\t\t\tint prev = min_pf[n], cnt = -1;\n\t\t\twhile (n\
-    \ > 0) {\n\t\t\t\tint now = min_pf[n];\n\t\t\t\tn /= now;\n\t\t\t\tcnt++;\n\t\t\
-    \t\tif (prev != now) {\n\t\t\t\t\tres.emplace_back(prev, cnt);\n\t\t\t\t\tprev\
-    \ = now;\n\t\t\t\t\tcnt = 0;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn res;\n\t\
-    }\n\n\t// verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu\n\
-    \tbool isPrime(lint n) {\n\t\tif (n < (int)(min_pf.size())) return min_pf[n] ==\
-    \ n;\n\t\telse if (n == 2 || n == 3) return true;\n\t\telse if (n % 2 == 0 ||\
-    \ n % 3 == 0) return false;\n\t\telse if (n % 6 != 1 && n % 6 != 5) return false;\n\
-    \t\tfor (lint i = 5; i * i <= n; i += 6) {\n\t\t\tif (n % i == 0) return false;\n\
-    \t\t\tif (n % (i + 2) == 0) return false;\n\t\t}\n\t\treturn true;\n\t}\n};\n"
+    using lint = long long;\n\nclass Prime {\nprivate:\n    vector<int> min_pf; //\
+    \ min_pf[i] = minimum prime factor of i\n    vector<int> prime;\n\n    // linear\
+    \ sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n    void sieve(int\
+    \ N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int i = 2; i < N; i++)\
+    \ {\n            if (min_pf[i] == 0) {\n                prime.emplace_back(i);\n\
+    \                min_pf[i] = i;\n            }\n            for (int j = 0; j\
+    \ < (int)(prime.size()); ++j) {\n                if (prime[j] > min_pf[i] || i\
+    \ * prime[j] >= N) break;\n                min_pf[i * prime[j]] = prime[j];\n\
+    \            }\n        }\n    }\n\npublic:\n    Prime(int N = 1100000) : min_pf(N\
+    \ + 1) { sieve(N + 1); }\n\n    vector<pair<lint, int>> factorize(lint n) {\n\
+    \        vector<pair<lint, int>> res;\n        lint sz = (lint)min_pf.size();\n\
+    \n        if (n >= sz) {\n            for (lint i = 2; i * i <= n; i++) {\n  \
+    \              int cnt = 0;\n                while (n % i == 0) {\n          \
+    \          cnt++;\n                    n /= i;\n                }\n          \
+    \      if (cnt) res.emplace_back(i, cnt);\n            }\n            res.emplace_back(n,\
+    \ 1);\n        }\n        else {\n            int prev = min_pf[n], cnt = -1;\n\
+    \            while (n > 0) {\n                int now = min_pf[n];\n         \
+    \       n /= now;\n                cnt++;\n                if (prev != now) {\n\
+    \                    res.emplace_back(prev, cnt);\n                    prev =\
+    \ now;\n                    cnt = 0;\n                }\n            }\n     \
+    \   }\n\n        return res;\n    }\n\n    // verified using boost miller_rabin_test\
+    \ https://wandbox.org/permlink/6YepW3J9SQNFwWxu\n    bool isPrime(lint n) {\n\
+    \        if (n < (int)(min_pf.size())) return min_pf[n] == n;\n        else if\
+    \ (n == 2 || n == 3) return true;\n        else if (n % 2 == 0 || n % 3 == 0)\
+    \ return false;\n        else if (n % 6 != 1 && n % 6 != 5) return false;\n  \
+    \      for (lint i = 5; i * i <= n; i += 6) {\n            if (n % i == 0) return\
+    \ false;\n            if (n % (i + 2) == 0) return false;\n        }\n       \
+    \ return true;\n    }\n};\n"
   code: "#include <vector>\n\nusing namespace std;\nusing lint = long long;\n\nclass\
-    \ Prime {\nprivate:\n\tvector<int> min_pf; // min_pf[i] = minimum prime factor\
-    \ of i\n\tvector<int> prime;\n\n\t// linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
-    \tvoid sieve(int N) {\n\t\tmin_pf[0] = min_pf[1] = -1;\n\t\tfor (int i = 2; i\
-    \ < N; i++) {\n\t\t\tif (min_pf[i] == 0) {\n\t\t\t\tprime.emplace_back(i);\n\t\
-    \t\t\tmin_pf[i] = i;\n\t\t\t}\n\t\t\tfor (int j = 0; j < (int)(prime.size());\
-    \ ++j) {\n\t\t\t\tif (prime[j] > min_pf[i] || i * prime[j] >= N) break;\n\t\t\t\
-    \tmin_pf[i * prime[j]] = prime[j];\n\t\t\t}\n\t\t}\n\t}\n\npublic:\n\tPrime(int\
-    \ N = 1100000) : min_pf(N + 1) { sieve(N + 1); }\n\n\tvector<pair<lint, int>>\
-    \ factorize(lint n) {\n\t\tvector<pair<lint, int>> res;\n\t\tlint sz = (lint)min_pf.size();\n\
-    \n\t\tif (n >= sz) {\n\t\t\tfor (lint i = 2; i * i <= n; i++) {\n\t\t\t\tint cnt\
-    \ = 0;\n\t\t\t\twhile (n % i == 0) {\n\t\t\t\t\tcnt++;\n\t\t\t\t\tn /= i;\n\t\t\
-    \t\t}\n\t\t\t\tif (cnt) res.emplace_back(i, cnt);\n\t\t\t}\n\t\t\tres.emplace_back(n,\
-    \ 1);\n\t\t}\n\t\telse {\n\t\t\tint prev = min_pf[n], cnt = -1;\n\t\t\twhile (n\
-    \ > 0) {\n\t\t\t\tint now = min_pf[n];\n\t\t\t\tn /= now;\n\t\t\t\tcnt++;\n\t\t\
-    \t\tif (prev != now) {\n\t\t\t\t\tres.emplace_back(prev, cnt);\n\t\t\t\t\tprev\
-    \ = now;\n\t\t\t\t\tcnt = 0;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn res;\n\t\
-    }\n\n\t// verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu\n\
-    \tbool isPrime(lint n) {\n\t\tif (n < (int)(min_pf.size())) return min_pf[n] ==\
-    \ n;\n\t\telse if (n == 2 || n == 3) return true;\n\t\telse if (n % 2 == 0 ||\
-    \ n % 3 == 0) return false;\n\t\telse if (n % 6 != 1 && n % 6 != 5) return false;\n\
-    \t\tfor (lint i = 5; i * i <= n; i += 6) {\n\t\t\tif (n % i == 0) return false;\n\
-    \t\t\tif (n % (i + 2) == 0) return false;\n\t\t}\n\t\treturn true;\n\t}\n};\n"
+    \ Prime {\nprivate:\n    vector<int> min_pf; // min_pf[i] = minimum prime factor\
+    \ of i\n    vector<int> prime;\n\n    // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
+    \    void sieve(int N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int\
+    \ i = 2; i < N; i++) {\n            if (min_pf[i] == 0) {\n                prime.emplace_back(i);\n\
+    \                min_pf[i] = i;\n            }\n            for (int j = 0; j\
+    \ < (int)(prime.size()); ++j) {\n                if (prime[j] > min_pf[i] || i\
+    \ * prime[j] >= N) break;\n                min_pf[i * prime[j]] = prime[j];\n\
+    \            }\n        }\n    }\n\npublic:\n    Prime(int N = 1100000) : min_pf(N\
+    \ + 1) { sieve(N + 1); }\n\n    vector<pair<lint, int>> factorize(lint n) {\n\
+    \        vector<pair<lint, int>> res;\n        lint sz = (lint)min_pf.size();\n\
+    \n        if (n >= sz) {\n            for (lint i = 2; i * i <= n; i++) {\n  \
+    \              int cnt = 0;\n                while (n % i == 0) {\n          \
+    \          cnt++;\n                    n /= i;\n                }\n          \
+    \      if (cnt) res.emplace_back(i, cnt);\n            }\n            res.emplace_back(n,\
+    \ 1);\n        }\n        else {\n            int prev = min_pf[n], cnt = -1;\n\
+    \            while (n > 0) {\n                int now = min_pf[n];\n         \
+    \       n /= now;\n                cnt++;\n                if (prev != now) {\n\
+    \                    res.emplace_back(prev, cnt);\n                    prev =\
+    \ now;\n                    cnt = 0;\n                }\n            }\n     \
+    \   }\n\n        return res;\n    }\n\n    // verified using boost miller_rabin_test\
+    \ https://wandbox.org/permlink/6YepW3J9SQNFwWxu\n    bool isPrime(lint n) {\n\
+    \        if (n < (int)(min_pf.size())) return min_pf[n] == n;\n        else if\
+    \ (n == 2 || n == 3) return true;\n        else if (n % 2 == 0 || n % 3 == 0)\
+    \ return false;\n        else if (n % 6 != 1 && n % 6 != 5) return false;\n  \
+    \      for (lint i = 5; i * i <= n; i += 6) {\n            if (n % i == 0) return\
+    \ false;\n            if (n % (i + 2) == 0) return false;\n        }\n       \
+    \ return true;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Prime.cpp
   requiredBy: []
-  timestamp: '2020-12-31 17:28:17+09:00'
+  timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/Prime.cpp

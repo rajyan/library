@@ -8,30 +8,32 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/Compress.cpp\"\n\ntemplate<class T>\nclass Compress\
-    \ {\nprivate:\n\tvector<T> comp;\n\npublic:\n\tCompress() {}\n\tCompress(const\
-    \ vector<T> &vec) : comp(vec) { build(); }\n\n\tvoid add(const T &x) { comp.emplace_back(x);\
-    \ }\n\n\tvoid build() {\n\t\tsort(begin(comp), end(comp));\n\t\tcomp.erase(unique(begin(comp),\
-    \ end(comp)), end(comp));\n\t}\n\n\tvector<int> get(const vector<T> &vec) const\
-    \ {\n\t\tvector<int> ret(vec.size());\n\t\ttransform(begin(vec), end(vec), ret.begin(),\
-    \ [&](const T &x) {\n\t\t\treturn (int)(lower_bound(begin(comp), end(comp), x)\
-    \ - begin(comp));\n\t\t});\n\t\treturn ret;\n\t}\n\tint get(const T &x) const\
-    \ { return lower_bound(begin(comp), end(comp), x) - begin(comp); }\n\n\tconst\
-    \ T &operator[](const int k) const { return comp[k]; }\n};\n"
-  code: "\ntemplate<class T>\nclass Compress {\nprivate:\n\tvector<T> comp;\n\npublic:\n\
-    \tCompress() {}\n\tCompress(const vector<T> &vec) : comp(vec) { build(); }\n\n\
-    \tvoid add(const T &x) { comp.emplace_back(x); }\n\n\tvoid build() {\n\t\tsort(begin(comp),\
-    \ end(comp));\n\t\tcomp.erase(unique(begin(comp), end(comp)), end(comp));\n\t\
-    }\n\n\tvector<int> get(const vector<T> &vec) const {\n\t\tvector<int> ret(vec.size());\n\
-    \t\ttransform(begin(vec), end(vec), ret.begin(), [&](const T &x) {\n\t\t\treturn\
-    \ (int)(lower_bound(begin(comp), end(comp), x) - begin(comp));\n\t\t});\n\t\t\
-    return ret;\n\t}\n\tint get(const T &x) const { return lower_bound(begin(comp),\
-    \ end(comp), x) - begin(comp); }\n\n\tconst T &operator[](const int k) const {\
-    \ return comp[k]; }\n};\n"
+    \ {\nprivate:\n    vector<T> comp;\n\npublic:\n    Compress() {}\n    Compress(const\
+    \ vector<T> &vec) : comp(vec) { build(); }\n\n    void add(const T &x) { comp.emplace_back(x);\
+    \ }\n\n    void build() {\n        sort(begin(comp), end(comp));\n        comp.erase(unique(begin(comp),\
+    \ end(comp)), end(comp));\n    }\n\n    vector<int> get(const vector<T> &vec)\
+    \ const {\n        vector<int> ret(vec.size());\n        transform(begin(vec),\
+    \ end(vec), ret.begin(), [&](const T &x) {\n            return (int)(lower_bound(begin(comp),\
+    \ end(comp), x) - begin(comp));\n        });\n        return ret;\n    }\n   \
+    \ int get(const T &x) const { return lower_bound(begin(comp), end(comp), x) -\
+    \ begin(comp); }\n\n    const T &operator[](const int k) const { return comp[k];\
+    \ }\n};\n"
+  code: "\ntemplate<class T>\nclass Compress {\nprivate:\n    vector<T> comp;\n\n\
+    public:\n    Compress() {}\n    Compress(const vector<T> &vec) : comp(vec) { build();\
+    \ }\n\n    void add(const T &x) { comp.emplace_back(x); }\n\n    void build()\
+    \ {\n        sort(begin(comp), end(comp));\n        comp.erase(unique(begin(comp),\
+    \ end(comp)), end(comp));\n    }\n\n    vector<int> get(const vector<T> &vec)\
+    \ const {\n        vector<int> ret(vec.size());\n        transform(begin(vec),\
+    \ end(vec), ret.begin(), [&](const T &x) {\n            return (int)(lower_bound(begin(comp),\
+    \ end(comp), x) - begin(comp));\n        });\n        return ret;\n    }\n   \
+    \ int get(const T &x) const { return lower_bound(begin(comp), end(comp), x) -\
+    \ begin(comp); }\n\n    const T &operator[](const int k) const { return comp[k];\
+    \ }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Compress.cpp
   requiredBy: []
-  timestamp: '2020-12-31 17:28:17+09:00'
+  timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/Compress.cpp

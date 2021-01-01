@@ -14,16 +14,17 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
   bundledCode: "#line 1 \"test/aoj/DSL_1_A.test.cpp\"\n\n#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'\n\
-    \n#line 1 \"src/UnionFind.cpp\"\n#include <vector>\nusing namespace std;\n\nclass\
-    \ UnionFind {\nprivate:\n\tvector<int> data;\npublic:\n\tUnionFind(int size) :\
-    \ data(size, -1) { }\n\tint root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]);\
-    \ }\n\tbool is_same(int x, int y) { return root(x) == root(y); }\n\tint size(int\
-    \ x) { return -data[root(x)]; }\n\n\tbool unify(int x, int y) {\n\t\tx = root(x);\
-    \ y = root(y);\n\t\tif (x != y) {\n\t\t\tif (data[y] < data[x]) swap(x, y);\n\t\
-    \t\tdata[x] += data[y]; data[y] = x;\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\
-    \t}\n};\n#line 5 \"test/aoj/DSL_1_A.test.cpp\"\n\n#include <iostream>\n#include\
-    \ <iomanip>\n#line 9 \"test/aoj/DSL_1_A.test.cpp\"\n\nusing namespace std;\nusing\
-    \ lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr\
+    \n#line 1 \"src/UnionFind.cpp\"\n#include <vector>\n\nusing namespace std;\n\n\
+    class UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    UnionFind(int\
+    \ size) : data(size, -1) {}\n    int root(int x) { return data[x] < 0 ? x : data[x]\
+    \ = root(data[x]); }\n    bool is_same(int x, int y) { return root(x) == root(y);\
+    \ }\n    int size(int x) { return -data[root(x)]; }\n\n    bool unify(int x, int\
+    \ y) {\n        x = root(x);\n        y = root(y);\n        if (x != y) {\n  \
+    \          if (data[y] < data[x]) swap(x, y);\n            data[x] += data[y];\n\
+    \            data[y] = x;\n            return true;\n        }\n        return\
+    \ false;\n    }\n};\n#line 5 \"test/aoj/DSL_1_A.test.cpp\"\n\n#include <iostream>\n\
+    #include <iomanip>\n#line 9 \"test/aoj/DSL_1_A.test.cpp\"\n\nusing namespace std;\n\
+    using lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr\
     \ lint LINF = 1LL << 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
     \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint\
     \ n, q;\n\tcin >> n >> q;\n\n\tUnionFind uf(n);\n\tfor (int i = 0; i < q; i++)\
@@ -45,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-12-31 17:47:53+09:00'
+  timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_A.test.cpp

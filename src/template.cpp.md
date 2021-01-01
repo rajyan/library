@@ -22,14 +22,14 @@ data:
     \ <map>\n#include <unordered_map>\n#include <queue>\n#include <numeric>\n#include\
     \ <algorithm>\n#include <bitset>\n#include <functional>\n\nusing namespace std;\n\
     using lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr\
-    \ lint LINF = 1LL << 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
-    \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\n\n\t\
-    return 0;\n}\n"
+    \ lint LINF = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
+    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \    }\n} init_;\n\nint main() {\n\n\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/template.cpp
   requiredBy: []
-  timestamp: '2020-12-31 17:47:53+09:00'
+  timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/template.cpp

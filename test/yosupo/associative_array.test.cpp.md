@@ -16,10 +16,10 @@ data:
   bundledCode: "#line 1 \"test/yosupo/associative_array.test.cpp\"\n\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line 1 \"src/fnv1a.cpp\"\
     \n#include <iostream>\n\nusing namespace std;\n\ninline uint64_t fnv1a_64(string\
-    \ data) {\n\n\tuint64_t hash = 0xcbf29ce484222325;\n\tconstexpr uint64_t prime\
-    \ = 0x100000001b3;\n\n\tfor (int i = 0; i < (int)data.size(); ++i) {\n\t\thash\
-    \ = hash ^ data[i];\n\t\thash *= prime;\n\t}\n\n\treturn hash;\n}\n#line 5 \"\
-    test/yosupo/associative_array.test.cpp\"\n\n#line 7 \"test/yosupo/associative_array.test.cpp\"\
+    \ data) {\n\n    uint64_t hash = 0xcbf29ce484222325;\n    constexpr uint64_t prime\
+    \ = 0x100000001b3;\n\n    for (int i = 0; i < (int)data.size(); ++i) {\n     \
+    \   hash = hash ^ data[i];\n        hash *= prime;\n    }\n\n    return hash;\n\
+    }\n#line 5 \"test/yosupo/associative_array.test.cpp\"\n\n#line 7 \"test/yosupo/associative_array.test.cpp\"\
     \n#include <iomanip>\n#include <string>\n#include <unordered_map>\n\nusing namespace\
     \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\n\
     constexpr lint LINF = 1LL << 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr);\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2020-12-31 17:47:53+09:00'
+  timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/associative_array.test.cpp

@@ -22,33 +22,37 @@ data:
   bundledCode: "#line 1 \"test/yosupo/lca.test.cpp\"\n\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
     \n\n#line 1 \"src/makevec.cpp\"\n#include <vector>\n\nusing namespace std;\n\n\
     template<class T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s, val);\
-    \ }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n\treturn\
+    \ }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n    return\
     \ vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n#line 1 \"src/nlz.cpp\"\
-    \nint nlz(unsigned int x) {\n\tunion {\n\t\tunsigned int as_uint32;\n\t\tfloat\
-    \        as_float;\n\t} data;\n\tdata.as_float = (float)x + 0.5;\n\tint n = 158\
-    \ - (data.as_uint32 >> 23);\n\treturn n;\n}\n#line 2 \"src/LowestCommonAncestor.cpp\"\
-    \n\nusing namespace std;\n\nclass LCA {\nprivate:\n\n\tint N, lg_N;\n\tvector<int>\
-    \ depth;\n\tvector<vector<int>> par;\n\n\tvoid build(const vector<vector<int>>\
-    \ &tree, int root) {\n\n\t\tauto dfs = [&](auto &&f, int now) -> void {\n\t\t\t\
-    for (const auto &next : tree[now]) {\n\t\t\t\tif (par[0][next] == -1) {\n\t\t\t\
-    \t\tpar[0][next] = now;\n\t\t\t\t\tdepth[next] = depth[now] + 1;\n\t\t\t\t\tf(f,\
-    \ next);\n\t\t\t\t}\n\t\t\t}\n\t\t};\n\n\t\tpar[0][root] = root;\n\t\tdfs(dfs,\
-    \ root);\n\n\t\tfor (int bit = 0; bit < lg_N; bit++) {\n\t\t\tfor (int i = 0;\
-    \ i < N; i++) {\n\t\t\t\tpar[bit + 1][i] = par[bit][par[bit][i]];\n\t\t\t}\n\t\
-    \t}\n\t}\n\n\tint ancestor(int now, int n) {\n\t\tif (n <= 0) return now;\n\t\t\
-    for (int i = 0, lg_n = 32 - nlz(n); i < lg_n; i++) {\n\t\t\tif (n & (1LL << i))\
-    \ now = par[i][now];\n\t\t}\n\t\treturn now;\n\t}\n\n\tint nlz(unsigned int x)\
-    \ {\n\t\tunion {\n\t\t\tunsigned int as_uint32;\n\t\t\tfloat        as_float;\n\
-    \t\t} data;\n\t\tdata.as_float = (float)x + 0.5;\n\t\tint n = 158 - (data.as_uint32\
-    \ >> 23);\n\t\treturn n;\n\t}\n\npublic:\n\tLCA(const vector<vector<int>> &tree,\
-    \ int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N), par(lg_N + 1, vector<int>(N,\
-    \ -1)) { build(tree, root); }\n\n\tint get_lca(int u, int v) {\n\n\t\tif (depth[u]\
-    \ < depth[v]) swap(u, v);\n\t\tu = ancestor(u, depth[u] - depth[v]);\n\t\tif (u\
-    \ == v) return u;\n\n\t\tfor (int i = 32 - nlz(depth[u]); i >= 0; i--) {\n\t\t\
-    \tif (par[i][u] != par[i][v]) {\n\t\t\t\tu = par[i][u];\n\t\t\t\tv = par[i][v];\n\
-    \t\t\t}\n\t\t}\n\t\treturn par[0][u];\n\t}\n\n\tint dist(int u, int v) {\n\t\t\
-    return depth[u] + depth[v] - 2 * depth[get_lca(u, v)];\n\t}\n};\n#line 7 \"test/yosupo/lca.test.cpp\"\
-    \n\n#include <iostream>\n#include <iomanip>\n#line 11 \"test/yosupo/lca.test.cpp\"\
+    \nint nlz(unsigned int x) {\n    union {\n        unsigned int as_uint32;\n  \
+    \      float as_float;\n    } data;\n    data.as_float = (float)x + 0.5;\n   \
+    \ int n = 158 - (data.as_uint32 >> 23);\n    return n;\n}\n#line 2 \"src/LowestCommonAncestor.cpp\"\
+    \n\nusing namespace std;\n\nclass LCA {\nprivate:\n\n    int N, lg_N;\n    vector<int>\
+    \ depth;\n    vector<vector<int>> par;\n\n    void build(const vector<vector<int>>\
+    \ &tree, int root) {\n\n        auto dfs = [&](auto &&f, int now) -> void {\n\
+    \            for (const auto &next : tree[now]) {\n                if (par[0][next]\
+    \ == -1) {\n                    par[0][next] = now;\n                    depth[next]\
+    \ = depth[now] + 1;\n                    f(f, next);\n                }\n    \
+    \        }\n        };\n\n        par[0][root] = root;\n        dfs(dfs, root);\n\
+    \n        for (int bit = 0; bit < lg_N; bit++) {\n            for (int i = 0;\
+    \ i < N; i++) {\n                par[bit + 1][i] = par[bit][par[bit][i]];\n  \
+    \          }\n        }\n    }\n\n    int ancestor(int now, int n) {\n       \
+    \ if (n <= 0) return now;\n        for (int i = 0, lg_n = 32 - nlz(n); i < lg_n;\
+    \ i++) {\n            if (n & (1LL << i)) now = par[i][now];\n        }\n    \
+    \    return now;\n    }\n\n    int nlz(unsigned int x) {\n        union {\n  \
+    \          unsigned int as_uint32;\n            float as_float;\n        } data;\n\
+    \        data.as_float = (float)x + 0.5;\n        int n = 158 - (data.as_uint32\
+    \ >> 23);\n        return n;\n    }\n\npublic:\n    LCA(const vector<vector<int>>\
+    \ &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N),\n      \
+    \                                                    par(lg_N + 1, vector<int>(N,\
+    \ -1)) { build(tree, root); }\n\n    int get_lca(int u, int v) {\n\n        if\
+    \ (depth[u] < depth[v]) swap(u, v);\n        u = ancestor(u, depth[u] - depth[v]);\n\
+    \        if (u == v) return u;\n\n        for (int i = 32 - nlz(depth[u]); i >=\
+    \ 0; i--) {\n            if (par[i][u] != par[i][v]) {\n                u = par[i][u];\n\
+    \                v = par[i][v];\n            }\n        }\n        return par[0][u];\n\
+    \    }\n\n    int dist(int u, int v) {\n        return depth[u] + depth[v] - 2\
+    \ * depth[get_lca(u, v)];\n    }\n};\n#line 7 \"test/yosupo/lca.test.cpp\"\n\n\
+    #include <iostream>\n#include <iomanip>\n#line 11 \"test/yosupo/lca.test.cpp\"\
     \n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007,\
     \ INF = 1010101010;\nconstexpr lint LINF = 1LL << 60;\n\nstruct init {\n\tinit()\
     \ {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed <<\
@@ -76,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2020-12-31 17:47:53+09:00'
+  timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.test.cpp
