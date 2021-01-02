@@ -17,14 +17,12 @@
 
 ## snippets (deprecated)
 
-競技プログラミングのVisual Studio用のスニペットです。  
-CLionに移行したため、現在は更新・メンテナンスされていません。
+競技プログラミングのVisual Studio用のスニペットです。CLionに移行したため、現在は更新・メンテナンスされていません。
 
 ## templates
 
-競技プログラミングのCLion用のLive Templateです。  
+競技プログラミングのCLion用のLive Templateです。srcに合わせて自動で更新されるようにしています。
 srcの内容は全てスニペットになっているのに加えて、競技プログラミングでよく使うコードの断片をスニペット化しています。  
-srcに合わせて自動で更新されるようにしています。
 
 ## scripts
 
