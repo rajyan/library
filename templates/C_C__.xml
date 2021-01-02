@@ -187,7 +187,7 @@
         <option name="OC_STATEMENT_C" value="true"/>
         <option name="OC_STATEMENT_CPP" value="true"/>
     </context>
-</template><template name="myrenamed2" value="" description="" toReformat="false" toShortenFQNames="true">
+</template><template name="myrenamed2" value="modify&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
