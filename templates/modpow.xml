@@ -1,4 +1,4 @@
-<template name="mymodpow" value="lint modpow(lint a, lint n, lint mod = MOD) {&#10;    lint res = 1;&#10;    while (n &gt; 0) {&#10;        if (n &amp; 1) res = res * a % mod;&#10;        a = a * a % mod;&#10;        n &gt;&gt;= 1;&#10;    }&#10;    return res;&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+<template name="mymodpow" value="lint modpow(lint a, lint n, lint mod = MOD) {&#10;    lint res = 1;&#10;    while (n &gt; 0) {&#10;        if (n &amp; 1) res = res * a % mod;&#10;        a = a * a % mod;&#10;        n &gt;&gt;= 1;&#10;    }&#10;    return res;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>

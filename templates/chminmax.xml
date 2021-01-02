@@ -1,4 +1,4 @@
-<template name="mychminmax" value="template&lt;class T&gt;&#10;inline bool chmax(T &amp;a, const T b) { return a &lt; b &amp;&amp; (a = b, true); }&#10;&#10;template&lt;class T&gt;&#10;inline bool chmin(T &amp;a, const T b) { return a &gt; b &amp;&amp; (a = b, true); }&#10;" description="" toReformat="true" toShortenFQNames="true">
+<template name="mychminmax" value="template&lt;class T&gt;&#10;inline bool chmax(T &amp;a, const T b) { return a &lt; b &amp;&amp; (a = b, true); }&#10;&#10;template&lt;class T&gt;&#10;inline bool chmin(T &amp;a, const T b) { return a &gt; b &amp;&amp; (a = b, true); }&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>

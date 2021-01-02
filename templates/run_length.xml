@@ -1,4 +1,4 @@
-<template name="myrunlength" value="vector&lt;pair&lt;char, int&gt;&gt; run_length(string s) {&#10;    char prev = s[0];&#10;    vector&lt;pair&lt;char, int&gt;&gt; res{{prev, 0}};&#10;    for (const auto &amp;c : s) {&#10;        if (c == prev) res.back().second++;&#10;        else res.emplace_back(c, 1);&#10;        prev = c;&#10;    }&#10;    return res;&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+<template name="myrunlength" value="vector&lt;pair&lt;char, int&gt;&gt; run_length(string s) {&#10;    char prev = s[0];&#10;    vector&lt;pair&lt;char, int&gt;&gt; res{{prev, 0}};&#10;    for (const auto &amp;c : s) {&#10;        if (c == prev) res.back().second++;&#10;        else res.emplace_back(c, 1);&#10;        prev = c;&#10;    }&#10;    return res;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>

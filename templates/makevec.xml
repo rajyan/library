@@ -1,4 +1,4 @@
-<template name="mymakevec" value="template&lt;class T&gt;&#10;vector&lt;T&gt; make_vec(size_t s, T val) { return vector&lt;T&gt;(s, val); }&#10;template&lt;class... Size&gt;&#10;auto make_vec(size_t s, Size... tail) {&#10;    return vector&lt;decltype(make_vec(tail...))&gt;(s, make_vec(tail...));&#10;}&#10;" description="" toReformat="true" toShortenFQNames="true">
+<template name="mymakevec" value="template&lt;class T&gt;&#10;vector&lt;T&gt; make_vec(size_t s, T val) { return vector&lt;T&gt;(s, val); }&#10;template&lt;class... Size&gt;&#10;auto make_vec(size_t s, Size... tail) {&#10;    return vector&lt;decltype(make_vec(tail...))&gt;(s, make_vec(tail...));&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
