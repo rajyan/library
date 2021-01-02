@@ -15,7 +15,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ src/template.cpp: line 3: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "\n#ifdef _DEBUG\n#include \"../../src/library/debug_template.cpp\"\n#define\
+  code: "\n#ifdef _DEBUG\n#include \"../../../library/src/debug_template.cpp\"\n#define\
     \ DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)\n#else\n#define DMP(...) ((void)0)\n\
     #endif\n\n#include <cassert>\n#include <cstdio>\n#include <cmath>\n#include <iostream>\n\
     #include <iomanip>\n#include <string>\n#include <vector>\n#include <set>\n#include\
@@ -29,7 +29,7 @@ data:
   isVerificationFile: false
   path: src/template.cpp
   requiredBy: []
-  timestamp: '2021-01-01 20:28:23+09:00'
+  timestamp: '2021-01-02 18:01:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/template.cpp
