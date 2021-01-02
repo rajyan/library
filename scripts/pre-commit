@@ -1,10 +1,10 @@
 #! /bin/bash
 
-# delete snippets
+# delete templates
 ## deleted files
-git diff --cached --name-only --diff-filter=D | grep "src/.*\.cpp$" | sed -e "s/src/snippets/g" -e "s/cpp$/snippets/g" | xargs rm -f
+git diff --cached --name-only --diff-filter=D | grep "src/.*\.cpp$" | sed -e "s/src/templates/g" -e "s/cpp$/templates/g" | xargs rm -f
 ## renamed files
-git diff --cached | grep "rename from src/.*\.cpp$" | sed -e "s/rename from //g" -e "s/src/snippets/g" -e "s/cpp$/snippets/g" | xargs rm -f
+git diff --cached | grep "rename from src/.*\.cpp$" | sed -e "s/rename from //g" -e "s/src/templates/g" -e "s/cpp$/templates/g" | xargs rm -f
 
-# generate snippets
+# generate templates
 git diff --cached --name-only --diff-filter=d | grep "src/.*\.cpp$" | xargs ./scripts/autotemplate.sh
