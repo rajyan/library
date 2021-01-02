@@ -12,18 +12,18 @@
 
 ### verify
 
-旧: [verifyに使用した問題一覧](verify.md)（移行後削除予定）
+旧: [verifyに使用した問題一覧](verify.md)（移行後削除予定）  
 新: https://github.com/online-judge-tools/verification-helper
 
 ## snippets (deprecated)
 
-競技プログラミングのVisual Studio用のスニペットです。
+競技プログラミングのVisual Studio用のスニペットです。  
 CLionに移行したため、現在は更新・メンテナンスされていません。
 
 ## templates
 
-競技プログラミングのCLion用のLive Templateです。
-srcの内容は全てスニペットになっているのに加えて、競技プログラミングでよく使うコードの断片をスニペット化しています。
+競技プログラミングのCLion用のLive Templateです。  
+srcの内容は全てスニペットになっているのに加えて、競技プログラミングでよく使うコードの断片をスニペット化しています。  
 srcに合わせて自動で更新されるようにしています。
 
 ## scripts
