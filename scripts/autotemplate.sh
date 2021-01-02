@@ -1,7 +1,7 @@
 #! /bin/bash -eu
 
-temp_dir=${TEMP_DIR:-'/home/rajyan/kyopro/library/templates'}
-template=${TEMP_FILE:-'/home/rajyan/kyopro/library/templates/auto_template.xml'}
+temp_dir=${TEMP_DIR:-'/home/rajyan/CLion/library/templates'}
+template=${TEMP_FILE:-'/home/rajyan/CLion/library/templates/auto_template.xml'}
 config_dir=${CONFIG_DIR:-'/mnt/c/Users/kitak/AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
 config_file=${CONFIG_DIR:-'C_C__.xml'}
 
