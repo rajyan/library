@@ -7,15 +7,15 @@
 
 using namespace std;
 
-class Topological_sort {
+class TopologicalSort {
 private:
     int V;
     vector<vector<int>> edges;
     vector<int> used;
 
 public:
-    Topological_sort(int n) : V(n), edges(n), used(n) {}
-    Topological_sort(vector<vector<int>> &edges) : V(edges.size()), used(edges.size()) { this->edges = edges; }
+    TopologicalSort(int n) : V(n), edges(n), used(n) {}
+    TopologicalSort(vector<vector<int>> &edges) : V(edges.size()), used(edges.size()) { this->edges = edges; }
 
     void add_edge(int from, int to) { edges[from].emplace_back(to); }
 
