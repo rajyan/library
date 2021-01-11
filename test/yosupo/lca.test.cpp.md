@@ -25,8 +25,8 @@ data:
     \ }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n    return\
     \ vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n#line 1 \"src/nlz.cpp\"\
     \nint nlz(unsigned int x) {\n    union {\n        unsigned int as_uint32;\n  \
-    \      float as_float;\n    } data;\n    data.as_float = (float)x + 0.5;\n   \
-    \ int n = 158 - (data.as_uint32 >> 23);\n    return n;\n}\n#line 2 \"src/LowestCommonAncestor.cpp\"\
+    \      float as_float;\n    } data{};\n    data.as_float = (float)x + 0.5;\n \
+    \   int n = 158 - (data.as_uint32 >> 23);\n    return n;\n}\n#line 2 \"src/LowestCommonAncestor.cpp\"\
     \n\nusing namespace std;\n\nclass LCA {\nprivate:\n\n    int N, lg_N;\n    vector<int>\
     \ depth;\n    vector<vector<int>> par;\n\n    void build(const vector<vector<int>>\
     \ &tree, int root) {\n\n        auto dfs = [&](auto &&f, int now) -> void {\n\
@@ -39,10 +39,10 @@ data:
     \          }\n        }\n    }\n\n    int ancestor(int now, int n) {\n       \
     \ if (n <= 0) return now;\n        for (int i = 0, lg_n = 32 - nlz(n); i < lg_n;\
     \ i++) {\n            if (n & (1LL << i)) now = par[i][now];\n        }\n    \
-    \    return now;\n    }\n\n    int nlz(unsigned int x) {\n        union {\n  \
-    \          unsigned int as_uint32;\n            float as_float;\n        } data;\n\
-    \        data.as_float = (float)x + 0.5;\n        int n = 158 - (data.as_uint32\
-    \ >> 23);\n        return n;\n    }\n\npublic:\n    LCA(const vector<vector<int>>\
+    \    return now;\n    }\n\n    static int nlz(unsigned int x) {\n        union\
+    \ {\n            unsigned int as_uint32;\n            float as_float;\n      \
+    \  } data{};\n        data.as_float = (float)x + 0.5;\n        int n = 158 - (data.as_uint32\
+    \ >> 23);\n        return n;\n    }\n\npublic:\n    explicit LCA(const vector<vector<int>>\
     \ &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N),\n      \
     \                                                    par(lg_N + 1, vector<int>(N,\
     \ -1)) { build(tree, root); }\n\n    int get_lca(int u, int v) {\n\n        if\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2021-01-01 20:28:23+09:00'
+  timestamp: '2021-01-11 12:34:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.test.cpp

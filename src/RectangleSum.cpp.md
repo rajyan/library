@@ -9,7 +9,7 @@ data:
     links: []
   bundledCode: "#line 1 \"src/RectangleSum.cpp\"\n#include <vector>\n\nusing namespace\
     \ std;\n\n// 2d Cumulative Sum\ntemplate<class T>\nclass RecSum {\nprivate:\n\
-    \    int H, W;\n    vector<vector<T>> data;\n\npublic:\n    RecSum(vector<vector<T>>\
+    \    int H, W;\n    vector<vector<T>> data;\n\npublic:\n    explicit RecSum(vector<vector<T>>\
     \ const &vec) : H(vec.size()), W(vec[0].size()), data(H + 1, vector<T>(W + 1,\
     \ 0)) {\n        for (int row = 0; row < H; row++) {\n            for (int col\
     \ = 0; col < W; col++) {\n                data[row + 1][col + 1] += data[row +\
@@ -24,7 +24,7 @@ data:
     \    }\n};\n"
   code: "#include <vector>\n\nusing namespace std;\n\n// 2d Cumulative Sum\ntemplate<class\
     \ T>\nclass RecSum {\nprivate:\n    int H, W;\n    vector<vector<T>> data;\n\n\
-    public:\n    RecSum(vector<vector<T>> const &vec) : H(vec.size()), W(vec[0].size()),\
+    public:\n    explicit RecSum(vector<vector<T>> const &vec) : H(vec.size()), W(vec[0].size()),\
     \ data(H + 1, vector<T>(W + 1, 0)) {\n        for (int row = 0; row < H; row++)\
     \ {\n            for (int col = 0; col < W; col++) {\n                data[row\
     \ + 1][col + 1] += data[row + 1][col] + data[row][col + 1] - data[row][col] +\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: src/RectangleSum.cpp
   requiredBy: []
-  timestamp: '2021-01-01 20:28:23+09:00'
+  timestamp: '2021-01-11 12:34:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/RectangleSum.cpp

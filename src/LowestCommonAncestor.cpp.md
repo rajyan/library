@@ -23,10 +23,10 @@ data:
     \          }\n        }\n    }\n\n    int ancestor(int now, int n) {\n       \
     \ if (n <= 0) return now;\n        for (int i = 0, lg_n = 32 - nlz(n); i < lg_n;\
     \ i++) {\n            if (n & (1LL << i)) now = par[i][now];\n        }\n    \
-    \    return now;\n    }\n\n    int nlz(unsigned int x) {\n        union {\n  \
-    \          unsigned int as_uint32;\n            float as_float;\n        } data;\n\
-    \        data.as_float = (float)x + 0.5;\n        int n = 158 - (data.as_uint32\
-    \ >> 23);\n        return n;\n    }\n\npublic:\n    LCA(const vector<vector<int>>\
+    \    return now;\n    }\n\n    static int nlz(unsigned int x) {\n        union\
+    \ {\n            unsigned int as_uint32;\n            float as_float;\n      \
+    \  } data{};\n        data.as_float = (float)x + 0.5;\n        int n = 158 - (data.as_uint32\
+    \ >> 23);\n        return n;\n    }\n\npublic:\n    explicit LCA(const vector<vector<int>>\
     \ &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N),\n      \
     \                                                    par(lg_N + 1, vector<int>(N,\
     \ -1)) { build(tree, root); }\n\n    int get_lca(int u, int v) {\n\n        if\
@@ -48,14 +48,14 @@ data:
     \ = par[bit][par[bit][i]];\n            }\n        }\n    }\n\n    int ancestor(int\
     \ now, int n) {\n        if (n <= 0) return now;\n        for (int i = 0, lg_n\
     \ = 32 - nlz(n); i < lg_n; i++) {\n            if (n & (1LL << i)) now = par[i][now];\n\
-    \        }\n        return now;\n    }\n\n    int nlz(unsigned int x) {\n    \
-    \    union {\n            unsigned int as_uint32;\n            float as_float;\n\
-    \        } data;\n        data.as_float = (float)x + 0.5;\n        int n = 158\
-    \ - (data.as_uint32 >> 23);\n        return n;\n    }\n\npublic:\n    LCA(const\
-    \ vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)),\
-    \ depth(N),\n                                                          par(lg_N\
-    \ + 1, vector<int>(N, -1)) { build(tree, root); }\n\n    int get_lca(int u, int\
-    \ v) {\n\n        if (depth[u] < depth[v]) swap(u, v);\n        u = ancestor(u,\
+    \        }\n        return now;\n    }\n\n    static int nlz(unsigned int x) {\n\
+    \        union {\n            unsigned int as_uint32;\n            float as_float;\n\
+    \        } data{};\n        data.as_float = (float)x + 0.5;\n        int n = 158\
+    \ - (data.as_uint32 >> 23);\n        return n;\n    }\n\npublic:\n    explicit\
+    \ LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32\
+    \ - nlz(N)), depth(N),\n                                                     \
+    \     par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }\n\n    int get_lca(int\
+    \ u, int v) {\n\n        if (depth[u] < depth[v]) swap(u, v);\n        u = ancestor(u,\
     \ depth[u] - depth[v]);\n        if (u == v) return u;\n\n        for (int i =\
     \ 32 - nlz(depth[u]); i >= 0; i--) {\n            if (par[i][u] != par[i][v])\
     \ {\n                u = par[i][u];\n                v = par[i][v];\n        \
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: src/LowestCommonAncestor.cpp
   requiredBy: []
-  timestamp: '2021-01-01 20:28:23+09:00'
+  timestamp: '2021-01-11 12:34:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp

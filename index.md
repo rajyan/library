@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: src/BellmanFord.cpp
       title: src/BellmanFord.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/Combination.cpp
       title: src/Combination.cpp
     - icon: ':warning:'
@@ -118,7 +118,7 @@ data:
       title: test/yosupo/unionfind.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/1081.test.cpp
       title: test/yukicoder/1081.test.cpp
     - icon: ':heavy_check_mark:'
