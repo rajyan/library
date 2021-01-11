@@ -16,15 +16,15 @@ private:
                 prime.emplace_back(i);
                 min_pf[i] = i;
             }
-            for (int j = 0; j < (int)(prime.size()); ++j) {
-                if (prime[j] > min_pf[i] || i * prime[j] >= N) break;
-                min_pf[i * prime[j]] = prime[j];
+            for (int j : prime) {
+                if (j > min_pf[i] || i * j >= N) break;
+                min_pf[i * j] = j;
             }
         }
     }
 
 public:
-    Prime(int N = 1100000) : min_pf(N + 1) { sieve(N + 1); }
+    explicit Prime(int N = 1100000) : min_pf(N + 1) { sieve(N + 1); }
 
     vector<pair<lint, int>> factorize(lint n) {
         vector<pair<lint, int>> res;

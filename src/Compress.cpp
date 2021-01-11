@@ -1,12 +1,15 @@
+#include <vector>
+
+using namespace std;
 
 template<class T>
 class Compress {
 private:
-    vector<T> comp;
+    vector<T> comp{};
 
 public:
-    Compress() {}
-    Compress(const vector<T> &vec) : comp(vec) { build(); }
+    Compress() = default;
+    explicit Compress(const vector<T> &vec) : comp(vec) { build(); }
 
     void add(const T &x) { comp.emplace_back(x); }
 
@@ -15,7 +18,7 @@ public:
         comp.erase(unique(begin(comp), end(comp)), end(comp));
     }
 
-    vector<int> get(const vector<T> &vec) const {
+    [[nodiscard]] vector<int> get(const vector<T> &vec) const {
         vector<int> ret(vec.size());
         transform(begin(vec), end(vec), ret.begin(), [&](const T &x) {
             return (int)(lower_bound(begin(comp), end(comp), x) - begin(comp));

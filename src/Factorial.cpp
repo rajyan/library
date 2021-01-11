@@ -21,7 +21,7 @@ private:
     }
 
 public:
-    Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
+    explicit Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
 
     lint Cmod(int n, int k) {
         if (n < k || k < 0) return 0LL;

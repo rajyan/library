@@ -9,7 +9,7 @@ template<int Modulo = MOD>
 struct Mint {
 
     lint val;
-    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
+    constexpr explicit Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
 
     constexpr Mint &operator+=(const Mint &r) noexcept {
         val += r.val;

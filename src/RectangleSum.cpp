@@ -10,7 +10,7 @@ private:
     vector<vector<T>> data;
 
 public:
-    RecSum(vector<vector<T>> const &vec) : H(vec.size()), W(vec[0].size()), data(H + 1, vector<T>(W + 1, 0)) {
+    explicit RecSum(vector<vector<T>> const &vec) : H(vec.size()), W(vec[0].size()), data(H + 1, vector<T>(W + 1, 0)) {
         for (int row = 0; row < H; row++) {
             for (int col = 0; col < W; col++) {
                 data[row + 1][col + 1] += data[row + 1][col] + data[row][col + 1] - data[row][col] + vec[row][col];

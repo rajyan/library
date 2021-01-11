@@ -39,18 +39,18 @@ private:
         return now;
     }
 
-    int nlz(unsigned int x) {
+    static int nlz(unsigned int x) {
         union {
             unsigned int as_uint32;
             float as_float;
-        } data;
+        } data{};
         data.as_float = (float)x + 0.5;
         int n = 158 - (data.as_uint32 >> 23);
         return n;
     }
 
 public:
-    LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N),
+    explicit LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N),
                                                           par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
 
     int get_lca(int u, int v) {

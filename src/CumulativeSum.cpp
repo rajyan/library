@@ -1,3 +1,4 @@
+#include <cassert>
 #include <vector>
 
 using namespace std;
@@ -8,10 +9,10 @@ private:
     vector<T> cusum;
 
 public:
-    CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
+    explicit CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
         for (int i = 0; i < (int)vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
     }
-    CuSum(const int N) : cusum(N + 1) {}
+    explicit CuSum(const int N) : cusum(N + 1) {}
     void add(const int i, const T &x) { cusum[i + 1] += x; }
     void build() { for (int i = 0; i < (int)cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }
 

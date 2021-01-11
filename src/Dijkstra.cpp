@@ -6,11 +6,10 @@ using namespace std;
 
 template<class T>
 struct Edge {
-    int to;
+    int from{}, to{};
     T cost;
-    Edge() {}
-    Edge(int to, T cost) : to(to), cost(cost) {}
-    bool operator>(const Edge &r) const { return this->cost > r.cost; }
+    Edge() = default;
+    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
 };
 
 template<class T>

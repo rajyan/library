@@ -5,9 +5,9 @@ using namespace std;
 
 template<class T>
 struct Edge {
-    int from, to;
+    int from{}, to{};
     T cost;
-    Edge() {}
+    Edge() = default;
     Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
 };
 

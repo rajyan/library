@@ -14,8 +14,8 @@ private:
     vector<int> used;
 
 public:
-    TopologicalSort(int n) : V(n), edges(n), used(n) {}
-    TopologicalSort(vector<vector<int>> &edges) : V(edges.size()), used(edges.size()) { this->edges = edges; }
+    explicit TopologicalSort(int n) : V(n), edges(n), used(n) {}
+    explicit TopologicalSort(vector<vector<int>> &edges) : V(edges.size()), used(edges.size()) { this->edges = edges; }
 
     void add_edge(int from, int to) { edges[from].emplace_back(to); }
 
@@ -34,7 +34,6 @@ public:
         }
         while (!que.empty()) {
             int now = que.front();
-            DMP(now, in);
             que.pop();
             res.emplace_back(now);
             for (const auto &e : edges[now]) {
