@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(../library/src)
+project(src)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,7 +16,6 @@ else ()
     add_compile_options(
             -Wall
             -Wextra
-            -Wunreachable-code
             -fsanitize=address,undefined
             -D_GLIBCXX_DEBUG
             -D_DEBUG
@@ -29,6 +28,7 @@ add_executable(src_Combination Combination.cpp)
 add_executable(src_Compress Compress.cpp)
 add_executable(src_CumulativeSum CumulativeSum.cpp)
 add_executable(src_Dijkstra Dijkstra.cpp)
+add_executable(src_Edge Edge.cpp)
 add_executable(src_Factorial Factorial.cpp)
 add_executable(src_FenwickTree FenwickTree.cpp)
 add_executable(src_LowestCommonAncestor LowestCommonAncestor.cpp)

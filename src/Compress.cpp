@@ -25,7 +25,7 @@ public:
         });
         return ret;
     }
-    int get(const T &x) const { return lower_bound(begin(comp), end(comp), x) - begin(comp); }
+    [[nodiscard]] int get(const T &x) const { return lower_bound(begin(comp), end(comp), x) - begin(comp); }
 
     const T &operator[](const int k) const { return comp[k]; }
 };

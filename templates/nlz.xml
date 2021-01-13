@@ -1,4 +1,4 @@
-<template name="mynlz" value="int nlz(unsigned int x) {&#10;    union {&#10;        unsigned int as_uint32;&#10;        float as_float;&#10;    } data{};&#10;    data.as_float = (float)x + 0.5;&#10;    int n = 158 - (data.as_uint32 &gt;&gt; 23);&#10;    return n;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
+<template name="mynlz" value="int nlz(unsigned int x) {&#10;    union {&#10;        unsigned int as_uint32;&#10;        float as_float;&#10;    } data{};&#10;    data.as_float = (float)x + 0.5f;&#10;    int n = 158 - (int)(data.as_uint32 &gt;&gt; 23);&#10;    return n;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
