@@ -2,11 +2,11 @@
 
 [![Actions Status](https://github.com/rajyan/library/workflows/verify/badge.svg)](https://github.com/rajyan/library/actions) 
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://rajyan.github.io/library/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## src
 
 競技プログラミング用のライブラリです。  
-コピーなどは自由ですが、間違いなどから生じる不利益について一切責任をとりません。
 
 バグや改善点などありましたら、[@unagiunag](https://twitter.com/unagiunag) まで指摘していただけるとありがたいです。
 
