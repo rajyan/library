@@ -28,7 +28,7 @@ struct Point2D {
     constexpr Point2D &operator++(int) noexcept { return ((*this) += Point2D(1, 1)); };
     constexpr Point2D operator-() const noexcept { return {-x, -y}; }
     constexpr T operator*(const Point2D &rhs) const noexcept { return x * rhs.x + y * rhs.y; }
-    constexpr Point2D nor() const noexcept { return {y, -x}; }
+    [[nodiscard]] constexpr Point2D nor() const noexcept { return {y, -x}; }
     [[nodiscard]] constexpr long double hypot() const noexcept { return ::hypotl(x, y); }
     friend istream &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }
     friend ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << " " << p.y; }

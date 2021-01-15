@@ -3,13 +3,7 @@
 
 using namespace std;
 
-template<class T>
-struct Edge {
-    int from{}, to{};
-    T cost;
-    Edge() = default;
-    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
-};
+#include "Edge.cpp"
 
 template<class T>
 vector<T> BellmanFord(const vector<Edge<T>> &edges, const int V, const int st) {

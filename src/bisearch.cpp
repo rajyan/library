@@ -1,3 +1,8 @@
+#include <cmath>
+
+using namespace std;
+using lint = long long;
+constexpr lint LINF = 1LL << 60;
 
 auto judge = [&](auto key) {
     return key;

@@ -1,40 +1,54 @@
 #! /bin/bash -eu
 
-temp_dir=${TEMP_DIR:-'../library/templates'}
-template=${TEMP_FILE:-'../library/templates/auto_template.xml'}
+tmp_file=${TMP_FILE:-'/tmp/temp.cpp'}
+templates=${TEMPLATES:-'../library/templates'}
+base_file=${BASE_FILE:-'../library/templates/auto_template.xml'}
 config_dir=${CONFIG_DIR:-'../../AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
 config_file=${CONFIG_DIR:-'C_C__.xml'}
 
+function format() {
+  # compress multiple empty lines, delete empty lines until content, replace end of line with EOL, drop \r or \n
+  cat -s "$1" | sed '/[^\r\n]/,$!d; s/$/EOL/' | tr -d '\r\n' | \
+  # escape xml special characters
+  sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/EOL/\&#10;/g;'
+  rm "$1"
+}
+
 for cppfile in "$@"; do
+  # run only on cpp files
+  if [[ ! $cppfile == *'.cpp' ]]; then
+    continue
+  fi
+  # expand and trim
   if [[ $cppfile == *'template.cpp' ]]; then
-    # delete empty lines until content, replace end of line with EOF, drop \r or \n
-    content=$(sed -e '/[^\r\n]/,$!d; s/$/EOL/' "$cppfile" | tr -d '\r\n')
+    cat "$cppfile" > "$tmp_file"
     echo "$cppfile"
   else
+    # expand includes
+    echo "$(sed -n -r "s/#include \"(.*)\"/${cppfile%/*}\/\1/p" "$cppfile")" "$cppfile" | xargs cat | \
     # delete line starting with (#include | using (namespace|lint) | constexpr)
-    content=$(sed -e '/^#include/d; /^using\ [nl]/d; /^constexpr/d' -e '/[^\r\n]/,$!d; s/$/EOL/' "$cppfile" | tr -d '\r\n')
+    sed '/^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
   fi
-  # escape xml special characters
-  content=$(echo "$content" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/EOL/\&#10;/g;')
+  content=$(format "$tmp_file")
 
   filename=${cppfile%.cpp}
   filename=${filename##*/}
   shortname=${filename/_/}
   shortname=${shortname,,}
 
-  NAME="my${shortname}" VALUE=${content} envsubst < "$template" > "$temp_dir/$filename.xml"
+  NAME="my${shortname}" VALUE=${content} envsubst < "$base_file" > "$templates/$filename.xml"
 done
 
 # generate templateSet
-templates='<templateSet group="C/C++">'
-for xml in "$temp_dir"/*; do
+templateSet='<templateSet group="C/C++">'
+for xml in "$templates"/*; do
   [[ -e $xml ]] || break
-  if [[ $xml == *"$config_file" || $xml == *"${template##*/}" ]]; then
+  if [[ $xml == *"$config_file" || $xml == *"${base_file##*/}" ]]; then
     echo "$xml"
     continue
   fi
-  templates+=$(cat "$xml")
+  templateSet+=$(cat "$xml")
 done
-templates+='</templateSet>'
-echo "$templates" > "$temp_dir"/"$config_file"
-cp -v "$temp_dir"/"$config_file" "$config_dir"/"$config_file"
+templateSet+='</templateSet>'
+echo "$templateSet" > "$templates"/"$config_file"
+cp -v "$templates"/"$config_file" "$config_dir"/"$config_file"

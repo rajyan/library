@@ -17,7 +17,7 @@ struct RandNum {
     }
     lint operator()(const lint &rand_max) { return (*this)(0LL, rand_max); }
 
-    vector<lint> uniq_vec(const int &sz, const lint &rand_min, lint rand_max) {
+    [[nodiscard]] vector<lint> uniq_vec(const int &sz, const lint &rand_min, lint rand_max) {
 
         vector<lint> res(sz);
         unordered_map <lint, lint> memo;
