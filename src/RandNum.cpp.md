@@ -13,11 +13,11 @@ data:
     \ {}\n\n    lint operator()(const lint &rand_min, const lint &rand_max) {\n  \
     \      uniform_int_distribution <lint> dist(rand_min, rand_max);\n        return\
     \ dist(mt);\n    }\n    lint operator()(const lint &rand_max) { return (*this)(0LL,\
-    \ rand_max); }\n\n    vector<lint> uniq_vec(const int &sz, const lint &rand_min,\
-    \ lint rand_max) {\n\n        vector<lint> res(sz);\n        unordered_map <lint,\
-    \ lint> memo;\n        for (int i = 0; i < sz; i++, rand_max--) {\n\n        \
-    \    lint rand_val = (*this)(rand_min, rand_max);\n\n            // If rand_max\
-    \ hasn't been replaced yet, fill it with rand_max\n            if (memo.find(rand_max)\
+    \ rand_max); }\n\n    [[nodiscard]] vector<lint> uniq_vec(const int &sz, const\
+    \ lint &rand_min, lint rand_max) {\n\n        vector<lint> res(sz);\n        unordered_map\
+    \ <lint, lint> memo;\n        for (int i = 0; i < sz; i++, rand_max--) {\n\n \
+    \           lint rand_val = (*this)(rand_min, rand_max);\n\n            // If\
+    \ rand_max hasn't been replaced yet, fill it with rand_max\n            if (memo.find(rand_max)\
     \ == memo.end()) memo[rand_max] = rand_max;\n\n            auto val_itr = memo.find(rand_val);\n\
     \            if (val_itr == memo.end()) { // replace rand_val with rand_max\n\
     \                memo[rand_val] = memo[rand_max];\n            }\n           \
@@ -32,11 +32,11 @@ data:
     \ {}\n\n    lint operator()(const lint &rand_min, const lint &rand_max) {\n  \
     \      uniform_int_distribution <lint> dist(rand_min, rand_max);\n        return\
     \ dist(mt);\n    }\n    lint operator()(const lint &rand_max) { return (*this)(0LL,\
-    \ rand_max); }\n\n    vector<lint> uniq_vec(const int &sz, const lint &rand_min,\
-    \ lint rand_max) {\n\n        vector<lint> res(sz);\n        unordered_map <lint,\
-    \ lint> memo;\n        for (int i = 0; i < sz; i++, rand_max--) {\n\n        \
-    \    lint rand_val = (*this)(rand_min, rand_max);\n\n            // If rand_max\
-    \ hasn't been replaced yet, fill it with rand_max\n            if (memo.find(rand_max)\
+    \ rand_max); }\n\n    [[nodiscard]] vector<lint> uniq_vec(const int &sz, const\
+    \ lint &rand_min, lint rand_max) {\n\n        vector<lint> res(sz);\n        unordered_map\
+    \ <lint, lint> memo;\n        for (int i = 0; i < sz; i++, rand_max--) {\n\n \
+    \           lint rand_val = (*this)(rand_min, rand_max);\n\n            // If\
+    \ rand_max hasn't been replaced yet, fill it with rand_max\n            if (memo.find(rand_max)\
     \ == memo.end()) memo[rand_max] = rand_max;\n\n            auto val_itr = memo.find(rand_val);\n\
     \            if (val_itr == memo.end()) { // replace rand_val with rand_max\n\
     \                memo[rand_val] = memo[rand_max];\n            }\n           \
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: src/RandNum.cpp
   requiredBy: []
-  timestamp: '2021-01-01 20:28:23+09:00'
+  timestamp: '2021-01-16 00:14:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/RandNum.cpp

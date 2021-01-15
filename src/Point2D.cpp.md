@@ -32,13 +32,13 @@ data:
     \ { return ((*this) -= Point2D(1, 1)); };\n    constexpr Point2D &operator++(int)\
     \ noexcept { return ((*this) += Point2D(1, 1)); };\n    constexpr Point2D operator-()\
     \ const noexcept { return {-x, -y}; }\n    constexpr T operator*(const Point2D\
-    \ &rhs) const noexcept { return x * rhs.x + y * rhs.y; }\n    constexpr Point2D\
-    \ nor() const noexcept { return {y, -x}; }\n    [[nodiscard]] constexpr long double\
-    \ hypot() const noexcept { return ::hypotl(x, y); }\n    friend istream &operator>>(istream\
-    \ &is, Point2D &p) { return is >> p.x >> p.y; }\n    friend ostream &operator<<(ostream\
-    \ &os, const Point2D &p) { return os << p.x << \" \" << p.y; }\n    template<class\
-    \ U>\n    U &operator[](vector<vector<U>> &v) { return v[x][y]; }\n};\n\nusing\
-    \ pnt = Point2D<lint>;\n"
+    \ &rhs) const noexcept { return x * rhs.x + y * rhs.y; }\n    [[nodiscard]] constexpr\
+    \ Point2D nor() const noexcept { return {y, -x}; }\n    [[nodiscard]] constexpr\
+    \ long double hypot() const noexcept { return ::hypotl(x, y); }\n    friend istream\
+    \ &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }\n    friend\
+    \ ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << \"\
+    \ \" << p.y; }\n    template<class U>\n    U &operator[](vector<vector<U>> &v)\
+    \ { return v[x][y]; }\n};\n\nusing pnt = Point2D<lint>;\n"
   code: "#include <cmath>\n#include <iostream>\n#include <vector>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\ntemplate<class T>\nstruct Point2D {\n    T\
     \ x, y;\n    constexpr explicit Point2D(T x = 0, T y = 0) noexcept: x(x), y(y)\
@@ -64,18 +64,18 @@ data:
     \ { return ((*this) -= Point2D(1, 1)); };\n    constexpr Point2D &operator++(int)\
     \ noexcept { return ((*this) += Point2D(1, 1)); };\n    constexpr Point2D operator-()\
     \ const noexcept { return {-x, -y}; }\n    constexpr T operator*(const Point2D\
-    \ &rhs) const noexcept { return x * rhs.x + y * rhs.y; }\n    constexpr Point2D\
-    \ nor() const noexcept { return {y, -x}; }\n    [[nodiscard]] constexpr long double\
-    \ hypot() const noexcept { return ::hypotl(x, y); }\n    friend istream &operator>>(istream\
-    \ &is, Point2D &p) { return is >> p.x >> p.y; }\n    friend ostream &operator<<(ostream\
-    \ &os, const Point2D &p) { return os << p.x << \" \" << p.y; }\n    template<class\
-    \ U>\n    U &operator[](vector<vector<U>> &v) { return v[x][y]; }\n};\n\nusing\
-    \ pnt = Point2D<lint>;\n"
+    \ &rhs) const noexcept { return x * rhs.x + y * rhs.y; }\n    [[nodiscard]] constexpr\
+    \ Point2D nor() const noexcept { return {y, -x}; }\n    [[nodiscard]] constexpr\
+    \ long double hypot() const noexcept { return ::hypotl(x, y); }\n    friend istream\
+    \ &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }\n    friend\
+    \ ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << \"\
+    \ \" << p.y; }\n    template<class U>\n    U &operator[](vector<vector<U>> &v)\
+    \ { return v[x][y]; }\n};\n\nusing pnt = Point2D<lint>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Point2D.cpp
   requiredBy: []
-  timestamp: '2021-01-11 12:34:28+09:00'
+  timestamp: '2021-01-16 00:14:14+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/Point2D.cpp

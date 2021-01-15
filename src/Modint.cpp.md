@@ -1,10 +1,19 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/Combination.cpp
+    title: src/Combination.cpp
+  - icon: ':warning:'
+    path: src/RollingHash.cpp
+    title: src/RollingHash.cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1081.test.cpp
+    title: test/yukicoder/1081.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/Modint.cpp\"\n#include <iostream>\n\nusing namespace\
@@ -69,10 +78,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/Modint.cpp
-  requiredBy: []
+  requiredBy:
+  - src/RollingHash.cpp
+  - src/Combination.cpp
   timestamp: '2021-01-11 13:15:38+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/1081.test.cpp
 documentation_of: src/Modint.cpp
 layout: document
 redirect_from:

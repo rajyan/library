@@ -18,6 +18,9 @@ data:
     - icon: ':warning:'
       path: src/Dijkstra.cpp
       title: src/Dijkstra.cpp
+    - icon: ':warning:'
+      path: src/Edge.cpp
+      title: src/Edge.cpp
     - icon: ':heavy_check_mark:'
       path: src/Factorial.cpp
       title: src/Factorial.cpp
@@ -27,7 +30,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/LowestCommonAncestor.cpp
       title: src/LowestCommonAncestor.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/Modint.cpp
       title: src/Modint.cpp
     - icon: ':warning:'
