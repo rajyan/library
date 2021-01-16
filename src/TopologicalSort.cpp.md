@@ -24,9 +24,9 @@ data:
     \              if (in[e] == 0) {\n                    if (used[e]) return vector<int>();\
     \ // unable to sort\n                    used[e] = used[now] + 1;\n          \
     \          que.emplace(e);\n                }\n            }\n        }\n\n  \
-    \      return res;\n    }\n\n    int longest_path() {\n        if (none_of(used.begin(),\
-    \ used.end(), [](int u) { return u > 0; })) build();\n        return *max_element(used.begin(),\
-    \ used.end()) - 1;\n    }\n\n};\n"
+    \      return res;\n    }\n\n    [[nodiscard]] int longest_path() {\n        if\
+    \ (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();\n\
+    \        return *max_element(used.begin(), used.end()) - 1;\n    }\n\n};\n"
   code: "#include <cassert>\n#include <cstdio>\n#include <cmath>\n#include <iostream>\n\
     #include <vector>\n#include <queue>\n\nusing namespace std;\n\nclass TopologicalSort\
     \ {\nprivate:\n    int V;\n    vector<vector<int>> edges;\n    vector<int> used;\n\
@@ -43,14 +43,14 @@ data:
     \              if (in[e] == 0) {\n                    if (used[e]) return vector<int>();\
     \ // unable to sort\n                    used[e] = used[now] + 1;\n          \
     \          que.emplace(e);\n                }\n            }\n        }\n\n  \
-    \      return res;\n    }\n\n    int longest_path() {\n        if (none_of(used.begin(),\
-    \ used.end(), [](int u) { return u > 0; })) build();\n        return *max_element(used.begin(),\
-    \ used.end()) - 1;\n    }\n\n};\n"
+    \      return res;\n    }\n\n    [[nodiscard]] int longest_path() {\n        if\
+    \ (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();\n\
+    \        return *max_element(used.begin(), used.end()) - 1;\n    }\n\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/TopologicalSort.cpp
   requiredBy: []
-  timestamp: '2021-01-11 12:34:28+09:00'
+  timestamp: '2021-01-17 00:12:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/TopologicalSort.cpp

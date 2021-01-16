@@ -37,11 +37,11 @@ data:
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
     \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
     \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
-    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    constexpr\
-    \ Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n      \
-    \  while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp *= tmp;\n\
-    \            n >>= 1;\n        }\n        return res;\n    }\n};\n\nusing mint\
-    \ = Mint<>;\n#line 9 \"src/RollingHash.cpp\"\n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
+    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
+    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n\
+    \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
+    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
+    using mint = Mint<>;\n#line 9 \"src/RollingHash.cpp\"\n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
     class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
     \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
     \    const int base2 = 2147483627;\n    int sz;\n\npublic:\n    explicit RollingHash(const\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-16 00:14:14+09:00'
+  timestamp: '2021-01-17 00:12:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/RollingHash.cpp

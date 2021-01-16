@@ -41,11 +41,11 @@ data:
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
     \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
     \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
-    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    constexpr\
-    \ Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n      \
-    \  while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp *= tmp;\n\
-    \            n >>= 1;\n        }\n        return res;\n    }\n};\n\nusing mint\
-    \ = Mint<>;\n"
+    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
+    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n\
+    \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
+    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
+    using mint = Mint<>;\n"
   code: "#include <iostream>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
     \ int MOD = 1000000007;\n\ntemplate<int Modulo = MOD>\nstruct Mint {\n\n    lint\
     \ val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0)\
@@ -70,18 +70,18 @@ data:
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
     \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
     \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
-    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    constexpr\
-    \ Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n      \
-    \  while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp *= tmp;\n\
-    \            n >>= 1;\n        }\n        return res;\n    }\n};\n\nusing mint\
-    \ = Mint<>;\n"
+    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
+    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n\
+    \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
+    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
+    using mint = Mint<>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Modint.cpp
   requiredBy:
   - src/RollingHash.cpp
   - src/Combination.cpp
-  timestamp: '2021-01-11 13:15:38+09:00'
+  timestamp: '2021-01-17 00:12:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1081.test.cpp
