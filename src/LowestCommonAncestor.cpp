@@ -31,7 +31,7 @@ private:
         }
     }
 
-    int ancestor(int now, int n) {
+    [[nodiscard]] int ancestor(int now, int n) {
         if (n <= 0) return now;
         for (int i = 0, lg_n = 32 - nlz(n); i < lg_n; i++) {
             if (n & (1LL << i)) now = par[i][now];
@@ -39,7 +39,7 @@ private:
         return now;
     }
 
-    static int nlz(unsigned int x) {
+    [[nodiscard]] static int nlz(unsigned int x) {
         union {
             unsigned int as_uint32;
             float as_float;

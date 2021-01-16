@@ -12,12 +12,12 @@ public:
         for (int i = 0; i < n; i++) add(i, x);
     }
 
-    T sum(int k) const {
+    [[nodiscard]] T sum(int k) const {
         T res = 0;
         for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];
         return res;
     }
-    T sum(int l, int r) const { return sum(r) - sum(l); }
+    [[nodiscard]] T sum(int l, int r) const { return sum(r) - sum(l); }
 
     void add(int k, const T &x) {
         for (; k < n; k |= k + 1) bit[k] += x;

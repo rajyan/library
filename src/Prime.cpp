@@ -26,7 +26,7 @@ private:
 public:
     explicit Prime(int N = 1100000) : min_pf(N + 1) { sieve(N + 1); }
 
-    vector<pair<lint, int>> factorize(lint n) {
+    [[nodiscard]] vector<pair<lint, int>> factorize(lint n) {
         vector<pair<lint, int>> res;
         lint sz = (lint)min_pf.size();
 
@@ -59,7 +59,7 @@ public:
     }
 
     // verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu
-    bool isPrime(lint n) {
+    [[nodiscard]] bool isPrime(lint n) {
         if (n < (int)(min_pf.size())) return min_pf[n] == n;
         else if (n == 2 || n == 3) return true;
         else if (n % 2 == 0 || n % 3 == 0) return false;

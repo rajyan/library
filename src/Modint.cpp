@@ -57,7 +57,7 @@ struct Mint {
         return is;
     }
 
-    constexpr Mint pow(lint n) const noexcept {
+    [[nodiscard]] constexpr Mint pow(lint n) const noexcept {
         Mint res = 1, tmp = val;
         while (n > 0) {
             if (n & 1) res *= tmp;

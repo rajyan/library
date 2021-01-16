@@ -23,17 +23,17 @@ private:
 public:
     explicit Factorial(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
 
-    lint Cmod(int n, int k) {
+    [[nodiscard]] lint Cmod(int n, int k) {
         if (n < k || k < 0) return 0LL;
         return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
     }
 
-    lint Pmod(int n, int k) {
+    [[nodiscard]] lint Pmod(int n, int k) {
         if (n < k || k < 0) return 0LL;
         return fac[n] * finv[n - k] % MOD;
     }
 
-    lint Hmod(int n, int k) {
+    [[nodiscard]] lint Hmod(int n, int k) {
         if (n < 0 || k < 0) return 0LL;
         return k == 0 ? 1 : Cmod(n + k - 1, k);
     }

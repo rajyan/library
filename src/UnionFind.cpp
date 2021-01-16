@@ -7,9 +7,9 @@ private:
     vector<int> data;
 public:
     explicit UnionFind(int size) : data(size, -1) {}
-    int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
-    bool is_same(int x, int y) { return root(x) == root(y); }
-    int size(int x) { return -data[root(x)]; }
+    [[nodiscard]] int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
+    [[nodiscard]] bool is_same(int x, int y) { return root(x) == root(y); }
+    [[nodiscard]] int size(int x) { return -data[root(x)]; }
 
     bool unify(int x, int y) {
         x = root(x);
