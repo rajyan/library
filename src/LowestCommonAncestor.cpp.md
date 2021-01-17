@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/clz.cpp
     title: src/clz.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/LowestCommonAncestor.cpp\"\n#include <vector>\n\n#line\
@@ -69,7 +69,7 @@ data:
   path: src/LowestCommonAncestor.cpp
   requiredBy: []
   timestamp: '2021-01-17 16:03:18+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
 documentation_of: src/LowestCommonAncestor.cpp

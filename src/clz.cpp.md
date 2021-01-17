@@ -2,21 +2,18 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/LowestCommonAncestor.cpp
     title: src/LowestCommonAncestor.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/own/RandNum_clz.test.cpp
     title: test/own/RandNum_clz.test.cpp
-  - icon: ':x:'
-    path: test/yosupo/lca.test.cpp
-    title: test/yosupo/lca.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/clz.cpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
@@ -33,9 +30,8 @@ data:
   requiredBy:
   - src/LowestCommonAncestor.cpp
   timestamp: '2021-01-17 15:47:25+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo/lca.test.cpp
   - test/yosupo/lca.test.cpp
   - test/own/RandNum_clz.test.cpp
 documentation_of: src/clz.cpp

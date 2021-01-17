@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/RandNum.cpp
     title: src/RandNum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/clz.cpp
     title: src/clz.cpp
   _extendedRequiredBy: []

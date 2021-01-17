@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FenwickTree.cpp
       title: src/FenwickTree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/LowestCommonAncestor.cpp
       title: src/LowestCommonAncestor.cpp
     - icon: ':heavy_check_mark:'
@@ -63,7 +63,7 @@ data:
     - icon: ':warning:'
       path: src/chminmax.cpp
       title: src/chminmax.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/clz.cpp
       title: src/clz.cpp
     - icon: ':heavy_check_mark:'
@@ -78,7 +78,7 @@ data:
     - icon: ':warning:'
       path: src/in_grid.cpp
       title: src/in_grid.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/makevec.cpp
       title: src/makevec.cpp
     - icon: ':warning:'
@@ -118,7 +118,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/associative_array.test.cpp
       title: test/yosupo/associative_array.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp
     - icon: ':heavy_check_mark:'
