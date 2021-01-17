@@ -45,14 +45,14 @@ data:
     \n        for (int bit = 0; bit < lg_N; bit++) {\n            for (int i = 0;\
     \ i < N; i++) {\n                par[bit + 1][i] = par[bit][par[bit][i]];\n  \
     \          }\n        }\n    }\n\n    [[nodiscard]] int ancestor(int now, int\
-    \ n) {\n        if (n <= 0) return now;\n        for (int i = 0, lg_n = 32 - clz(n);\
+    \ n) {\n        if (n <= 0) return now;\n        for (int i = 0, lg_n = 64 - clz(n);\
     \ i < lg_n; i++) {\n            if (n & (1LL << i)) now = par[i][now];\n     \
     \   }\n        return now;\n    }\n\npublic:\n    explicit LCA(const vector<vector<int>>\
-    \ &tree, int root = 0) : N(tree.size()), lg_N(32 - clz(N)), depth(N),\n      \
+    \ &tree, int root = 0) : N(tree.size()), lg_N(64 - clz(N)), depth(N),\n      \
     \                                                            par(lg_N + 1, vector<int>(N,\
     \ -1)) { build(tree, root); }\n\n    int get_lca(int u, int v) {\n\n        if\
     \ (depth[u] < depth[v]) swap(u, v);\n        u = ancestor(u, depth[u] - depth[v]);\n\
-    \        if (u == v) return u;\n\n        for (int i = 32 - clz(depth[u]); i >=\
+    \        if (u == v) return u;\n\n        for (int i = 64 - clz(depth[u]); i >=\
     \ 0; i--) {\n            if (par[i][u] != par[i][v]) {\n                u = par[i][u];\n\
     \                v = par[i][v];\n            }\n        }\n        return par[0][u];\n\
     \    }\n\n    int dist(int u, int v) {\n        return depth[u] + depth[v] - 2\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2021-01-17 15:47:25+09:00'
+  timestamp: '2021-01-17 16:03:18+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/lca.test.cpp
