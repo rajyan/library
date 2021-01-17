@@ -8,5 +8,7 @@
 "test/yosupo/point_add_range_sum.test.cpp": "2021-01-17 00:12:39 +0900",
 "test/yosupo/unionfind.test.cpp": "2021-01-17 00:12:39 +0900",
 "test/yukicoder/1081.test.cpp": "2021-01-17 00:12:39 +0900",
-"test/yukicoder/184.test.cpp": "2021-01-17 00:12:39 +0900"
+"test/yukicoder/184.test.cpp": "2021-01-17 00:12:39 +0900",
+"test/yukicoder/430.test.cpp": "2021-01-17 16:27:48 +0900",
+"test/yukicoder/599.test.cpp": "2021-01-17 16:27:48 +0900"
 }
