@@ -2,8 +2,6 @@
 #include <string>
 
 using namespace std;
-using lint = long long;
-constexpr int MOD = 1000000007;
 
 #include "Modint.cpp"
 
