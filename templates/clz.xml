@@ -1,4 +1,4 @@
-<template name="mylowestcommonancestor" value="" description="" toReformat="false" toShortenFQNames="true">
+<template name="myclz" value="" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>

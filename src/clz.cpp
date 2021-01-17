@@ -1,4 +1,4 @@
-int nlz(unsigned int x) {
+int clz(unsigned int x) {
     union {
         unsigned int as_uint32;
         float as_float;

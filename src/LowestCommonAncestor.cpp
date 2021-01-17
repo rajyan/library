@@ -33,13 +33,13 @@ private:
 
     [[nodiscard]] int ancestor(int now, int n) {
         if (n <= 0) return now;
-        for (int i = 0, lg_n = 32 - nlz(n); i < lg_n; i++) {
+        for (int i = 0, lg_n = 32 - clz(n); i < lg_n; i++) {
             if (n & (1LL << i)) now = par[i][now];
         }
         return now;
     }
 
-    [[nodiscard]] static int nlz(unsigned int x) {
+    [[nodiscard]] static int clz(unsigned int x) {
         union {
             unsigned int as_uint32;
             float as_float;
@@ -50,8 +50,8 @@ private:
     }
 
 public:
-    explicit LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - nlz(N)), depth(N),
-                                                          par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
+    explicit LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(32 - clz(N)), depth(N),
+                                                                  par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
 
     int get_lca(int u, int v) {
 
@@ -59,7 +59,7 @@ public:
         u = ancestor(u, depth[u] - depth[v]);
         if (u == v) return u;
 
-        for (int i = 32 - nlz(depth[u]); i >= 0; i--) {
+        for (int i = 32 - clz(depth[u]); i >= 0; i--) {
             if (par[i][u] != par[i][v]) {
                 u = par[i][u];
                 v = par[i][v];
