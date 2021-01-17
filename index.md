@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FenwickTree.cpp
       title: src/FenwickTree.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/LowestCommonAncestor.cpp
       title: src/LowestCommonAncestor.cpp
     - icon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
     - icon: ':warning:'
       path: src/Prime.cpp
       title: src/Prime.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/RandNum.cpp
       title: src/RandNum.cpp
     - icon: ':warning:'
@@ -63,6 +63,9 @@ data:
     - icon: ':warning:'
       path: src/chminmax.cpp
       title: src/chminmax.cpp
+    - icon: ':question:'
+      path: src/clz.cpp
+      title: src/clz.cpp
     - icon: ':heavy_check_mark:'
       path: src/debug_template.cpp
       title: src/debug_template.cpp
@@ -75,16 +78,13 @@ data:
     - icon: ':warning:'
       path: src/in_grid.cpp
       title: src/in_grid.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/makevec.cpp
       title: src/makevec.cpp
     - icon: ':warning:'
       path: src/modpow.cpp
       title: src/modpow.cpp
     - icon: ':heavy_check_mark:'
-      path: src/nlz.cpp
-      title: src/nlz.cpp
-    - icon: ':warning:'
       path: src/popcount.cpp
       title: src/popcount.cpp
     - icon: ':warning:'
@@ -105,12 +105,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
+  - name: test/own
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/own/RandNum_clz.test.cpp
+      title: test/own/RandNum_clz.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/own/RandNum_popcount.test.cpp
+      title: test/own/RandNum_popcount.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/associative_array.test.cpp
       title: test/yosupo/associative_array.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp
     - icon: ':heavy_check_mark:'

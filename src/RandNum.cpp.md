@@ -2,9 +2,15 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/own/RandNum_clz.test.cpp
+    title: test/own/RandNum_clz.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/own/RandNum_popcount.test.cpp
+    title: test/own/RandNum_popcount.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/RandNum.cpp\"\n#include <random>\n#include <chrono>\n\
@@ -50,8 +56,10 @@ data:
   path: src/RandNum.cpp
   requiredBy: []
   timestamp: '2021-01-16 00:14:14+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/own/RandNum_popcount.test.cpp
+  - test/own/RandNum_clz.test.cpp
 documentation_of: src/RandNum.cpp
 layout: document
 redirect_from:

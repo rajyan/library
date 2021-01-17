@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/own/RandNum_popcount.test.cpp
+    title: test/own/RandNum_popcount.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/popcount.cpp\"\n\nusing lint = long long;\n\ninline\
@@ -25,8 +28,9 @@ data:
   path: src/popcount.cpp
   requiredBy: []
   timestamp: '2021-01-01 20:28:23+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/own/RandNum_popcount.test.cpp
 documentation_of: src/popcount.cpp
 layout: document
 redirect_from:
