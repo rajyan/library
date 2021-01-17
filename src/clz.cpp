@@ -1,9 +1,12 @@
-int clz(unsigned int x) {
+
+using lint = long long;
+
+inline int clz(lint x) {
     union {
-        unsigned int as_uint32;
-        float as_float;
+        unsigned long long as_uint64;
+        double as_double;
     } data{};
-    data.as_float = (float)x + 0.5f;
-    int n = 158 - (int)(data.as_uint32 >> 23);
-    return n;
+    data.as_double = (double)x + 0.5;
+    int n = 1054 - (int)(data.as_uint64 >> 52);
+    return 32 + n;
 }
