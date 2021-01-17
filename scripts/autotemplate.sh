@@ -14,6 +14,12 @@ function format() {
   rm "$1"
 }
 
+# skip if no changes
+if [ $# -eq 0 ]; then
+    exit 0
+fi
+
+# generate templates
 for cppfile in "$@"; do
   # run only on cpp files
   if [[ ! $cppfile == *'.cpp' ]]; then
@@ -25,7 +31,7 @@ for cppfile in "$@"; do
     echo "$cppfile"
   else
     # expand includes
-    oj-bundle "$cppfile" | \
+    oj-bundle "$cppfile" 2> /dev/null | \
     # delete line starting with (#include | using (namespace|lint) | constexpr)
     sed '/^#line/d; /^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
   fi
