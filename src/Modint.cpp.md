@@ -5,13 +5,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Combination.cpp
     title: src/Combination.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/RollingHash.cpp
     title: src/RollingHash.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1081.test.cpp
     title: test/yukicoder/1081.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/430.test.cpp
+    title: test/yukicoder/430.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/599.test.cpp
+    title: test/yukicoder/599.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -85,6 +91,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1081.test.cpp
+  - test/yukicoder/599.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: src/Modint.cpp
 layout: document
 redirect_from:

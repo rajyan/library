@@ -45,7 +45,7 @@ data:
     - icon: ':warning:'
       path: src/RectangleSum.cpp
       title: src/RectangleSum.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/RollingHash.cpp
       title: src/RollingHash.cpp
     - icon: ':warning:'
@@ -135,5 +135,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/184.test.cpp
       title: test/yukicoder/184.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/430.test.cpp
+      title: test/yukicoder/430.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/599.test.cpp
+      title: test/yukicoder/599.test.cpp
 layout: toppage
 ---
