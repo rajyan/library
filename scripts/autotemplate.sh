@@ -25,9 +25,9 @@ for cppfile in "$@"; do
     echo "$cppfile"
   else
     # expand includes
-    echo "$(sed -n -r "s/#include \"(.*)\"/${cppfile%/*}\/\1/p" "$cppfile")" "$cppfile" | xargs cat | \
+    oj-bundle "$cppfile" | \
     # delete line starting with (#include | using (namespace|lint) | constexpr)
-    sed '/^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
+    sed '/^#line/d; /^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
   fi
   content=$(format "$tmp_file")
 
