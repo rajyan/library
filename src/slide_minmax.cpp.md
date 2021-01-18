@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/DSL_3_D.test.cpp
+    title: test/aoj/DSL_3_D.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/slide_minmax.cpp\"\n#include <vector>\n#include <deque>\n\
@@ -34,8 +37,9 @@ data:
   path: src/slide_minmax.cpp
   requiredBy: []
   timestamp: '2021-01-01 20:28:23+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/aoj/DSL_3_D.test.cpp
 documentation_of: src/slide_minmax.cpp
 layout: document
 redirect_from:

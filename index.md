@@ -93,7 +93,7 @@ data:
     - icon: ':warning:'
       path: src/run_length.cpp
       title: src/run_length.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/slide_minmax.cpp
       title: src/slide_minmax.cpp
     - icon: ':warning:'
@@ -108,6 +108,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
+    - icon: ':x:'
+      path: test/aoj/DSL_3_D.test.cpp
+      title: test/aoj/DSL_3_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
