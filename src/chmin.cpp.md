@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Dijkstra.cpp
     title: src/Dijkstra.cpp
+  - icon: ':warning:'
+    path: src/FloydWarshall.cpp
+    title: src/FloydWarshall.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -35,6 +38,7 @@ data:
   isVerificationFile: false
   path: src/chmin.cpp
   requiredBy:
+  - src/FloydWarshall.cpp
   - src/Dijkstra.cpp
   - src/BellmanFord.cpp
   timestamp: '2021-01-18 09:44:26+09:00'

@@ -27,6 +27,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FenwickTree.cpp
       title: src/FenwickTree.cpp
+    - icon: ':warning:'
+      path: src/FloydWarshall.cpp
+      title: src/FloydWarshall.cpp
     - icon: ':heavy_check_mark:'
       path: src/LowestCommonAncestor.cpp
       title: src/LowestCommonAncestor.cpp
@@ -54,9 +57,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/UnionFind.cpp
       title: src/UnionFind.cpp
-    - icon: ':warning:'
-      path: src/WarshalFloyd.cpp
-      title: src/WarshalFloyd.cpp
     - icon: ':warning:'
       path: src/bisearch.cpp
       title: src/bisearch.cpp

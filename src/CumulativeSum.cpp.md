@@ -15,7 +15,7 @@ data:
     \ add(const int i, const T &x) { cusum[i + 1] += x; }\n    void build() { for\
     \ (int i = 0; i < (int)cusum.size() - 1; i++) cusum[i + 1] += cusum[i]; }\n\n\
     \    // partial sum of 0-indexed [l, r)\n    T operator()(int l, int r) {\n  \
-    \      if (r < l || r < 0) {\n            assert(0);\n            return T(0);\n\
+    \      if (r < l || r < 0) {\n            assert(0);\n            return T{};\n\
     \        }\n        else return cusum[r] - cusum[l];\n    }\n    // 0-indexed\n\
     \    const T &operator[](int i) { return cusum[i + 1]; }\n    T back() { return\
     \ cusum.back(); }\n};\n\n"
@@ -27,14 +27,14 @@ data:
     \ x; }\n    void build() { for (int i = 0; i < (int)cusum.size() - 1; i++) cusum[i\
     \ + 1] += cusum[i]; }\n\n    // partial sum of 0-indexed [l, r)\n    T operator()(int\
     \ l, int r) {\n        if (r < l || r < 0) {\n            assert(0);\n       \
-    \     return T(0);\n        }\n        else return cusum[r] - cusum[l];\n    }\n\
+    \     return T{};\n        }\n        else return cusum[r] - cusum[l];\n    }\n\
     \    // 0-indexed\n    const T &operator[](int i) { return cusum[i + 1]; }\n \
     \   T back() { return cusum.back(); }\n};\n\n"
   dependsOn: []
   isVerificationFile: false
   path: src/CumulativeSum.cpp
   requiredBy: []
-  timestamp: '2021-01-11 12:34:28+09:00'
+  timestamp: '2021-01-18 14:54:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/CumulativeSum.cpp

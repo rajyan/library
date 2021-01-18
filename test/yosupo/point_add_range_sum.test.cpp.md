@@ -17,7 +17,7 @@ data:
     \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 1 \"src/FenwickTree.cpp\"\
     \n#include <vector>\n\nusing namespace std;\n\ntemplate<class T>\nclass FenwickTree\
     \ {\nprivate:\n    int n;\n    vector<T> bit;\npublic:\n    explicit FenwickTree(int\
-    \ sz, T &&x = T(0)) : n(sz), bit(n + 1) {\n        for (int i = 0; i < n; i++)\
+    \ sz, T &&x = T{}) : n(sz), bit(n + 1) {\n        for (int i = 0; i < n; i++)\
     \ add(i, x);\n    }\n\n    [[nodiscard]] T sum(int k) const {\n        T res =\
     \ 0;\n        for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];\n      \
     \  return res;\n    }\n    [[nodiscard]] T sum(int l, int r) const { return sum(r)\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:28:02+09:00'
+  timestamp: '2021-01-18 14:54:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum.test.cpp

@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#line 1 \"src/FenwickTree.cpp\"\n#include <vector>\n\nusing namespace std;\n\
     \ntemplate<class T>\nclass FenwickTree {\nprivate:\n    int n;\n    vector<T>\
-    \ bit;\npublic:\n    explicit FenwickTree(int sz, T &&x = T(0)) : n(sz), bit(n\
+    \ bit;\npublic:\n    explicit FenwickTree(int sz, T &&x = T{}) : n(sz), bit(n\
     \ + 1) {\n        for (int i = 0; i < n; i++) add(i, x);\n    }\n\n    [[nodiscard]]\
     \ T sum(int k) const {\n        T res = 0;\n        for (k--; k >= 0; k = (k &\
     \ (k + 1)) - 1) res += bit[k];\n        return res;\n    }\n    [[nodiscard]]\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:18:17+09:00'
+  timestamp: '2021-01-18 14:54:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp
