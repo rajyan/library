@@ -12,7 +12,7 @@ data:
     - icon: ':warning:'
       path: src/Compress.cpp
       title: src/Compress.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/CumulativeSum.cpp
       title: src/CumulativeSum.cpp
     - icon: ':heavy_check_mark:'
@@ -99,11 +99,6 @@ data:
     - icon: ':warning:'
       path: src/template.cpp
       title: src/template.cpp
-  - name: test/yosupo
-    pages:
-    - icon: ':warning:'
-      path: test/yosupo/static_range_sum.cpp
-      title: test/yosupo/static_range_sum.cpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -150,6 +145,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/static_range_sum.test.cpp
+      title: test/yosupo/static_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/unionfind.test.cpp
       title: test/yosupo/unionfind.test.cpp
