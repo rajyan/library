@@ -96,6 +96,11 @@ data:
     - icon: ':warning:'
       path: src/template.cpp
       title: src/template.cpp
+  - name: test/aoj
+    pages:
+    - icon: ':warning:'
+      path: test/aoj/GRL_1_A.cpp
+      title: test/aoj/GRL_1_A.cpp
   verificationCategories:
   - name: test/aoj
     pages:
