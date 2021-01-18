@@ -3,6 +3,7 @@
 
 using namespace std;
 
+#include "chmin.cpp"
 #include "Edge.cpp"
 
 template<class T>
@@ -14,7 +15,7 @@ vector<T> BellmanFord(const vector<Edge<T>> &edges, const int V, const int st) {
     for (int i = 0; i < V - 1; i++) {
         for (const auto &e : edges) {
             if (cost[e.from] == inf) continue;
-            cost[e.to] = min(cost[e.to], cost[e.from] + e.cost);
+            chmin(cost[e.to], cost[e.from] + e.cost);
         }
     }
 

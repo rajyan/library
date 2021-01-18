@@ -4,6 +4,7 @@
 
 using namespace std;
 
+#include "chmin.cpp"
 #include "Edge.cpp"
 
 template<class T>
@@ -25,8 +26,7 @@ vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {
         if (cost[now.to] < now.cost) continue;
         for (const Edge<T> &e : edges[now.to]) {
             T tmp_cost = now.cost + e.cost;
-            if (cost[e.to] > tmp_cost) {
-                cost[e.to] = tmp_cost;
+            if (chmin(cost[e.to], tmp_cost)) {
                 pq.emplace(e.to, cost[e.to]);
             }
         }
