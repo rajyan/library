@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/Edge.cpp
     title: src/Edge.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/chmin.cpp
     title: src/chmin.cpp
   _extendedRequiredBy: []

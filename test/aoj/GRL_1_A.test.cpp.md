@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/Dijkstra.cpp
     title: src/Dijkstra.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/Edge.cpp
     title: src/Edge.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/chmin.cpp
     title: src/chmin.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
@@ -65,7 +65,7 @@ data:
   path: test/aoj/GRL_1_A.test.cpp
   requiredBy: []
   timestamp: '2021-01-18 09:47:15+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_A.test.cpp
 layout: document

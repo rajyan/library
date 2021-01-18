@@ -15,10 +15,10 @@ data:
     - icon: ':warning:'
       path: src/CumulativeSum.cpp
       title: src/CumulativeSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/Dijkstra.cpp
       title: src/Dijkstra.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/Edge.cpp
       title: src/Edge.cpp
     - icon: ':heavy_check_mark:'
@@ -63,7 +63,7 @@ data:
     - icon: ':warning:'
       path: src/chmax.cpp
       title: src/chmax.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/chmin.cpp
       title: src/chmin.cpp
     - icon: ':heavy_check_mark:'
@@ -108,7 +108,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
   - name: test/own
