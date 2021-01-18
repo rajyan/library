@@ -1,6 +1,7 @@
 {
 "test/aoj/DSL_1_A.test.cpp": "2021-01-18 09:18:17 +0900",
 "test/aoj/DSL_2_B.test.cpp": "2021-01-18 09:18:17 +0900",
+"test/aoj/GRL_1_A.test.cpp": "2021-01-18 09:47:15 +0900",
 "test/own/RandNum_clz.test.cpp": "2021-01-18 09:28:02 +0900",
 "test/own/RandNum_popcount.test.cpp": "2021-01-18 09:28:02 +0900",
 "test/yosupo/associative_array.test.cpp": "2021-01-18 09:28:02 +0900",
