@@ -1,6 +1,6 @@
 #! /bin/bash -eu
 
-tmp_file=${TMP_FILE:-'/tmp/temp.cpp'}
+tmp_file=${TMP_FILE:-'temp.cpp'}
 templates=${TEMPLATES:-'../library/templates'}
 base_file=${BASE_FILE:-'../library/templates/auto_template.xml'}
 config_dir=${CONFIG_DIR:-'../../AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
@@ -31,7 +31,8 @@ for cppfile in "$@"; do
     echo "$cppfile"
   else
     # expand includes
-    oj-bundle "$cppfile" 2> /dev/null | \
+#    /home/rajyan/.pyenv/shims/oj-bundle "$cppfile" 2> /dev/null | \
+    echo "$(sed -n -r "s/#include \"(.*)\"/${cppfile%/*}\/\1/p" "$cppfile")" "$cppfile" | xargs cat | \
     # delete line starting with (#include | using (namespace|lint) | constexpr)
     sed '/^#line/d; /^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
   fi
