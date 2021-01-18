@@ -50,27 +50,24 @@ data:
     \                v = par[i][v];\n            }\n        }\n        return par[0][u];\n\
     \    }\n\n    int dist(int u, int v) {\n        return depth[u] + depth[v] - 2\
     \ * depth[get_lca(u, v)];\n    }\n};\n#line 6 \"test/yosupo/lca.test.cpp\"\n\n\
-    #include <iostream>\n#include <iomanip>\n#line 10 \"test/yosupo/lca.test.cpp\"\
-    \n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007,\
-    \ INF = 1010101010;\nconstexpr lint LINF = 1LL << 60;\n\nstruct init {\n\tinit()\
-    \ {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed <<\
-    \ setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint N, Q;\n\tcin >> N\
-    \ >> Q;\n\n\tauto edges = make_vec(N, 0, 0);\n\tfor (int i = 0; i < N - 1; i++)\
+    #include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\nstruct init\
+    \ {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout\
+    \ << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint N, Q;\n\
+    \tcin >> N >> Q;\n\n\tauto edges = make_vec(N, 0, 0);\n\tfor (int i = 0; i < N\
+    \ - 1; i++) {\n\t\tint p;\n\t\tcin >> p;\n\t\tedges[p].emplace_back(i + 1);\n\t\
+    \tedges[i + 1].emplace_back(p);\n\t}\n\n\tLCA lca(edges);\n\tfor (int i = 0; i\
+    \ < Q; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout << lca.get_lca(u, v)\
+    \ << \"\\n\";\n\t}\n\n\treturn 0;\n}\n"
+  code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"\
+    ../../src/makevec.cpp\"\n#include \"../../src/LowestCommonAncestor.cpp\"\n\n#include\
+    \ <iostream>\n#include <iomanip>\n\nusing namespace std;\n\nstruct init {\n\t\
+    init() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed\
+    \ << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint N, Q;\n\tcin >>\
+    \ N >> Q;\n\n\tauto edges = make_vec(N, 0, 0);\n\tfor (int i = 0; i < N - 1; i++)\
     \ {\n\t\tint p;\n\t\tcin >> p;\n\t\tedges[p].emplace_back(i + 1);\n\t\tedges[i\
     \ + 1].emplace_back(p);\n\t}\n\n\tLCA lca(edges);\n\tfor (int i = 0; i < Q; i++)\
     \ {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout << lca.get_lca(u, v) << \"\\\
     n\";\n\t}\n\n\treturn 0;\n}\n"
-  code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"\
-    ../../src/makevec.cpp\"\n#include \"../../src/LowestCommonAncestor.cpp\"\n\n#include\
-    \ <iostream>\n#include <iomanip>\n#include <vector>\n\nusing namespace std;\n\
-    using lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr\
-    \ lint LINF = 1LL << 60;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
-    \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint\
-    \ N, Q;\n\tcin >> N >> Q;\n\n\tauto edges = make_vec(N, 0, 0);\n\tfor (int i =\
-    \ 0; i < N - 1; i++) {\n\t\tint p;\n\t\tcin >> p;\n\t\tedges[p].emplace_back(i\
-    \ + 1);\n\t\tedges[i + 1].emplace_back(p);\n\t}\n\n\tLCA lca(edges);\n\tfor (int\
-    \ i = 0; i < Q; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout << lca.get_lca(u,\
-    \ v) << \"\\n\";\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
   - src/makevec.cpp
   - src/LowestCommonAncestor.cpp
@@ -78,7 +75,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2021-01-17 16:10:57+09:00'
+  timestamp: '2021-01-18 09:28:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.test.cpp

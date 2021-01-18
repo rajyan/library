@@ -15,10 +15,10 @@ data:
     - icon: ':warning:'
       path: src/CumulativeSum.cpp
       title: src/CumulativeSum.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/Dijkstra.cpp
       title: src/Dijkstra.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: src/Edge.cpp
       title: src/Edge.cpp
     - icon: ':heavy_check_mark:'
@@ -61,8 +61,11 @@ data:
       path: src/bisearch.cpp
       title: src/bisearch.cpp
     - icon: ':warning:'
-      path: src/chminmax.cpp
-      title: src/chminmax.cpp
+      path: src/chmax.cpp
+      title: src/chmax.cpp
+    - icon: ':x:'
+      path: src/chmin.cpp
+      title: src/chmin.cpp
     - icon: ':heavy_check_mark:'
       path: src/clz.cpp
       title: src/clz.cpp
@@ -96,11 +99,6 @@ data:
     - icon: ':warning:'
       path: src/template.cpp
       title: src/template.cpp
-  - name: test/aoj
-    pages:
-    - icon: ':warning:'
-      path: test/aoj/GRL_1_A.cpp
-      title: test/aoj/GRL_1_A.cpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -110,6 +108,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
+    - icon: ':x:'
+      path: test/aoj/GRL_1_A.test.cpp
+      title: test/aoj/GRL_1_A.test.cpp
   - name: test/own
     pages:
     - icon: ':heavy_check_mark:'

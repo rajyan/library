@@ -44,8 +44,7 @@ data:
     \ + (n >> 16 & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >>\
     \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 6 \"test/own/RandNum_popcount.test.cpp\"\
     \n\n#include <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
-    \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\n\
-    constexpr lint LINF = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
+    \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
     \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
     \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
     \ volatile(\"POPCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
@@ -63,8 +62,7 @@ data:
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/RandNum.cpp\"\n#include \"../../src/popcount.cpp\"\n\n\
     #include <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
-    \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\n\
-    constexpr lint LINF = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
+    \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
     \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
     \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
     \ volatile(\"POPCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
@@ -85,7 +83,7 @@ data:
   isVerificationFile: true
   path: test/own/RandNum_popcount.test.cpp
   requiredBy: []
-  timestamp: '2021-01-17 15:59:53+09:00'
+  timestamp: '2021-01-18 09:28:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/RandNum_popcount.test.cpp

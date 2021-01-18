@@ -5,15 +5,15 @@ data:
   - icon: ':warning:'
     path: src/BellmanFord.cpp
     title: src/BellmanFord.cpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: src/Dijkstra.cpp
     title: src/Dijkstra.cpp
-  - icon: ':warning:'
-    path: test/aoj/GRL_1_A.cpp
-    title: test/aoj/GRL_1_A.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/GRL_1_A.test.cpp
+    title: test/aoj/GRL_1_A.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/Edge.cpp\"\ntemplate<class T>\nstruct Edge {\n    int\
@@ -31,10 +31,10 @@ data:
   requiredBy:
   - src/Dijkstra.cpp
   - src/BellmanFord.cpp
-  - test/aoj/GRL_1_A.cpp
   timestamp: '2021-01-18 08:59:48+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/aoj/GRL_1_A.test.cpp
 documentation_of: src/Edge.cpp
 layout: document
 redirect_from:

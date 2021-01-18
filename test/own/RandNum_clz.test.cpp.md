@@ -41,9 +41,8 @@ data:
     \    int n = 1054 - (int)(data.as_uint64 >> 52);\n    return 32 + n;\n}\n#line\
     \ 6 \"test/own/RandNum_clz.test.cpp\"\n\n#include <cassert>\n#include <bitset>\n\
     #include <iostream>\n#include <iomanip>\n\nusing namespace std;\nusing lint =\
-    \ long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr lint\
-    \ LINF = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
-    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \ long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n     \
+    \   ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
     \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
     \ volatile(\"LZCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
     \    return count;\n}\n\nint main() {\n\n    // random test\n    RandNum ran;\n\
@@ -53,14 +52,13 @@ data:
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/RandNum.cpp\"\n#include \"../../src/clz.cpp\"\n\n#include\
     \ <cassert>\n#include <bitset>\n#include <iostream>\n#include <iomanip>\n\nusing\
-    \ namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007, INF\
-    \ = 1010101010;\nconstexpr lint LINF = 1LL << 60;\n\nstruct init {\n    init()\
-    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
-    \ cout << fixed << setprecision(10);\n    }\n} init_;\n\ninline int test(lint\
-    \ x) {\n    long long count = 0;\n    __asm__ volatile(\"LZCNT %1, %0;\"\n   \
-    \ :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n    return count;\n}\n\nint main()\
-    \ {\n\n    // random test\n    RandNum ran;\n    for (int i = 0; i < 100000000;\
-    \ i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
+    \ namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n   \
+    \     cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout <<\
+    \ fixed << setprecision(10);\n    }\n} init_;\n\ninline int test(lint x) {\n \
+    \   long long count = 0;\n    __asm__ volatile(\"LZCNT %1, %0;\"\n    :\"=r\"\
+    (count)\n    :\"r\"(x)\n    :\n    );\n    return count;\n}\n\nint main() {\n\n\
+    \    // random test\n    RandNum ran;\n    for (int i = 0; i < 100000000; i++)\
+    \ {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
     \ == clz(n));\n    }\n\n    std::cout << \"Hello World\\n\";\n\n    return 0;\n\
     }\n"
   dependsOn:
@@ -69,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/own/RandNum_clz.test.cpp
   requiredBy: []
-  timestamp: '2021-01-17 15:59:53+09:00'
+  timestamp: '2021-01-18 09:28:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/RandNum_clz.test.cpp

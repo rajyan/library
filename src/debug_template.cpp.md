@@ -10,7 +10,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/debug_template.cpp\"\n\n// for MSVC++\n#define _CRT_SECURE_NO_WARNINGS\n\
+  bundledCode: "#line 2 \"src/debug_template.cpp\"\n\n#define _CRT_SECURE_NO_WARNINGS\n\
     \n#include <iostream>\n#include <vector>\n#include <set>\n#include <map>\n\nusing\
     \ namespace std;\n\ntemplate<class T>\nostream &operator<<(ostream &os, const\
     \ vector<T> &vec) {\n    os << \"[ \";\n    for (const auto &e : vec) os << e\
@@ -26,11 +26,11 @@ data:
     \ Head, class... Tail>\nvoid dump(const char *str, Head &&h, Tail &&... t) {\n\
     \    while (*str != ',') cerr << *str++;\n    cerr << \" = \" << h << \"\\n\"\
     ;\n    dump(str + (*(str + 1) == ' ' ? 2 : 1), t...);\n}\n"
-  code: "#pragma once\n\n// for MSVC++\n#define _CRT_SECURE_NO_WARNINGS\n\n#include\
-    \ <iostream>\n#include <vector>\n#include <set>\n#include <map>\n\nusing namespace\
-    \ std;\n\ntemplate<class T>\nostream &operator<<(ostream &os, const vector<T>\
-    \ &vec) {\n    os << \"[ \";\n    for (const auto &e : vec) os << e << \" \";\n\
-    \    os << \"]\\n\";\n    return os;\n}\n\ntemplate<class T>\nostream &operator<<(ostream\
+  code: "#pragma once\n\n#define _CRT_SECURE_NO_WARNINGS\n\n#include <iostream>\n\
+    #include <vector>\n#include <set>\n#include <map>\n\nusing namespace std;\n\n\
+    template<class T>\nostream &operator<<(ostream &os, const vector<T> &vec) {\n\
+    \    os << \"[ \";\n    for (const auto &e : vec) os << e << \" \";\n    os <<\
+    \ \"]\\n\";\n    return os;\n}\n\ntemplate<class T>\nostream &operator<<(ostream\
     \ &os, const set <T> &st) {\n    os << \"[ \";\n    for (const auto &e : st) os\
     \ << e << \" \";\n    os << \"]\\n\";\n    return os;\n}\n\ntemplate<class T1,\
     \ class T2>\nostream &operator<<(ostream &os, const pair <T1, T2> &p) {\n    os\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: false
   path: src/debug_template.cpp
   requiredBy: []
-  timestamp: '2021-01-01 20:28:23+09:00'
+  timestamp: '2021-01-18 09:28:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/184.test.cpp
