@@ -22,7 +22,7 @@ struct init {
 
 int main() {
 
-    int N, M, s, t;
+    int N, M, s;
     cin >> N >> M >> s;
 
     vector<vector<Edge<lint>>> edges(N);

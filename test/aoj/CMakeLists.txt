@@ -25,4 +25,4 @@ endif ()
 
 add_executable(aoj_DSL_1_A.test DSL_1_A.test.cpp)
 add_executable(aoj_DSL_2_B.test DSL_2_B.test.cpp)
-add_executable(aoj_GRL_1_A GRL_1_A.cpp)
+add_executable(aoj_GRL_1_A GRL_1_A.test.cpp)
