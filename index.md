@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FenwickTree.cpp
       title: src/FenwickTree.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/FloydWarshall.cpp
       title: src/FloydWarshall.cpp
     - icon: ':heavy_check_mark:'
@@ -114,6 +114,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_B.test.cpp
       title: test/aoj/GRL_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/GRL_1_C.test.cpp
+      title: test/aoj/GRL_1_C.test.cpp
   - name: test/own
     pages:
     - icon: ':heavy_check_mark:'

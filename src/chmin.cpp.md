@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Dijkstra.cpp
     title: src/Dijkstra.cpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/FloydWarshall.cpp
     title: src/FloydWarshall.cpp
   _extendedVerifiedWith:
@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_B.test.cpp
     title: test/aoj/GRL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_C.test.cpp
+    title: test/aoj/GRL_1_C.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -45,6 +48,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp
+  - test/aoj/GRL_1_C.test.cpp
   - test/aoj/GRL_1_A.test.cpp
 documentation_of: src/chmin.cpp
 layout: document
