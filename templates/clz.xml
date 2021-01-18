@@ -1,4 +1,4 @@
-<template name="myclz" value="" description="" toReformat="false" toShortenFQNames="true">
+<template name="myclz" value="inline int clz(lint x) {&#10;    union {&#10;        unsigned long long as_uint64;&#10;        double as_double;&#10;    } data{};&#10;    data.as_double = (double)x + 0.5;&#10;    int n = 1054 - (int)(data.as_uint64 &gt;&gt; 52);&#10;    return 32 + n;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>

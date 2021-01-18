@@ -1,4 +1,4 @@
-<template name="myedge" value="" description="" toReformat="false" toShortenFQNames="true">
+<template name="myedge" value="template&lt;class T&gt;&#10;struct Edge {&#10;    int from{}, to{};&#10;    T cost;&#10;    Edge() = default;&#10;    Edge(int to, T cost) : to(to), cost(cost) {}&#10;    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}&#10;    bool operator&gt;(const Edge &amp;r) const { return this-&gt;cost &gt; r.cost; }&#10;};&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
