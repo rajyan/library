@@ -99,6 +99,11 @@ data:
     - icon: ':warning:'
       path: src/template.cpp
       title: src/template.cpp
+  - name: test/yosupo
+    pages:
+    - icon: ':warning:'
+      path: test/yosupo/static_range_sum.cpp
+      title: test/yosupo/static_range_sum.cpp
   verificationCategories:
   - name: test/aoj
     pages:
