@@ -1,0 +1,8 @@
+<template name="myfloydwarshall" value="template&lt;class T&gt;&#10;inline bool chmin(T &amp;a, const T b) { return a &gt; b &amp;&amp; (a = b, true); }&#10;&#10;template&lt;class T&gt;&#10;vector&lt;vector&lt;T&gt;&gt; FloydWarshall(const vector&lt;vector&lt;T&gt;&gt; &amp;in, const T diag = T{}) {&#10;    const int N = in.size();&#10;    assert(N == in[0].size());&#10;&#10;    auto d = in;&#10;    for (int i = 0; i &lt; N; i++) d[i][i] = diag;&#10;    for (int k = 0; k &lt; N; k++) {&#10;        for (int i = 0; i &lt; N; i++) {&#10;            for (int j = 0; j &lt; N; j++) {&#10;                chmin(d[i][j], d[i][k] + d[k][j]);&#10;            }&#10;        }&#10;    }&#10;    return d;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>
