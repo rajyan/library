@@ -8,7 +8,7 @@ pair <vector<T>, vector<T>> slide_minmax(const vector<T> &v, int k) {
 
     deque<int> deq_min, deq_max;
     vector<T> ret_min, ret_max;
-    for (int i = 0; i < v.size(); i++) {
+    for (int i = 0; i < (int)v.size(); i++) {
 
         while (!deq_min.empty() && v[deq_min.back()] >= v[i]) deq_min.pop_back();
         while (!deq_max.empty() && v[deq_max.back()] <= v[i]) deq_max.pop_back();

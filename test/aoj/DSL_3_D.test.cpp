@@ -20,10 +20,13 @@ int main() {
 
     int N, K;
     cin >> N >> K;
-    vector<int> v(N);
-    for (int i = 0; i < N; i++) cin >> v[i];
+    vector<int> V(N);
+    for (int i = 0; i < N; i++) cin >> V[i];
 
-    cout << slide_minmax(v, K).first << '\n';
+    auto m = slide_minmax(V, K).first;
+    for (const auto &i : m) {
+        cout << i << (&i == &m.back() ? '\n' : ' ');
+    }
 
     return 0;
 }
