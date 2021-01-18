@@ -20,7 +20,7 @@ public:
     T operator()(int l, int r) {
         if (r < l || r < 0) {
             assert(0);
-            return T(0);
+            return T{};
         }
         else return cusum[r] - cusum[l];
     }

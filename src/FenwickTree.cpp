@@ -8,7 +8,7 @@ private:
     int n;
     vector<T> bit;
 public:
-    explicit FenwickTree(int sz, T &&x = T(0)) : n(sz), bit(n + 1) {
+    explicit FenwickTree(int sz, T &&x = T{}) : n(sz), bit(n + 1) {
         for (int i = 0; i < n; i++) add(i, x);
     }
 
