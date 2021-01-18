@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(AOJ)
+project(aoj)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -23,5 +23,6 @@ else ()
     )
 endif ()
 
-add_executable(AOJ_DSL_1_A.test DSL_1_A.test.cpp)
-add_executable(AOJ_DSL_2_B.test DSL_2_B.test.cpp)
+add_executable(aoj_DSL_1_A.test DSL_1_A.test.cpp)
+add_executable(aoj_DSL_2_B.test DSL_2_B.test.cpp)
+add_executable(aoj_GRL_1_A GRL_1_A.cpp)
