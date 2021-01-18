@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -eux
 
 git add 'templates/*'
 git diff --cached --exit-code --quiet || git commit --amend --no-edit --no-verify
