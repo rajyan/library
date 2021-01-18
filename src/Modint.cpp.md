@@ -10,6 +10,9 @@ data:
     title: src/RollingHash.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_1_B_2.test.cpp
+    title: test/aoj/NTL_1_B_2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1081.test.cpp
     title: test/yukicoder/1081.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,6 +93,7 @@ data:
   timestamp: '2021-01-17 00:12:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/NTL_1_B_2.test.cpp
   - test/yukicoder/1081.test.cpp
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
