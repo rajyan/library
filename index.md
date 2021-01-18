@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: src
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/BellmanFord.cpp
       title: src/BellmanFord.cpp
     - icon: ':heavy_check_mark:'
@@ -111,6 +111,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/GRL_1_B.test.cpp
+      title: test/aoj/GRL_1_B.test.cpp
   - name: test/own
     pages:
     - icon: ':heavy_check_mark:'

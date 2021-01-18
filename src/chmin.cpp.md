@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/BellmanFord.cpp
     title: src/BellmanFord.cpp
   - icon: ':heavy_check_mark:'
@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
     title: test/aoj/GRL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_B.test.cpp
+    title: test/aoj/GRL_1_B.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -37,6 +40,7 @@ data:
   timestamp: '2021-01-18 09:44:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_A.test.cpp
 documentation_of: src/chmin.cpp
 layout: document

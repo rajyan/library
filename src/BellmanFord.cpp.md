@@ -8,9 +8,12 @@ data:
     path: src/chmin.cpp
     title: src/chmin.cpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_B.test.cpp
+    title: test/aoj/GRL_1_B.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/BellmanFord.cpp\"\n#include <vector>\n#include <algorithm>\n\
@@ -50,8 +53,9 @@ data:
   path: src/BellmanFord.cpp
   requiredBy: []
   timestamp: '2021-01-18 09:47:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/GRL_1_B.test.cpp
 documentation_of: src/BellmanFord.cpp
 layout: document
 redirect_from:
