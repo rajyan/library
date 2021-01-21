@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Modint.cpp
     title: src/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/599.test.cpp
     title: test/yukicoder/599.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
@@ -21,25 +21,25 @@ data:
     \nusing namespace std;\n\n#line 1 \"src/Modint.cpp\"\n#include <iostream>\n\n\
     using namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\
     \n// #define RUNTIME_MODINT\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n\
-    #else\ntemplate<int Modulo>\n#endif\nclass Mint {\npublic:\n    constexpr Mint(lint\
-    \ v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
-    \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
-    \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if\
-    \ (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
-    \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
-    \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
-    \ a = r.val, b = Modulo, u = 1, v = 0;\n        while (b) {\n            lint\
-    \ t = a / b;\n            a -= t * b;\n            swap(a, b);\n            u\
-    \ -= t * v;\n            swap(u, v);\n        }\n        val = val * u % Modulo;\n\
-    \        if (val < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr\
-    \ Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }\n\
-    \    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this)\
-    \ -= r; }\n    constexpr Mint operator*(const Mint &r) const noexcept { return\
-    \ Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint &r) const noexcept\
-    \ { return Mint(*this) /= r; }\n\n    constexpr Mint operator-() const noexcept\
-    \ { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const Mint\
-    \ &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
+    #else\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
+    \ Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\
+    \n    constexpr Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n\
+    \        if (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n   \
+    \ constexpr Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n\
+    \        if (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr\
+    \ Mint &operator*=(const Mint &r) noexcept {\n        val = val * r.val % Modulo;\n\
+    \        return *this;\n    }\n    constexpr Mint &operator/=(const Mint &r) noexcept\
+    \ {\n        lint a = r.val, b = Modulo, u = 1, v = 0;\n        while (b) {\n\
+    \            lint t = a / b;\n            a -= t * b;\n            swap(a, b);\n\
+    \            u -= t * v;\n            swap(u, v);\n        }\n        val = val\
+    \ * u % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n\
+    \    }\n\n    constexpr Mint operator+(const Mint &r) const noexcept { return\
+    \ Mint(*this) += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept\
+    \ { return Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const\
+    \ noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint\
+    \ &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
+    \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
     \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
@@ -47,11 +47,11 @@ data:
     \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
     \ constexpr Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n\
     \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
-    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\nprivate:\n\
-    \    lint val;\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n\
-    #else\nusing mint = Mint<MOD>;\n#endif\n\n#line 7 \"src/RollingHash.cpp\"\n\n\
-    //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
-    class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
+    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
+    #ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n#else\nusing mint\
+    \ = Mint<MOD>;\n#endif\n\n#line 7 \"src/RollingHash.cpp\"\n\n//// mod, base from\
+    \ https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\nclass\
+    \ RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
     \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
     \    const int base2 = 2147483627;\n    int sz;\n\npublic:\n    explicit RollingHash(const\
     \ string &s) : sz(s.size()) {\n\n        hash1.assign(sz + 1, 0);\n        pow1.assign(sz\
@@ -82,8 +82,8 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-21 23:07:44+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-01-21 23:13:02+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
