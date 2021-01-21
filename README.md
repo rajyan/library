@@ -1,23 +1,19 @@
-# README
+# Library
 
 [![Actions Status](https://github.com/rajyan/library/workflows/verify/badge.svg)](https://github.com/rajyan/library/actions) 
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://rajyan.github.io/library/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![C++](https://img.shields.io/badge/C++-17-purple)
 
-## src
-
-競技プログラミング用のライブラリです。  
+競技プログラミング用のライブラリです。
 
 バグや改善点などありましたら、[@unagiunag](https://twitter.com/unagiunag) まで指摘していただけるとありがたいです。
 
-### verify
+## src
 
-旧: [verifyに使用した問題一覧](verify.md)（移行後削除予定）  
-新: https://github.com/online-judge-tools/verification-helper
+ライブラリのコードです。
 
-## snippets (deprecated)
-
-競技プログラミングのVisual Studio用のスニペットです。CLionに移行したため、現在は更新・メンテナンスされていません。
+[Online Judge Verification Helper](https://github.com/online-judge-tools/verification-helper) を使用して、verifyを行っています。
 
 ## templates
 
@@ -26,4 +22,12 @@ srcの内容は全てスニペットになっているのに加えて、競技�
 
 ## scripts
 
-srcの内容からLive templateを生成するスクリプトや自動更新のgit hooksなどのスクリプトが入っています。
+srcの内容からLive templateを生成したり、自動で更新したりするためのgit hooksなどが入っています。
+
+## test
+
+テストコードです。
+
+## snippets (deprecated)
+
+競技プログラミングのVisual Studio用のスニペットです。CLionに移行したため、現在は更新・メンテナンスされていません。
