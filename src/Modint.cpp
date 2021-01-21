@@ -4,10 +4,15 @@ using namespace std;
 using lint = long long;
 constexpr int MOD = 1000000007;
 
-template<int Modulo = MOD>
-struct Mint {
+// #define RUNTIME_MODINT
 
-    lint val;
+#ifdef RUNTIME_MODINT
+template<int &Modulo>
+#else
+template<int Modulo>
+#endif
+class Mint {
+public:
     constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
 
     constexpr Mint &operator+=(const Mint &r) noexcept {
@@ -66,6 +71,14 @@ struct Mint {
         }
         return res;
     }
+private:
+    lint val;
 };
 
-using mint = Mint<>;
+#ifdef RUNTIME_MODINT
+int RMOD;
+using rmint = Mint<RMOD>;
+#else
+using mint = Mint<MOD>;
+#endif
+
