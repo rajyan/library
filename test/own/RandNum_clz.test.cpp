@@ -39,7 +39,7 @@ int main() {
         assert(test(n) == clz(n));
     }
 
-    std::cout << "Hello World\n";
+    cout << "Hello World\n";
 
     return 0;
 }
