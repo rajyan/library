@@ -11,8 +11,9 @@ template<int &Modulo>
 #else
 template<int Modulo>
 #endif
-class Mint {
-public:
+struct Mint {
+
+    lint val;
     constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }
 
     constexpr Mint &operator+=(const Mint &r) noexcept {
@@ -71,8 +72,6 @@ public:
         }
         return res;
     }
-private:
-    lint val;
 };
 
 #ifdef RUNTIME_MODINT
