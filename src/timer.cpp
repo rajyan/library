@@ -11,7 +11,7 @@ public:
         start = chrono::high_resolution_clock::now();
     }
 
-    chrono::microseconds::rep elapsed() {
+    [[nodiscard]] chrono::microseconds::rep elapsed() const {
         auto end = chrono::high_resolution_clock::now();
         return chrono::duration_cast<chrono::microseconds>(end - start).count();
     }
