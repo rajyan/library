@@ -41,15 +41,15 @@ data:
   isVerificationFile: false
   path: src/chmin.cpp
   requiredBy:
-  - src/FloydWarshall.cpp
-  - src/Dijkstra.cpp
   - src/BellmanFord.cpp
+  - src/Dijkstra.cpp
+  - src/FloydWarshall.cpp
   timestamp: '2021-01-18 09:44:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/GRL_1_A.test.cpp
   - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_C.test.cpp
-  - test/aoj/GRL_1_A.test.cpp
 documentation_of: src/chmin.cpp
 layout: document
 redirect_from:

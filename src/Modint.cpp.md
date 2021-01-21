@@ -94,9 +94,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/NTL_1_B_2.test.cpp
-  - test/yukicoder/1081.test.cpp
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
+  - test/yukicoder/1081.test.cpp
 documentation_of: src/Modint.cpp
 layout: document
 redirect_from:

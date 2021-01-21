@@ -99,6 +99,9 @@ data:
     - icon: ':warning:'
       path: src/template.cpp
       title: src/template.cpp
+    - icon: ':warning:'
+      path: src/timer.cpp
+      title: src/timer.cpp
   verificationCategories:
   - name: test/aoj
     pages:
