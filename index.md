@@ -33,7 +33,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/LowestCommonAncestor.cpp
       title: src/LowestCommonAncestor.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/Modint.cpp
       title: src/Modint.cpp
     - icon: ':warning:'
@@ -48,7 +48,7 @@ data:
     - icon: ':warning:'
       path: src/RectangleSum.cpp
       title: src/RectangleSum.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/RollingHash.cpp
       title: src/RollingHash.cpp
     - icon: ':warning:'
@@ -78,9 +78,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/fnv1a.cpp
       title: src/fnv1a.cpp
-    - icon: ':warning:'
-      path: src/in_grid.cpp
-      title: src/in_grid.cpp
     - icon: ':heavy_check_mark:'
       path: src/makevec.cpp
       title: src/makevec.cpp
@@ -162,10 +159,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/184.test.cpp
       title: test/yukicoder/184.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/430.test.cpp
       title: test/yukicoder/430.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/599.test.cpp
       title: test/yukicoder/599.test.cpp
 layout: toppage

@@ -47,8 +47,8 @@ data:
     \ volatile(\"LZCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
     \    return count;\n}\n\nint main() {\n\n    // random test\n    RandNum ran;\n\
     \    for (int i = 0; i < 100000000; i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n\
-    \        assert(test(n) == clz(n));\n    }\n\n    std::cout << \"Hello World\\\
-    n\";\n\n    return 0;\n}\n"
+    \        assert(test(n) == clz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\
+    \n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/RandNum.cpp\"\n#include \"../../src/clz.cpp\"\n\n#include\
     \ <cassert>\n#include <bitset>\n#include <iostream>\n#include <iomanip>\n\nusing\
@@ -59,15 +59,14 @@ data:
     (count)\n    :\"r\"(x)\n    :\n    );\n    return count;\n}\n\nint main() {\n\n\
     \    // random test\n    RandNum ran;\n    for (int i = 0; i < 100000000; i++)\
     \ {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
-    \ == clz(n));\n    }\n\n    std::cout << \"Hello World\\n\";\n\n    return 0;\n\
-    }\n"
+    \ == clz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   dependsOn:
   - src/RandNum.cpp
   - src/clz.cpp
   isVerificationFile: true
   path: test/own/RandNum_clz.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:28:02+09:00'
+  timestamp: '2021-01-21 20:20:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/RandNum_clz.test.cpp

@@ -49,16 +49,16 @@ data:
     \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
     \ volatile(\"POPCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
     \    return count;\n}\n\nint main() {\n\n    // meaning of magic numbers\n// \
-    \   std::cout << std::hex;\n//    std::cout << 0b0101010101010101010101010101010101010101010101010101010101010101\
-    \ << '\\n';\n//    std::cout << 0b0011001100110011001100110011001100110011001100110011001100110011\
-    \ << '\\n';\n//    std::cout << 0b0000111100001111000011110000111100001111000011110000111100001111\
-    \ << '\\n';\n//    std::cout << 0b0000000011111111000000001111111100000000111111110000000011111111\
-    \ << '\\n';\n//    std::cout << 0b0000000000000000111111111111111100000000000000001111111111111111\
-    \ << '\\n';\n//    std::cout << 0b0000000000000000000000000000000011111111111111111111111111111111\
+    \   cout << hex;\n//    cout << 0b0101010101010101010101010101010101010101010101010101010101010101\
+    \ << '\\n';\n//    cout << 0b0011001100110011001100110011001100110011001100110011001100110011\
+    \ << '\\n';\n//    cout << 0b0000111100001111000011110000111100001111000011110000111100001111\
+    \ << '\\n';\n//    cout << 0b0000000011111111000000001111111100000000111111110000000011111111\
+    \ << '\\n';\n//    cout << 0b0000000000000000111111111111111100000000000000001111111111111111\
+    \ << '\\n';\n//    cout << 0b0000000000000000000000000000000011111111111111111111111111111111\
     \ << '\\n';\n\n    // random test\n    RandNum ran;\n    for (int i = 0; i < 100000000;\
     \ i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
-    \ == popcount(n));\n    }\n\n    std::cout << \"Hello World\\n\";\n\n    return\
-    \ 0;\n}\n"
+    \ == popcount(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n\
+    }\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/RandNum.cpp\"\n#include \"../../src/popcount.cpp\"\n\n\
     #include <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
@@ -67,23 +67,23 @@ data:
     \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
     \ volatile(\"POPCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
     \    return count;\n}\n\nint main() {\n\n    // meaning of magic numbers\n// \
-    \   std::cout << std::hex;\n//    std::cout << 0b0101010101010101010101010101010101010101010101010101010101010101\
-    \ << '\\n';\n//    std::cout << 0b0011001100110011001100110011001100110011001100110011001100110011\
-    \ << '\\n';\n//    std::cout << 0b0000111100001111000011110000111100001111000011110000111100001111\
-    \ << '\\n';\n//    std::cout << 0b0000000011111111000000001111111100000000111111110000000011111111\
-    \ << '\\n';\n//    std::cout << 0b0000000000000000111111111111111100000000000000001111111111111111\
-    \ << '\\n';\n//    std::cout << 0b0000000000000000000000000000000011111111111111111111111111111111\
+    \   cout << hex;\n//    cout << 0b0101010101010101010101010101010101010101010101010101010101010101\
+    \ << '\\n';\n//    cout << 0b0011001100110011001100110011001100110011001100110011001100110011\
+    \ << '\\n';\n//    cout << 0b0000111100001111000011110000111100001111000011110000111100001111\
+    \ << '\\n';\n//    cout << 0b0000000011111111000000001111111100000000111111110000000011111111\
+    \ << '\\n';\n//    cout << 0b0000000000000000111111111111111100000000000000001111111111111111\
+    \ << '\\n';\n//    cout << 0b0000000000000000000000000000000011111111111111111111111111111111\
     \ << '\\n';\n\n    // random test\n    RandNum ran;\n    for (int i = 0; i < 100000000;\
     \ i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
-    \ == popcount(n));\n    }\n\n    std::cout << \"Hello World\\n\";\n\n    return\
-    \ 0;\n}\n"
+    \ == popcount(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n\
+    }\n"
   dependsOn:
   - src/RandNum.cpp
   - src/popcount.cpp
   isVerificationFile: true
   path: test/own/RandNum_popcount.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:28:02+09:00'
+  timestamp: '2021-01-21 20:20:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/RandNum_popcount.test.cpp

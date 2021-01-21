@@ -1,26 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/Modint.cpp
     title: src/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/599.test.cpp
     title: test/yukicoder/599.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
   bundledCode: "#line 1 \"src/RollingHash.cpp\"\n#include <vector>\n#include <string>\n\
     \nusing namespace std;\n\n#line 1 \"src/Modint.cpp\"\n#include <iostream>\n\n\
     using namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\
-    \ntemplate<int Modulo = MOD>\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint\
+    \n// #define RUNTIME_MODINT\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n\
+    #else\ntemplate<int Modulo>\n#endif\nclass Mint {\npublic:\n    constexpr Mint(lint\
     \ v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
     \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
     \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
@@ -46,8 +47,10 @@ data:
     \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
     \ constexpr Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n\
     \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
-    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
-    using mint = Mint<>;\n#line 7 \"src/RollingHash.cpp\"\n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
+    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\nprivate:\n\
+    \    lint val;\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n\
+    #else\nusing mint = Mint<MOD>;\n#endif\n\n#line 7 \"src/RollingHash.cpp\"\n\n\
+    //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
     class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
     \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
     \    const int base2 = 2147483627;\n    int sz;\n\npublic:\n    explicit RollingHash(const\
@@ -79,8 +82,8 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-17 16:27:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-01-21 23:07:44+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
