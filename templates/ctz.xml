@@ -1,0 +1,8 @@
+<template name="myctz" value="inline int popcount(lint n) {&#10;    n = (n &amp; 0x5555555555555555) + (n &gt;&gt; 1 &amp; 0x5555555555555555);&#10;    n = (n &amp; 0x3333333333333333) + (n &gt;&gt; 2 &amp; 0x3333333333333333);&#10;    n = (n &amp; 0x0f0f0f0f0f0f0f0f) + (n &gt;&gt; 4 &amp; 0x0f0f0f0f0f0f0f0f);&#10;    n = (n &amp; 0x00ff00ff00ff00ff) + (n &gt;&gt; 8 &amp; 0x00ff00ff00ff00ff);&#10;    n = (n &amp; 0x0000ffff0000ffff) + (n &gt;&gt; 16 &amp; 0x0000ffff0000ffff);&#10;    n = (n &amp; 0x00000000ffffffff) + (n &gt;&gt; 32 &amp; 0x00000000ffffffff);&#10;    return n;&#10;}&#10;&#10;inline int ctz(lint n) {&#10;    return popcount(~n &amp; (n - 1));&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+        <option name="OC_STATEMENT_C" value="true"/>
+        <option name="OC_STATEMENT_CPP" value="true"/>
+    </context>
+</template>
