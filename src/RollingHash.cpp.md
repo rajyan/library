@@ -20,24 +20,23 @@ data:
   bundledCode: "#line 1 \"src/RollingHash.cpp\"\n#include <vector>\n#include <string>\n\
     \nusing namespace std;\n\n#line 1 \"src/Modint.cpp\"\n#include <iostream>\n\n\
     using namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\
-    \n// #define RUNTIME_MODINT\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n\
-    #else\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
-    \ Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\
-    \n    constexpr Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n\
-    \        if (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n   \
-    \ constexpr Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n\
-    \        if (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator*=(const Mint &r) noexcept {\n        val = val * r.val % Modulo;\n\
-    \        return *this;\n    }\n    constexpr Mint &operator/=(const Mint &r) noexcept\
-    \ {\n        lint a = r.val, b = Modulo, u = 1, v = 0;\n        while (b) {\n\
-    \            lint t = a / b;\n            a -= t * b;\n            swap(a, b);\n\
-    \            u -= t * v;\n            swap(u, v);\n        }\n        val = val\
-    \ * u % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n\
-    \    }\n\n    constexpr Mint operator+(const Mint &r) const noexcept { return\
-    \ Mint(*this) += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept\
-    \ { return Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const\
-    \ noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint\
-    \ &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\ntemplate<int Modulo>\n\
+    #endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v = 0) noexcept:\
+    \ val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr Mint &operator+=(const\
+    \ Mint &r) noexcept {\n        val += r.val;\n        if (val >= Modulo) val -=\
+    \ Modulo;\n        return *this;\n    }\n    constexpr Mint &operator-=(const\
+    \ Mint &r) noexcept {\n        val -= r.val;\n        if (val < 0) val += Modulo;\n\
+    \        return *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept\
+    \ {\n        val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
+    \ Mint &operator/=(const Mint &r) noexcept {\n        lint a = r.val, b = Modulo,\
+    \ u = 1, v = 0;\n        while (b) {\n            lint t = a / b;\n          \
+    \  a -= t * b;\n            swap(a, b);\n            u -= t * v;\n           \
+    \ swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val < 0)\
+    \ val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
+    \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
+    \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
+    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
     \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
@@ -82,7 +81,7 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-21 23:13:02+09:00'
+  timestamp: '2021-01-22 23:51:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/599.test.cpp
