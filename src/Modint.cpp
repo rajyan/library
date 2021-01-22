@@ -4,8 +4,6 @@ using namespace std;
 using lint = long long;
 constexpr int MOD = 1000000007;
 
-// #define RUNTIME_MODINT
-
 #ifdef RUNTIME_MODINT
 template<int &Modulo>
 #else
