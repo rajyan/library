@@ -5,26 +5,29 @@ data:
     path: src/Modint.cpp
     title: src/Modint.cpp
   - icon: ':heavy_check_mark:'
+    path: src/Prime.cpp
+    title: src/Prime.cpp
+  - icon: ':heavy_check_mark:'
     path: src/ctz.cpp
     title: src/ctz.cpp
   - icon: ':heavy_check_mark:'
     path: src/popcount.cpp
     title: src/popcount.cpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo/enumerate_primes.test.cpp
-    title: test/yosupo/enumerate_primes.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/enumerate_primes
     links:
-    - http://miller-rabin.appspot.com/
-    - https://cp-algorithms.com/algebra/prime-sieve-linear.html
-  bundledCode: "#line 1 \"src/Prime.cpp\"\n#include <vector>\n\nusing namespace std;\n\
-    using lint = long long;\n\n#define RUNTIME_MODINT\n#line 1 \"src/Modint.cpp\"\n\
-    #include <iostream>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
-    \ int MOD = 1000000007;\n\n// #define RUNTIME_MODINT\n\n#ifdef RUNTIME_MODINT\n\
+    - https://judge.yosupo.jp/problem/enumerate_primes
+  bundledCode: "#line 1 \"test/yosupo/enumerate_primes.test.cpp\"\n\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n#include <iostream>\n\
+    #include <iomanip>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"src/Prime.cpp\"\
+    \n\nusing namespace std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n\
+    #line 2 \"src/Modint.cpp\"\n\nusing namespace std;\nusing lint = long long;\n\
+    constexpr int MOD = 1000000007;\n\n// #define RUNTIME_MODINT\n\n#ifdef RUNTIME_MODINT\n\
     template<int &Modulo>\n#else\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n\
     \    lint val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if\
     \ (val < 0) val += Modulo; }\n\n    constexpr Mint &operator+=(const Mint &r)\
@@ -86,49 +89,40 @@ data:
     \        for (const lint base : {2, 325, 9375, 28178, 450775, 9780504, 1795265022})\
     \ {\n            rmint a = rmint(base).pow(d);\n            int i = s;\n     \
     \       while (a != 1 && a != -1 && a != 0 && i--) a *= a;\n            if (a\
-    \ != -1 && i != s) return false;\n        }\n        return true;\n    }\n};\n"
-  code: "#include <vector>\n\nusing namespace std;\nusing lint = long long;\n\n#define\
-    \ RUNTIME_MODINT\n#include \"Modint.cpp\"\n\n#include \"ctz.cpp\"\n\nclass Prime\
-    \ {\n    vector<int> prime;\n    vector<int> min_pf; // min_pf[i] = minimum prime\
-    \ factor of i\n    // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
-    \    void linearSieve(int N) {\n        min_pf[0] = min_pf[1] = -1;\n        for\
-    \ (int i = 2; i < N; i++) {\n            if (min_pf[i] == 0) {\n             \
-    \   prime.emplace_back(i);\n                min_pf[i] = i;\n            }\n  \
-    \          for (int j : prime) {\n                if (j > min_pf[i] || i * j >=\
-    \ N) break;\n                min_pf[i * j] = j;\n            }\n        }\n  \
-    \  }\n\n    void Eratosthenes(lint N) {\n        for (lint i = 2; i * i < N; i++)\
-    \ {\n            if (pTable[i]) {\n                for (int j = 0; i * (j + 2)\
-    \ < N; j++) pTable[i * (j + 2)] = false;\n            }\n        }\n    }\n\n\
-    public:\n    vector<bool> pTable;\n\n    explicit Prime(int N, bool useLinear)\
-    \ : min_pf(N + 1) { linearSieve(N + 1); }\n    explicit Prime(int N = 1100000)\
-    \ : pTable(N + 1, true) { Eratosthenes(N + 1); }\n\n    [[nodiscard]] vector<pair<lint,\
-    \ int>> factorize(lint n) {\n        vector<pair<lint, int>> res;\n        for\
-    \ (lint i = 2; i * i <= n; i++) {\n            int cnt = 0;\n            while\
-    \ (n % i == 0) {\n                cnt++;\n                n /= i;\n          \
-    \  }\n            if (cnt) res.emplace_back(i, cnt);\n        }\n        if (n\
-    \ != 1) res.emplace_back(n, 1);\n\n        return res;\n    }\n\n    // Miller-Rabin\n\
-    \    [[nodiscard]] bool isPrime(lint n) {\n        if (n <= 1 || n % 2 == 0) return\
-    \ (n == 2);\n        const int s = ctz(n - 1);\n        const lint d = (n - 1)\
-    \ >> s;\n        // set runtime mod\n        RMOD = n;\n        // http://miller-rabin.appspot.com/\n\
-    \        for (const lint base : {2, 325, 9375, 28178, 450775, 9780504, 1795265022})\
-    \ {\n            rmint a = rmint(base).pow(d);\n            int i = s;\n     \
-    \       while (a != 1 && a != -1 && a != 0 && i--) a *= a;\n            if (a\
-    \ != -1 && i != s) return false;\n        }\n        return true;\n    }\n};\n"
+    \ != -1 && i != s) return false;\n        }\n        return true;\n    }\n};\n\
+    #line 11 \"test/yosupo/enumerate_primes.test.cpp\"\n\nstruct init {\n    init()\
+    \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
+    \ cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int\
+    \ N, A, B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt = 0;\n   \
+    \ vector<int> ans;\n    for (int i = 2; i <= N; i++) {\n        if (p.pTable[i])\
+    \ {\n            if ((cnt++ - B) % A == 0) ans.emplace_back(i);\n        }\n \
+    \   }\n\n    cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item\
+    \ : ans) {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
+  code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
+    #include <iostream>\n#include <iomanip>\n#include <vector>\n\nusing namespace\
+    \ std;\n\n#include \"../../src/Prime.cpp\"\n\nstruct init {\n    init() {\n  \
+    \      cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout <<\
+    \ fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N, A,\
+    \ B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt = 0;\n    vector<int>\
+    \ ans;\n    for (int i = 2; i <= N; i++) {\n        if (p.pTable[i]) {\n     \
+    \       if ((cnt++ - B) % A == 0) ans.emplace_back(i);\n        }\n    }\n\n \
+    \   cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item : ans)\
+    \ {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
   dependsOn:
+  - src/Prime.cpp
   - src/Modint.cpp
   - src/ctz.cpp
   - src/popcount.cpp
-  isVerificationFile: false
-  path: src/Prime.cpp
+  isVerificationFile: true
+  path: test/yosupo/enumerate_primes.test.cpp
   requiredBy: []
   timestamp: '2021-01-22 23:24:47+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yosupo/enumerate_primes.test.cpp
-documentation_of: src/Prime.cpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/yosupo/enumerate_primes.test.cpp
 layout: document
 redirect_from:
-- /library/src/Prime.cpp
-- /library/src/Prime.cpp.html
-title: src/Prime.cpp
+- /verify/test/yosupo/enumerate_primes.test.cpp
+- /verify/test/yosupo/enumerate_primes.test.cpp.html
+title: test/yosupo/enumerate_primes.test.cpp
 ---

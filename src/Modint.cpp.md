@@ -6,12 +6,18 @@ data:
     path: src/Combination.cpp
     title: src/Combination.cpp
   - icon: ':heavy_check_mark:'
+    path: src/Prime.cpp
+    title: src/Prime.cpp
+  - icon: ':heavy_check_mark:'
     path: src/RollingHash.cpp
     title: src/RollingHash.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B_2.test.cpp
     title: test/aoj/NTL_1_B_2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/enumerate_primes.test.cpp
+    title: test/yosupo/enumerate_primes.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1081.test.cpp
     title: test/yukicoder/1081.test.cpp
@@ -93,10 +99,12 @@ data:
   path: src/Modint.cpp
   requiredBy:
   - src/RollingHash.cpp
+  - src/Prime.cpp
   - src/Combination.cpp
   timestamp: '2021-01-21 23:13:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo/enumerate_primes.test.cpp
   - test/aoj/NTL_1_B_2.test.cpp
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp

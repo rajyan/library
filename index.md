@@ -39,7 +39,7 @@ data:
     - icon: ':warning:'
       path: src/Point2D.cpp
       title: src/Point2D.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/Prime.cpp
       title: src/Prime.cpp
     - icon: ':heavy_check_mark:'
@@ -69,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/clz.cpp
       title: src/clz.cpp
+    - icon: ':heavy_check_mark:'
+      path: src/ctz.cpp
+      title: src/ctz.cpp
     - icon: ':heavy_check_mark:'
       path: src/debug_template.cpp
       title: src/debug_template.cpp
@@ -132,6 +135,9 @@ data:
       path: test/own/RandNum_clz.test.cpp
       title: test/own/RandNum_clz.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/own/RandNum_ctz.test.cpp
+      title: test/own/RandNum_ctz.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/own/RandNum_popcount.test.cpp
       title: test/own/RandNum_popcount.test.cpp
   - name: test/yosupo
@@ -139,6 +145,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/associative_array.test.cpp
       title: test/yosupo/associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/enumerate_primes.test.cpp
+      title: test/yosupo/enumerate_primes.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp

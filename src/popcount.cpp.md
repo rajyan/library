@@ -1,11 +1,23 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/Prime.cpp
+    title: src/Prime.cpp
+  - icon: ':heavy_check_mark:'
+    path: src/ctz.cpp
+    title: src/ctz.cpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/own/RandNum_ctz.test.cpp
+    title: test/own/RandNum_ctz.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/own/RandNum_popcount.test.cpp
     title: test/own/RandNum_popcount.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/enumerate_primes.test.cpp
+    title: test/yosupo/enumerate_primes.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -26,11 +38,15 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/popcount.cpp
-  requiredBy: []
+  requiredBy:
+  - src/ctz.cpp
+  - src/Prime.cpp
   timestamp: '2021-01-01 20:28:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo/enumerate_primes.test.cpp
   - test/own/RandNum_popcount.test.cpp
+  - test/own/RandNum_ctz.test.cpp
 documentation_of: src/popcount.cpp
 layout: document
 redirect_from:

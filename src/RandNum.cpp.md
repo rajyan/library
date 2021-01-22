@@ -7,6 +7,9 @@ data:
     path: test/own/RandNum_clz.test.cpp
     title: test/own/RandNum_clz.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/own/RandNum_ctz.test.cpp
+    title: test/own/RandNum_ctz.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/own/RandNum_popcount.test.cpp
     title: test/own/RandNum_popcount.test.cpp
   _pathExtension: cpp
@@ -59,6 +62,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/own/RandNum_popcount.test.cpp
+  - test/own/RandNum_ctz.test.cpp
   - test/own/RandNum_clz.test.cpp
 documentation_of: src/RandNum.cpp
 layout: document
