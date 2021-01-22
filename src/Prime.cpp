@@ -3,13 +3,14 @@
 using namespace std;
 using lint = long long;
 
-class Prime {
-private:
-    vector<int> min_pf; // min_pf[i] = minimum prime factor of i
-    vector<int> prime;
+#define RUNTIME_MODINT
+#include "Modint.cpp"
 
+#include "ctz.cpp"
+
+class Prime {
     // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html
-    void sieve(int N) {
+    void lsieve(int N) {
         min_pf[0] = min_pf[1] = -1;
         for (int i = 2; i < N; i++) {
             if (min_pf[i] == 0) {
@@ -23,50 +24,49 @@ private:
         }
     }
 
+    void Eratosthenes(lint N) {
+        for (lint i = 2; i * i < N; i++) {
+            if (tb[i]) for (int j = 0; i * (j + 2) < N; j++) tb[i * (j + 2)] = 0;
+        }
+    }
+
 public:
-    explicit Prime(int N = 1100000) : min_pf(N + 1) { sieve(N + 1); }
+
+    vector<int> min_pf; // min_pf[i] = minimum prime factor of i
+    vector<int> prime;
+
+    explicit Prime(int N, bool useLinear) : min_pf(N + 1) { lsieve(N + 1); }
+    explicit Prime(int N = 1100000) : tb(N + 1, 1) { Eratosthenes(N + 1); }
 
     [[nodiscard]] vector<pair<lint, int>> factorize(lint n) {
-        vector<pair<lint, int>> res;
-        lint sz = (lint)min_pf.size();
 
-        if (n >= sz) {
-            for (lint i = 2; i * i <= n; i++) {
-                int cnt = 0;
-                while (n % i == 0) {
-                    cnt++;
-                    n /= i;
-                }
-                if (cnt) res.emplace_back(i, cnt);
-            }
-            res.emplace_back(n, 1);
-        }
-        else {
-            int prev = min_pf[n], cnt = -1;
-            while (n > 0) {
-                int now = min_pf[n];
-                n /= now;
+        vector<pair<lint, int>> res;
+        for (lint i = 2; i * i <= n; i++) {
+            int cnt = 0;
+            while (n % i == 0) {
                 cnt++;
-                if (prev != now) {
-                    res.emplace_back(prev, cnt);
-                    prev = now;
-                    cnt = 0;
-                }
+                n /= i;
             }
+            if (cnt) res.emplace_back(i, cnt);
         }
+        if (n != 1) res.emplace_back(n, 1);
 
         return res;
     }
 
-    // verified using boost miller_rabin_test https://wandbox.org/permlink/6YepW3J9SQNFwWxu
+    // Miller-Rabin
     [[nodiscard]] bool isPrime(lint n) {
-        if (n < (int)(min_pf.size())) return min_pf[n] == n;
-        else if (n == 2 || n == 3) return true;
-        else if (n % 2 == 0 || n % 3 == 0) return false;
-        else if (n % 6 != 1 && n % 6 != 5) return false;
-        for (lint i = 5; i * i <= n; i += 6) {
-            if (n % i == 0) return false;
-            if (n % (i + 2) == 0) return false;
+        if (n <= 1 || n % 2 == 0) return (n == 2);
+        const int s = ctz(n - 1);
+        const lint d = (n - 1) >> s;
+        // set runtime mod
+        RMOD = n;
+        // http://miller-rabin.appspot.com/
+        for (const lint base : {2, 325, 9375, 28178, 450775, 9780504, 1795265022}) {
+            rmint a = rmint(base).pow(d);
+            int i = s;
+            while (a != 1 && a != -1 && a != 0 && i--) a *= a;
+            if (a != -1 && i != s) return false;
         }
         return true;
     }
