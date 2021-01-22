@@ -24,4 +24,5 @@ else ()
 endif ()
 
 add_executable(own_RandNum_clz.test RandNum_clz.test.cpp)
+add_executable(own_RandNum_ctz.test RandNum_ctz.test.cpp)
 add_executable(own_RandNum_popcount.test RandNum_popcount.test.cpp)

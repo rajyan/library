@@ -9,9 +9,10 @@ using lint = long long;
 #include "ctz.cpp"
 
 class Prime {
+    vector<int> prime;
     vector<int> min_pf; // min_pf[i] = minimum prime factor of i
     // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html
-    void lsieve(int N) {
+    void linearSieve(int N) {
         min_pf[0] = min_pf[1] = -1;
         for (int i = 2; i < N; i++) {
             if (min_pf[i] == 0) {
@@ -28,7 +29,6 @@ class Prime {
     void Eratosthenes(lint N) {
         for (lint i = 2; i * i < N; i++) {
             if (pTable[i]) {
-                prime.emplace_back(i);
                 for (int j = 0; i * (j + 2) < N; j++) pTable[i * (j + 2)] = false;
             }
         }
@@ -36,9 +36,8 @@ class Prime {
 
 public:
     vector<bool> pTable;
-    vector<int> prime;
 
-    explicit Prime(int N, bool useLinear) : min_pf(N + 1) { lsieve(N + 1); }
+    explicit Prime(int N, bool useLinear) : min_pf(N + 1) { linearSieve(N + 1); }
     explicit Prime(int N = 1100000) : pTable(N + 1, true) { Eratosthenes(N + 1); }
 
     [[nodiscard]] vector<pair<lint, int>> factorize(lint n) {
