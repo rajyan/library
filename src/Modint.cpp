@@ -29,7 +29,7 @@ struct Mint {
         return *this;
     }
     constexpr Mint &operator/=(const Mint &r) noexcept {
-        lint a = r.val, b = Modulo, u = 1, v = 0;
+        lint a{r.val}, b{Modulo}, u{1}, v{0};
         while (b) {
             lint t = a / b;
             a -= t * b;
@@ -42,10 +42,10 @@ struct Mint {
         return *this;
     }
 
-    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }
-    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this) -= r; }
-    constexpr Mint operator*(const Mint &r) const noexcept { return Mint(*this) *= r; }
-    constexpr Mint operator/(const Mint &r) const noexcept { return Mint(*this) /= r; }
+    constexpr Mint operator+(const Mint &r) const noexcept { return *this += r; }
+    constexpr Mint operator-(const Mint &r) const noexcept { return *this -= r; }
+    constexpr Mint operator*(const Mint &r) const noexcept { return *this *= r; }
+    constexpr Mint operator/(const Mint &r) const noexcept { return *this /= r; }
 
     constexpr Mint operator-() const noexcept { return val ? Modulo - val : 0; }
 
@@ -62,7 +62,7 @@ struct Mint {
     }
 
     [[nodiscard]] constexpr Mint pow(lint n) const noexcept {
-        Mint res = 1, tmp = val;
+        Mint res{1}, tmp{*this};
         while (n > 0) {
             if (n & 1) res *= tmp;
             tmp *= tmp;
