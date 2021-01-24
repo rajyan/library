@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/own/Point2D_Basic.test.cpp
     title: test/own/Point2D_Basic.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/891.test.cpp
+    title: test/yukicoder/891.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -93,6 +96,7 @@ data:
   timestamp: '2021-01-24 15:05:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/891.test.cpp
   - test/own/Matrix2D_Basic.test.cpp
   - test/own/Point2D_Basic.test.cpp
 documentation_of: src/Point2D.cpp

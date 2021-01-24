@@ -33,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/599.test.cpp
     title: test/yukicoder/599.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/891.test.cpp
+    title: test/yukicoder/891.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -116,6 +119,7 @@ data:
   - test/aoj/NTL_1_B_2.test.cpp
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
+  - test/yukicoder/891.test.cpp
   - test/yukicoder/1081.test.cpp
   - test/own/Modint_Basic.test.cpp
   - test/own/RuntimeModint_Basic.test.cpp
