@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/popcount.cpp
     title: src/popcount.cpp
   _extendedRequiredBy:
@@ -9,15 +9,15 @@ data:
     path: src/Prime.cpp
     title: src/Prime.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/own/RandNum_ctz.test.cpp
     title: test/own/RandNum_ctz.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_primes.test.cpp
     title: test/yosupo/enumerate_primes.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/ctz.cpp\"\n\n#line 1 \"src/popcount.cpp\"\n\nusing lint\
@@ -38,7 +38,7 @@ data:
   requiredBy:
   - src/Prime.cpp
   timestamp: '2021-01-22 23:13:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
   - test/own/RandNum_ctz.test.cpp

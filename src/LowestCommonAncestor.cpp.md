@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/clz.cpp
     title: src/clz.cpp
   _extendedRequiredBy: []

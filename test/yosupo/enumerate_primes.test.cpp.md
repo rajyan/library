@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Prime.cpp
     title: src/Prime.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/ctz.cpp
     title: src/ctz.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/popcount.cpp
     title: src/popcount.cpp
   _extendedRequiredBy: []

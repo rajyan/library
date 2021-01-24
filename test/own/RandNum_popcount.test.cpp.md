@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/Random.cpp
     title: src/Random.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/popcount.cpp
     title: src/popcount.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
@@ -19,9 +19,9 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/RandNum_popcount.test.cpp\"\n\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line\
-    \ 1 \"src/Random.cpp\"\n#include <random>\n#include <chrono>\n#include <vector>\n\
-    #include <unordered_map>\n\nusing namespace std;\nusing lint = long long;\n\n\
-    struct Random {\n\n    mt19937 mt;\n    Random() : mt(chrono::steady_clock::now().time_since_epoch().count())\
+    \ 1 \"src/Random.cpp\"\n#include <algorithm>\n#include <random>\n#include <chrono>\n\
+    #include <vector>\n#include <unordered_map>\n\nusing namespace std;\nusing lint\
+    \ = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    Random() : mt(chrono::steady_clock::now().time_since_epoch().count())\
     \ {}\n\n    lint operator()(const lint &rand_min, const lint &rand_max) {\n  \
     \      uniform_int_distribution <lint> dist(rand_min, rand_max);\n        return\
     \ dist(mt);\n    }\n    lint operator()(const lint &rand_max) { return (*this)(0LL,\
@@ -88,8 +88,8 @@ data:
   isVerificationFile: true
   path: test/own/RandNum_popcount.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:40:48+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-01-24 12:45:14+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/RandNum_popcount.test.cpp
 layout: document

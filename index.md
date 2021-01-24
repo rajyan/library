@@ -45,7 +45,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/Prime.cpp
       title: src/Prime.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/Random.cpp
       title: src/Random.cpp
     - icon: ':warning:'
@@ -69,10 +69,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/chmin.cpp
       title: src/chmin.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/clz.cpp
       title: src/clz.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/ctz.cpp
       title: src/ctz.cpp
     - icon: ':heavy_check_mark:'
@@ -90,7 +90,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/modpow.cpp
       title: src/modpow.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/popcount.cpp
       title: src/popcount.cpp
     - icon: ':warning:'
@@ -134,13 +134,13 @@ data:
       title: test/aoj/NTL_1_B_2.test.cpp
   - name: test/own
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/own/RandNum_clz.test.cpp
       title: test/own/RandNum_clz.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/own/RandNum_ctz.test.cpp
       title: test/own/RandNum_ctz.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/own/RandNum_popcount.test.cpp
       title: test/own/RandNum_popcount.test.cpp
   - name: test/yosupo
