@@ -9,8 +9,6 @@ using namespace std;
 #include "../../src/Modint.cpp"
 #include "../../src/Matrix2D.cpp"
 
-using mintmat = Matrix2D<mint>;
-
 struct init {
     init() {
         cin.tie(nullptr);
@@ -24,7 +22,7 @@ int main() {
     int a, b, n;
     cin >> a >> b >> n;
 
-    mintmat A{{a, b},
+    Matrix2D<mint> A{{a, b},
               {1, 0}};
     cout << (A.pow(n) * Point2D<mint>(1, 0)).y << '\n';
 
