@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Modint.cpp
     title: src/Modint.cpp
   - icon: ':heavy_check_mark:'
@@ -42,13 +42,13 @@ data:
     \           u -= t * v;\n            swap(u, v);\n        }\n        val = val\
     \ * u % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n\
     \    }\n\n    constexpr Mint operator+(const Mint &r) const noexcept { return\
-    \ *this += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept {\
-    \ return *this -= r; }\n    constexpr Mint operator*(const Mint &r) const noexcept\
-    \ { return *this *= r; }\n    constexpr Mint operator/(const Mint &r) const noexcept\
-    \ { return *this /= r; }\n\n    constexpr Mint operator-() const noexcept { return\
-    \ val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const Mint &r) const\
-    \ noexcept { return val == r.val; }\n    constexpr bool operator!=(const Mint\
-    \ &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
+    \ Mint(*this) += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept\
+    \ { return Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const\
+    \ noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint\
+    \ &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
+    \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
+    \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
     \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
     \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:11:15+09:00'
+  timestamp: '2021-01-24 12:21:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_primes.test.cpp

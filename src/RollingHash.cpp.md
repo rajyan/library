@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Modint.cpp
     title: src/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/599.test.cpp
     title: test/yukicoder/599.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
@@ -34,10 +34,10 @@ data:
     \ -= t * b;\n            swap(a, b);\n            u -= t * v;\n            swap(u,\
     \ v);\n        }\n        val = val * u % Modulo;\n        if (val < 0) val +=\
     \ Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
-    \ Mint &r) const noexcept { return *this += r; }\n    constexpr Mint operator-(const\
-    \ Mint &r) const noexcept { return *this -= r; }\n    constexpr Mint operator*(const\
-    \ Mint &r) const noexcept { return *this *= r; }\n    constexpr Mint operator/(const\
-    \ Mint &r) const noexcept { return *this /= r; }\n\n    constexpr Mint operator-()\
+    \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
+    \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
+    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
     \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
@@ -82,8 +82,8 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:11:15+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-01-24 12:21:29+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp

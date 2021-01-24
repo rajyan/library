@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/BellmanFord.cpp
       title: src/BellmanFord.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/Combination.cpp
       title: src/Combination.cpp
     - icon: ':warning:'
@@ -36,7 +36,7 @@ data:
     - icon: ':warning:'
       path: src/Matrix2D.cpp
       title: src/Matrix2D.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/Modint.cpp
       title: src/Modint.cpp
     - icon: ':warning:'
@@ -51,7 +51,7 @@ data:
     - icon: ':warning:'
       path: src/RectangleSum.cpp
       title: src/RectangleSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/RollingHash.cpp
       title: src/RollingHash.cpp
     - icon: ':warning:'
@@ -165,16 +165,16 @@ data:
       title: test/yosupo/unionfind.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1081.test.cpp
       title: test/yukicoder/1081.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/184.test.cpp
       title: test/yukicoder/184.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/430.test.cpp
       title: test/yukicoder/430.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/599.test.cpp
       title: test/yukicoder/599.test.cpp
 layout: toppage
