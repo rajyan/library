@@ -87,7 +87,36 @@ data:
     \ }\n};\n\nusing mat = Matrix2D<lint>;\n#line 6 \"test/own/Matrix2D_Basic.test.cpp\"\
     \n\n#include <cassert>\n#line 9 \"test/own/Matrix2D_Basic.test.cpp\"\n#include\
     \ <iomanip>\n#line 11 \"test/own/Matrix2D_Basic.test.cpp\"\n#include <algorithm>\n\
-    #include <sstream>\n\nusing namespace std;\nusing lint = long long;\n\nstruct\
+    \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
+    \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
+    \ << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    // default\
+    \ constructor\n    mat M1;\n    assert(M1.r0 == pnt{} && M1.r1 == pnt{});\n  \
+    \  // constructor\n    mat M2(pnt(1, 2), pnt(3, 4));\n    assert(M2.r0 == pnt(1,\
+    \ 2) && M2.r1 == pnt(3, 4));\n    // initializer_list construct, == operator\n\
+    \    mat M3{{1, 2},\n           {3, 4}};\n    assert(M3 == M2);\n    // copy constructor,\
+    \ == operator\n    mat M4 = M3;\n    assert(M4 == M3);\n    // vector, implicit\
+    \ conversion\n    vector<mat> v(10);\n    assert(all_of(v.begin(), v.end(), [](const\
+    \ mat &m) { return m == mat{}; }));\n    // +=, + operator\n    mat M5{{1, 2},\n\
+    \           {3, 4}};\n    mat M6{{1, 2},\n           {3, 4}};\n    assert(M5 +\
+    \ M6 == mat({2, 4}, {6, 8}));\n    M5 += M6;\n    assert(M5 == mat({2, 4}, {6,\
+    \ 8}));\n    // -=, -, - pnt operator\n    mat M7{};\n    mat M8{{-1, 0},\n  \
+    \         {-4, 3}};\n    assert(M7 - M8 == -M8);\n    M7 -= M8;\n    assert(M7\
+    \ == -M8);\n    // *=, * operator\n    mat M9{{1, 2},\n           {3, 4}};\n \
+    \   mat M10{{0, 1},\n            {2, 3}};\n    assert(M9 * M10 == mat({4, 7},\
+    \ {8, 15}));\n    M9 *= M10;\n    assert(M9 == mat({4, 7}, {8, 15}));\n    //\
+    \ mat * pnt operator\n    mat M11{{1, 2},\n            {3, 4}};\n    pnt p{1,\
+    \ 2};\n    assert(M11 * p == pnt(5, 11));\n    // transpose\n    mat M12{{0, 2},\n\
+    \            {3, 5}};\n    assert(M12.trans() == mat({0, 3}, {2, 5}));\n    //\
+    \ identity\n    mat M13{{5, 1},\n            {4, 2}};\n    assert(mat().identity()\
+    \ == mat({1, 0}, {0, 1}));\n    assert(M13 * mat().identity() == M13);\n    //\
+    \ power\n    mat M14{{1, 2},\n            {3, 4}};\n    assert(M14.pow(2) == M14\
+    \ * M14);\n    assert(M14.pow(5) == M14 * M14 * M14 * M14 * M14);\n    // determinant\n\
+    \    assert(M14.det() == -2);\n\n    cout << \"Hello World\\n\";\n\n    return\
+    \ 0;\n}\n"
+  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITM1_1_A\"\
+    \n\n#include \"../../src/makevec.cpp\"\n#include \"../../src/Matrix2D.cpp\"\n\n\
+    #include <cassert>\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\
+    #include <algorithm>\n\nusing namespace std;\nusing lint = long long;\n\nstruct\
     \ init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
     \n    // default constructor\n    mat M1;\n    assert(M1.r0 == pnt{} && M1.r1\
@@ -113,35 +142,6 @@ data:
     \ * M14);\n    assert(M14.pow(5) == M14 * M14 * M14 * M14 * M14);\n    // determinant\n\
     \    assert(M14.det() == -2);\n\n    cout << \"Hello World\\n\";\n\n    return\
     \ 0;\n}\n"
-  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITM1_1_A\"\
-    \n\n#include \"../../src/makevec.cpp\"\n#include \"../../src/Matrix2D.cpp\"\n\n\
-    #include <cassert>\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\
-    #include <algorithm>\n#include <sstream>\n\nusing namespace std;\nusing lint =\
-    \ long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n     \
-    \   ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
-    \    }\n} init_;\n\nint main() {\n\n    // default constructor\n    mat M1;\n\
-    \    assert(M1.r0 == pnt{} && M1.r1 == pnt{});\n    // constructor\n    mat M2(pnt(1,\
-    \ 2), pnt(3, 4));\n    assert(M2.r0 == pnt(1, 2) && M2.r1 == pnt(3, 4));\n   \
-    \ // initializer_list construct, == operator\n    mat M3{{1, 2},\n           {3,\
-    \ 4}};\n    assert(M3 == M2);\n    // copy constructor, == operator\n    mat M4\
-    \ = M3;\n    assert(M4 == M3);\n    // vector, implicit conversion\n    vector<mat>\
-    \ v(10);\n    assert(all_of(v.begin(), v.end(), [](const mat &m) { return m ==\
-    \ mat{}; }));\n    // +=, + operator\n    mat M5{{1, 2},\n           {3, 4}};\n\
-    \    mat M6{{1, 2},\n           {3, 4}};\n    assert(M5 + M6 == mat({2, 4}, {6,\
-    \ 8}));\n    M5 += M6;\n    assert(M5 == mat({2, 4}, {6, 8}));\n    // -=, -,\
-    \ - pnt operator\n    mat M7{};\n    mat M8{{-1, 0},\n           {-4, 3}};\n \
-    \   assert(M7 - M8 == -M8);\n    M7 -= M8;\n    assert(M7 == -M8);\n    // *=,\
-    \ * operator\n    mat M9{{1, 2},\n           {3, 4}};\n    mat M10{{0, 1},\n \
-    \           {2, 3}};\n    assert(M9 * M10 == mat({4, 7}, {8, 15}));\n    M9 *=\
-    \ M10;\n    assert(M9 == mat({4, 7}, {8, 15}));\n    // mat * pnt operator\n \
-    \   mat M11{{1, 2},\n            {3, 4}};\n    pnt p{1, 2};\n    assert(M11 *\
-    \ p == pnt(5, 11));\n    // transpose\n    mat M12{{0, 2},\n            {3, 5}};\n\
-    \    assert(M12.trans() == mat({0, 3}, {2, 5}));\n    // identity\n    mat M13{{5,\
-    \ 1},\n            {4, 2}};\n    assert(mat().identity() == mat({1, 0}, {0, 1}));\n\
-    \    assert(M13 * mat().identity() == M13);\n    // power\n    mat M14{{1, 2},\n\
-    \            {3, 4}};\n    assert(M14.pow(2) == M14 * M14);\n    assert(M14.pow(5)\
-    \ == M14 * M14 * M14 * M14 * M14);\n    // determinant\n    assert(M14.det() ==\
-    \ -2);\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   dependsOn:
   - src/makevec.cpp
   - src/Matrix2D.cpp
@@ -149,7 +149,7 @@ data:
   isVerificationFile: true
   path: test/own/Matrix2D_Basic.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 15:36:22+09:00'
+  timestamp: '2021-01-24 15:43:01+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/own/Matrix2D_Basic.test.cpp
