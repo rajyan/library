@@ -1,19 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/Modint.cpp
     title: src/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/599.test.cpp
     title: test/yukicoder/599.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
@@ -28,15 +29,15 @@ data:
     \ Mint &r) noexcept {\n        val -= r.val;\n        if (val < 0) val += Modulo;\n\
     \        return *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept\
     \ {\n        val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator/=(const Mint &r) noexcept {\n        lint a = r.val, b = Modulo,\
-    \ u = 1, v = 0;\n        while (b) {\n            lint t = a / b;\n          \
-    \  a -= t * b;\n            swap(a, b);\n            u -= t * v;\n           \
-    \ swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val < 0)\
-    \ val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
-    \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
-    \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
-    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
-    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \ Mint &operator/=(const Mint &r) noexcept {\n        lint a{r.val}, b{Modulo},\
+    \ u{1}, v{0};\n        while (b) {\n            lint t = a / b;\n            a\
+    \ -= t * b;\n            swap(a, b);\n            u -= t * v;\n            swap(u,\
+    \ v);\n        }\n        val = val * u % Modulo;\n        if (val < 0) val +=\
+    \ Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
+    \ Mint &r) const noexcept { return *this += r; }\n    constexpr Mint operator-(const\
+    \ Mint &r) const noexcept { return *this -= r; }\n    constexpr Mint operator*(const\
+    \ Mint &r) const noexcept { return *this *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return *this /= r; }\n\n    constexpr Mint operator-()\
     \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
@@ -44,7 +45,7 @@ data:
     \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
     \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
     \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
-    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res = 1, tmp = val;\n\
+    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res{1}, tmp{*this};\n\
     \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
     \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
     #ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n#else\nusing mint\
@@ -81,8 +82,8 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-22 23:51:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-01-24 12:11:15+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
