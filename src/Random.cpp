@@ -1,3 +1,4 @@
+#include <cassert>
 #include <algorithm>
 #include <random>
 #include <chrono>
@@ -46,9 +47,10 @@ struct Random {
     void shuf(Ite first, Ite last) { shuffle(first, last, mt); }
 
     string random_string(const int &max_len, const string list = "abcdefghijklmnopqrstuvwxyz") {
-        int size = (*this)(1, max_len);
+        assert(!list.empty());
+        int size = (int)(*this)(1, max_len);
         string res(size, 0);
-        generate(res.begin(), res.end(), [this, &list]() { return list[(*this)(list.size() - 1)]; });
+        generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size() - 1)]; });
         return res;
     }
 
