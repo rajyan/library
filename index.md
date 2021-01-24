@@ -149,6 +149,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/own/Random_runlength.test.cpp
       title: test/own/Random_runlength.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/own/RuntimeModint_Basic.test.cpp
+      title: test/own/RuntimeModint_Basic.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

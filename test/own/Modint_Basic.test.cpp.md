@@ -15,21 +15,22 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Modint_Basic.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#line 1 \"src/Modint.cpp\"\n#include <iostream>\n\nusing namespace std;\n\
-    using lint = long long;\nconstexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\n\
-    template<int &Modulo>\n#else\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n\
-    \    lint val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if\
-    \ (val < 0) val += Modulo; }\n\n    constexpr Mint &operator+=(const Mint &r)\
-    \ noexcept {\n        val += r.val;\n        if (val >= Modulo) val -= Modulo;\n\
-    \        return *this;\n    }\n    constexpr Mint &operator-=(const Mint &r) noexcept\
-    \ {\n        val -= r.val;\n        if (val < 0) val += Modulo;\n        return\
-    \ *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept {\n  \
-    \      val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator/=(const Mint &r) noexcept {\n        lint a{r.val}, b{Modulo},\
-    \ u{1}, v{0};\n        while (b) {\n            lint t = a / b;\n            a\
-    \ -= t * b;\n            swap(a, b);\n            u -= t * v;\n            swap(u,\
-    \ v);\n        }\n        val = val * u % Modulo;\n        if (val < 0) val +=\
-    \ Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
+    \n\n#line 1 \"src/Modint.cpp\"\n#include <cassert>\n#include <iostream>\n#include\
+    \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
+    \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\ntemplate<int\
+    \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
+    \ 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
+    \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
+    \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
+    \ Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if\
+    \ (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
+    \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
+    \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
+    \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
+    \ must be coprime\");\n        while (b) {\n            lint t = a / b;\n    \
+    \        a -= t * b;\n            swap(a, b);\n            u -= t * v;\n     \
+    \       swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val\
+    \ < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
     \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
     \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
     \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
@@ -45,31 +46,32 @@ data:
     \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
     \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
     #ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n#else\nusing mint\
-    \ = Mint<MOD>;\n#endif\n\n#line 5 \"test/own/Modint_Basic.test.cpp\"\n\n#include\
-    \ <cassert>\n#line 8 \"test/own/Modint_Basic.test.cpp\"\n#include <iomanip>\n\
-    #include <vector>\n#include <algorithm>\n#include <sstream>\n\nusing namespace\
-    \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
-    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \ = Mint<MOD>;\n#endif\n\n#line 5 \"test/own/Modint_Basic.test.cpp\"\n\n#line\
+    \ 8 \"test/own/Modint_Basic.test.cpp\"\n#include <iomanip>\n#include <vector>\n\
+    #include <algorithm>\n#include <sstream>\n\nusing namespace std;\nusing lint =\
+    \ long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n     \
+    \   ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
     \    }\n} init_;\n\nint main() {\n\n    // default constructor\n    mint m1{};\n\
     \    assert(m1.val == 0);\n    // constructor\n    mint m2{MOD + 2};\n    assert(m2.val\
     \ == 2);\n    // copy constructor, == operator\n    mint m3 = m2;\n    assert(m3.val\
     \ == 2);\n    assert(m2 == m3);\n    // construct with negative value\n    mint\
-    \ m4(-1);\n    assert(m4.val == MOD - 1);\n    // vector (default constructor),\
-    \ implicit conversion\n    vector<mint> v(10);\n    assert(all_of(v.begin(), v.end(),\
-    \ [](const mint &m) { return m == 0; }));\n    // +=, + operator\n    mint m5(1),\
-    \ m6(1);\n    assert(m5 + m6 == 2);\n    m5 += m6;\n    assert(m5 == 2);\n   \
-    \ // -=, - operator\n    mint m7(0), m8(1);\n    assert(m7 - m8 == MOD - 1);\n\
-    \    m7 -= m8;\n    assert(m7 == MOD - 1);\n    // *=, * operator\n    mint m9(1),\
-    \ m10(2);\n    assert(m9 * m10 == 2);\n    m9 *= m10;\n    assert(m9 == 2);\n\
-    \    // pow\n    mint m11(2);\n    assert(m11.pow(10) == 1024);\n    assert(m11.pow(40)\
-    \ == (1LL << 40) % MOD);\n    // /=, / operator\n    mint m12(4), m13(2), m14(3);\n\
-    \    assert(m12 / m13 == 2);\n    assert(mint(1) / m14 == m14.pow(MOD - 2));\n\
-    \    assert(m13 / m14 == m13 * m14.pow(MOD - 2));\n    // - operator\n    mint\
-    \ m15(0), m16(1);\n    assert(-m15 == 0);\n    assert(-m16 == -1);\n    // !=,\
-    \ < operator\n    assert(m15 != m16);\n    assert(m15 < m16);\n    // <<, >> operator\n\
-    \    stringstream ss;\n    assert(ss << m15);\n    assert(ss.str() == to_string(m15.val));\n\
-    \    assert(ss >> m16);\n    assert(m15 == m16);\n\n    cout << \"Hello World\\\
-    n\";\n\n    return 0;\n}\n"
+    \ m4(-1);\n    assert(m4.val == MOD - 1);\n    // vector, implicit conversion\n\
+    \    vector<mint> v(10, 1);\n    assert(all_of(v.begin(), v.end(), [](const mint\
+    \ &m) { return m == 1; }));\n    // +=, + operator\n    mint m5(1), m6(1);\n \
+    \   assert(m5 + m6 == 2);\n    m5 += m6;\n    assert(m5 == 2);\n    // -=, - operator\n\
+    \    mint m7(0), m8(1);\n    assert(m7 - m8 == MOD - 1);\n    m7 -= m8;\n    assert(m7\
+    \ == MOD - 1);\n    // *=, * operator\n    mint m9(1), m10(2);\n    assert(m9\
+    \ * m10 == 2);\n    m9 *= m10;\n    assert(m9 == 2);\n    // pow\n    mint m11(2);\n\
+    \    assert(m11.pow(10) == 1024);\n    assert(m11.pow(40) == (1LL << 40) % MOD);\n\
+    \    // /=, / operator\n    mint m12(4), m13(2), m14(3);\n    assert(m12 / m13\
+    \ == 2);\n    assert(m12 / m13 * m13 == m12);\n    assert(m13 / m14 * m14 == m13);\n\
+    \    // confirm by Fermat's little theorem when MOD is prime\n    assert(mint(1)\
+    \ / m14 == m14.pow(MOD - 2));\n    assert(m13 / m14 == m13 * m14.pow(MOD - 2));\n\
+    \    // - operator\n    mint m15(0), m16(1);\n    assert(-m15 == 0);\n    assert(-m16\
+    \ == -1);\n    // !=, < operator\n    assert(m15 != m16);\n    assert(m15 < m16);\n\
+    \    // <<, >> operator\n    stringstream ss;\n    assert(ss << m15);\n    assert(ss.str()\
+    \ == to_string(m15.val));\n    assert(ss >> m16);\n    assert(m15 == m16);\n\n\
+    \    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/Modint.cpp\"\n\n#include <cassert>\n#include <iostream>\n\
     #include <iomanip>\n#include <vector>\n#include <algorithm>\n#include <sstream>\n\
@@ -80,28 +82,29 @@ data:
     \    mint m2{MOD + 2};\n    assert(m2.val == 2);\n    // copy constructor, ==\
     \ operator\n    mint m3 = m2;\n    assert(m3.val == 2);\n    assert(m2 == m3);\n\
     \    // construct with negative value\n    mint m4(-1);\n    assert(m4.val ==\
-    \ MOD - 1);\n    // vector (default constructor), implicit conversion\n    vector<mint>\
-    \ v(10);\n    assert(all_of(v.begin(), v.end(), [](const mint &m) { return m ==\
-    \ 0; }));\n    // +=, + operator\n    mint m5(1), m6(1);\n    assert(m5 + m6 ==\
-    \ 2);\n    m5 += m6;\n    assert(m5 == 2);\n    // -=, - operator\n    mint m7(0),\
-    \ m8(1);\n    assert(m7 - m8 == MOD - 1);\n    m7 -= m8;\n    assert(m7 == MOD\
-    \ - 1);\n    // *=, * operator\n    mint m9(1), m10(2);\n    assert(m9 * m10 ==\
-    \ 2);\n    m9 *= m10;\n    assert(m9 == 2);\n    // pow\n    mint m11(2);\n  \
-    \  assert(m11.pow(10) == 1024);\n    assert(m11.pow(40) == (1LL << 40) % MOD);\n\
-    \    // /=, / operator\n    mint m12(4), m13(2), m14(3);\n    assert(m12 / m13\
-    \ == 2);\n    assert(mint(1) / m14 == m14.pow(MOD - 2));\n    assert(m13 / m14\
-    \ == m13 * m14.pow(MOD - 2));\n    // - operator\n    mint m15(0), m16(1);\n \
-    \   assert(-m15 == 0);\n    assert(-m16 == -1);\n    // !=, < operator\n    assert(m15\
-    \ != m16);\n    assert(m15 < m16);\n    // <<, >> operator\n    stringstream ss;\n\
-    \    assert(ss << m15);\n    assert(ss.str() == to_string(m15.val));\n    assert(ss\
-    \ >> m16);\n    assert(m15 == m16);\n\n    cout << \"Hello World\\n\";\n\n   \
-    \ return 0;\n}\n"
+    \ MOD - 1);\n    // vector, implicit conversion\n    vector<mint> v(10, 1);\n\
+    \    assert(all_of(v.begin(), v.end(), [](const mint &m) { return m == 1; }));\n\
+    \    // +=, + operator\n    mint m5(1), m6(1);\n    assert(m5 + m6 == 2);\n  \
+    \  m5 += m6;\n    assert(m5 == 2);\n    // -=, - operator\n    mint m7(0), m8(1);\n\
+    \    assert(m7 - m8 == MOD - 1);\n    m7 -= m8;\n    assert(m7 == MOD - 1);\n\
+    \    // *=, * operator\n    mint m9(1), m10(2);\n    assert(m9 * m10 == 2);\n\
+    \    m9 *= m10;\n    assert(m9 == 2);\n    // pow\n    mint m11(2);\n    assert(m11.pow(10)\
+    \ == 1024);\n    assert(m11.pow(40) == (1LL << 40) % MOD);\n    // /=, / operator\n\
+    \    mint m12(4), m13(2), m14(3);\n    assert(m12 / m13 == 2);\n    assert(m12\
+    \ / m13 * m13 == m12);\n    assert(m13 / m14 * m14 == m13);\n    // confirm by\
+    \ Fermat's little theorem when MOD is prime\n    assert(mint(1) / m14 == m14.pow(MOD\
+    \ - 2));\n    assert(m13 / m14 == m13 * m14.pow(MOD - 2));\n    // - operator\n\
+    \    mint m15(0), m16(1);\n    assert(-m15 == 0);\n    assert(-m16 == -1);\n \
+    \   // !=, < operator\n    assert(m15 != m16);\n    assert(m15 < m16);\n    //\
+    \ <<, >> operator\n    stringstream ss;\n    assert(ss << m15);\n    assert(ss.str()\
+    \ == to_string(m15.val));\n    assert(ss >> m16);\n    assert(m15 == m16);\n\n\
+    \    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   dependsOn:
   - src/Modint.cpp
   isVerificationFile: true
   path: test/own/Modint_Basic.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 13:41:16+09:00'
+  timestamp: '2021-01-24 14:04:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Modint_Basic.test.cpp

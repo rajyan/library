@@ -27,25 +27,26 @@ data:
     \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n#include <iostream>\n\
     #include <iomanip>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"src/Prime.cpp\"\
     \n\nusing namespace std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n\
-    #line 2 \"src/Modint.cpp\"\n\nusing namespace std;\nusing lint = long long;\n\
-    constexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n\
-    #else\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
-    \ Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\
-    \n    constexpr Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n\
-    \        if (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n   \
-    \ constexpr Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n\
-    \        if (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator*=(const Mint &r) noexcept {\n        val = val * r.val % Modulo;\n\
-    \        return *this;\n    }\n    constexpr Mint &operator/=(const Mint &r) noexcept\
-    \ {\n        lint a{r.val}, b{Modulo}, u{1}, v{0};\n        while (b) {\n    \
-    \        lint t = a / b;\n            a -= t * b;\n            swap(a, b);\n \
-    \           u -= t * v;\n            swap(u, v);\n        }\n        val = val\
-    \ * u % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n\
-    \    }\n\n    constexpr Mint operator+(const Mint &r) const noexcept { return\
-    \ Mint(*this) += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept\
-    \ { return Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const\
-    \ noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint\
-    \ &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    #line 1 \"src/Modint.cpp\"\n#include <cassert>\n#line 3 \"src/Modint.cpp\"\n#include\
+    \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
+    \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\ntemplate<int\
+    \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
+    \ 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
+    \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
+    \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
+    \ Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if\
+    \ (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
+    \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
+    \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
+    \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
+    \ must be coprime\");\n        while (b) {\n            lint t = a / b;\n    \
+    \        a -= t * b;\n            swap(a, b);\n            u -= t * v;\n     \
+    \       swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val\
+    \ < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
+    \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
+    \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
+    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
     \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
@@ -117,7 +118,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:21:29+09:00'
+  timestamp: '2021-01-24 14:04:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_primes.test.cpp
