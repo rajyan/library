@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/clz.cpp
     title: src/clz.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/makevec.cpp
     title: src/makevec.cpp
   _extendedRequiredBy: []

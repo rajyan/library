@@ -27,15 +27,15 @@ data:
     \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
     \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
     \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
-    \ must be coprime\");\n        while (b) {\n            lint t = a / b;\n    \
-    \        a -= t * b;\n            swap(a, b);\n            u -= t * v;\n     \
-    \       swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val\
+    \ must be co-prime\");\n        while (b) {\n            lint t = a / b;\n   \
+    \         a -= t * b;\n            swap(a, b);\n            u -= t * v;\n    \
+    \        swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val\
     \ < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
     \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
     \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
     \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
     \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
-    \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
+    \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
@@ -104,7 +104,7 @@ data:
   isVerificationFile: true
   path: test/own/Modint_Basic.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 14:04:47+09:00'
+  timestamp: '2021-01-24 14:18:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Modint_Basic.test.cpp

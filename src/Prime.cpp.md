@@ -35,7 +35,7 @@ data:
     \ *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept {\n  \
     \      val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
     \ Mint &operator/=(const Mint &r) noexcept {\n        lint a{r.val}, b{Modulo},\
-    \ u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b must be coprime\");\n\
+    \ u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b must be co-prime\");\n\
     \        while (b) {\n            lint t = a / b;\n            a -= t * b;\n \
     \           swap(a, b);\n            u -= t * v;\n            swap(u, v);\n  \
     \      }\n        val = val * u % Modulo;\n        if (val < 0) val += Modulo;\n\
@@ -44,7 +44,7 @@ data:
     \ &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
     \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
     \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
-    \ const noexcept { return val ? Modulo - val : 0; }\n\n    constexpr bool operator==(const\
+    \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
     \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
@@ -123,7 +123,7 @@ data:
   isVerificationFile: false
   path: src/Prime.cpp
   requiredBy: []
-  timestamp: '2021-01-24 14:04:47+09:00'
+  timestamp: '2021-01-24 14:18:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
