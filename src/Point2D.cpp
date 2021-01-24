@@ -10,8 +10,8 @@ struct Point2D {
     T x{}, y{};
 
     constexpr Point2D() = default;
-    constexpr Point2D(T x, T y) noexcept: x(x), y(y) {};
-    constexpr explicit Point2D(pair<T, T> &p) noexcept: x(p.first), y(p.second) {};
+    constexpr Point2D(const T &x, const T &y) noexcept: x(x), y(y) {};
+    constexpr explicit Point2D(const pair<T, T> &p) noexcept: x(p.first), y(p.second) {};
 
     constexpr bool operator==(const Point2D &rhs) const noexcept { return x == rhs.x && y == rhs.y; }
     constexpr bool operator!=(const Point2D &rhs) const noexcept { return !(*this == rhs); }
@@ -41,7 +41,7 @@ struct Point2D {
     [[nodiscard]] constexpr U &operator[](vector<vector<U>> &v) { return v[x][y]; }
 
     friend istream &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }
-    friend ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << " " << p.y; }
+    friend ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y; }
 };
 
 using pnt = Point2D<lint>;
