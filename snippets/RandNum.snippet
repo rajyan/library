@@ -2,7 +2,7 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>RandNum</Title>
+      <Title>Random</Title>
       <Shortcut>myrandnum</Shortcut>
       <Description></Description>
       <Author>Yohta Kimura id:rajyan</Author>
@@ -16,10 +16,10 @@
         <Literal Editable="false"></Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[struct RandNum {
+        <![CDATA[struct Random {
 
     mt19937 mt;
-    RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
+    Random() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
 
     lint operator()(const lint &rand_min, const lint &rand_max) {
         uniform_int_distribution <lint> dist(rand_min, rand_max);

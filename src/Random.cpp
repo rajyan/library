@@ -6,10 +6,10 @@
 using namespace std;
 using lint = long long;
 
-struct RandNum {
+struct Random {
 
     mt19937 mt;
-    RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
+    Random() : mt(chrono::steady_clock::now().time_since_epoch().count()) {}
 
     lint operator()(const lint &rand_min, const lint &rand_max) {
         uniform_int_distribution <lint> dist(rand_min, rand_max);
@@ -41,8 +41,14 @@ struct RandNum {
         }
         return res;
     }
-
     template<class Ite>
     void shuf(Ite first, Ite last) { shuffle(first, last, mt); }
+
+    string random_string(const int &max_len, const string list = "abcdefghijklmnopqrstuvwxyz") {
+        int size = (*this)(1, max_len);
+        string res(size, 0);
+        generate(res.begin(), res.end(), [this, &list]() { return list[(*this)(list.size() - 1)]; });
+        return res;
+    }
 
 };

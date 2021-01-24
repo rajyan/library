@@ -1,7 +1,7 @@
 
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
-#include "../../src/RandNum.cpp"
+#include "../../src/Random.cpp"
 #include "../../src/clz.cpp"
 
 #include <cassert>
@@ -33,7 +33,7 @@ inline int test(lint x) {
 int main() {
 
     // random test
-    RandNum ran;
+    Random ran;
     for (int i = 0; i < 100000000; i++) {
         lint n = ran(0, numeric_limits<lint>::max());
         assert(test(n) == clz(n));
