@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/own/Matrix2D_Basic.test.cpp
     title: test/own/Matrix2D_Basic.test.cpp
   - icon: ':heavy_check_mark:'
@@ -12,9 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/makevec.cpp\"\n#include <vector>\n\nusing namespace\
@@ -30,7 +30,7 @@ data:
   path: src/makevec.cpp
   requiredBy: []
   timestamp: '2021-01-01 20:28:23+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
   - test/own/Matrix2D_Basic.test.cpp

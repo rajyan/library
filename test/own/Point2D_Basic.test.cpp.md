@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Point2D.cpp
     title: src/Point2D.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/makevec.cpp
     title: src/makevec.cpp
   _extendedRequiredBy: []

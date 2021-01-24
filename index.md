@@ -33,13 +33,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/LowestCommonAncestor.cpp
       title: src/LowestCommonAncestor.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/Matrix2D.cpp
       title: src/Matrix2D.cpp
     - icon: ':heavy_check_mark:'
       path: src/Modint.cpp
       title: src/Modint.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/Point2D.cpp
       title: src/Point2D.cpp
     - icon: ':heavy_check_mark:'
@@ -84,7 +84,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/fnv1a.cpp
       title: src/fnv1a.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/makevec.cpp
       title: src/makevec.cpp
     - icon: ':heavy_check_mark:'
@@ -134,7 +134,7 @@ data:
       title: test/aoj/NTL_1_B_2.test.cpp
   - name: test/own
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/own/Matrix2D_Basic.test.cpp
       title: test/own/Matrix2D_Basic.test.cpp
     - icon: ':heavy_check_mark:'

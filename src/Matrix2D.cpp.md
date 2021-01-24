@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Point2D.cpp
     title: src/Point2D.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/own/Matrix2D_Basic.test.cpp
     title: test/own/Matrix2D_Basic.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/Matrix2D.cpp\"\n\n#line 1 \"src/Point2D.cpp\"\n#include\
@@ -105,7 +105,7 @@ data:
   path: src/Matrix2D.cpp
   requiredBy: []
   timestamp: '2021-01-24 15:36:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/own/Matrix2D_Basic.test.cpp
 documentation_of: src/Matrix2D.cpp
