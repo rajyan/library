@@ -42,10 +42,10 @@ struct Mint {
         return *this;
     }
 
-    constexpr Mint operator+(const Mint &r) const noexcept { return *this += r; }
-    constexpr Mint operator-(const Mint &r) const noexcept { return *this -= r; }
-    constexpr Mint operator*(const Mint &r) const noexcept { return *this *= r; }
-    constexpr Mint operator/(const Mint &r) const noexcept { return *this /= r; }
+    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }
+    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this) -= r; }
+    constexpr Mint operator*(const Mint &r) const noexcept { return Mint(*this) *= r; }
+    constexpr Mint operator/(const Mint &r) const noexcept { return Mint(*this) /= r; }
 
     constexpr Mint operator-() const noexcept { return val ? Modulo - val : 0; }
 
