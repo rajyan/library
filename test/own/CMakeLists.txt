@@ -23,6 +23,7 @@ else ()
     )
 endif ()
 
+add_executable(own_Modint.test Modint_Basic.test.cpp)
 add_executable(own_Random_clz.test Random_clz.test.cpp)
 add_executable(own_Random_ctz.test Random_ctz.test.cpp)
 add_executable(own_Random_popcount.test Random_popcount.test.cpp)

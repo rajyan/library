@@ -5,7 +5,6 @@
 #include "../../src/clz.cpp"
 
 #include <cassert>
-#include <bitset>
 #include <iostream>
 #include <iomanip>
 

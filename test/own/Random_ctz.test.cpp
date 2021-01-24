@@ -5,7 +5,6 @@
 #include "../../src/ctz.cpp"
 
 #include <cassert>
-#include <bitset>
 #include <iostream>
 #include <iomanip>
 
