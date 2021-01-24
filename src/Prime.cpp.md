@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Modint.cpp
     title: src/Modint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/ctz.cpp
     title: src/ctz.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/popcount.cpp
     title: src/popcount.cpp
   _extendedRequiredBy: []

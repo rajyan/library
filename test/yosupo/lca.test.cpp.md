@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/LowestCommonAncestor.cpp
     title: src/LowestCommonAncestor.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/clz.cpp
     title: src/clz.cpp
   - icon: ':heavy_check_mark:'

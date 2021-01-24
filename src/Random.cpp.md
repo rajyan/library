@@ -3,23 +3,23 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/own/RandNum_clz.test.cpp
     title: test/own/RandNum_clz.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/own/RandNum_ctz.test.cpp
     title: test/own/RandNum_ctz.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/own/RandNum_popcount.test.cpp
     title: test/own/RandNum_popcount.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/RandNum.cpp\"\n#include <random>\n#include <chrono>\n\
+  bundledCode: "#line 1 \"src/Random.cpp\"\n#include <random>\n#include <chrono>\n\
     #include <vector>\n#include <unordered_map>\n\nusing namespace std;\nusing lint\
-    \ = long long;\n\nstruct RandNum {\n\n    mt19937 mt;\n    RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count())\
+    \ = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    Random() : mt(chrono::steady_clock::now().time_since_epoch().count())\
     \ {}\n\n    lint operator()(const lint &rand_min, const lint &rand_max) {\n  \
     \      uniform_int_distribution <lint> dist(rand_min, rand_max);\n        return\
     \ dist(mt);\n    }\n    lint operator()(const lint &rand_max) { return (*this)(0LL,\
@@ -34,11 +34,15 @@ data:
     \ else { // If rand_val has already been replaced\n                rand_val =\
     \ val_itr->second;\n                val_itr->second = memo[rand_max];\n      \
     \      }\n\n            res[i] = rand_val;\n        }\n        return res;\n \
-    \   }\n\n    template<class Ite>\n    void shuf(Ite first, Ite last) { shuffle(first,\
-    \ last, mt); }\n\n};\n"
+    \   }\n    template<class Ite>\n    void shuf(Ite first, Ite last) { shuffle(first,\
+    \ last, mt); }\n\n    string random_string(const int &max_len, const string list\
+    \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        int size = (*this)(1, max_len);\n\
+    \        string res(size, 0);\n        generate(res.begin(), res.end(), [this,\
+    \ &list]() { return list[(*this)(list.size() - 1)]; });\n        return res;\n\
+    \    }\n\n};\n"
   code: "#include <random>\n#include <chrono>\n#include <vector>\n#include <unordered_map>\n\
-    \nusing namespace std;\nusing lint = long long;\n\nstruct RandNum {\n\n    mt19937\
-    \ mt;\n    RandNum() : mt(chrono::steady_clock::now().time_since_epoch().count())\
+    \nusing namespace std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937\
+    \ mt;\n    Random() : mt(chrono::steady_clock::now().time_since_epoch().count())\
     \ {}\n\n    lint operator()(const lint &rand_min, const lint &rand_max) {\n  \
     \      uniform_int_distribution <lint> dist(rand_min, rand_max);\n        return\
     \ dist(mt);\n    }\n    lint operator()(const lint &rand_max) { return (*this)(0LL,\
@@ -53,22 +57,26 @@ data:
     \ else { // If rand_val has already been replaced\n                rand_val =\
     \ val_itr->second;\n                val_itr->second = memo[rand_max];\n      \
     \      }\n\n            res[i] = rand_val;\n        }\n        return res;\n \
-    \   }\n\n    template<class Ite>\n    void shuf(Ite first, Ite last) { shuffle(first,\
-    \ last, mt); }\n\n};\n"
+    \   }\n    template<class Ite>\n    void shuf(Ite first, Ite last) { shuffle(first,\
+    \ last, mt); }\n\n    string random_string(const int &max_len, const string list\
+    \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        int size = (*this)(1, max_len);\n\
+    \        string res(size, 0);\n        generate(res.begin(), res.end(), [this,\
+    \ &list]() { return list[(*this)(list.size() - 1)]; });\n        return res;\n\
+    \    }\n\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: src/RandNum.cpp
+  path: src/Random.cpp
   requiredBy: []
-  timestamp: '2021-01-16 00:14:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-01-24 12:40:48+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/own/RandNum_popcount.test.cpp
   - test/own/RandNum_ctz.test.cpp
   - test/own/RandNum_clz.test.cpp
-documentation_of: src/RandNum.cpp
+documentation_of: src/Random.cpp
 layout: document
 redirect_from:
-- /library/src/RandNum.cpp
-- /library/src/RandNum.cpp.html
-title: src/RandNum.cpp
+- /library/src/Random.cpp
+- /library/src/Random.cpp.html
+title: src/Random.cpp
 ---
