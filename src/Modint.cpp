@@ -32,7 +32,7 @@ struct Mint {
     }
     constexpr Mint &operator/=(const Mint &r) noexcept {
         lint a{r.val}, b{Modulo}, u{1}, v{0};
-        assert(gcd(a, b) == 1 && "a and b must be coprime");
+        assert(gcd(a, b) == 1 && "a and b must be co-prime");
         while (b) {
             lint t = a / b;
             a -= t * b;
@@ -50,7 +50,7 @@ struct Mint {
     constexpr Mint operator*(const Mint &r) const noexcept { return Mint(*this) *= r; }
     constexpr Mint operator/(const Mint &r) const noexcept { return Mint(*this) /= r; }
 
-    constexpr Mint operator-() const noexcept { return val ? Modulo - val : 0; }
+    constexpr Mint operator-() const noexcept { return Mint(-val); }
 
     constexpr bool operator==(const Mint &r) const noexcept { return val == r.val; }
     constexpr bool operator!=(const Mint &r) const noexcept { return !((*this) == r); }
