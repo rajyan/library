@@ -1,4 +1,6 @@
+#include <cassert>
 #include <iostream>
+#include <numeric>
 
 using namespace std;
 using lint = long long;
@@ -30,6 +32,7 @@ struct Mint {
     }
     constexpr Mint &operator/=(const Mint &r) noexcept {
         lint a{r.val}, b{Modulo}, u{1}, v{0};
+        assert(gcd(a, b) == 1 && "a and b must be coprime");
         while (b) {
             lint t = a / b;
             a -= t * b;
