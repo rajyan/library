@@ -20,12 +20,10 @@ public:
 
     [[nodiscard]] vector<int> get(const vector<T> &vec) const {
         vector<int> ret(vec.size());
-        transform(begin(vec), end(vec), ret.begin(), [&](const T &x) {
-            return (int)(lower_bound(begin(comp), end(comp), x) - begin(comp));
-        });
+        transform(vec.begin(), vec.end(), ret.begin(), [&](const T &x) { return get(x); });
         return ret;
     }
-    [[nodiscard]] int get(const T &x) const { return lower_bound(begin(comp), end(comp), x) - begin(comp); }
+    [[nodiscard]] int get(const T &x) const { return lower_bound(comp.begin(), comp.end(), x) - begin(comp); }
 
     const T &operator[](const int k) const { return comp[k]; }
 };
