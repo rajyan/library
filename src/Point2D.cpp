@@ -8,7 +8,7 @@ using lint = long long;
 template<class T>
 struct Point2D {
     T x, y;
-    constexpr explicit Point2D(T x = 0, T y = 0) noexcept: x(x), y(y) {};
+    constexpr Point2D(T x = 0, T y = 0) noexcept: x(x), y(y) {};
     constexpr explicit Point2D(pair<T, T> &p) noexcept: x(p.first), y(p.second) {};
     constexpr bool operator==(const Point2D &rhs) const noexcept { return x == rhs.x && y == rhs.y; }
     constexpr bool operator!=(const Point2D &rhs) const noexcept { return !((*this) == rhs); }
