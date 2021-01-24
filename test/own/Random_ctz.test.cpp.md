@@ -53,26 +53,26 @@ data:
     \ & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >> 32 & 0x00000000ffffffff);\n\
     \    return n;\n}\n#line 3 \"src/ctz.cpp\"\n\nusing lint = long long;\n\ninline\
     \ int ctz(lint n) {\n    return popcount(~n & (n - 1));\n}\n#line 6 \"test/own/Random_ctz.test.cpp\"\
-    \n\n#line 8 \"test/own/Random_ctz.test.cpp\"\n#include <bitset>\n#include <iostream>\n\
-    #include <iomanip>\n\nusing namespace std;\nusing lint = long long;\n\nstruct\
-    \ init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
-    \        cout << fixed << setprecision(10);\n    }\n} init_;\n\ninline int test(lint\
-    \ x) {\n    long long count = 0;\n    __asm__ volatile(\"TZCNT %1, %0;\"\n   \
-    \ :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n    return count;\n}\n\nint main()\
-    \ {\n\n    // random test\n    Random ran;\n    for (int i = 0; i < 100000000;\
-    \ i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
-    \ == ctz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
-  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/ctz.cpp\"\n\n#include\
-    \ <cassert>\n#include <bitset>\n#include <iostream>\n#include <iomanip>\n\nusing\
-    \ namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n   \
-    \     cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout <<\
-    \ fixed << setprecision(10);\n    }\n} init_;\n\ninline int test(lint x) {\n \
-    \   long long count = 0;\n    __asm__ volatile(\"TZCNT %1, %0;\"\n    :\"=r\"\
+    \n\n#line 8 \"test/own/Random_ctz.test.cpp\"\n#include <iostream>\n#include <iomanip>\n\
+    \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
+    \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
+    \ << fixed << setprecision(10);\n    }\n} init_;\n\ninline int test(lint x) {\n\
+    \    long long count = 0;\n    __asm__ volatile(\"TZCNT %1, %0;\"\n    :\"=r\"\
     (count)\n    :\"r\"(x)\n    :\n    );\n    return count;\n}\n\nint main() {\n\n\
     \    // random test\n    Random ran;\n    for (int i = 0; i < 100000000; i++)\
     \ {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
-    \ == ctz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}"
+    \ == ctz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
+  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
+    \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/ctz.cpp\"\n\n#include\
+    \ <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\
+    using lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
+    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
+    \ volatile(\"TZCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
+    \    return count;\n}\n\nint main() {\n\n    // random test\n    Random ran;\n\
+    \    for (int i = 0; i < 100000000; i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n\
+    \        assert(test(n) == ctz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\
+    \n    return 0;\n}"
   dependsOn:
   - src/Random.cpp
   - src/ctz.cpp
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/own/Random_ctz.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:59:22+09:00'
+  timestamp: '2021-01-24 13:41:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_ctz.test.cpp

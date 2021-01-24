@@ -46,9 +46,9 @@ data:
     \ long long as_uint64;\n        double as_double;\n    } data{};\n    data.as_double\
     \ = (double)x + 0.5;\n    int n = 1054 - (int)(data.as_uint64 >> 52);\n    return\
     \ 32 + n;\n}\n#line 6 \"test/own/Random_clz.test.cpp\"\n\n#line 8 \"test/own/Random_clz.test.cpp\"\
-    \n#include <bitset>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
-    \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
-    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\nusing lint\
+    \ = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n   \
+    \     ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
     \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
     \ volatile(\"LZCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
     \    return count;\n}\n\nint main() {\n\n    // random test\n    Random ran;\n\
@@ -57,22 +57,22 @@ data:
     \n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/clz.cpp\"\n\n#include\
-    \ <cassert>\n#include <bitset>\n#include <iostream>\n#include <iomanip>\n\nusing\
-    \ namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n   \
-    \     cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout <<\
-    \ fixed << setprecision(10);\n    }\n} init_;\n\ninline int test(lint x) {\n \
-    \   long long count = 0;\n    __asm__ volatile(\"LZCNT %1, %0;\"\n    :\"=r\"\
-    (count)\n    :\"r\"(x)\n    :\n    );\n    return count;\n}\n\nint main() {\n\n\
-    \    // random test\n    Random ran;\n    for (int i = 0; i < 100000000; i++)\
-    \ {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
-    \ == clz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
+    \ <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\
+    using lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
+    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \    }\n} init_;\n\ninline int test(lint x) {\n    long long count = 0;\n    __asm__\
+    \ volatile(\"LZCNT %1, %0;\"\n    :\"=r\"(count)\n    :\"r\"(x)\n    :\n    );\n\
+    \    return count;\n}\n\nint main() {\n\n    // random test\n    Random ran;\n\
+    \    for (int i = 0; i < 100000000; i++) {\n        lint n = ran(0, numeric_limits<lint>::max());\n\
+    \        assert(test(n) == clz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\
+    \n    return 0;\n}\n"
   dependsOn:
   - src/Random.cpp
   - src/clz.cpp
   isVerificationFile: true
   path: test/own/Random_clz.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:59:22+09:00'
+  timestamp: '2021-01-24 13:41:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_clz.test.cpp

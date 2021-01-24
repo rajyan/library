@@ -16,6 +16,9 @@ data:
     path: test/aoj/NTL_1_B_2.test.cpp
     title: test/aoj/NTL_1_B_2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/own/Modint_Basic.test.cpp
+    title: test/own/Modint_Basic.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_primes.test.cpp
     title: test/yosupo/enumerate_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -109,6 +112,7 @@ data:
   - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
   - test/yukicoder/1081.test.cpp
+  - test/own/Modint_Basic.test.cpp
 documentation_of: src/Modint.cpp
 layout: document
 redirect_from:

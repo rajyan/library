@@ -135,6 +135,9 @@ data:
   - name: test/own
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/own/Modint_Basic.test.cpp
+      title: test/own/Modint_Basic.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/own/Random_clz.test.cpp
       title: test/own/Random_clz.test.cpp
     - icon: ':heavy_check_mark:'
