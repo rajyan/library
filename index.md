@@ -93,9 +93,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/popcount.cpp
       title: src/popcount.cpp
-    - icon: ':warning:'
-      path: src/run_length.cpp
-      title: src/run_length.cpp
+    - icon: ':heavy_check_mark:'
+      path: src/runLength.cpp
+      title: src/runLength.cpp
     - icon: ':heavy_check_mark:'
       path: src/slide_minmax.cpp
       title: src/slide_minmax.cpp
@@ -135,14 +135,17 @@ data:
   - name: test/own
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/own/RandNum_clz.test.cpp
-      title: test/own/RandNum_clz.test.cpp
+      path: test/own/Random_clz.test.cpp
+      title: test/own/Random_clz.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/own/RandNum_ctz.test.cpp
-      title: test/own/RandNum_ctz.test.cpp
+      path: test/own/Random_ctz.test.cpp
+      title: test/own/Random_ctz.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/own/RandNum_popcount.test.cpp
-      title: test/own/RandNum_popcount.test.cpp
+      path: test/own/Random_popcount.test.cpp
+      title: test/own/Random_popcount.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/own/Random_runlength.test.cpp
+      title: test/own/Random_runlength.test.cpp
   - name: test/yosupo
     pages:
     - icon: ':heavy_check_mark:'

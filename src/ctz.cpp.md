@@ -10,8 +10,8 @@ data:
     title: src/Prime.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/own/RandNum_ctz.test.cpp
-    title: test/own/RandNum_ctz.test.cpp
+    path: test/own/Random_ctz.test.cpp
+    title: test/own/Random_ctz.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_primes.test.cpp
     title: test/yosupo/enumerate_primes.test.cpp
@@ -41,7 +41,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
-  - test/own/RandNum_ctz.test.cpp
+  - test/own/Random_ctz.test.cpp
 documentation_of: src/ctz.cpp
 layout: document
 redirect_from:

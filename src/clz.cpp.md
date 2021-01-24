@@ -7,8 +7,8 @@ data:
     title: src/LowestCommonAncestor.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/own/RandNum_clz.test.cpp
-    title: test/own/RandNum_clz.test.cpp
+    path: test/own/Random_clz.test.cpp
+    title: test/own/Random_clz.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
@@ -34,7 +34,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
-  - test/own/RandNum_clz.test.cpp
+  - test/own/Random_clz.test.cpp
 documentation_of: src/clz.cpp
 layout: document
 redirect_from:
