@@ -44,3 +44,5 @@ struct Matrix2D {
     }
     [[nodiscard]] constexpr T det() const noexcept { return r0 * r1.nor(); }
 };
+
+using mat = Matrix2D<lint>;

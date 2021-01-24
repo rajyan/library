@@ -23,6 +23,7 @@ else ()
     )
 endif ()
 
+add_executable(own_Matrix2D_Basic.test Matrix2D_Basic.test.cpp)
 add_executable(own_Modint_Basic.test Modint_Basic.test.cpp)
 add_executable(own_Point2D_Basic.test Point2D_Basic.test.cpp)
 add_executable(own_Random_clz.test Random_clz.test.cpp)
