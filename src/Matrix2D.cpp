@@ -21,7 +21,7 @@ struct Matrix2D {
     constexpr Matrix2D &operator+=(const Matrix2D &rhs) noexcept { return *this = *this + rhs; }
     constexpr Matrix2D &operator-=(const Matrix2D &rhs) noexcept { return *this = *this - rhs; }
     constexpr Matrix2D &operator*=(const Matrix2D &rhs) noexcept { return *this = *this * rhs; }
-    constexpr Matrix2D operator-() noexcept { return {-r0, -r1}; }
+    constexpr Matrix2D operator-() const noexcept { return {-r0, -r1}; }
 
     constexpr Point2D<T> operator*(const Point2D<T> &b_T) const noexcept { return {r0 * b_T, r1 * b_T}; }
 
