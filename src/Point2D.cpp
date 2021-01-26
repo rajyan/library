@@ -38,7 +38,7 @@ struct Point2D {
     [[nodiscard]] constexpr long double hypot() const noexcept { return ::hypotl(x, y); }
     [[nodiscard]] constexpr bool inGrid(const T &H, const T &W) const noexcept { return 0 <= x && x < H && 0 <= y && y < W; }
     template<class U>
-    [[nodiscard]] constexpr U &operator[](vector<vector<U>> &v) { return v[x][y]; }
+    [[nodiscard]] constexpr U &operator[](vector<vector<U>> &v) const noexcept { return v[x][y]; }
 
     friend istream &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }
     friend ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y; }

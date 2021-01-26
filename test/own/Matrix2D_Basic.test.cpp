@@ -5,7 +5,6 @@
 #include "../../src/Matrix2D.cpp"
 
 #include <cassert>
-#include <type_traits>
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -113,7 +112,6 @@ int main() {
     constexpr mat CM6{{3, 5},
                       {2, 1}};
     static_assert(CM5 + CM6 == mat({4, 7}, {5, 5}));
-
     constexpr auto additionAssign = [=]() {
         mat res = CM5;
         res += CM6;
