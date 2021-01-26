@@ -66,13 +66,13 @@ data:
     \ Matrix2D &rhs) noexcept { return *this = *this + rhs; }\n    constexpr Matrix2D\
     \ &operator-=(const Matrix2D &rhs) noexcept { return *this = *this - rhs; }\n\
     \    constexpr Matrix2D &operator*=(const Matrix2D &rhs) noexcept { return *this\
-    \ = *this * rhs; }\n    constexpr Matrix2D operator-() noexcept { return {-r0,\
-    \ -r1}; }\n\n    constexpr Point2D<T> operator*(const Point2D<T> &b_T) const noexcept\
-    \ { return {r0 * b_T, r1 * b_T}; }\n\n    [[nodiscard]] constexpr Matrix2D trans()\
-    \ const noexcept {\n        return {{r0.x, r1.x},\n                {r0.y, r1.y}};\n\
-    \    }\n    [[nodiscard]] constexpr Matrix2D identity() const noexcept {\n   \
-    \     return {{1, 0},\n                {0, 1}};\n    }\n    [[nodiscard]] constexpr\
-    \ Matrix2D pow(lint n) const noexcept {\n        Matrix2D res{Matrix2D().identity()},\
+    \ = *this * rhs; }\n    constexpr Matrix2D operator-() const noexcept { return\
+    \ {-r0, -r1}; }\n\n    constexpr Point2D<T> operator*(const Point2D<T> &b_T) const\
+    \ noexcept { return {r0 * b_T, r1 * b_T}; }\n\n    [[nodiscard]] constexpr Matrix2D\
+    \ trans() const noexcept {\n        return {{r0.x, r1.x},\n                {r0.y,\
+    \ r1.y}};\n    }\n    [[nodiscard]] constexpr Matrix2D identity() const noexcept\
+    \ {\n        return {{1, 0},\n                {0, 1}};\n    }\n    [[nodiscard]]\
+    \ constexpr Matrix2D pow(lint n) const noexcept {\n        Matrix2D res{Matrix2D().identity()},\
     \ tmp{*this};\n        while (n > 0) {\n            if (n & 1) res *= tmp;\n \
     \           tmp *= tmp;\n            n >>= 1;\n        }\n        return res;\n\
     \    }\n    [[nodiscard]] constexpr T det() const noexcept { return r0 * r1.nor();\
@@ -92,7 +92,7 @@ data:
     \ = *this + rhs; }\n    constexpr Matrix2D &operator-=(const Matrix2D &rhs) noexcept\
     \ { return *this = *this - rhs; }\n    constexpr Matrix2D &operator*=(const Matrix2D\
     \ &rhs) noexcept { return *this = *this * rhs; }\n    constexpr Matrix2D operator-()\
-    \ noexcept { return {-r0, -r1}; }\n\n    constexpr Point2D<T> operator*(const\
+    \ const noexcept { return {-r0, -r1}; }\n\n    constexpr Point2D<T> operator*(const\
     \ Point2D<T> &b_T) const noexcept { return {r0 * b_T, r1 * b_T}; }\n\n    [[nodiscard]]\
     \ constexpr Matrix2D trans() const noexcept {\n        return {{r0.x, r1.x},\n\
     \                {r0.y, r1.y}};\n    }\n    [[nodiscard]] constexpr Matrix2D identity()\
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: src/Matrix2D.cpp
   requiredBy: []
-  timestamp: '2021-01-24 15:36:22+09:00'
+  timestamp: '2021-01-26 10:05:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/891.test.cpp
