@@ -56,9 +56,9 @@ struct Mint {
     constexpr bool operator!=(const Mint &r) const noexcept { return !((*this) == r); }
     constexpr bool operator<(const Mint &r) const noexcept { return val < r.val; }
 
-    friend ostream &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
-    friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept {
-        lint tmp;
+    constexpr friend ostream &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val; }
+    constexpr friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept {
+        lint tmp{};
         is >> tmp;
         x = Mint(tmp);
         return is;

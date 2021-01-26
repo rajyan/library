@@ -40,8 +40,8 @@ struct Point2D {
     template<class U>
     [[nodiscard]] constexpr U &operator[](vector<vector<U>> &v) const noexcept { return v[x][y]; }
 
-    friend istream &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }
-    friend ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y; }
+    constexpr friend istream &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }
+    constexpr friend ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y; }
 };
 
 using pnt = Point2D<lint>;
