@@ -3,9 +3,9 @@
 using namespace std;
 
 template<class T, class F>
-T bisearch(T NG, T OK, F f) {
-    T ng = NG;
+T bisearch(T OK, T NG, F f) {
     T ok = OK;
+    T ng = NG;
 
     while (abs(ok - ng) > 1) {
         auto mid = (ok + ng) / 2;
