@@ -14,8 +14,8 @@ public:
     void add(const T &x) { comp.emplace_back(x); }
 
     void build() {
-        sort(begin(comp), end(comp));
-        comp.erase(unique(begin(comp), end(comp)), end(comp));
+        sort(comp.begin(), comp.end());
+        comp.erase(unique(comp.begin(), comp.end(), comp.end()));
     }
 
     [[nodiscard]] vector<int> get(const vector<T> &vec) const {
