@@ -1,7 +1,7 @@
 
 #define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 
-#include "../../src/fnv1a.cpp"
+#include "../../src/fnv1a.hpp"
 
 #include <iostream>
 #include <iomanip>

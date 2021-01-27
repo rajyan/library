@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "chmin.cpp"
+#include "chmin.hpp"
 
 template<class T>
 vector<vector<T>> FloydWarshall(const vector<vector<T>> &in, const T diag = T{}) {

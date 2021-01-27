@@ -1,8 +1,8 @@
 
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
-#include "../../src/makevec.cpp"
-#include "../../src/LowestCommonAncestor.cpp"
+#include "../../src/makevec.hpp"
+#include "../../src/LowestCommonAncestor.hpp"
 
 #include <iostream>
 #include <iomanip>

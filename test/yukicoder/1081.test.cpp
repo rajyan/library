@@ -1,7 +1,7 @@
 
 #define PROBLEM "https://yukicoder.me/problems/no/1081"
 
-#include "../../src/Combination.cpp"
+#include "../../src/Combination.hpp"
 
 #include <iostream>
 #include <iomanip>

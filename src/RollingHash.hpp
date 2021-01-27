@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "Modint.cpp"
+#include "Modint.hpp"
 
 //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
 class RollingHash {

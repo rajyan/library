@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 
-#include "Modint.cpp"
+#include "Modint.hpp"
 
 template<class T = mint>
 class Combination {

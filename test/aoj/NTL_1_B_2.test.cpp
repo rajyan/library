@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#include "../../src/Modint.cpp"
+#include "../../src/Modint.hpp"
 
 struct init {
     init() {

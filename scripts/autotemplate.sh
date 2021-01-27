@@ -1,6 +1,6 @@
 #! /bin/bash -eu
 
-tmp_file=${TMP_FILE:-'temp.cpp'}
+tmp_file=${TMP_FILE:-'temp.hpp'}
 templates=${TEMPLATES:-'../library/templates'}
 base_file=${BASE_FILE:-'../library/templates/auto_template.xml'}
 config_dir=${CONFIG_DIR:-'../../AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
@@ -20,25 +20,25 @@ if [ $# -eq 0 ]; then
 fi
 
 # generate templates
-for cppfile in "$@"; do
-  # run only on cpp files
-  if [[ ! $cppfile == *'.cpp' ]]; then
+for hppfile in "$@"; do
+  # run only on hpp files
+  if [[ ! $hppfile == *'.hpp' ]]; then
     continue
   fi
   # expand and trim
-  if [[ $cppfile == *'template.cpp' ]]; then
-    cat "$cppfile" > "$tmp_file"
-    echo "$cppfile"
+  if [[ $hppfile == *'template.hpp' ]]; then
+    cat "$hppfile" > "$tmp_file"
+    echo "$hppfile"
   else
     # expand includes
-#    /home/rajyan/.pyenv/shims/oj-bundle "$cppfile" 2> /dev/null | \
-    echo "$(sed -n -r "s/#include \"(.*)\"/${cppfile%/*}\/\1/p" "$cppfile")" "$cppfile" | xargs cat | \
+#    /home/rajyan/.pyenv/shims/oj-bundle "$hppfile" 2> /dev/null | \
+    echo "$(sed -n -r "s/#include \"(.*)\"/${hppfile%/*}\/\1/p" "$hppfile")" "$hppfile" | xargs cat | \
     # delete line starting with (#include | using (namespace|lint) | constexpr)
     sed '/^#line/d; /^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
   fi
   content=$(format "$tmp_file")
 
-  filename=${cppfile%.cpp}
+  filename=${hppfile%.hpp}
   filename=${filename##*/}
   shortname=${filename/_/}
   shortname=${shortname,,}

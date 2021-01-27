@@ -2,9 +2,9 @@
 
 # delete templates
 ## deleted files
-git diff --cached --name-only --diff-filter=D | grep "src/.*\.cpp$" | sed -e "s/src/templates/g" -e "s/cpp$/xml/g" | xargs rm -f
+git diff --cached --name-only --diff-filter=D | grep "src/.*\.hpp$" | sed -e "s/src/templates/g" -e "s/hpp$/xml/g" | xargs rm -f
 ## renamed files
-git diff --cached | grep "rename from src/.*\.cpp$" | sed -e "s/rename from //g" -e "s/src/templates/g" -e "s/cpp$/xml/g" | xargs rm -f
+git diff --cached | grep "rename from src/.*\.hpp$" | sed -e "s/rename from //g" -e "s/src/templates/g" -e "s/hpp$/xml/g" | xargs rm -f
 
 # generate templates
-git diff --cached --name-only --diff-filter=d | grep "src/.*\.cpp$" | xargs ./scripts/autotemplate.sh
+git diff --cached --name-only --diff-filter=d | grep "src/.*\.hpp$" | xargs ./scripts/autotemplate.sh

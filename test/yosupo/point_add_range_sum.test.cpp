@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
-#include "../../src/FenwickTree.cpp"
+#include "../../src/FenwickTree.hpp"
 
 #include <iostream>
 #include <iomanip>

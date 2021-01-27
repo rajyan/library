@@ -10,7 +10,7 @@ using namespace std;
 using lint = long long;
 constexpr lint LINF = 1LL << 60;
 
-#include "../../src/FloydWarshall.cpp"
+#include "../../src/FloydWarshall.hpp"
 
 struct init {
     init() {

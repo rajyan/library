@@ -6,8 +6,8 @@
 
 using namespace std;
 
-#include "../../src/Modint.cpp"
-#include "../../src/Matrix2D.cpp"
+#include "../../src/Modint.hpp"
+#include "../../src/Matrix2D.hpp"
 
 struct init {
     init() {

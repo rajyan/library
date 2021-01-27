@@ -1,5 +1,5 @@
 
-#include "Point2D.cpp"
+#include "Point2D.hpp"
 
 template<class T>
 struct Matrix2D {

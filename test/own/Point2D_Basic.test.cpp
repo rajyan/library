@@ -1,8 +1,8 @@
 
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
-#include "../../src/makevec.cpp"
-#include "../../src/Point2D.cpp"
+#include "../../src/makevec.hpp"
+#include "../../src/Point2D.hpp"
 
 #include <cassert>
 #include <iostream>

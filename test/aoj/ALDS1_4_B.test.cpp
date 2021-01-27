@@ -1,7 +1,7 @@
 
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja"
 
-#include "../../src/bisearch.cpp"
+#include "../../src/bisearch.hpp"
 
 #include <iostream>
 #include <iomanip>

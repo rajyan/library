@@ -1,8 +1,8 @@
 
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
-#include "../../src/Random.cpp"
-#include "../../src/clz.cpp"
+#include "../../src/Random.hpp"
+#include "../../src/clz.hpp"
 
 #include <cassert>
 #include <iostream>

@@ -1,7 +1,7 @@
 
 #define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'
 
-#include "../../src/UnionFind.cpp"
+#include "../../src/UnionFind.hpp"
 
 #include <iostream>
 #include <iomanip>

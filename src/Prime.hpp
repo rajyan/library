@@ -4,9 +4,9 @@ using namespace std;
 using lint = long long;
 
 #define RUNTIME_MODINT
-#include "Modint.cpp"
+#include "Modint.hpp"
 
-#include "ctz.cpp"
+#include "ctz.hpp"
 
 class Prime {
     vector<int> prime;

@@ -11,7 +11,7 @@ using namespace std;
 using lint = long long;
 constexpr lint LINF = 1LL << 60;
 
-#include "../../src/BellmanFord.cpp"
+#include "../../src/BellmanFord.hpp"
 
 struct init {
     init() {

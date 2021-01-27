@@ -2,7 +2,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
 #define RUNTIME_MODINT
-#include "../../src/Modint.cpp"
+#include "../../src/Modint.hpp"
 
 #include <cassert>
 #include <iostream>

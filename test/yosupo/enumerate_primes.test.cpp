@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#include "../../src/Prime.cpp"
+#include "../../src/Prime.hpp"
 
 struct init {
     init() {

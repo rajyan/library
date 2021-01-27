@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#include "../../src/slide_minmax.cpp"
+#include "../../src/slide_minmax.hpp"
 
 struct init {
     init() {

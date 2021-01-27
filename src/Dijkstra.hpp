@@ -4,8 +4,8 @@
 
 using namespace std;
 
-#include "chmin.cpp"
-#include "Edge.cpp"
+#include "chmin.hpp"
+#include "Edge.hpp"
 
 template<class T>
 vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {

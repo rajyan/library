@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "clz.cpp"
+#include "clz.hpp"
 
 using namespace std;
 

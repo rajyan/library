@@ -1,7 +1,7 @@
 
 #define PROBLEM "https://yukicoder.me/problems/no/430"
 
-#include "../../src/RollingHash.cpp"
+#include "../../src/RollingHash.hpp"
 
 #include <iostream>
 #include <iomanip>

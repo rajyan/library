@@ -1,5 +1,5 @@
 
-#include "popcount.cpp"
+#include "popcount.hpp"
 
 using lint = long long;
 

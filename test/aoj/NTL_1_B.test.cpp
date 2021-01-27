@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#include "../../src/modpow.cpp"
+#include "../../src/modpow.hpp"
 
 struct init {
     init() {

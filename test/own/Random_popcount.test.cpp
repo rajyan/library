@@ -1,8 +1,8 @@
 
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
-#include "../../src/Random.cpp"
-#include "../../src/popcount.cpp"
+#include "../../src/Random.hpp"
+#include "../../src/popcount.hpp"
 
 #include <cassert>
 #include <iostream>

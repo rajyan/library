@@ -8,7 +8,7 @@
 using namespace std;
 using lint = long long;
 
-#include "../../src/CumulativeSum.cpp"
+#include "../../src/CumulativeSum.hpp"
 
 struct init {
     init() {
