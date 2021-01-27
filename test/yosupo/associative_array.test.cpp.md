@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/fnv1a.cpp
-    title: src/fnv1a.cpp
+    path: src/fnv1a.hpp
+    title: src/fnv1a.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,7 +15,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/associative_array
   bundledCode: "#line 1 \"test/yosupo/associative_array.test.cpp\"\n\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line 1 \"src/fnv1a.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line 1 \"src/fnv1a.hpp\"\
     \n#include <iostream>\n\nusing namespace std;\n\ninline uint64_t fnv1a_64(const\
     \ string& data) {\n\n    uint64_t hash = 0xcbf29ce484222325;\n    constexpr uint64_t\
     \ prime = 0x100000001b3;\n\n    for (char i : data) {\n        hash = hash ^ i;\n\
@@ -33,7 +33,7 @@ data:
     ;\n\t\t}\n\t\telse {\n\t\t\tlint k, v;\n\t\t\tcin >> k >> v;\n\t\t\tmp[test(k)]\
     \ = v;\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n\
-    \n#include \"../../src/fnv1a.cpp\"\n\n#include <iostream>\n#include <iomanip>\n\
+    \n#include \"../../src/fnv1a.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     #include <unordered_map>\n\nusing namespace std;\nusing lint = long long;\n\n\
     struct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
     \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nstruct test {\n\tlint\
@@ -46,11 +46,11 @@ data:
     ;\n\t\t}\n\t\telse {\n\t\t\tlint k, v;\n\t\t\tcin >> k >> v;\n\t\t\tmp[test(k)]\
     \ = v;\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
-  - src/fnv1a.cpp
+  - src/fnv1a.hpp
   isVerificationFile: true
   path: test/yosupo/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:28:02+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/associative_array.test.cpp

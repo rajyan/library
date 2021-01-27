@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/LowestCommonAncestor.cpp
-    title: src/LowestCommonAncestor.cpp
+    path: src/LowestCommonAncestor.hpp
+    title: src/LowestCommonAncestor.hpp
   - icon: ':heavy_check_mark:'
-    path: src/clz.cpp
-    title: src/clz.cpp
+    path: src/clz.hpp
+    title: src/clz.hpp
   - icon: ':heavy_check_mark:'
-    path: src/makevec.cpp
-    title: src/makevec.cpp
+    path: src/makevec.hpp
+    title: src/makevec.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -21,14 +21,14 @@ data:
     links:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"test/yosupo/lca.test.cpp\"\n\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
-    \n\n#line 1 \"src/makevec.cpp\"\n#include <vector>\n\nusing namespace std;\n\n\
+    \n\n#line 1 \"src/makevec.hpp\"\n#include <vector>\n\nusing namespace std;\n\n\
     template<class T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s, val);\
     \ }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n    return\
-    \ vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n#line 2 \"src/LowestCommonAncestor.cpp\"\
-    \n\n#line 1 \"src/clz.cpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
+    \ vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n#line 2 \"src/LowestCommonAncestor.hpp\"\
+    \n\n#line 1 \"src/clz.hpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
     \ x) {\n    union {\n        unsigned long long as_uint64;\n        double as_double;\n\
     \    } data{};\n    data.as_double = (double)x + 0.5;\n    int n = 1054 - (int)(data.as_uint64\
-    \ >> 52);\n    return 32 + n;\n}\n#line 4 \"src/LowestCommonAncestor.cpp\"\n\n\
+    \ >> 52);\n    return 32 + n;\n}\n#line 4 \"src/LowestCommonAncestor.hpp\"\n\n\
     using namespace std;\n\nclass LCA {\nprivate:\n\n    int N, lg_N;\n    vector<int>\
     \ depth;\n    vector<vector<int>> par;\n\n    void build(const vector<vector<int>>\
     \ &tree, int root) {\n\n        auto dfs = [&](auto &&f, int now) -> void {\n\
@@ -60,7 +60,7 @@ data:
     \ < Q; i++) {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout << lca.get_lca(u, v)\
     \ << \"\\n\";\n\t}\n\n\treturn 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"\
-    ../../src/makevec.cpp\"\n#include \"../../src/LowestCommonAncestor.cpp\"\n\n#include\
+    ../../src/makevec.hpp\"\n#include \"../../src/LowestCommonAncestor.hpp\"\n\n#include\
     \ <iostream>\n#include <iomanip>\n\nusing namespace std;\n\nstruct init {\n\t\
     init() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed\
     \ << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint N, Q;\n\tcin >>\
@@ -70,13 +70,13 @@ data:
     \ {\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout << lca.get_lca(u, v) << \"\\\
     n\";\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
-  - src/makevec.cpp
-  - src/LowestCommonAncestor.cpp
-  - src/clz.cpp
+  - src/makevec.hpp
+  - src/LowestCommonAncestor.hpp
+  - src/clz.hpp
   isVerificationFile: true
   path: test/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:28:02+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.test.cpp

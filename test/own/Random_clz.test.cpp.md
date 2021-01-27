@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Random.cpp
-    title: src/Random.cpp
+    path: src/Random.hpp
+    title: src/Random.hpp
   - icon: ':heavy_check_mark:'
-    path: src/clz.cpp
-    title: src/clz.cpp
+    path: src/clz.hpp
+    title: src/clz.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -18,7 +18,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Random_clz.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#line 1 \"src/Random.cpp\"\n#include <cassert>\n#include <algorithm>\n#include\
+    \n\n#line 1 \"src/Random.hpp\"\n#include <cassert>\n#include <algorithm>\n#include\
     \ <random>\n#include <chrono>\n#include <vector>\n#include <unordered_map>\n\n\
     using namespace std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937\
     \ mt;\n    Random() : mt(chrono::steady_clock::now().time_since_epoch().count())\
@@ -41,7 +41,7 @@ data:
     \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        assert(!list.empty());\n      \
     \  int size = (int)(*this)(1, max_len);\n        string res(size, 0);\n      \
     \  generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size()\
-    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/clz.cpp\"\n\nusing\
+    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/clz.hpp\"\n\nusing\
     \ lint = long long;\n\ninline int clz(lint x) {\n    union {\n        unsigned\
     \ long long as_uint64;\n        double as_double;\n    } data{};\n    data.as_double\
     \ = (double)x + 0.5;\n    int n = 1054 - (int)(data.as_uint64 >> 52);\n    return\
@@ -56,7 +56,7 @@ data:
     \        assert(test(n) == clz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\
     \n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/clz.cpp\"\n\n#include\
+    \n\n#include \"../../src/Random.hpp\"\n#include \"../../src/clz.hpp\"\n\n#include\
     \ <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\
     using lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
     \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
@@ -67,12 +67,12 @@ data:
     \        assert(test(n) == clz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\
     \n    return 0;\n}\n"
   dependsOn:
-  - src/Random.cpp
-  - src/clz.cpp
+  - src/Random.hpp
+  - src/clz.hpp
   isVerificationFile: true
   path: test/own/Random_clz.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 13:41:16+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_clz.test.cpp

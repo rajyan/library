@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/UnionFind.cpp
-    title: src/UnionFind.cpp
+    path: src/UnionFind.hpp
+    title: src/UnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,7 +15,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
   bundledCode: "#line 1 \"test/aoj/DSL_1_A.test.cpp\"\n\n#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'\n\
-    \n#line 1 \"src/UnionFind.cpp\"\n#include <vector>\n\nusing namespace std;\n\n\
+    \n#line 1 \"src/UnionFind.hpp\"\n#include <vector>\n\nusing namespace std;\n\n\
     class UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    explicit UnionFind(int\
     \ size) : data(size, -1) {}\n    [[nodiscard]] int root(int x) { return data[x]\
     \ < 0 ? x : data[x] = root(data[x]); }\n    [[nodiscard]] bool is_same(int x,\
@@ -33,7 +33,7 @@ data:
     \ << \"\\n\";\n\t\t}\n\t\telse {\n\t\t\tuf.unify(x, y);\n\t\t}\n\t}\n\n\treturn\
     \ 0;\n}\n"
   code: "\n#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'\n\
-    \n#include \"../../src/UnionFind.cpp\"\n\n#include <iostream>\n#include <iomanip>\n\
+    \n#include \"../../src/UnionFind.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     #include <vector>\n\nusing namespace std;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr);\
     \ ios::sync_with_stdio(false);\n\t\tcout << fixed << setprecision(10);\n\t}\n\
     } init_;\n\nint main() {\n\n\tint n, q;\n\tcin >> n >> q;\n\n\tUnionFind uf(n);\n\
@@ -41,11 +41,11 @@ data:
     \t\tif (c) {\n\t\t\tcout << uf.is_same(x, y) << \"\\n\";\n\t\t}\n\t\telse {\n\t\
     \t\tuf.unify(x, y);\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
-  - src/UnionFind.cpp
+  - src/UnionFind.hpp
   isVerificationFile: true
   path: test/aoj/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:18:17+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_A.test.cpp

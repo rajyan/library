@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/FloydWarshall.cpp
-    title: src/FloydWarshall.cpp
+    path: src/FloydWarshall.hpp
+    title: src/FloydWarshall.hpp
   - icon: ':heavy_check_mark:'
-    path: src/chmin.cpp
-    title: src/chmin.cpp
+    path: src/chmin.hpp
+    title: src/chmin.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -20,9 +20,9 @@ data:
   bundledCode: "#line 1 \"test/aoj/GRL_1_C.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
     \n\n#include <iostream>\n#include <iomanip>\n#include <string>\n#include <vector>\n\
     \nusing namespace std;\nusing lint = long long;\nconstexpr lint LINF = 1LL <<\
-    \ 60;\n\n#line 1 \"src/FloydWarshall.cpp\"\n#include <cassert>\n#line 3 \"src/FloydWarshall.cpp\"\
-    \n\nusing namespace std;\n\n#line 1 \"src/chmin.cpp\"\ntemplate<class T>\ninline\
-    \ bool chmin(T &a, const T b) { return a > b && (a = b, true); }\n#line 7 \"src/FloydWarshall.cpp\"\
+    \ 60;\n\n#line 1 \"src/FloydWarshall.hpp\"\n#include <cassert>\n#line 3 \"src/FloydWarshall.hpp\"\
+    \n\nusing namespace std;\n\n#line 1 \"src/chmin.hpp\"\ntemplate<class T>\ninline\
+    \ bool chmin(T &a, const T b) { return a > b && (a = b, true); }\n#line 7 \"src/FloydWarshall.hpp\"\
     \n\ntemplate<class T>\nvector<vector<T>> FloydWarshall(const vector<vector<T>>\
     \ &in, const T diag = T{}) {\n\n    const int N = in.size();\n    assert(N ==\
     \ (int)in[0].size());\n    const T inf = in[0][0];\n\n    auto d = in;\n    for\
@@ -44,7 +44,7 @@ data:
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
     \n\n#include <iostream>\n#include <iomanip>\n#include <string>\n#include <vector>\n\
     \nusing namespace std;\nusing lint = long long;\nconstexpr lint LINF = 1LL <<\
-    \ 60;\n\n#include \"../../src/FloydWarshall.cpp\"\n\nstruct init {\n    init()\
+    \ 60;\n\n#include \"../../src/FloydWarshall.hpp\"\n\nstruct init {\n    init()\
     \ {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n       \
     \ cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int\
     \ N, M;\n    cin >> N >> M;\n\n    vector<vector<lint>> edges(N, vector<lint>(N,\
@@ -57,12 +57,12 @@ data:
     \ &row.back()) cout << ' ';\n        }\n        cout << '\\n';\n    }\n\n    return\
     \ 0;\n}\n"
   dependsOn:
-  - src/FloydWarshall.cpp
-  - src/chmin.cpp
+  - src/FloydWarshall.hpp
+  - src/chmin.hpp
   isVerificationFile: true
   path: test/aoj/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 15:49:39+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_C.test.cpp

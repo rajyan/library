@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Random.cpp
-    title: src/Random.cpp
+    path: src/Random.hpp
+    title: src/Random.hpp
   - icon: ':heavy_check_mark:'
-    path: src/popcount.cpp
-    title: src/popcount.cpp
+    path: src/popcount.hpp
+    title: src/popcount.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Random_popcount.test.cpp\"\n\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line 1\
-    \ \"src/Random.cpp\"\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
+    \ \"src/Random.hpp\"\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
     #include <chrono>\n#include <vector>\n#include <unordered_map>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    Random()\
     \ : mt(chrono::steady_clock::now().time_since_epoch().count()) {}\n\n    lint\
@@ -42,7 +42,7 @@ data:
     \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        assert(!list.empty());\n      \
     \  int size = (int)(*this)(1, max_len);\n        string res(size, 0);\n      \
     \  generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size()\
-    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/popcount.cpp\"\n\
+    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/popcount.hpp\"\n\
     \nusing lint = long long;\n\ninline int popcount(lint n) {\n    n = (n & 0x5555555555555555)\
     \ + (n >> 1 & 0x5555555555555555);\n    n = (n & 0x3333333333333333) + (n >> 2\
     \ & 0x3333333333333333);\n    n = (n & 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n\
@@ -66,7 +66,7 @@ data:
     \ == popcount(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n\
     }\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/popcount.cpp\"\n\n\
+    \n\n#include \"../../src/Random.hpp\"\n#include \"../../src/popcount.hpp\"\n\n\
     #include <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
     \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
@@ -84,12 +84,12 @@ data:
     \ == popcount(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n\
     }\n"
   dependsOn:
-  - src/Random.cpp
-  - src/popcount.cpp
+  - src/Random.hpp
+  - src/popcount.hpp
   isVerificationFile: true
   path: test/own/Random_popcount.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:59:22+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_popcount.test.cpp

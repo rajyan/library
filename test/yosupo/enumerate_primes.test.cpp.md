@@ -2,17 +2,17 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Modint.cpp
-    title: src/Modint.cpp
+    path: src/Modint.hpp
+    title: src/Modint.hpp
   - icon: ':heavy_check_mark:'
-    path: src/Prime.cpp
-    title: src/Prime.cpp
+    path: src/Prime.hpp
+    title: src/Prime.hpp
   - icon: ':heavy_check_mark:'
-    path: src/ctz.cpp
-    title: src/ctz.cpp
+    path: src/ctz.hpp
+    title: src/ctz.hpp
   - icon: ':heavy_check_mark:'
-    path: src/popcount.cpp
-    title: src/popcount.cpp
+    path: src/popcount.hpp
+    title: src/popcount.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -25,9 +25,9 @@ data:
     - https://judge.yosupo.jp/problem/enumerate_primes
   bundledCode: "#line 1 \"test/yosupo/enumerate_primes.test.cpp\"\n\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n#include <iostream>\n\
-    #include <iomanip>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"src/Prime.cpp\"\
+    #include <iomanip>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"src/Prime.hpp\"\
     \n\nusing namespace std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n\
-    #line 1 \"src/Modint.cpp\"\n#include <cassert>\n#line 3 \"src/Modint.cpp\"\n#include\
+    #line 1 \"src/Modint.hpp\"\n#include <cassert>\n#line 3 \"src/Modint.hpp\"\n#include\
     \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
     \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\ntemplate<int\
     \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
@@ -59,16 +59,16 @@ data:
     \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
     \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
-    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 8 \"src/Prime.cpp\"\
-    \n\n#line 1 \"src/ctz.cpp\"\n\n#line 1 \"src/popcount.cpp\"\n\nusing lint = long\
+    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 8 \"src/Prime.hpp\"\
+    \n\n#line 1 \"src/ctz.hpp\"\n\n#line 1 \"src/popcount.hpp\"\n\nusing lint = long\
     \ long;\n\ninline int popcount(lint n) {\n    n = (n & 0x5555555555555555) + (n\
     \ >> 1 & 0x5555555555555555);\n    n = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);\n\
     \    n = (n & 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n    n = (n\
     \ & 0x00ff00ff00ff00ff) + (n >> 8 & 0x00ff00ff00ff00ff);\n    n = (n & 0x0000ffff0000ffff)\
     \ + (n >> 16 & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >>\
-    \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 3 \"src/ctz.cpp\"\n\nusing\
+    \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 3 \"src/ctz.hpp\"\n\nusing\
     \ lint = long long;\n\ninline int ctz(lint n) {\n    return popcount(~n & (n -\
-    \ 1));\n}\n#line 10 \"src/Prime.cpp\"\n\nclass Prime {\n    vector<int> prime;\n\
+    \ 1));\n}\n#line 10 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
     \    vector<int> min_pf; // min_pf[i] = minimum prime factor of i\n    // linear\
     \ sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n    void linearSieve(int\
     \ N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int i = 2; i < N; i++)\
@@ -103,7 +103,7 @@ data:
     \ : ans) {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
     #include <iostream>\n#include <iomanip>\n#include <vector>\n\nusing namespace\
-    \ std;\n\n#include \"../../src/Prime.cpp\"\n\nstruct init {\n    init() {\n  \
+    \ std;\n\n#include \"../../src/Prime.hpp\"\n\nstruct init {\n    init() {\n  \
     \      cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout <<\
     \ fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N, A,\
     \ B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt = 0;\n    vector<int>\
@@ -112,14 +112,14 @@ data:
     \   cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item : ans)\
     \ {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
   dependsOn:
-  - src/Prime.cpp
-  - src/Modint.cpp
-  - src/ctz.cpp
-  - src/popcount.cpp
+  - src/Prime.hpp
+  - src/Modint.hpp
+  - src/ctz.hpp
+  - src/popcount.hpp
   isVerificationFile: true
   path: test/yosupo/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 10:41:23+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_primes.test.cpp

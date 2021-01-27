@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/FenwickTree.cpp
-    title: src/FenwickTree.cpp
+    path: src/FenwickTree.hpp
+    title: src/FenwickTree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,7 +15,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "#line 1 \"test/yosupo/point_add_range_sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 1 \"src/FenwickTree.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 1 \"src/FenwickTree.hpp\"\
     \n#include <vector>\n\nusing namespace std;\n\ntemplate<class T>\nclass FenwickTree\
     \ {\nprivate:\n    int n;\n    vector<T> bit;\npublic:\n    explicit FenwickTree(int\
     \ sz, T &&x = T{}) : n(sz), bit(n + 1) {\n        for (int i = 0; i < n; i++)\
@@ -34,7 +34,7 @@ data:
     \ {\n\t\t\tcout << ft.sum(x, y) << \"\\n\";\n\t\t}\n\t\telse {\n\t\t\tft.add(x,\
     \ y);\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    \n#include \"../../src/FenwickTree.cpp\"\n\n#include <iostream>\n#include <iomanip>\n\
+    \n#include \"../../src/FenwickTree.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n\tinit() {\n\
     \t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed << setprecision(10);\n\
     \t}\n} init_;\n\nint main() {\n\n\tint n, q;\n\tcin >> n >> q;\n\n\tFenwickTree<lint>\
@@ -43,11 +43,11 @@ data:
     cin >> c >> x >> y;\n\t\tif (c) {\n\t\t\tcout << ft.sum(x, y) << \"\\n\";\n\t\t\
     }\n\t\telse {\n\t\t\tft.add(x, y);\n\t\t}\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
-  - src/FenwickTree.cpp
+  - src/FenwickTree.hpp
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 14:54:11+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum.test.cpp

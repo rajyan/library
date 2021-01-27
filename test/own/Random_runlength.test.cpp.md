@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Random.cpp
-    title: src/Random.cpp
+    path: src/Random.hpp
+    title: src/Random.hpp
   - icon: ':heavy_check_mark:'
-    path: src/runLength.cpp
-    title: src/runLength.cpp
+    path: src/runLength.hpp
+    title: src/runLength.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Random_runlength.test.cpp\"\n\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line\
-    \ 1 \"src/Random.cpp\"\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
+    \ 1 \"src/Random.hpp\"\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
     #include <chrono>\n#include <vector>\n#include <unordered_map>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    Random()\
     \ : mt(chrono::steady_clock::now().time_since_epoch().count()) {}\n\n    lint\
@@ -42,8 +42,8 @@ data:
     \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        assert(!list.empty());\n      \
     \  int size = (int)(*this)(1, max_len);\n        string res(size, 0);\n      \
     \  generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size()\
-    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/runLength.cpp\"\n\
-    #include <string>\n#line 3 \"src/runLength.cpp\"\n\nusing namespace std;\n\nvector<pair<char,\
+    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/runLength.hpp\"\n\
+    #include <string>\n#line 3 \"src/runLength.hpp\"\n\nusing namespace std;\n\nvector<pair<char,\
     \ int>> runLength(string s) {\n    char prev = s[0];\n    vector<pair<char, int>>\
     \ res{{prev, 0}};\n    for (const auto &c : s) {\n        if (c == prev) res.back().second++;\n\
     \        else res.emplace_back(c, 1);\n        prev = c;\n    }\n    return res;\n\
@@ -57,7 +57,7 @@ data:
     \ &[c, n] : rl_s) {\n            test += string(n, c);\n        }\n        assert(s\
     \ == test);\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/runLength.cpp\"\n\n\
+    \n\n#include \"../../src/Random.hpp\"\n#include \"../../src/runLength.hpp\"\n\n\
     #include <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
     \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
@@ -67,12 +67,12 @@ data:
     \ &[c, n] : rl_s) {\n            test += string(n, c);\n        }\n        assert(s\
     \ == test);\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   dependsOn:
-  - src/Random.cpp
-  - src/runLength.cpp
+  - src/Random.hpp
+  - src/runLength.hpp
   isVerificationFile: true
   path: test/own/Random_runlength.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 12:59:22+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_runlength.test.cpp

@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Random.cpp
-    title: src/Random.cpp
+    path: src/Random.hpp
+    title: src/Random.hpp
   - icon: ':heavy_check_mark:'
-    path: src/ctz.cpp
-    title: src/ctz.cpp
+    path: src/ctz.hpp
+    title: src/ctz.hpp
   - icon: ':heavy_check_mark:'
-    path: src/popcount.cpp
-    title: src/popcount.cpp
+    path: src/popcount.hpp
+    title: src/popcount.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -21,7 +21,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Random_ctz.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#line 1 \"src/Random.cpp\"\n#include <cassert>\n#include <algorithm>\n#include\
+    \n\n#line 1 \"src/Random.hpp\"\n#include <cassert>\n#include <algorithm>\n#include\
     \ <random>\n#include <chrono>\n#include <vector>\n#include <unordered_map>\n\n\
     using namespace std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937\
     \ mt;\n    Random() : mt(chrono::steady_clock::now().time_since_epoch().count())\
@@ -44,14 +44,14 @@ data:
     \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        assert(!list.empty());\n      \
     \  int size = (int)(*this)(1, max_len);\n        string res(size, 0);\n      \
     \  generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size()\
-    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/ctz.cpp\"\n\n#line\
-    \ 1 \"src/popcount.cpp\"\n\nusing lint = long long;\n\ninline int popcount(lint\
+    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/ctz.hpp\"\n\n#line\
+    \ 1 \"src/popcount.hpp\"\n\nusing lint = long long;\n\ninline int popcount(lint\
     \ n) {\n    n = (n & 0x5555555555555555) + (n >> 1 & 0x5555555555555555);\n  \
     \  n = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);\n    n = (n &\
     \ 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n    n = (n & 0x00ff00ff00ff00ff)\
     \ + (n >> 8 & 0x00ff00ff00ff00ff);\n    n = (n & 0x0000ffff0000ffff) + (n >> 16\
     \ & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >> 32 & 0x00000000ffffffff);\n\
-    \    return n;\n}\n#line 3 \"src/ctz.cpp\"\n\nusing lint = long long;\n\ninline\
+    \    return n;\n}\n#line 3 \"src/ctz.hpp\"\n\nusing lint = long long;\n\ninline\
     \ int ctz(lint n) {\n    return popcount(~n & (n - 1));\n}\n#line 6 \"test/own/Random_ctz.test.cpp\"\
     \n\n#line 8 \"test/own/Random_ctz.test.cpp\"\n#include <iostream>\n#include <iomanip>\n\
     \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
@@ -63,7 +63,7 @@ data:
     \ {\n        lint n = ran(0, numeric_limits<lint>::max());\n        assert(test(n)\
     \ == ctz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#include \"../../src/Random.cpp\"\n#include \"../../src/ctz.cpp\"\n\n#include\
+    \n\n#include \"../../src/Random.hpp\"\n#include \"../../src/ctz.hpp\"\n\n#include\
     \ <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\
     using lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
     \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
@@ -74,13 +74,13 @@ data:
     \        assert(test(n) == ctz(n));\n    }\n\n    cout << \"Hello World\\n\";\n\
     \n    return 0;\n}"
   dependsOn:
-  - src/Random.cpp
-  - src/ctz.cpp
-  - src/popcount.cpp
+  - src/Random.hpp
+  - src/ctz.hpp
+  - src/popcount.hpp
   isVerificationFile: true
   path: test/own/Random_ctz.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 13:41:16+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_ctz.test.cpp

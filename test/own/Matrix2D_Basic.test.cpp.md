@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Matrix2D.cpp
-    title: src/Matrix2D.cpp
+    path: src/Matrix2D.hpp
+    title: src/Matrix2D.hpp
   - icon: ':heavy_check_mark:'
-    path: src/Point2D.cpp
-    title: src/Point2D.cpp
+    path: src/Point2D.hpp
+    title: src/Point2D.hpp
   - icon: ':heavy_check_mark:'
-    path: src/makevec.cpp
-    title: src/makevec.cpp
+    path: src/makevec.hpp
+    title: src/makevec.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -22,11 +22,11 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Matrix2D_Basic.test.cpp\"\n\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line 1\
-    \ \"src/makevec.cpp\"\n#include <vector>\n\nusing namespace std;\n\ntemplate<class\
+    \ \"src/makevec.hpp\"\n#include <vector>\n\nusing namespace std;\n\ntemplate<class\
     \ T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }\ntemplate<class...\
     \ Size>\nauto make_vec(size_t s, Size... tail) {\n    return vector<decltype(make_vec(tail...))>(s,\
-    \ make_vec(tail...));\n}\n#line 1 \"src/Matrix2D.cpp\"\n\n#line 1 \"src/Point2D.cpp\"\
-    \n#include <cmath>\n#include <iostream>\n#line 4 \"src/Point2D.cpp\"\n\nusing\
+    \ make_vec(tail...));\n}\n#line 1 \"src/Matrix2D.hpp\"\n\n#line 1 \"src/Point2D.hpp\"\
+    \n#include <cmath>\n#include <iostream>\n#line 4 \"src/Point2D.hpp\"\n\nusing\
     \ namespace std;\nusing lint = long long;\n\ntemplate<class T>\nstruct Point2D\
     \ {\n    T x{}, y{};\n\n    constexpr Point2D() = default;\n    constexpr Point2D(const\
     \ T &x, const T &y) noexcept: x(x), y(y) {};\n    constexpr explicit Point2D(const\
@@ -60,7 +60,7 @@ data:
     \ constexpr friend istream &operator>>(istream &is, Point2D &p) { return is >>\
     \ p.x >> p.y; }\n    constexpr friend ostream &operator<<(ostream &os, const Point2D\
     \ &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n\
-    #line 3 \"src/Matrix2D.cpp\"\n\ntemplate<class T>\nstruct Matrix2D {\n    Point2D<T>\
+    #line 3 \"src/Matrix2D.hpp\"\n\ntemplate<class T>\nstruct Matrix2D {\n    Point2D<T>\
     \ r0{}, r1{};\n\n    constexpr Matrix2D() = default;\n    constexpr Matrix2D(const\
     \ Point2D<T> &r0, const Point2D<T> &r1) noexcept: r0(r0), r1(r1) {};\n\n    constexpr\
     \ bool operator==(const Matrix2D &rhs) const noexcept { return r0 == rhs.r0 &&\
@@ -146,7 +146,7 @@ data:
     \ * CM14);\n    // determinant\n    static_assert(CM14.det() == -2);\n\n    cout\
     \ << \"Hello World\\n\";\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#include \"../../src/makevec.cpp\"\n#include \"../../src/Matrix2D.cpp\"\n\n\
+    \n\n#include \"../../src/makevec.hpp\"\n#include \"../../src/Matrix2D.hpp\"\n\n\
     #include <cassert>\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\
     #include <algorithm>\n\nusing namespace std;\nusing lint = long long;\n\nstruct\
     \ init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
@@ -207,13 +207,13 @@ data:
     \ * CM14);\n    // determinant\n    static_assert(CM14.det() == -2);\n\n    cout\
     \ << \"Hello World\\n\";\n\n    return 0;\n}\n"
   dependsOn:
-  - src/makevec.cpp
-  - src/Matrix2D.cpp
-  - src/Point2D.cpp
+  - src/makevec.hpp
+  - src/Matrix2D.hpp
+  - src/Point2D.hpp
   isVerificationFile: true
   path: test/own/Matrix2D_Basic.test.cpp
   requiredBy: []
-  timestamp: '2021-01-26 21:16:08+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Matrix2D_Basic.test.cpp

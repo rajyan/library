@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/BellmanFord.cpp
-    title: src/BellmanFord.cpp
+    path: src/BellmanFord.hpp
+    title: src/BellmanFord.hpp
   - icon: ':heavy_check_mark:'
-    path: src/Edge.cpp
-    title: src/Edge.cpp
+    path: src/Edge.hpp
+    title: src/Edge.hpp
   - icon: ':heavy_check_mark:'
-    path: src/chmin.cpp
-    title: src/chmin.cpp
+    path: src/chmin.hpp
+    title: src/chmin.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,13 +23,13 @@ data:
   bundledCode: "#line 1 \"test/aoj/GRL_1_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n\n#include <iostream>\n#include <iomanip>\n#include <string>\n#include <vector>\n\
     #include <algorithm>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
-    \ lint LINF = 1LL << 60;\n\n#line 3 \"src/BellmanFord.cpp\"\n\nusing namespace\
-    \ std;\n\n#line 1 \"src/chmin.cpp\"\ntemplate<class T>\ninline bool chmin(T &a,\
-    \ const T b) { return a > b && (a = b, true); }\n#line 1 \"src/Edge.cpp\"\ntemplate<class\
+    \ lint LINF = 1LL << 60;\n\n#line 3 \"src/BellmanFord.hpp\"\n\nusing namespace\
+    \ std;\n\n#line 1 \"src/chmin.hpp\"\ntemplate<class T>\ninline bool chmin(T &a,\
+    \ const T b) { return a > b && (a = b, true); }\n#line 1 \"src/Edge.hpp\"\ntemplate<class\
     \ T>\nstruct Edge {\n    int from{}, to{};\n    T cost;\n    Edge() = default;\n\
     \    Edge(int to, T cost) : to(to), cost(cost) {}\n    Edge(int from, int to,\
     \ T cost) : from(from), to(to), cost(cost) {}\n    bool operator>(const Edge &r)\
-    \ const { return this->cost > r.cost; }\n};\n#line 8 \"src/BellmanFord.cpp\"\n\
+    \ const { return this->cost > r.cost; }\n};\n#line 8 \"src/BellmanFord.hpp\"\n\
     \ntemplate<class T>\nvector<T> BellmanFord(const vector<Edge<T>> &edges, const\
     \ int V, const int st) {\n\n    const T inf = numeric_limits<T>::max() / 2;\n\
     \    vector<T> cost(V, inf);\n    cost[st] = 0;\n    for (int i = 0; i < V - 1;\
@@ -53,7 +53,7 @@ data:
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n\n#include <iostream>\n#include <iomanip>\n#include <string>\n#include <vector>\n\
     #include <algorithm>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
-    \ lint LINF = 1LL << 60;\n\n#include \"../../src/BellmanFord.cpp\"\n\nstruct init\
+    \ lint LINF = 1LL << 60;\n\n#include \"../../src/BellmanFord.hpp\"\n\nstruct init\
     \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
     \n    int N, M, s;\n    cin >> N >> M >> s;\n\n    vector<Edge<lint>> edges;\n\
@@ -64,13 +64,13 @@ data:
     \  }\n    for (const auto &cost : costs) {\n        cout << (cost < LINF ? to_string(cost)\
     \ : \"INF\") << '\\n';\n    }\n\n    return 0;\n}\n"
   dependsOn:
-  - src/BellmanFord.cpp
-  - src/chmin.cpp
-  - src/Edge.cpp
+  - src/BellmanFord.hpp
+  - src/chmin.hpp
+  - src/Edge.hpp
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 11:00:53+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp

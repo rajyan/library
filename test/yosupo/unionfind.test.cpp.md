@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/UnionFind.cpp
-    title: src/UnionFind.cpp
+    path: src/UnionFind.hpp
+    title: src/UnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,7 +15,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"test/yosupo/unionfind.test.cpp\"\n\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
-    \n\n#line 1 \"src/UnionFind.cpp\"\n#include <vector>\n\nusing namespace std;\n\
+    \n\n#line 1 \"src/UnionFind.hpp\"\n#include <vector>\n\nusing namespace std;\n\
     \nclass UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    explicit UnionFind(int\
     \ size) : data(size, -1) {}\n    [[nodiscard]] int root(int x) { return data[x]\
     \ < 0 ? x : data[x] = root(data[x]); }\n    [[nodiscard]] bool is_same(int x,\
@@ -31,18 +31,18 @@ data:
     \ {\n\t\tint t, u, v;\n\t\tcin >> t >> u >> v;\n\t\tif (t == 0) uf.unify(u, v);\n\
     \t\telse cout << uf.is_same(u, v) << \"\\n\";\n\t}\n\n\treturn 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
-    \ \"../../src/UnionFind.cpp\"\n\n#include <iostream>\n#include <iomanip>\n\nusing\
+    \ \"../../src/UnionFind.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\nusing\
     \ namespace std;\n\nstruct init {\n\tinit() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\
     \t\tcout << fixed << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint\
     \ N, Q;\n\tcin >> N >> Q;\n\n\tUnionFind uf(N);\n\tfor (int i = 0; i < Q; i++)\
     \ {\n\t\tint t, u, v;\n\t\tcin >> t >> u >> v;\n\t\tif (t == 0) uf.unify(u, v);\n\
     \t\telse cout << uf.is_same(u, v) << \"\\n\";\n\t}\n\n\treturn 0;\n}\n"
   dependsOn:
-  - src/UnionFind.cpp
+  - src/UnionFind.hpp
   isVerificationFile: true
   path: test/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2021-01-18 09:28:02+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/unionfind.test.cpp

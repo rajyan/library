@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/Modint.cpp
-    title: src/Modint.cpp
+    path: src/Modint.hpp
+    title: src/Modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -16,7 +16,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/RuntimeModint_Basic.test.cpp\"\n\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#define\
-    \ RUNTIME_MODINT\n#line 1 \"src/Modint.cpp\"\n#include <cassert>\n#include <iostream>\n\
+    \ RUNTIME_MODINT\n#line 1 \"src/Modint.hpp\"\n#include <cassert>\n#include <iostream>\n\
     #include <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
     \ int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\
     \ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
@@ -74,7 +74,7 @@ data:
     \    assert(ss >> m16);\n    assert(m15 == m16);\n\n    cout << \"Hello World\\\
     n\";\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
-    \n\n#define RUNTIME_MODINT\n#include \"../../src/Modint.cpp\"\n\n#include <cassert>\n\
+    \n\n#define RUNTIME_MODINT\n#include \"../../src/Modint.hpp\"\n\n#include <cassert>\n\
     #include <iostream>\n#include <iomanip>\n#include <vector>\n#include <algorithm>\n\
     #include <sstream>\n\nusing namespace std;\nusing lint = long long;\n\nstruct\
     \ init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
@@ -100,11 +100,11 @@ data:
     \    assert(m15 == m16);\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n\
     }\n"
   dependsOn:
-  - src/Modint.cpp
+  - src/Modint.hpp
   isVerificationFile: true
   path: test/own/RuntimeModint_Basic.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 10:41:23+09:00'
+  timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/RuntimeModint_Basic.test.cpp
