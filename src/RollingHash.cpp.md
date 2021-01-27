@@ -22,7 +22,7 @@ data:
     \nusing namespace std;\n\n#line 1 \"src/Modint.cpp\"\n#include <cassert>\n#include\
     \ <iostream>\n#include <numeric>\n\nusing namespace std;\nusing lint = long long;\n\
     constexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n\
-    #else\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
+    #else\n\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
     \ Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\
     \n    constexpr Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n\
     \        if (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n   \
@@ -32,28 +32,28 @@ data:
     \        return *this;\n    }\n    constexpr Mint &operator/=(const Mint &r) noexcept\
     \ {\n        lint a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) ==\
     \ 1 && \"a and b must be co-prime\");\n        while (b) {\n            lint t\
-    \ = a / b;\n            a -= t * b;\n            swap(a, b);\n            u -=\
-    \ t * v;\n            swap(u, v);\n        }\n        val = val * u % Modulo;\n\
-    \        if (val < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr\
-    \ Mint operator+(const Mint &r) const noexcept { return Mint(*this) += r; }\n\
-    \    constexpr Mint operator-(const Mint &r) const noexcept { return Mint(*this)\
-    \ -= r; }\n    constexpr Mint operator*(const Mint &r) const noexcept { return\
-    \ Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint &r) const noexcept\
-    \ { return Mint(*this) /= r; }\n\n    constexpr Mint operator-() const noexcept\
-    \ { return Mint(-val); }\n\n    constexpr bool operator==(const Mint &r) const\
-    \ noexcept { return val == r.val; }\n    constexpr bool operator!=(const Mint\
-    \ &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
-    \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
-    \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
-    \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
-    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
-    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res{1}, tmp{*this};\n\
-    \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
-    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
-    #ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n#else\nusing mint\
-    \ = Mint<MOD>;\n#endif\n\n#line 7 \"src/RollingHash.cpp\"\n\n//// mod, base from\
-    \ https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\nclass\
-    \ RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
+    \ = a / b;\n            a -= t * b;\n            a ^= b, b ^= a, a ^= b;\n   \
+    \         u -= t * v;\n            u ^= v, v ^= u, u ^= v;\n        }\n      \
+    \  val = val * u % Modulo;\n        if (val < 0) val += Modulo;\n        return\
+    \ *this;\n    }\n\n    constexpr Mint operator+(const Mint &r) const noexcept\
+    \ { return Mint(*this) += r; }\n    constexpr Mint operator-(const Mint &r) const\
+    \ noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint\
+    \ &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
+    \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
+    \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
+    \ Mint &r) const noexcept { return val < r.val; }\n\n    constexpr friend ostream\
+    \ &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val;\
+    \ }\n    constexpr friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept\
+    \ {\n        lint tmp{};\n        is >> tmp;\n        x = Mint(tmp);\n       \
+    \ return is;\n    }\n\n    [[nodiscard]] constexpr Mint pow(lint n) const noexcept\
+    \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
+    \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
+    \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
+    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 7 \"src/RollingHash.cpp\"\
+    \n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
+    class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
     \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
     \    const int base2 = 2147483627;\n    int sz;\n\npublic:\n    explicit RollingHash(const\
     \ string &s) : sz(s.size()) {\n\n        hash1.assign(sz + 1, 0);\n        pow1.assign(sz\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: src/RollingHash.cpp
   requiredBy: []
-  timestamp: '2021-01-24 14:18:38+09:00'
+  timestamp: '2021-01-27 10:41:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/599.test.cpp

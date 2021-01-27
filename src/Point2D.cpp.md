@@ -51,9 +51,10 @@ data:
     \ { return ::hypotl(x, y); }\n    [[nodiscard]] constexpr bool inGrid(const T\
     \ &H, const T &W) const noexcept { return 0 <= x && x < H && 0 <= y && y < W;\
     \ }\n    template<class U>\n    [[nodiscard]] constexpr U &operator[](vector<vector<U>>\
-    \ &v) { return v[x][y]; }\n\n    friend istream &operator>>(istream &is, Point2D\
-    \ &p) { return is >> p.x >> p.y; }\n    friend ostream &operator<<(ostream &os,\
-    \ const Point2D &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n"
+    \ &v) const noexcept { return v[x][y]; }\n\n    constexpr friend istream &operator>>(istream\
+    \ &is, Point2D &p) { return is >> p.x >> p.y; }\n    constexpr friend ostream\
+    \ &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y;\
+    \ }\n};\n\nusing pnt = Point2D<lint>;\n"
   code: "#include <cmath>\n#include <iostream>\n#include <vector>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\ntemplate<class T>\nstruct Point2D {\n    T\
     \ x{}, y{};\n\n    constexpr Point2D() = default;\n    constexpr Point2D(const\
@@ -84,16 +85,16 @@ data:
     \ hypot() const noexcept { return ::hypotl(x, y); }\n    [[nodiscard]] constexpr\
     \ bool inGrid(const T &H, const T &W) const noexcept { return 0 <= x && x < H\
     \ && 0 <= y && y < W; }\n    template<class U>\n    [[nodiscard]] constexpr U\
-    \ &operator[](vector<vector<U>> &v) { return v[x][y]; }\n\n    friend istream\
-    \ &operator>>(istream &is, Point2D &p) { return is >> p.x >> p.y; }\n    friend\
-    \ ostream &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' '\
-    \ << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n"
+    \ &operator[](vector<vector<U>> &v) const noexcept { return v[x][y]; }\n\n   \
+    \ constexpr friend istream &operator>>(istream &is, Point2D &p) { return is >>\
+    \ p.x >> p.y; }\n    constexpr friend ostream &operator<<(ostream &os, const Point2D\
+    \ &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Point2D.cpp
   requiredBy:
   - src/Matrix2D.cpp
-  timestamp: '2021-01-24 15:05:12+09:00'
+  timestamp: '2021-01-26 21:16:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/891.test.cpp

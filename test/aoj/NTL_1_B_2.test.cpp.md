@@ -18,7 +18,7 @@ data:
     \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 1\
     \ \"src/Modint.cpp\"\n#include <cassert>\n#line 3 \"src/Modint.cpp\"\n#include\
     \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
-    \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\ntemplate<int\
+    \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\ntemplate<int\
     \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
     \ 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
     \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
@@ -29,26 +29,27 @@ data:
     \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
     \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
     \ must be co-prime\");\n        while (b) {\n            lint t = a / b;\n   \
-    \         a -= t * b;\n            swap(a, b);\n            u -= t * v;\n    \
-    \        swap(u, v);\n        }\n        val = val * u % Modulo;\n        if (val\
-    \ < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
-    \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
-    \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
-    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
-    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
-    \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
-    \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
+    \         a -= t * b;\n            a ^= b, b ^= a, a ^= b;\n            u -= t\
+    \ * v;\n            u ^= v, v ^= u, u ^= v;\n        }\n        val = val * u\
+    \ % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n    }\n\
+    \n    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this)\
+    \ += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept { return\
+    \ Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const noexcept\
+    \ { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint &r) const\
+    \ noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-() const\
+    \ noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const Mint\
+    \ &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
-    \ Mint &r) const noexcept { return val < r.val; }\n\n    friend ostream &operator<<(ostream\
-    \ &os, const Mint<Modulo> &x) noexcept { return os << x.val; }\n    friend istream\
-    \ &operator>>(istream &is, Mint<Modulo> &x) noexcept {\n        lint tmp;\n  \
-    \      is >> tmp;\n        x = Mint(tmp);\n        return is;\n    }\n\n    [[nodiscard]]\
-    \ constexpr Mint pow(lint n) const noexcept {\n        Mint res{1}, tmp{*this};\n\
-    \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
-    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n};\n\n\
-    #ifdef RUNTIME_MODINT\nint RMOD;\nusing rmint = Mint<RMOD>;\n#else\nusing mint\
-    \ = Mint<MOD>;\n#endif\n\n#line 10 \"test/aoj/NTL_1_B_2.test.cpp\"\n\nstruct init\
-    \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \ Mint &r) const noexcept { return val < r.val; }\n\n    constexpr friend ostream\
+    \ &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val;\
+    \ }\n    constexpr friend istream &operator>>(istream &is, Mint<Modulo> &x) noexcept\
+    \ {\n        lint tmp{};\n        is >> tmp;\n        x = Mint(tmp);\n       \
+    \ return is;\n    }\n\n    [[nodiscard]] constexpr Mint pow(lint n) const noexcept\
+    \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
+    \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
+    \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
+    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 10 \"test/aoj/NTL_1_B_2.test.cpp\"\
+    \n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
     \n    int m, n;\n    cin >> m >> n;\n\n    cout << mint(m).pow(n) << '\\n';\n\n\
     \    return 0;\n}\n\n"
@@ -63,7 +64,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_B_2.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 14:18:38+09:00'
+  timestamp: '2021-01-27 10:41:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_B_2.test.cpp
