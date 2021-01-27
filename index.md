@@ -60,7 +60,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/UnionFind.cpp
       title: src/UnionFind.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/bisearch.cpp
       title: src/bisearch.cpp
     - icon: ':warning:'
@@ -108,6 +108,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ALDS1_4_B.test.cpp
+      title: test/aoj/ALDS1_4_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_A.test.cpp
       title: test/aoj/DSL_1_A.test.cpp
