@@ -1,17 +1,11 @@
 #include <cmath>
 
 using namespace std;
-using lint = long long;
-constexpr lint LINF = 1LL << 60;
 
-auto judge = [&](auto key) {
-    return key;
-};
-
-auto bisearch = [&](auto f) {
-
-    auto ng = -1LL;
-    auto ok = LINF;
+template<class T, class F>
+T bisearch(T NG, T OK, F f) {
+    T ng = NG;
+    T ok = OK;
 
     while (abs(ok - ng) > 1) {
         auto mid = (ok + ng) / 2;
@@ -21,4 +15,4 @@ auto bisearch = [&](auto f) {
     }
 
     return ok;
-};
+}

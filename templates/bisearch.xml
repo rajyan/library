@@ -1,4 +1,4 @@
-<template name="mybisearch" value="auto judge = [&amp;](auto key) {&#10;    return key;&#10;};&#10;&#10;auto bisearch = [&amp;](auto f) {&#10;&#10;    auto ng = -1LL;&#10;    auto ok = LINF;&#10;&#10;    while (abs(ok - ng) &gt; 1) {&#10;        auto mid = (ok + ng) / 2;&#10;&#10;        if (f(mid)) ok = mid;&#10;        else ng = mid;&#10;    }&#10;&#10;    return ok;&#10;};&#10;" description="" toReformat="false" toShortenFQNames="true">
+<template name="mybisearch" value="template&lt;class T, class F&gt;&#10;T bisearch(T NG, T OK, F f) {&#10;    T ng = NG;&#10;    T ok = OK;&#10;&#10;    while (abs(ok - ng) &gt; 1) {&#10;        auto mid = (ok + ng) / 2;&#10;&#10;        if (f(mid)) ok = mid;&#10;        else ng = mid;&#10;    }&#10;&#10;    return ok;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
