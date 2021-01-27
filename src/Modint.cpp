@@ -9,6 +9,7 @@ constexpr int MOD = 1000000007;
 #ifdef RUNTIME_MODINT
 template<int &Modulo>
 #else
+
 template<int Modulo>
 #endif
 struct Mint {
@@ -36,9 +37,9 @@ struct Mint {
         while (b) {
             lint t = a / b;
             a -= t * b;
-            swap(a, b);
+            a ^= b, b ^= a, a ^= b;
             u -= t * v;
-            swap(u, v);
+            u ^= v, v ^= u, u ^= v;
         }
         val = val * u % Modulo;
         if (val < 0) val += Modulo;

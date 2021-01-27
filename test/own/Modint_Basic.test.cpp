@@ -80,6 +80,66 @@ int main() {
     assert(ss >> m16);
     assert(m15 == m16);
 
+    // default constructor
+    constexpr mint cm1{};
+    static_assert(cm1.val == 0);
+    // constructor
+    constexpr mint cm2{MOD + 2};
+    static_assert(cm2.val == 2);
+    // copy constructor, == operator
+    constexpr mint cm3 = cm2;
+    static_assert(cm3.val == 2);
+    static_assert(cm2 == cm3);
+    // construct with negative value
+    constexpr mint cm4(-1);
+    static_assert(cm4.val == MOD - 1);
+    // +=, + operator
+    constexpr mint cm5(1), cm6(1);
+    static_assert(cm5 + cm6 == 2);
+    constexpr auto additionAssign = [=]() {
+        mint res = cm5;
+        res += cm6;
+        return res;
+    };
+    static_assert(additionAssign() == 2);
+    // -=, - operator
+    constexpr mint cm7(0), cm8(1);
+    static_assert(cm7 - cm8 == MOD - 1);
+    constexpr auto subtractionAssign = [=]() {
+        mint res = cm7;
+        res -= cm8;
+        return res;
+    };
+    static_assert(subtractionAssign() == MOD - 1);
+    // *=, * operator
+    constexpr mint cm9(1), cm10(2);
+    static_assert(cm9 * cm10 == 2);
+    constexpr auto multiplicationAssign = [=]() {
+        mint res = cm9;
+        res *= cm10;
+        return res;
+    };
+    static_assert(multiplicationAssign() == 2);
+    // pow
+    constexpr mint cm11(2);
+    static_assert(cm11.pow(10) == 1024);
+    static_assert(cm11.pow(40) == (1LL << 40) % MOD);
+    // /=, / operator
+    constexpr mint cm12(4), cm13(2), cm14(3);
+    static_assert(cm12 / cm13 == 2);
+    static_assert(cm12 / cm13 * cm13 == cm12);
+    static_assert(cm13 / cm14 * cm14 == cm13);
+    // confirm by Fermat's little theorem when MOD is prime
+    static_assert(mint(1) / cm14 == cm14.pow(MOD - 2));
+    static_assert(cm13 / cm14 == cm13 * cm14.pow(MOD - 2));
+    // - operator
+    constexpr mint cm15(0), cm16(1);
+    static_assert(-cm15 == 0);
+    static_assert(-cm16 == -1);
+    // !=, < operator
+    static_assert(cm15 != cm16);
+    static_assert(cm15 < cm16);
+
     cout << "Hello World\n";
 
     return 0;
