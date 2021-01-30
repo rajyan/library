@@ -33,13 +33,13 @@ data:
   isVerificationFile: false
   path: src/Edge.hpp
   requiredBy:
-  - src/Dijkstra.hpp
   - src/BellmanFord.hpp
+  - src/Dijkstra.hpp
   timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_1_A.test.cpp
   - test/aoj/GRL_1_B.test.cpp
+  - test/aoj/GRL_1_A.test.cpp
 documentation_of: src/Edge.hpp
 layout: document
 redirect_from:

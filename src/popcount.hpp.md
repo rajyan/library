@@ -40,14 +40,14 @@ data:
   isVerificationFile: false
   path: src/popcount.hpp
   requiredBy:
-  - src/ctz.hpp
   - src/Prime.hpp
+  - src/ctz.hpp
   timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
-  - test/own/Random_ctz.test.cpp
   - test/own/Random_popcount.test.cpp
+  - test/own/Random_ctz.test.cpp
 documentation_of: src/popcount.hpp
 layout: document
 redirect_from:

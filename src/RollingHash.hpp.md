@@ -87,8 +87,8 @@ data:
   timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/599.test.cpp
   - test/yukicoder/430.test.cpp
+  - test/yukicoder/599.test.cpp
 documentation_of: src/RollingHash.hpp
 layout: document
 redirect_from:

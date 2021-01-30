@@ -33,8 +33,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
-  - test/own/Matrix2D_Basic.test.cpp
   - test/own/Point2D_Basic.test.cpp
+  - test/own/Matrix2D_Basic.test.cpp
 documentation_of: src/makevec.hpp
 layout: document
 redirect_from:

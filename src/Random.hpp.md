@@ -74,10 +74,10 @@ data:
   timestamp: '2021-01-27 22:37:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/own/Random_popcount.test.cpp
   - test/own/Random_ctz.test.cpp
   - test/own/Random_runlength.test.cpp
   - test/own/Random_clz.test.cpp
-  - test/own/Random_popcount.test.cpp
 documentation_of: src/Random.hpp
 layout: document
 redirect_from:
