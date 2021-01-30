@@ -3,39 +3,24 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
-#include <vector>
-#include <set>
-#include <map>
 
 using namespace std;
 
-template<class T>
-ostream &operator<<(ostream &os, const vector<T> &vec) {
-    os << "[ ";
-    for (const auto &e : vec) os << e << " ";
-    os << "]\n";
-    return os;
-}
-
-template<class T>
-ostream &operator<<(ostream &os, const set <T> &st) {
-    os << "[ ";
-    for (const auto &e : st) os << e << " ";
-    os << "]\n";
-    return os;
-}
+template<typename T, typename = void_t<>>
+struct is_iterable: false_type {};
+template<typename T>
+struct is_iterable<T, void_t<decltype(declval<T>().begin(), declval<T>().end())>>: negation<is_same<T, string>> {};
 
 template<class T1, class T2>
-ostream &operator<<(ostream &os, const pair <T1, T2> &p) {
+ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
     os << '(' << p.first << ',' << p.second << ')';
     return os;
 }
-
-template<class T1, class T2>
-ostream &operator<<(ostream &os, const map <T1, T2> &mp) {
-    os << "[ ";
-    for (const auto &e : mp) os << e << " ";
-    os << "]\n";
+template<class T>
+enable_if_t<is_iterable<T>::value, ostream> &operator<<(ostream &os, const T &r) {
+    os << '[';
+    for (const auto &e : r) os << e << (&e != &*(--r.end()) ? " " : "");
+    os << ']';
     return os;
 }
 
