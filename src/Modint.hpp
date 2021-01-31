@@ -6,14 +6,8 @@
 
 using namespace std;
 using lint = long long;
-constexpr int MOD = 1000000007;
 
-#ifdef RUNTIME_MODINT
-template<int &Modulo>
-#else
-
-template<int Modulo>
-#endif
+template<const int &Modulo>
 struct Mint {
 
     lint val;
@@ -78,10 +72,8 @@ struct Mint {
     }
 };
 
-#ifdef RUNTIME_MODINT
+constexpr int MOD = 1000000007;
+using mint = Mint<MOD>;
+
 int RMOD;
 using rmint = Mint<RMOD>;
-#else
-using mint = Mint<MOD>;
-#endif
-
