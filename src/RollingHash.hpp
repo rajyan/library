@@ -11,13 +11,13 @@ using namespace std;
 class RollingHash {
 
 private:
-    constexpr int prime = 2147483647;
+    static constexpr int prime = 2147483647;
+    static constexpr int base1 = 2147483634;
+    static constexpr int base2 = 2147483627;
     using Mod = Mint<prime>;
 
     vector<Mod> hash1, pow1;
     vector<Mod> hash2, pow2;
-    constexpr int base1 = 2147483634;
-    constexpr int base2 = 2147483627;
     int sz;
 
 public:
