@@ -18,9 +18,7 @@ int main() {
         cout << a + b << "\n";
     }
 
-    if (timer.elapsed() / 1000.0 / 1000.0 > 2.0) {
-        abort();
-    }
+    assert(timer.elapsed() / 1000.0 / 1000.0 < 2.0);
 
     return 0;
 }
