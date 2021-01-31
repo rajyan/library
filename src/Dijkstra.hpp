@@ -1,11 +1,13 @@
+#pragma once
+
 #include <vector>
 #include <algorithm>
 #include <queue>
 
-using namespace std;
-
 #include "chmin.hpp"
 #include "Edge.hpp"
+
+using namespace std;
 
 template<class T>
 vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {

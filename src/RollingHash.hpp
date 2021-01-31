@@ -1,9 +1,11 @@
+#pragma once
+
 #include <vector>
 #include <string>
 
-using namespace std;
-
 #include "Modint.hpp"
+
+using namespace std;
 
 //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
 class RollingHash {

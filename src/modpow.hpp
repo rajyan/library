@@ -1,3 +1,4 @@
+#pragma once
 
 using lint = long long;
 constexpr int MOD = 1000000007;

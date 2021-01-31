@@ -1,9 +1,11 @@
+#pragma once
+
 #include <cassert>
 #include <vector>
 
-using namespace std;
-
 #include "chmin.hpp"
+
+using namespace std;
 
 template<class T>
 vector<vector<T>> FloydWarshall(const vector<vector<T>> &in, const T diag = T{}) {
