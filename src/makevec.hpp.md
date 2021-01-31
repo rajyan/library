@@ -17,19 +17,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/makevec.hpp\"\n#include <vector>\n\nusing namespace\
+  bundledCode: "#line 2 \"src/makevec.hpp\"\n\n#include <vector>\n\nusing namespace\
     \ std;\n\ntemplate<class T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s,\
     \ val); }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n\
     \    return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n"
-  code: "#include <vector>\n\nusing namespace std;\n\ntemplate<class T>\nvector<T>\
-    \ make_vec(size_t s, T val) { return vector<T>(s, val); }\ntemplate<class... Size>\n\
-    auto make_vec(size_t s, Size... tail) {\n    return vector<decltype(make_vec(tail...))>(s,\
+  code: "#pragma once\n\n#include <vector>\n\nusing namespace std;\n\ntemplate<class\
+    \ T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s, val); }\ntemplate<class...\
+    \ Size>\nauto make_vec(size_t s, Size... tail) {\n    return vector<decltype(make_vec(tail...))>(s,\
     \ make_vec(tail...));\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/makevec.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp

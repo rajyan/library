@@ -14,9 +14,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/Combination.hpp\"\n#include <vector>\n#include <iostream>\n\
-    \n#line 1 \"src/Modint.hpp\"\n#include <cassert>\n#line 3 \"src/Modint.hpp\"\n\
-    #include <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
+  bundledCode: "#line 2 \"src/Combination.hpp\"\n\n#include <vector>\n#include <iostream>\n\
+    \n#line 2 \"src/Modint.hpp\"\n\n#include <cassert>\n#line 5 \"src/Modint.hpp\"\
+    \n#include <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
     \ int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\
     \ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
     \ Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\
@@ -47,7 +47,7 @@ data:
     \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
     \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
-    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 5 \"src/Combination.hpp\"\
+    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 7 \"src/Combination.hpp\"\
     \n\ntemplate<class T = mint>\nclass Combination {\nprivate:\n    vector<T> fac,\
     \ inv, finv;\n\n    void build(int N) {\n        fac[0] = fac[1] = 1;\n      \
     \  inv[1] = 1;\n        finv[0] = finv[1] = 1;\n\n        for (int i = 2; i <\
@@ -57,22 +57,22 @@ data:
     \ + 1), finv(N + 1) { build(N + 1); }\n\n    T operator()(int n, int k) {\n  \
     \      if (n < k || k < 0) return 0LL;\n        return fac[n] * (finv[k] * finv[n\
     \ - k]);\n    }\n\n};\n"
-  code: "#include <vector>\n#include <iostream>\n\n#include \"Modint.hpp\"\n\ntemplate<class\
-    \ T = mint>\nclass Combination {\nprivate:\n    vector<T> fac, inv, finv;\n\n\
-    \    void build(int N) {\n        fac[0] = fac[1] = 1;\n        inv[1] = 1;\n\
-    \        finv[0] = finv[1] = 1;\n\n        for (int i = 2; i < N; i++) {\n   \
-    \         fac[i] = fac[i - 1] * i;\n            inv[i] = -inv[MOD % i] * (MOD\
-    \ / i);\n            finv[i] = finv[i - 1] * inv[i];\n        }\n    }\n\npublic:\n\
-    \    explicit Combination(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1)\
-    \ { build(N + 1); }\n\n    T operator()(int n, int k) {\n        if (n < k ||\
-    \ k < 0) return 0LL;\n        return fac[n] * (finv[k] * finv[n - k]);\n    }\n\
-    \n};\n"
+  code: "#pragma once\n\n#include <vector>\n#include <iostream>\n\n#include \"Modint.hpp\"\
+    \n\ntemplate<class T = mint>\nclass Combination {\nprivate:\n    vector<T> fac,\
+    \ inv, finv;\n\n    void build(int N) {\n        fac[0] = fac[1] = 1;\n      \
+    \  inv[1] = 1;\n        finv[0] = finv[1] = 1;\n\n        for (int i = 2; i <\
+    \ N; i++) {\n            fac[i] = fac[i - 1] * i;\n            inv[i] = -inv[MOD\
+    \ % i] * (MOD / i);\n            finv[i] = finv[i - 1] * inv[i];\n        }\n\
+    \    }\n\npublic:\n    explicit Combination(int N = 110000) : fac(N + 1), inv(N\
+    \ + 1), finv(N + 1) { build(N + 1); }\n\n    T operator()(int n, int k) {\n  \
+    \      if (n < k || k < 0) return 0LL;\n        return fac[n] * (finv[k] * finv[n\
+    \ - k]);\n    }\n\n};\n"
   dependsOn:
   - src/Modint.hpp
   isVerificationFile: false
   path: src/Combination.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1081.test.cpp

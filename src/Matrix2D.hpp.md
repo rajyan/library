@@ -17,7 +17,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/Matrix2D.hpp\"\n\n#line 1 \"src/Point2D.hpp\"\n#include\
+  bundledCode: "#line 2 \"src/Matrix2D.hpp\"\n\n#line 2 \"src/Point2D.hpp\"\n\n#include\
     \ <cmath>\n#include <iostream>\n#include <vector>\n\nusing namespace std;\nusing\
     \ lint = long long;\n\ntemplate<class T>\nstruct Point2D {\n    T x{}, y{};\n\n\
     \    constexpr Point2D() = default;\n    constexpr Point2D(const T &x, const T\
@@ -52,7 +52,7 @@ data:
     \ constexpr friend istream &operator>>(istream &is, Point2D &p) { return is >>\
     \ p.x >> p.y; }\n    constexpr friend ostream &operator<<(ostream &os, const Point2D\
     \ &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n\
-    #line 3 \"src/Matrix2D.hpp\"\n\ntemplate<class T>\nstruct Matrix2D {\n    Point2D<T>\
+    #line 4 \"src/Matrix2D.hpp\"\n\ntemplate<class T>\nstruct Matrix2D {\n    Point2D<T>\
     \ r0{}, r1{};\n\n    constexpr Matrix2D() = default;\n    constexpr Matrix2D(const\
     \ Point2D<T> &r0, const Point2D<T> &r1) noexcept: r0(r0), r1(r1) {};\n\n    constexpr\
     \ bool operator==(const Matrix2D &rhs) const noexcept { return r0 == rhs.r0 &&\
@@ -77,37 +77,38 @@ data:
     \   if (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n  \
     \      }\n        return res;\n    }\n    [[nodiscard]] constexpr T det() const\
     \ noexcept { return r0 * r1.nor(); }\n};\n\nusing mat = Matrix2D<lint>;\n"
-  code: "\n#include \"Point2D.hpp\"\n\ntemplate<class T>\nstruct Matrix2D {\n    Point2D<T>\
-    \ r0{}, r1{};\n\n    constexpr Matrix2D() = default;\n    constexpr Matrix2D(const\
-    \ Point2D<T> &r0, const Point2D<T> &r1) noexcept: r0(r0), r1(r1) {};\n\n    constexpr\
-    \ bool operator==(const Matrix2D &rhs) const noexcept { return r0 == rhs.r0 &&\
-    \ r1 == rhs.r1; }\n    constexpr bool operator!=(const Matrix2D &rhs) const noexcept\
-    \ { return !(*this == rhs); }\n\n    constexpr Matrix2D operator+(const Matrix2D\
-    \ &rhs) const noexcept { return {r0 + rhs.r0, r1 + rhs.r1}; }\n    constexpr Matrix2D\
-    \ operator-(const Matrix2D &rhs) const noexcept { return {r0 - rhs.r0, r1 - rhs.r1};\
-    \ }\n    constexpr Matrix2D operator*(const Matrix2D &rhs) const noexcept {\n\
-    \        const Matrix2D rhs_T = rhs.trans();\n        return {{r0 * rhs_T.r0,\
-    \ r0 * rhs_T.r1},\n                {r1 * rhs_T.r0, r1 * rhs_T.r1}};\n    }\n \
-    \   constexpr Matrix2D &operator+=(const Matrix2D &rhs) noexcept { return *this\
-    \ = *this + rhs; }\n    constexpr Matrix2D &operator-=(const Matrix2D &rhs) noexcept\
-    \ { return *this = *this - rhs; }\n    constexpr Matrix2D &operator*=(const Matrix2D\
-    \ &rhs) noexcept { return *this = *this * rhs; }\n    constexpr Matrix2D operator-()\
-    \ const noexcept { return {-r0, -r1}; }\n\n    constexpr Point2D<T> operator*(const\
-    \ Point2D<T> &b_T) const noexcept { return {r0 * b_T, r1 * b_T}; }\n\n    [[nodiscard]]\
-    \ constexpr Matrix2D trans() const noexcept {\n        return {{r0.x, r1.x},\n\
-    \                {r0.y, r1.y}};\n    }\n    [[nodiscard]] constexpr Matrix2D identity()\
-    \ const noexcept {\n        return {{1, 0},\n                {0, 1}};\n    }\n\
-    \    [[nodiscard]] constexpr Matrix2D pow(lint n) const noexcept {\n        Matrix2D\
-    \ res{Matrix2D().identity()}, tmp{*this};\n        while (n > 0) {\n         \
-    \   if (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n  \
-    \      }\n        return res;\n    }\n    [[nodiscard]] constexpr T det() const\
-    \ noexcept { return r0 * r1.nor(); }\n};\n\nusing mat = Matrix2D<lint>;"
+  code: "#pragma once\n\n#include \"Point2D.hpp\"\n\ntemplate<class T>\nstruct Matrix2D\
+    \ {\n    Point2D<T> r0{}, r1{};\n\n    constexpr Matrix2D() = default;\n    constexpr\
+    \ Matrix2D(const Point2D<T> &r0, const Point2D<T> &r1) noexcept: r0(r0), r1(r1)\
+    \ {};\n\n    constexpr bool operator==(const Matrix2D &rhs) const noexcept { return\
+    \ r0 == rhs.r0 && r1 == rhs.r1; }\n    constexpr bool operator!=(const Matrix2D\
+    \ &rhs) const noexcept { return !(*this == rhs); }\n\n    constexpr Matrix2D operator+(const\
+    \ Matrix2D &rhs) const noexcept { return {r0 + rhs.r0, r1 + rhs.r1}; }\n    constexpr\
+    \ Matrix2D operator-(const Matrix2D &rhs) const noexcept { return {r0 - rhs.r0,\
+    \ r1 - rhs.r1}; }\n    constexpr Matrix2D operator*(const Matrix2D &rhs) const\
+    \ noexcept {\n        const Matrix2D rhs_T = rhs.trans();\n        return {{r0\
+    \ * rhs_T.r0, r0 * rhs_T.r1},\n                {r1 * rhs_T.r0, r1 * rhs_T.r1}};\n\
+    \    }\n    constexpr Matrix2D &operator+=(const Matrix2D &rhs) noexcept { return\
+    \ *this = *this + rhs; }\n    constexpr Matrix2D &operator-=(const Matrix2D &rhs)\
+    \ noexcept { return *this = *this - rhs; }\n    constexpr Matrix2D &operator*=(const\
+    \ Matrix2D &rhs) noexcept { return *this = *this * rhs; }\n    constexpr Matrix2D\
+    \ operator-() const noexcept { return {-r0, -r1}; }\n\n    constexpr Point2D<T>\
+    \ operator*(const Point2D<T> &b_T) const noexcept { return {r0 * b_T, r1 * b_T};\
+    \ }\n\n    [[nodiscard]] constexpr Matrix2D trans() const noexcept {\n       \
+    \ return {{r0.x, r1.x},\n                {r0.y, r1.y}};\n    }\n    [[nodiscard]]\
+    \ constexpr Matrix2D identity() const noexcept {\n        return {{1, 0},\n  \
+    \              {0, 1}};\n    }\n    [[nodiscard]] constexpr Matrix2D pow(lint\
+    \ n) const noexcept {\n        Matrix2D res{Matrix2D().identity()}, tmp{*this};\n\
+    \        while (n > 0) {\n            if (n & 1) res *= tmp;\n            tmp\
+    \ *= tmp;\n            n >>= 1;\n        }\n        return res;\n    }\n    [[nodiscard]]\
+    \ constexpr T det() const noexcept { return r0 * r1.nor(); }\n};\n\nusing mat\
+    \ = Matrix2D<lint>;"
   dependsOn:
   - src/Point2D.hpp
   isVerificationFile: false
   path: src/Matrix2D.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/891.test.cpp

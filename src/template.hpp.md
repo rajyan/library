@@ -14,9 +14,9 @@ data:
     , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ src/template.hpp: line 3: unable to process #include in #if / #ifdef / #ifndef\
+    \ src/template.hpp: line 2: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "\n#ifdef _DEBUG\n#include \"../../../library/src/debug_template.hpp\"\n#define\
+  code: "#ifdef _DEBUG\n#include \"../../../library/src/debug_template.hpp\"\n#define\
     \ DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)\n#else\n#define DMP(...) ((void)0)\n\
     #endif\n\n#include <cassert>\n#include <cstdio>\n#include <cmath>\n#include <iostream>\n\
     #include <iomanip>\n#include <string>\n#include <vector>\n#include <set>\n#include\
@@ -30,7 +30,7 @@ data:
   isVerificationFile: false
   path: src/template.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/template.hpp

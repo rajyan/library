@@ -15,7 +15,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"test/yosupo/unionfind.test.cpp\"\n\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
-    \n\n#line 1 \"src/UnionFind.hpp\"\n#include <vector>\n\nusing namespace std;\n\
+    \n\n#line 2 \"src/UnionFind.hpp\"\n\n#include <vector>\n\nusing namespace std;\n\
     \nclass UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    explicit UnionFind(int\
     \ size) : data(size, -1) {}\n    [[nodiscard]] int root(int x) { return data[x]\
     \ < 0 ? x : data[x] = root(data[x]); }\n    [[nodiscard]] bool is_same(int x,\
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/unionfind.test.cpp

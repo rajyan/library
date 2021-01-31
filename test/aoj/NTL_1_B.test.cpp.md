@@ -15,7 +15,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
   bundledCode: "#line 1 \"test/aoj/NTL_1_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
-    \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 1\
+    \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 2\
     \ \"src/modpow.hpp\"\n\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\
     \nlint modpow(lint a, lint n, lint mod = MOD) {\n    lint res = 1;\n    while\
     \ (n > 0) {\n        if (n & 1) res = res * a % mod;\n        a = a * a % mod;\n\
@@ -35,7 +35,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_B.test.cpp

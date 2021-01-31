@@ -11,20 +11,20 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/bisearch.hpp\"\n#include <cmath>\n\nusing namespace\
+  bundledCode: "#line 2 \"src/bisearch.hpp\"\n\n#include <cmath>\n\nusing namespace\
     \ std;\n\ntemplate<class T, class F>\nT bisearch(T OK, T NG, F f) {\n    T ok\
     \ = OK;\n    T ng = NG;\n\n    while (abs(ok - ng) > 1) {\n        auto mid =\
     \ (ok + ng) / 2;\n\n        if (f(mid)) ok = mid;\n        else ng = mid;\n  \
     \  }\n\n    return ok;\n}\n"
-  code: "#include <cmath>\n\nusing namespace std;\n\ntemplate<class T, class F>\n\
-    T bisearch(T OK, T NG, F f) {\n    T ok = OK;\n    T ng = NG;\n\n    while (abs(ok\
-    \ - ng) > 1) {\n        auto mid = (ok + ng) / 2;\n\n        if (f(mid)) ok =\
-    \ mid;\n        else ng = mid;\n    }\n\n    return ok;\n}\n"
+  code: "#pragma once\n\n#include <cmath>\n\nusing namespace std;\n\ntemplate<class\
+    \ T, class F>\nT bisearch(T OK, T NG, F f) {\n    T ok = OK;\n    T ng = NG;\n\
+    \n    while (abs(ok - ng) > 1) {\n        auto mid = (ok + ng) / 2;\n\n      \
+    \  if (f(mid)) ok = mid;\n        else ng = mid;\n    }\n\n    return ok;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/bisearch.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/ALDS1_4_B.test.cpp

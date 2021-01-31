@@ -41,7 +41,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/Modint.hpp\"\n#include <cassert>\n#include <iostream>\n\
+  bundledCode: "#line 2 \"src/Modint.hpp\"\n\n#include <cassert>\n#include <iostream>\n\
     #include <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
     \ int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\
     \ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr\
@@ -74,16 +74,16 @@ data:
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
     \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
     \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n"
-  code: "#include <cassert>\n#include <iostream>\n#include <numeric>\n\nusing namespace\
-    \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\n\
-    template<int &Modulo>\n#else\n\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n\
-    \    lint val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if\
-    \ (val < 0) val += Modulo; }\n\n    constexpr Mint &operator+=(const Mint &r)\
-    \ noexcept {\n        val += r.val;\n        if (val >= Modulo) val -= Modulo;\n\
-    \        return *this;\n    }\n    constexpr Mint &operator-=(const Mint &r) noexcept\
-    \ {\n        val -= r.val;\n        if (val < 0) val += Modulo;\n        return\
-    \ *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept {\n  \
-    \      val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
+  code: "#pragma once\n\n#include <cassert>\n#include <iostream>\n#include <numeric>\n\
+    \nusing namespace std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\
+    \n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\ntemplate<int Modulo>\n\
+    #endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v = 0) noexcept:\
+    \ val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr Mint &operator+=(const\
+    \ Mint &r) noexcept {\n        val += r.val;\n        if (val >= Modulo) val -=\
+    \ Modulo;\n        return *this;\n    }\n    constexpr Mint &operator-=(const\
+    \ Mint &r) noexcept {\n        val -= r.val;\n        if (val < 0) val += Modulo;\n\
+    \        return *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept\
+    \ {\n        val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
     \ Mint &operator/=(const Mint &r) noexcept {\n        lint a{r.val}, b{Modulo},\
     \ u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b must be co-prime\");\n\
     \        while (b) {\n            lint t = a / b;\n            a -= t * b;\n \
@@ -113,7 +113,7 @@ data:
   - src/Prime.hpp
   - src/RollingHash.hpp
   - src/Combination.hpp
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp

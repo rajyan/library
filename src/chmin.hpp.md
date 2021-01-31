@@ -26,14 +26,18 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: '#line 1 "src/chmin.hpp"
+  bundledCode: '#line 2 "src/chmin.hpp"
+
 
     template<class T>
 
     inline bool chmin(T &a, const T b) { return a > b && (a = b, true); }
 
     '
-  code: 'template<class T>
+  code: '#pragma once
+
+
+    template<class T>
 
     inline bool chmin(T &a, const T b) { return a > b && (a = b, true); }
 
@@ -45,7 +49,7 @@ data:
   - src/BellmanFord.hpp
   - src/Dijkstra.hpp
   - src/FloydWarshall.hpp
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp

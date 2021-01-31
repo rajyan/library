@@ -15,8 +15,8 @@ data:
     links:
     - https://judge.yosupo.jp/problem/associative_array
   bundledCode: "#line 1 \"test/yosupo/associative_array.test.cpp\"\n\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line 1 \"src/fnv1a.hpp\"\
-    \n#include <iostream>\n\nusing namespace std;\n\ninline uint64_t fnv1a_64(const\
+    \ \"https://judge.yosupo.jp/problem/associative_array\"\n\n#line 2 \"src/fnv1a.hpp\"\
+    \n\n#include <iostream>\n\nusing namespace std;\n\ninline uint64_t fnv1a_64(const\
     \ string& data) {\n\n    uint64_t hash = 0xcbf29ce484222325;\n    constexpr uint64_t\
     \ prime = 0x100000001b3;\n\n    for (char i : data) {\n        hash = hash ^ i;\n\
     \        hash *= prime;\n    }\n\n    return hash;\n}\n#line 5 \"test/yosupo/associative_array.test.cpp\"\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/associative_array.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/associative_array.test.cpp

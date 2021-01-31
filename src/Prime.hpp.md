@@ -22,9 +22,9 @@ data:
     links:
     - http://miller-rabin.appspot.com/
     - https://cp-algorithms.com/algebra/prime-sieve-linear.html
-  bundledCode: "#line 1 \"src/Prime.hpp\"\n#include <vector>\n\nusing namespace std;\n\
-    using lint = long long;\n\n#define RUNTIME_MODINT\n#line 1 \"src/Modint.hpp\"\n\
-    #include <cassert>\n#include <iostream>\n#include <numeric>\n\nusing namespace\
+  bundledCode: "#line 2 \"src/Prime.hpp\"\n\n#include <vector>\n\nusing namespace\
+    \ std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n#line 2 \"src/Modint.hpp\"\
+    \n\n#include <cassert>\n#include <iostream>\n#include <numeric>\n\nusing namespace\
     \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\n\
     template<int &Modulo>\n#else\n\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n\
     \    lint val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if\
@@ -55,16 +55,16 @@ data:
     \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
     \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
-    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 8 \"src/Prime.hpp\"\
-    \n\n#line 1 \"src/ctz.hpp\"\n\n#line 1 \"src/popcount.hpp\"\n\nusing lint = long\
+    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 10 \"src/Prime.hpp\"\
+    \n\n#line 2 \"src/ctz.hpp\"\n\n#line 2 \"src/popcount.hpp\"\n\nusing lint = long\
     \ long;\n\ninline int popcount(lint n) {\n    n = (n & 0x5555555555555555) + (n\
     \ >> 1 & 0x5555555555555555);\n    n = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);\n\
     \    n = (n & 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n    n = (n\
     \ & 0x00ff00ff00ff00ff) + (n >> 8 & 0x00ff00ff00ff00ff);\n    n = (n & 0x0000ffff0000ffff)\
     \ + (n >> 16 & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >>\
-    \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 3 \"src/ctz.hpp\"\n\nusing\
+    \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 4 \"src/ctz.hpp\"\n\nusing\
     \ lint = long long;\n\ninline int ctz(lint n) {\n    return popcount(~n & (n -\
-    \ 1));\n}\n#line 10 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
+    \ 1));\n}\n#line 12 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
     \    vector<int> min_pf; // min_pf[i] = minimum prime factor of i\n    // linear\
     \ sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n    void linearSieve(int\
     \ N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int i = 2; i < N; i++)\
@@ -90,10 +90,10 @@ data:
     \    rmint a = rmint(base).pow(d);\n            int i = s;\n            while\
     \ (a != 1 && a != -1 && a != 0 && i--) a *= a;\n            if (a != -1 && i !=\
     \ s) return false;\n        }\n        return true;\n    }\n};\n"
-  code: "#include <vector>\n\nusing namespace std;\nusing lint = long long;\n\n#define\
-    \ RUNTIME_MODINT\n#include \"Modint.hpp\"\n\n#include \"ctz.hpp\"\n\nclass Prime\
-    \ {\n    vector<int> prime;\n    vector<int> min_pf; // min_pf[i] = minimum prime\
-    \ factor of i\n    // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
+  code: "#pragma once\n\n#include <vector>\n\nusing namespace std;\nusing lint = long\
+    \ long;\n\n#define RUNTIME_MODINT\n#include \"Modint.hpp\"\n\n#include \"ctz.hpp\"\
+    \n\nclass Prime {\n    vector<int> prime;\n    vector<int> min_pf; // min_pf[i]\
+    \ = minimum prime factor of i\n    // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
     \    void linearSieve(int N) {\n        min_pf[0] = min_pf[1] = -1;\n        for\
     \ (int i = 2; i < N; i++) {\n            if (min_pf[i] == 0) {\n             \
     \   prime.emplace_back(i);\n                min_pf[i] = i;\n            }\n  \
@@ -124,7 +124,7 @@ data:
   isVerificationFile: false
   path: src/Prime.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp

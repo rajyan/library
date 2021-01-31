@@ -20,7 +20,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/Point2D.hpp\"\n#include <cmath>\n#include <iostream>\n\
+  bundledCode: "#line 2 \"src/Point2D.hpp\"\n\n#include <cmath>\n#include <iostream>\n\
     #include <vector>\n\nusing namespace std;\nusing lint = long long;\n\ntemplate<class\
     \ T>\nstruct Point2D {\n    T x{}, y{};\n\n    constexpr Point2D() = default;\n\
     \    constexpr Point2D(const T &x, const T &y) noexcept: x(x), y(y) {};\n    constexpr\
@@ -55,9 +55,9 @@ data:
     \ &is, Point2D &p) { return is >> p.x >> p.y; }\n    constexpr friend ostream\
     \ &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y;\
     \ }\n};\n\nusing pnt = Point2D<lint>;\n"
-  code: "#include <cmath>\n#include <iostream>\n#include <vector>\n\nusing namespace\
-    \ std;\nusing lint = long long;\n\ntemplate<class T>\nstruct Point2D {\n    T\
-    \ x{}, y{};\n\n    constexpr Point2D() = default;\n    constexpr Point2D(const\
+  code: "#pragma once\n\n#include <cmath>\n#include <iostream>\n#include <vector>\n\
+    \nusing namespace std;\nusing lint = long long;\n\ntemplate<class T>\nstruct Point2D\
+    \ {\n    T x{}, y{};\n\n    constexpr Point2D() = default;\n    constexpr Point2D(const\
     \ T &x, const T &y) noexcept: x(x), y(y) {};\n    constexpr explicit Point2D(const\
     \ pair<T, T> &p) noexcept: x(p.first), y(p.second) {};\n\n    constexpr bool operator==(const\
     \ Point2D &rhs) const noexcept { return x == rhs.x && y == rhs.y; }\n    constexpr\
@@ -94,7 +94,7 @@ data:
   path: src/Point2D.hpp
   requiredBy:
   - src/Matrix2D.hpp
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/891.test.cpp

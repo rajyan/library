@@ -23,17 +23,17 @@ data:
   bundledCode: "#line 1 \"test/aoj/GRL_1_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n\n#include <iostream>\n#include <iomanip>\n#include <string>\n#include <vector>\n\
     #include <algorithm>\n\nusing namespace std;\nusing lint = long long;\nconstexpr\
-    \ lint LINF = 1LL << 60;\n\n#line 3 \"src/BellmanFord.hpp\"\n\nusing namespace\
-    \ std;\n\n#line 1 \"src/chmin.hpp\"\ntemplate<class T>\ninline bool chmin(T &a,\
-    \ const T b) { return a > b && (a = b, true); }\n#line 1 \"src/Edge.hpp\"\ntemplate<class\
+    \ lint LINF = 1LL << 60;\n\n#line 2 \"src/BellmanFord.hpp\"\n\n#line 5 \"src/BellmanFord.hpp\"\
+    \n\n#line 2 \"src/chmin.hpp\"\n\ntemplate<class T>\ninline bool chmin(T &a, const\
+    \ T b) { return a > b && (a = b, true); }\n#line 2 \"src/Edge.hpp\"\n\ntemplate<class\
     \ T>\nstruct Edge {\n    int from{}, to{};\n    T cost;\n    Edge() = default;\n\
     \    Edge(int to, T cost) : to(to), cost(cost) {}\n    Edge(int from, int to,\
     \ T cost) : from(from), to(to), cost(cost) {}\n    bool operator>(const Edge &r)\
     \ const { return this->cost > r.cost; }\n};\n#line 8 \"src/BellmanFord.hpp\"\n\
-    \ntemplate<class T>\nvector<T> BellmanFord(const vector<Edge<T>> &edges, const\
-    \ int V, const int st) {\n\n    const T inf = numeric_limits<T>::max() / 2;\n\
-    \    vector<T> cost(V, inf);\n    cost[st] = 0;\n    for (int i = 0; i < V - 1;\
-    \ i++) {\n        for (const auto &e : edges) {\n            if (cost[e.from]\
+    \nusing namespace std;\n\ntemplate<class T>\nvector<T> BellmanFord(const vector<Edge<T>>\
+    \ &edges, const int V, const int st) {\n\n    const T inf = numeric_limits<T>::max()\
+    \ / 2;\n    vector<T> cost(V, inf);\n    cost[st] = 0;\n    for (int i = 0; i\
+    \ < V - 1; i++) {\n        for (const auto &e : edges) {\n            if (cost[e.from]\
     \ == inf) continue;\n            chmin(cost[e.to], cost[e.from] + e.cost);\n \
     \       }\n    }\n\n    for (int i = 0; i < V; i++) {\n        for (const auto\
     \ &e : edges) { // finding negative loop\n            if (cost[e.from] == inf)\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp

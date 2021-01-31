@@ -15,8 +15,8 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
   bundledCode: "#line 1 \"test/aoj/DSL_1_A.test.cpp\"\n\n#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'\n\
-    \n#line 1 \"src/UnionFind.hpp\"\n#include <vector>\n\nusing namespace std;\n\n\
-    class UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    explicit UnionFind(int\
+    \n#line 2 \"src/UnionFind.hpp\"\n\n#include <vector>\n\nusing namespace std;\n\
+    \nclass UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    explicit UnionFind(int\
     \ size) : data(size, -1) {}\n    [[nodiscard]] int root(int x) { return data[x]\
     \ < 0 ? x : data[x] = root(data[x]); }\n    [[nodiscard]] bool is_same(int x,\
     \ int y) { return root(x) == root(y); }\n    [[nodiscard]] int size(int x) { return\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_A.test.cpp

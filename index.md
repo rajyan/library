@@ -97,6 +97,9 @@ data:
       path: src/popcount.hpp
       title: src/popcount.hpp
     - icon: ':heavy_check_mark:'
+      path: src/print.hpp
+      title: src/print.hpp
+    - icon: ':heavy_check_mark:'
       path: src/runLength.hpp
       title: src/runLength.hpp
     - icon: ':heavy_check_mark:'

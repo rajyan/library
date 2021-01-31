@@ -21,14 +21,15 @@ data:
     links:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"test/yosupo/lca.test.cpp\"\n\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
-    \n\n#line 1 \"src/makevec.hpp\"\n#include <vector>\n\nusing namespace std;\n\n\
-    template<class T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s, val);\
-    \ }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n    return\
-    \ vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n#line 2 \"src/LowestCommonAncestor.hpp\"\
-    \n\n#line 1 \"src/clz.hpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
+    \n\n#line 2 \"src/makevec.hpp\"\n\n#include <vector>\n\nusing namespace std;\n\
+    \ntemplate<class T>\nvector<T> make_vec(size_t s, T val) { return vector<T>(s,\
+    \ val); }\ntemplate<class... Size>\nauto make_vec(size_t s, Size... tail) {\n\
+    \    return vector<decltype(make_vec(tail...))>(s, make_vec(tail...));\n}\n#line\
+    \ 2 \"src/LowestCommonAncestor.hpp\"\n\n#line 4 \"src/LowestCommonAncestor.hpp\"\
+    \n\n#line 2 \"src/clz.hpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
     \ x) {\n    union {\n        unsigned long long as_uint64;\n        double as_double;\n\
     \    } data{};\n    data.as_double = (double)x + 0.5;\n    int n = 1054 - (int)(data.as_uint64\
-    \ >> 52);\n    return 32 + n;\n}\n#line 4 \"src/LowestCommonAncestor.hpp\"\n\n\
+    \ >> 52);\n    return 32 + n;\n}\n#line 6 \"src/LowestCommonAncestor.hpp\"\n\n\
     using namespace std;\n\nclass LCA {\nprivate:\n\n    int N, lg_N;\n    vector<int>\
     \ depth;\n    vector<vector<int>> par;\n\n    void build(const vector<vector<int>>\
     \ &tree, int root) {\n\n        auto dfs = [&](auto &&f, int now) -> void {\n\
@@ -76,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/lca.test.cpp

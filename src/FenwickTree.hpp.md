@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/FenwickTree.hpp\"\n#include <vector>\n\nusing namespace\
+  bundledCode: "#line 2 \"src/FenwickTree.hpp\"\n\n#include <vector>\n\nusing namespace\
     \ std;\n\ntemplate<class T>\nclass FenwickTree {\nprivate:\n    int n;\n    vector<T>\
     \ bit;\npublic:\n    explicit FenwickTree(int sz, T &&x = T{}) : n(sz), bit(n\
     \ + 1) {\n        for (int i = 0; i < n; i++) add(i, x);\n    }\n\n    [[nodiscard]]\
@@ -23,20 +23,20 @@ data:
     \ T sum(int l, int r) const { return sum(r) - sum(l); }\n\n    void add(int k,\
     \ const T &x) {\n        for (; k < n; k |= k + 1) bit[k] += x;\n    }\n    void\
     \ set(int k, const T &x) { add(k, x - sum(k, k + 1)); }\n};\n"
-  code: "#include <vector>\n\nusing namespace std;\n\ntemplate<class T>\nclass FenwickTree\
-    \ {\nprivate:\n    int n;\n    vector<T> bit;\npublic:\n    explicit FenwickTree(int\
-    \ sz, T &&x = T{}) : n(sz), bit(n + 1) {\n        for (int i = 0; i < n; i++)\
-    \ add(i, x);\n    }\n\n    [[nodiscard]] T sum(int k) const {\n        T res =\
-    \ 0;\n        for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];\n      \
-    \  return res;\n    }\n    [[nodiscard]] T sum(int l, int r) const { return sum(r)\
-    \ - sum(l); }\n\n    void add(int k, const T &x) {\n        for (; k < n; k |=\
-    \ k + 1) bit[k] += x;\n    }\n    void set(int k, const T &x) { add(k, x - sum(k,\
-    \ k + 1)); }\n};\n"
+  code: "#pragma once\n\n#include <vector>\n\nusing namespace std;\n\ntemplate<class\
+    \ T>\nclass FenwickTree {\nprivate:\n    int n;\n    vector<T> bit;\npublic:\n\
+    \    explicit FenwickTree(int sz, T &&x = T{}) : n(sz), bit(n + 1) {\n       \
+    \ for (int i = 0; i < n; i++) add(i, x);\n    }\n\n    [[nodiscard]] T sum(int\
+    \ k) const {\n        T res = 0;\n        for (k--; k >= 0; k = (k & (k + 1))\
+    \ - 1) res += bit[k];\n        return res;\n    }\n    [[nodiscard]] T sum(int\
+    \ l, int r) const { return sum(r) - sum(l); }\n\n    void add(int k, const T &x)\
+    \ {\n        for (; k < n; k |= k + 1) bit[k] += x;\n    }\n    void set(int k,\
+    \ const T &x) { add(k, x - sum(k, k + 1)); }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/FenwickTree.hpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_add_range_sum.test.cpp

@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Random_runlength.test.cpp\"\n\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line\
-    \ 1 \"src/Random.hpp\"\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
+    \ 2 \"src/Random.hpp\"\n\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
     #include <chrono>\n#include <vector>\n#include <unordered_map>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    Random()\
     \ : mt(chrono::steady_clock::now().time_since_epoch().count()) {}\n\n    lint\
@@ -42,20 +42,21 @@ data:
     \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        assert(!list.empty());\n      \
     \  int size = (int)(*this)(1, max_len);\n        string res(size, 0);\n      \
     \  generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size()\
-    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/runLength.hpp\"\n\
-    #include <string>\n#line 3 \"src/runLength.hpp\"\n\nusing namespace std;\n\nvector<pair<char,\
-    \ int>> runLength(string s) {\n    char prev = s[0];\n    vector<pair<char, int>>\
-    \ res{{prev, 0}};\n    for (const auto &c : s) {\n        if (c == prev) res.back().second++;\n\
-    \        else res.emplace_back(c, 1);\n        prev = c;\n    }\n    return res;\n\
-    }\n#line 6 \"test/own/Random_runlength.test.cpp\"\n\n#line 8 \"test/own/Random_runlength.test.cpp\"\
-    \n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\nusing lint\
-    \ = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n   \
-    \     ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
-    \    }\n} init_;\n\nint main() {\n\n    // random test\n    Random ran;\n    for\
-    \ (int i = 0; i < 100000; i++) {\n        string s = ran.random_string(100);\n\
-    \        auto rl_s = runLength(s);\n        string test;\n        for (const auto\
-    \ &[c, n] : rl_s) {\n            test += string(n, c);\n        }\n        assert(s\
-    \ == test);\n    }\n\n    cout << \"Hello World\\n\";\n\n    return 0;\n}\n"
+    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 2 \"src/runLength.hpp\"\n\
+    \n#include <string>\n#line 5 \"src/runLength.hpp\"\n\nusing namespace std;\n\n\
+    vector<pair<char, int>> runLength(string s) {\n    char prev = s[0];\n    vector<pair<char,\
+    \ int>> res{{prev, 0}};\n    for (const auto &c : s) {\n        if (c == prev)\
+    \ res.back().second++;\n        else res.emplace_back(c, 1);\n        prev = c;\n\
+    \    }\n    return res;\n}\n#line 6 \"test/own/Random_runlength.test.cpp\"\n\n\
+    #line 8 \"test/own/Random_runlength.test.cpp\"\n#include <iostream>\n#include\
+    \ <iomanip>\n\nusing namespace std;\nusing lint = long long;\n\nstruct init {\n\
+    \    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
+    \n    // random test\n    Random ran;\n    for (int i = 0; i < 100000; i++) {\n\
+    \        string s = ran.random_string(100);\n        auto rl_s = runLength(s);\n\
+    \        string test;\n        for (const auto &[c, n] : rl_s) {\n           \
+    \ test += string(n, c);\n        }\n        assert(s == test);\n    }\n\n    cout\
+    \ << \"Hello World\\n\";\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\
     \n\n#include \"../../src/Random.hpp\"\n#include \"../../src/runLength.hpp\"\n\n\
     #include <cassert>\n#include <iostream>\n#include <iomanip>\n\nusing namespace\
@@ -72,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/own/Random_runlength.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_runlength.test.cpp

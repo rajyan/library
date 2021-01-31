@@ -15,7 +15,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
   bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#line 1 \"src/FenwickTree.hpp\"\n#include <vector>\n\nusing namespace std;\n\
+    \n\n#line 2 \"src/FenwickTree.hpp\"\n\n#include <vector>\n\nusing namespace std;\n\
     \ntemplate<class T>\nclass FenwickTree {\nprivate:\n    int n;\n    vector<T>\
     \ bit;\npublic:\n    explicit FenwickTree(int sz, T &&x = T{}) : n(sz), bit(n\
     \ + 1) {\n        for (int i = 0; i < n; i++) add(i, x);\n    }\n\n    [[nodiscard]]\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp

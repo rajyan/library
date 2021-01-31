@@ -15,8 +15,8 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
   bundledCode: "#line 1 \"test/aoj/NTL_1_B_2.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\"\
-    \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 1\
-    \ \"src/Modint.hpp\"\n#include <cassert>\n#line 3 \"src/Modint.hpp\"\n#include\
+    \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 2\
+    \ \"src/Modint.hpp\"\n\n#include <cassert>\n#line 5 \"src/Modint.hpp\"\n#include\
     \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
     \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\ntemplate<int\
     \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_B_2.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_B_2.test.cpp

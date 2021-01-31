@@ -15,8 +15,8 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D
   bundledCode: "#line 1 \"test/aoj/DSL_3_D.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D\"\
-    \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 1\
-    \ \"src/slide_minmax.hpp\"\n#include <vector>\n#include <deque>\n\nusing namespace\
+    \n\n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\n#line 2\
+    \ \"src/slide_minmax.hpp\"\n\n#include <vector>\n#include <deque>\n\nusing namespace\
     \ std;\n\ntemplate<class T>\npair <vector<T>, vector<T>> slide_minmax(const vector<T>\
     \ &v, int k) {\n\n    deque<int> deq_min, deq_max;\n    vector<T> ret_min, ret_max;\n\
     \    for (int i = 0; i < (int)v.size(); i++) {\n\n        while (!deq_min.empty()\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_3_D.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_3_D.test.cpp

@@ -26,30 +26,30 @@ data:
   bundledCode: "#line 1 \"test/yosupo/enumerate_primes.test.cpp\"\n\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n#include <iostream>\n\
     #include <iomanip>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"src/Prime.hpp\"\
-    \n\nusing namespace std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n\
-    #line 1 \"src/Modint.hpp\"\n#include <cassert>\n#line 3 \"src/Modint.hpp\"\n#include\
-    \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
-    \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\ntemplate<int\
-    \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
-    \ 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
-    \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
-    \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if\
-    \ (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
-    \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
-    \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
-    \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
-    \ must be co-prime\");\n        while (b) {\n            lint t = a / b;\n   \
-    \         a -= t * b;\n            a ^= b, b ^= a, a ^= b;\n            u -= t\
-    \ * v;\n            u ^= v, v ^= u, u ^= v;\n        }\n        val = val * u\
-    \ % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n    }\n\
-    \n    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this)\
-    \ += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept { return\
-    \ Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const noexcept\
-    \ { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint &r) const\
-    \ noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-() const\
-    \ noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const Mint\
-    \ &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
+    \n\n#line 4 \"src/Prime.hpp\"\n\nusing namespace std;\nusing lint = long long;\n\
+    \n#define RUNTIME_MODINT\n#line 2 \"src/Modint.hpp\"\n\n#include <cassert>\n#line\
+    \ 5 \"src/Modint.hpp\"\n#include <numeric>\n\nusing namespace std;\nusing lint\
+    \ = long long;\nconstexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int\
+    \ &Modulo>\n#else\n\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n\
+    \    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if (val < 0) val +=\
+    \ Modulo; }\n\n    constexpr Mint &operator+=(const Mint &r) noexcept {\n    \
+    \    val += r.val;\n        if (val >= Modulo) val -= Modulo;\n        return\
+    \ *this;\n    }\n    constexpr Mint &operator-=(const Mint &r) noexcept {\n  \
+    \      val -= r.val;\n        if (val < 0) val += Modulo;\n        return *this;\n\
+    \    }\n    constexpr Mint &operator*=(const Mint &r) noexcept {\n        val\
+    \ = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr Mint &operator/=(const\
+    \ Mint &r) noexcept {\n        lint a{r.val}, b{Modulo}, u{1}, v{0};\n       \
+    \ assert(gcd(a, b) == 1 && \"a and b must be co-prime\");\n        while (b) {\n\
+    \            lint t = a / b;\n            a -= t * b;\n            a ^= b, b ^=\
+    \ a, a ^= b;\n            u -= t * v;\n            u ^= v, v ^= u, u ^= v;\n \
+    \       }\n        val = val * u % Modulo;\n        if (val < 0) val += Modulo;\n\
+    \        return *this;\n    }\n\n    constexpr Mint operator+(const Mint &r) const\
+    \ noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const Mint\
+    \ &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
+    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
+    \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
     \ Mint &r) const noexcept { return val < r.val; }\n\n    constexpr friend ostream\
     \ &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val;\
@@ -59,16 +59,16 @@ data:
     \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
     \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
-    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 8 \"src/Prime.hpp\"\
-    \n\n#line 1 \"src/ctz.hpp\"\n\n#line 1 \"src/popcount.hpp\"\n\nusing lint = long\
+    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 10 \"src/Prime.hpp\"\
+    \n\n#line 2 \"src/ctz.hpp\"\n\n#line 2 \"src/popcount.hpp\"\n\nusing lint = long\
     \ long;\n\ninline int popcount(lint n) {\n    n = (n & 0x5555555555555555) + (n\
     \ >> 1 & 0x5555555555555555);\n    n = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);\n\
     \    n = (n & 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n    n = (n\
     \ & 0x00ff00ff00ff00ff) + (n >> 8 & 0x00ff00ff00ff00ff);\n    n = (n & 0x0000ffff0000ffff)\
     \ + (n >> 16 & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >>\
-    \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 3 \"src/ctz.hpp\"\n\nusing\
+    \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 4 \"src/ctz.hpp\"\n\nusing\
     \ lint = long long;\n\ninline int ctz(lint n) {\n    return popcount(~n & (n -\
-    \ 1));\n}\n#line 10 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
+    \ 1));\n}\n#line 12 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
     \    vector<int> min_pf; // min_pf[i] = minimum prime factor of i\n    // linear\
     \ sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n    void linearSieve(int\
     \ N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int i = 2; i < N; i++)\
@@ -119,7 +119,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_primes.test.cpp

@@ -18,8 +18,8 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "#line 1 \"test/own/Random_popcount.test.cpp\"\n\n#define PROBLEM \"\
-    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line 1\
-    \ \"src/Random.hpp\"\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
+    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\"\n\n#line 2\
+    \ \"src/Random.hpp\"\n\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
     #include <chrono>\n#include <vector>\n#include <unordered_map>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    Random()\
     \ : mt(chrono::steady_clock::now().time_since_epoch().count()) {}\n\n    lint\
@@ -42,7 +42,7 @@ data:
     \ = \"abcdefghijklmnopqrstuvwxyz\") {\n        assert(!list.empty());\n      \
     \  int size = (int)(*this)(1, max_len);\n        string res(size, 0);\n      \
     \  generate(res.begin(), res.end(), [this, &list]() { return list[(*this)((int)list.size()\
-    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 1 \"src/popcount.hpp\"\n\
+    \ - 1)]; });\n        return res;\n    }\n\n};\n#line 2 \"src/popcount.hpp\"\n\
     \nusing lint = long long;\n\ninline int popcount(lint n) {\n    n = (n & 0x5555555555555555)\
     \ + (n >> 1 & 0x5555555555555555);\n    n = (n & 0x3333333333333333) + (n >> 2\
     \ & 0x3333333333333333);\n    n = (n & 0x0f0f0f0f0f0f0f0f) + (n >> 4 & 0x0f0f0f0f0f0f0f0f);\n\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: test/own/Random_popcount.test.cpp
   requiredBy: []
-  timestamp: '2021-01-27 22:37:38+09:00'
+  timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/own/Random_popcount.test.cpp
