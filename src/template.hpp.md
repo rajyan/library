@@ -28,16 +28,16 @@ data:
     #include <iomanip>\n#include <string>\n#include <vector>\n#include <set>\n#include\
     \ <map>\n#include <unordered_map>\n#include <queue>\n#include <numeric>\n#include\
     \ <algorithm>\n#include <bitset>\n#include <functional>\n\nusing namespace std;\n\
-    using lint = long long;\nconstexpr int MOD = 1000000007, INF = 1010101010;\nconstexpr\
-    \ lint LINF = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
-    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    using lint = long long;\nconstexpr int INF = 1010101010;\nconstexpr lint LINF\
+    \ = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n   \
+    \     ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
     \    }\n} init_;\n\nint main() {\n\n\n    return 0;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/template.hpp
   requiredBy:
   - src/empty.cpp
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-01-31 22:31:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/many_aplusb.test.cpp

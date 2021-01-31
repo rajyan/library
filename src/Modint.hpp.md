@@ -6,6 +6,9 @@ data:
     path: src/Combination.hpp
     title: src/Combination.hpp
   - icon: ':heavy_check_mark:'
+    path: src/Factorial.hpp
+    title: src/Factorial.hpp
+  - icon: ':heavy_check_mark:'
     path: src/Prime.hpp
     title: src/Prime.hpp
   - icon: ':heavy_check_mark:'
@@ -30,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1081.test.cpp
     title: test/yukicoder/1081.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/184.test.cpp
+    title: test/yukicoder/184.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
@@ -113,6 +119,7 @@ data:
   requiredBy:
   - src/Prime.hpp
   - src/RollingHash.hpp
+  - src/Factorial.hpp
   - src/empty.cpp
   - src/Combination.hpp
   timestamp: '2021-01-31 22:05:14+09:00'
@@ -123,6 +130,7 @@ data:
   - test/yukicoder/891.test.cpp
   - test/yukicoder/430.test.cpp
   - test/yukicoder/599.test.cpp
+  - test/yukicoder/184.test.cpp
   - test/own/RuntimeModint_Basic.test.cpp
   - test/own/Modint_Basic.test.cpp
   - test/aoj/NTL_1_B_2.test.cpp

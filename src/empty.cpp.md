@@ -233,7 +233,7 @@ data:
   isVerificationFile: false
   path: src/empty.cpp
   requiredBy: []
-  timestamp: '2021-01-31 22:28:03+09:00'
+  timestamp: '2021-01-31 22:31:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/empty.cpp

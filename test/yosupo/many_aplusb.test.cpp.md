@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/many_aplusb.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 19:55:33+09:00'
+  timestamp: '2021-01-31 22:31:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/many_aplusb.test.cpp
