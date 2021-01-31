@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/empty.cpp
+    title: src/empty.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -33,7 +36,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/Compress.hpp
-  requiredBy: []
+  requiredBy:
+  - src/empty.cpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Modint.hpp
     title: src/Modint.hpp
   - icon: ':heavy_check_mark:'
@@ -10,7 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/popcount.hpp
     title: src/popcount.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/empty.cpp
+    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_primes.test.cpp
@@ -122,7 +125,8 @@ data:
   - src/popcount.hpp
   isVerificationFile: false
   path: src/Prime.hpp
-  requiredBy: []
+  requiredBy:
+  - src/empty.cpp
   timestamp: '2021-01-31 22:05:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

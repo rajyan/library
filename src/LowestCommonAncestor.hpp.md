@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/clz.hpp
     title: src/clz.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/empty.cpp
+    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
@@ -68,7 +71,8 @@ data:
   - src/clz.hpp
   isVerificationFile: false
   path: src/LowestCommonAncestor.hpp
-  requiredBy: []
+  requiredBy:
+  - src/empty.cpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

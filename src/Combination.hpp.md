@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/Modint.hpp
     title: src/Modint.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/empty.cpp
+    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1081.test.cpp
@@ -70,7 +73,8 @@ data:
   - src/Modint.hpp
   isVerificationFile: false
   path: src/Combination.hpp
-  requiredBy: []
+  requiredBy:
+  - src/empty.cpp
   timestamp: '2021-01-31 22:05:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
