@@ -23,7 +23,7 @@
 
 using namespace std;
 using lint = long long;
-constexpr int MOD = 1000000007, INF = 1010101010;
+constexpr int INF = 1010101010;
 constexpr lint LINF = 1LL << 60;
 
 struct init {
