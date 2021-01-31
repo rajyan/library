@@ -25,5 +25,7 @@
 "test/yosupo/unionfind.test.cpp": "2021-01-31 19:19:57 +0900",
 "test/yukicoder/1081.test.cpp": "2021-01-31 22:05:14 +0900",
 "test/yukicoder/184.test.cpp": "2021-01-31 19:19:57 +0900",
+"test/yukicoder/430.test.cpp": "2021-01-31 22:28:03 +0900",
+"test/yukicoder/599.test.cpp": "2021-01-31 22:28:03 +0900",
 "test/yukicoder/891.test.cpp": "2021-01-31 22:05:14 +0900"
 }
