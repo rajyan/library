@@ -54,7 +54,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/RollingHash.hpp
       title: src/RollingHash.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/Timer.hpp
       title: src/Timer.hpp
     - icon: ':warning:'
@@ -105,7 +105,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/slide_minmax.hpp
       title: src/slide_minmax.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/template.hpp
       title: src/template.hpp
   verificationCategories:
@@ -175,6 +175,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/many_aplusb.test.cpp
+      title: test/yosupo/many_aplusb.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
