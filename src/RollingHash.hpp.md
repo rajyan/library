@@ -52,38 +52,38 @@ data:
     \ }\n        return res;\n    }\n};\n\nconstexpr int MOD = 1000000007;\nusing\
     \ mint = Mint<MOD>;\n\nint RMOD;\nusing rmint = Mint<RMOD>;\n#line 7 \"src/RollingHash.hpp\"\
     \n\nusing namespace std;\n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
-    class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
-    \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
-    \    const int base2 = 2147483627;\n    int sz;\n\npublic:\n    explicit RollingHash(const\
-    \ string &s) : sz(s.size()) {\n\n        hash1.assign(sz + 1, 0);\n        pow1.assign(sz\
-    \ + 1, 1);\n        hash2.assign(sz + 1, 0);\n        pow2.assign(sz + 1, 1);\n\
-    \n        for (int i = 0; i < sz; i++) {\n            hash1[i + 1] = hash1[i]\
-    \ * base1 + s[i];\n            pow1[i + 1] = pow1[i] * base1;\n            hash2[i\
-    \ + 1] = hash2[i] * base2 + s[i];\n            pow2[i + 1] = pow2[i] * base2;\n\
-    \        }\n    }\n\n    [[nodiscard]] pair<int, int> get(int l, int r) {\n  \
-    \      int res1 = (hash1[r] - hash1[l] * pow1[r - l]).val;\n        int res2 =\
-    \ (hash2[r] - hash2[l] * pow2[r - l]).val;\n        return {res1, res2};\n   \
-    \ }\n};\n"
+    class RollingHash {\n\nprivate:\n    constexpr int prime = 2147483647;\n    using\
+    \ Mod = Mint<prime>;\n\n    vector<Mod> hash1, pow1;\n    vector<Mod> hash2, pow2;\n\
+    \    constexpr int base1 = 2147483634;\n    constexpr int base2 = 2147483627;\n\
+    \    int sz;\n\npublic:\n    explicit RollingHash(const string &s) : sz(s.size())\
+    \ {\n\n        hash1.assign(sz + 1, 0);\n        pow1.assign(sz + 1, 1);\n   \
+    \     hash2.assign(sz + 1, 0);\n        pow2.assign(sz + 1, 1);\n\n        for\
+    \ (int i = 0; i < sz; i++) {\n            hash1[i + 1] = hash1[i] * base1 + s[i];\n\
+    \            pow1[i + 1] = pow1[i] * base1;\n            hash2[i + 1] = hash2[i]\
+    \ * base2 + s[i];\n            pow2[i + 1] = pow2[i] * base2;\n        }\n   \
+    \ }\n\n    [[nodiscard]] pair<int, int> get(int l, int r) {\n        int res1\
+    \ = (hash1[r] - hash1[l] * pow1[r - l]).val;\n        int res2 = (hash2[r] - hash2[l]\
+    \ * pow2[r - l]).val;\n        return {res1, res2};\n    }\n};\n"
   code: "#pragma once\n\n#include <vector>\n#include <string>\n\n#include \"Modint.hpp\"\
     \n\nusing namespace std;\n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
-    class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
-    \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
-    \    const int base2 = 2147483627;\n    int sz;\n\npublic:\n    explicit RollingHash(const\
-    \ string &s) : sz(s.size()) {\n\n        hash1.assign(sz + 1, 0);\n        pow1.assign(sz\
-    \ + 1, 1);\n        hash2.assign(sz + 1, 0);\n        pow2.assign(sz + 1, 1);\n\
-    \n        for (int i = 0; i < sz; i++) {\n            hash1[i + 1] = hash1[i]\
-    \ * base1 + s[i];\n            pow1[i + 1] = pow1[i] * base1;\n            hash2[i\
-    \ + 1] = hash2[i] * base2 + s[i];\n            pow2[i + 1] = pow2[i] * base2;\n\
-    \        }\n    }\n\n    [[nodiscard]] pair<int, int> get(int l, int r) {\n  \
-    \      int res1 = (hash1[r] - hash1[l] * pow1[r - l]).val;\n        int res2 =\
-    \ (hash2[r] - hash2[l] * pow2[r - l]).val;\n        return {res1, res2};\n   \
-    \ }\n};\n"
+    class RollingHash {\n\nprivate:\n    constexpr int prime = 2147483647;\n    using\
+    \ Mod = Mint<prime>;\n\n    vector<Mod> hash1, pow1;\n    vector<Mod> hash2, pow2;\n\
+    \    constexpr int base1 = 2147483634;\n    constexpr int base2 = 2147483627;\n\
+    \    int sz;\n\npublic:\n    explicit RollingHash(const string &s) : sz(s.size())\
+    \ {\n\n        hash1.assign(sz + 1, 0);\n        pow1.assign(sz + 1, 1);\n   \
+    \     hash2.assign(sz + 1, 0);\n        pow2.assign(sz + 1, 1);\n\n        for\
+    \ (int i = 0; i < sz; i++) {\n            hash1[i + 1] = hash1[i] * base1 + s[i];\n\
+    \            pow1[i + 1] = pow1[i] * base1;\n            hash2[i + 1] = hash2[i]\
+    \ * base2 + s[i];\n            pow2[i + 1] = pow2[i] * base2;\n        }\n   \
+    \ }\n\n    [[nodiscard]] pair<int, int> get(int l, int r) {\n        int res1\
+    \ = (hash1[r] - hash1[l] * pow1[r - l]).val;\n        int res2 = (hash2[r] - hash2[l]\
+    \ * pow2[r - l]).val;\n        return {res1, res2};\n    }\n};\n"
   dependsOn:
   - src/Modint.hpp
   isVerificationFile: false
   path: src/RollingHash.hpp
   requiredBy: []
-  timestamp: '2021-01-31 22:05:14+09:00'
+  timestamp: '2021-01-31 22:12:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/430.test.cpp
