@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/Modint.hpp
     title: src/Modint.hpp
   - icon: ':heavy_check_mark:'
@@ -25,9 +25,8 @@ data:
   bundledCode: "#line 2 \"src/Prime.hpp\"\n\n#include <vector>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n#line 2 \"src/Modint.hpp\"\
     \n\n#include <cassert>\n#include <iostream>\n#include <numeric>\n\nusing namespace\
-    \ std;\nusing lint = long long;\nconstexpr int MOD = 1000000007;\n\n#ifdef RUNTIME_MODINT\n\
-    template<int &Modulo>\n#else\n\ntemplate<int Modulo>\n#endif\nstruct Mint {\n\n\
-    \    lint val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if\
+    \ std;\nusing lint = long long;\n\ntemplate<const int &Modulo>\nstruct Mint {\n\
+    \n    lint val;\n    constexpr Mint(lint v = 0) noexcept: val(v % Modulo) { if\
     \ (val < 0) val += Modulo; }\n\n    constexpr Mint &operator+=(const Mint &r)\
     \ noexcept {\n        val += r.val;\n        if (val >= Modulo) val -= Modulo;\n\
     \        return *this;\n    }\n    constexpr Mint &operator-=(const Mint &r) noexcept\
@@ -54,8 +53,8 @@ data:
     \ return is;\n    }\n\n    [[nodiscard]] constexpr Mint pow(lint n) const noexcept\
     \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
-    \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
-    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 10 \"src/Prime.hpp\"\
+    \ }\n        return res;\n    }\n};\n\nconstexpr int MOD = 1000000007;\nusing\
+    \ mint = Mint<MOD>;\n\nint RMOD;\nusing rmint = Mint<RMOD>;\n#line 10 \"src/Prime.hpp\"\
     \n\n#line 2 \"src/ctz.hpp\"\n\n#line 2 \"src/popcount.hpp\"\n\nusing lint = long\
     \ long;\n\ninline int popcount(lint n) {\n    n = (n & 0x5555555555555555) + (n\
     \ >> 1 & 0x5555555555555555);\n    n = (n & 0x3333333333333333) + (n >> 2 & 0x3333333333333333);\n\
@@ -124,7 +123,7 @@ data:
   isVerificationFile: false
   path: src/Prime.hpp
   requiredBy: []
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-01-31 22:05:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp

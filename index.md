@@ -36,7 +36,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/Matrix2D.hpp
       title: src/Matrix2D.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/Modint.hpp
       title: src/Modint.hpp
     - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
     - icon: ':warning:'
       path: src/RectangleSum.hpp
       title: src/RectangleSum.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: src/RollingHash.hpp
       title: src/RollingHash.hpp
     - icon: ':heavy_check_mark:'
@@ -195,10 +195,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/184.test.cpp
       title: test/yukicoder/184.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/430.test.cpp
       title: test/yukicoder/430.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/599.test.cpp
       title: test/yukicoder/599.test.cpp
     - icon: ':heavy_check_mark:'

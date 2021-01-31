@@ -1,33 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/Modint.hpp
     title: src/Modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/599.test.cpp
     title: test/yukicoder/599.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
   bundledCode: "#line 2 \"src/RollingHash.hpp\"\n\n#include <vector>\n#include <string>\n\
     \n#line 2 \"src/Modint.hpp\"\n\n#include <cassert>\n#include <iostream>\n#include\
-    \ <numeric>\n\nusing namespace std;\nusing lint = long long;\nconstexpr int MOD\
-    \ = 1000000007;\n\n#ifdef RUNTIME_MODINT\ntemplate<int &Modulo>\n#else\n\ntemplate<int\
-    \ Modulo>\n#endif\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v =\
-    \ 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
-    \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
-    \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
-    \ Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if\
-    \ (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
+    \ <numeric>\n\nusing namespace std;\nusing lint = long long;\n\ntemplate<const\
+    \ int &Modulo>\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v = 0)\
+    \ noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr Mint\
+    \ &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if (val\
+    \ >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr Mint\
+    \ &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if (val\
+    \ < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
     \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
     \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
     \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
@@ -50,8 +49,8 @@ data:
     \ return is;\n    }\n\n    [[nodiscard]] constexpr Mint pow(lint n) const noexcept\
     \ {\n        Mint res{1}, tmp{*this};\n        while (n > 0) {\n            if\
     \ (n & 1) res *= tmp;\n            tmp *= tmp;\n            n >>= 1;\n       \
-    \ }\n        return res;\n    }\n};\n\n#ifdef RUNTIME_MODINT\nint RMOD;\nusing\
-    \ rmint = Mint<RMOD>;\n#else\nusing mint = Mint<MOD>;\n#endif\n\n#line 7 \"src/RollingHash.hpp\"\
+    \ }\n        return res;\n    }\n};\n\nconstexpr int MOD = 1000000007;\nusing\
+    \ mint = Mint<MOD>;\n\nint RMOD;\nusing rmint = Mint<RMOD>;\n#line 7 \"src/RollingHash.hpp\"\
     \n\nusing namespace std;\n\n//// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f\n\
     class RollingHash {\n\nprivate:\n    using Mod = Mint<2147483647>;\n\n    vector<Mod>\
     \ hash1, pow1;\n    vector<Mod> hash2, pow2;\n    const int base1 = 2147483634;\n\
@@ -84,8 +83,8 @@ data:
   isVerificationFile: false
   path: src/RollingHash.hpp
   requiredBy: []
-  timestamp: '2021-01-31 19:19:57+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-01-31 22:05:14+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/430.test.cpp
   - test/yukicoder/599.test.cpp
