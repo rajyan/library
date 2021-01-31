@@ -31,15 +31,15 @@ data:
     \ main temp\n#include \"../../src/template.hpp\"\n#undef main\n#include \"../../src/Timer.hpp\"\
     \n\nint main() {\n\n    Timer timer;\n\n    int T;\n    cin >> T;\n    for (int\
     \ i = 0; i < T; i++) {\n        lint a, b;\n        cin >> a >> b;\n        cout\
-    \ << a + b << \"\\n\";\n    }\n\n    if (timer.elapsed() / 1000 / 1000 > 2) {\n\
-    \        abort();\n    }\n\n    return 0;\n}\n"
+    \ << a + b << \"\\n\";\n    }\n\n    assert(timer.elapsed() / 1000.0 / 1000.0\
+    \ < 2.0);\n\n    return 0;\n}\n"
   dependsOn:
   - src/template.hpp
   - src/Timer.hpp
   isVerificationFile: true
   path: test/yosupo/many_aplusb.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 19:36:54+09:00'
+  timestamp: '2021-01-31 19:55:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/many_aplusb.test.cpp
