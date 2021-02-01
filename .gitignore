@@ -1,7 +1,7 @@
 # CMake
 cmake-build-*/
 
-# ignore all preoject files
+# ignore all project files
 .idea/*
 
 # ignore files except *.hpp in src directory
