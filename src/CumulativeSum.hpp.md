@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/static_range_sum.test.cpp
@@ -41,8 +38,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/CumulativeSum.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

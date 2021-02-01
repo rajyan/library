@@ -4,10 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Point2D.hpp
     title: src/Point2D.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/own/Matrix2D_Basic.test.cpp
@@ -110,8 +107,7 @@ data:
   - src/Point2D.hpp
   isVerificationFile: false
   path: src/Matrix2D.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

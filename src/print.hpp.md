@@ -5,9 +5,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/debug_template.hpp
     title: src/debug_template.hpp
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/184.test.cpp
@@ -44,7 +41,6 @@ data:
   path: src/print.hpp
   requiredBy:
   - src/debug_template.hpp
-  - src/empty.cpp
   timestamp: '2021-01-31 19:17:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

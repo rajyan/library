@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -30,8 +27,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/chmax.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

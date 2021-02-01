@@ -14,9 +14,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/RollingHash.hpp
     title: src/RollingHash.hpp
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B_2.test.cpp
@@ -120,7 +117,6 @@ data:
   - src/Prime.hpp
   - src/RollingHash.hpp
   - src/Factorial.hpp
-  - src/empty.cpp
   - src/Combination.hpp
   timestamp: '2021-01-31 22:05:14+09:00'
   verificationStatus: LIBRARY_ALL_AC

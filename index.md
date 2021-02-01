@@ -84,9 +84,6 @@ data:
     - icon: ':warning:'
       path: src/divisor.hpp
       title: src/divisor.hpp
-    - icon: ':warning:'
-      path: src/empty.cpp
-      title: src/empty.cpp
     - icon: ':heavy_check_mark:'
       path: src/fnv1a.hpp
       title: src/fnv1a.hpp

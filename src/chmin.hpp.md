@@ -11,9 +11,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/FloydWarshall.hpp
     title: src/FloydWarshall.hpp
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -51,7 +48,6 @@ data:
   requiredBy:
   - src/BellmanFord.hpp
   - src/Dijkstra.hpp
-  - src/empty.cpp
   - src/FloydWarshall.hpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC

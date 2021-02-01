@@ -10,10 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/popcount.hpp
     title: src/popcount.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/enumerate_primes.test.cpp
@@ -125,8 +122,7 @@ data:
   - src/popcount.hpp
   isVerificationFile: false
   path: src/Prime.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 22:05:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

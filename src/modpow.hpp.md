@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B.test.cpp
@@ -25,8 +22,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/modpow.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 22:31:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

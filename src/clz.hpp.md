@@ -5,9 +5,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/LowestCommonAncestor.hpp
     title: src/LowestCommonAncestor.hpp
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/own/Random_clz.test.cpp
@@ -32,7 +29,6 @@ data:
   isVerificationFile: false
   path: src/clz.hpp
   requiredBy:
-  - src/empty.cpp
   - src/LowestCommonAncestor.hpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC

@@ -7,10 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/chmin.hpp
     title: src/chmin.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_B.test.cpp
@@ -55,8 +52,7 @@ data:
   - src/Edge.hpp
   isVerificationFile: false
   path: src/BellmanFord.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

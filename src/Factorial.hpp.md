@@ -4,10 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/Modint.hpp
     title: src/Modint.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: src/empty.cpp
-    title: src/empty.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/184.test.cpp
@@ -79,8 +76,7 @@ data:
   - src/Modint.hpp
   isVerificationFile: false
   path: src/Factorial.hpp
-  requiredBy:
-  - src/empty.cpp
+  requiredBy: []
   timestamp: '2021-01-31 22:31:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
