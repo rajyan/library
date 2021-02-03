@@ -33,8 +33,8 @@ for hppfile in "$@"; do
     # expand includes
 #    /home/rajyan/.pyenv/shims/oj-bundle "$hppfile" 2> /dev/null | \
     echo "$(sed -n -r "s/#include \"(.*)\"/${hppfile%/*}\/\1/p" "$hppfile")" "$hppfile" | xargs cat | \
-    # delete line starting with (#line | #pragma | #include | using (namespace|lint) | constexpr)
-    sed '/^#line/d; /^#pragma/d; /^#include/d; /^using\ [nl]/d; /^constexpr/d' > "$tmp_file"
+    # delete line starting with (#line | #pragma | #include | using (namespace|lint))
+    sed '/^#line/d; /^#pragma/d; /^#include/d; /^using\ [nl]/d;' > "$tmp_file"
   fi
   content=$(format "$tmp_file")
 

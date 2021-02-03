@@ -7,4 +7,4 @@ git diff --cached --name-only --diff-filter=D | grep "src/.*\.hpp$" | sed -e "s/
 git diff --cached | grep "rename from src/.*\.hpp$" | sed -e "s/rename from //g" -e "s/src/templates/g" -e "s/hpp$/xml/g" | xargs rm -f
 
 # generate templates
-git diff --cached --name-only --diff-filter=d | grep "src/.*\.hpp$" | xargs ./scripts/autotemplate.sh
+find src/*.hpp -maxdepth 1 -print0 | xargs -0 scripts/autotemplate.sh
