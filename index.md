@@ -48,9 +48,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/Random.hpp
       title: src/Random.hpp
-    - icon: ':warning:'
-      path: src/RectangleSum.hpp
-      title: src/RectangleSum.hpp
     - icon: ':heavy_check_mark:'
       path: src/RollingHash.hpp
       title: src/RollingHash.hpp

@@ -34,11 +34,11 @@ data:
     vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {\n\n \
     \   const int V = (int)edges.size();\n    const T inf = numeric_limits<T>::max()\
     \ / 2;\n    vector<T> cost(V, inf);\n    cost[st] = 0;\n\n    priority_queue <Edge<T>,\
-    \ vector<Edge<T>>, greater<Edge<T>>> pq;\n    pq.emplace(st, cost[st]);\n\n  \
-    \  while (!pq.empty()) {\n\n        Edge<T> now(pq.top().to, pq.top().cost);\n\
-    \        pq.pop();\n\n        if (cost[now.to] < now.cost) continue;\n       \
-    \ for (const Edge<T> &e : edges[now.to]) {\n            T tmp_cost = now.cost\
-    \ + e.cost;\n            if (chmin(cost[e.to], tmp_cost)) {\n                pq.emplace(e.to,\
+    \ vector<Edge<T>>, greater<>> pq;\n    pq.emplace(st, cost[st]);\n\n    while\
+    \ (!pq.empty()) {\n\n        Edge<T> now(pq.top().to, pq.top().cost);\n      \
+    \  pq.pop();\n\n        if (cost[now.to] < now.cost) continue;\n        for (const\
+    \ Edge<T> &e : edges[now.to]) {\n            T tmp_cost = now.cost + e.cost;\n\
+    \            if (chmin(cost[e.to], tmp_cost)) {\n                pq.emplace(e.to,\
     \ cost[e.to]);\n            }\n        }\n    }\n\n    return cost; // min cost\
     \ to vertex idx from st\n}\n#line 14 \"test/aoj/GRL_1_A.test.cpp\"\n\nstruct init\
     \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-02-04 09:18:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_A.test.cpp

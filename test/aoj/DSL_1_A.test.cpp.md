@@ -16,15 +16,15 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
   bundledCode: "#line 1 \"test/aoj/DSL_1_A.test.cpp\"\n\n#define PROBLEM 'http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A'\n\
     \n#line 2 \"src/UnionFind.hpp\"\n\n#include <vector>\n\nusing namespace std;\n\
-    \nclass UnionFind {\nprivate:\n    vector<int> data;\npublic:\n    explicit UnionFind(int\
-    \ size) : data(size, -1) {}\n    [[nodiscard]] int root(int x) { return data[x]\
-    \ < 0 ? x : data[x] = root(data[x]); }\n    [[nodiscard]] bool is_same(int x,\
-    \ int y) { return root(x) == root(y); }\n    [[nodiscard]] int size(int x) { return\
-    \ -data[root(x)]; }\n\n    bool unify(int x, int y) {\n        x = root(x);\n\
-    \        y = root(y);\n        if (x != y) {\n            if (data[y] < data[x])\
-    \ swap(x, y);\n            data[x] += data[y];\n            data[y] = x;\n   \
-    \         return true;\n        }\n        return false;\n    }\n};\n#line 5 \"\
-    test/aoj/DSL_1_A.test.cpp\"\n\n#include <iostream>\n#include <iomanip>\n#line\
+    \nclass UnionFind {\npublic:\n    explicit UnionFind(int size) : data(size, -1)\
+    \ {}\n    [[nodiscard]] int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]);\
+    \ }\n    [[nodiscard]] bool is_same(int x, int y) { return root(x) == root(y);\
+    \ }\n    [[nodiscard]] int size(int x) { return -data[root(x)]; }\n\n    bool\
+    \ unify(int x, int y) {\n        x = root(x);\n        y = root(y);\n        if\
+    \ (x != y) {\n            if (data[y] < data[x]) swap(x, y);\n            data[x]\
+    \ += data[y];\n            data[y] = x;\n            return true;\n        }\n\
+    \        return false;\n    }\n\nprivate:\n    vector<int> data;\n};\n#line 5\
+    \ \"test/aoj/DSL_1_A.test.cpp\"\n\n#include <iostream>\n#include <iomanip>\n#line\
     \ 9 \"test/aoj/DSL_1_A.test.cpp\"\n\nusing namespace std;\n\nstruct init {\n\t\
     init() {\n\t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed\
     \ << setprecision(10);\n\t}\n} init_;\n\nint main() {\n\n\tint n, q;\n\tcin >>\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-02-04 09:18:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_A.test.cpp

@@ -67,19 +67,8 @@ data:
     \ + (n >> 16 & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >>\
     \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 4 \"src/ctz.hpp\"\n\nusing\
     \ lint = long long;\n\ninline int ctz(lint n) {\n    return popcount(~n & (n -\
-    \ 1));\n}\n#line 12 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
-    \    vector<int> min_pf; // min_pf[i] = minimum prime factor of i\n    // linear\
-    \ sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n    void linearSieve(int\
-    \ N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int i = 2; i < N; i++)\
-    \ {\n            if (min_pf[i] == 0) {\n                prime.emplace_back(i);\n\
-    \                min_pf[i] = i;\n            }\n            for (int j : prime)\
-    \ {\n                if (j > min_pf[i] || i * j >= N) break;\n               \
-    \ min_pf[i * j] = j;\n            }\n        }\n    }\n\n    void Eratosthenes(lint\
-    \ N) {\n        for (lint i = 2; i * i < N; i++) {\n            if (pTable[i])\
-    \ {\n                for (int j = 0; i * (j + 2) < N; j++) pTable[i * (j + 2)]\
-    \ = false;\n            }\n        }\n    }\n\npublic:\n    vector<bool> pTable;\n\
-    \n    explicit Prime(int N, bool useLinear) : min_pf(N + 1) { linearSieve(N +\
-    \ 1); }\n    explicit Prime(int N = 1100000) : pTable(N + 1, true) { Eratosthenes(N\
+    \ 1));\n}\n#line 12 \"src/Prime.hpp\"\n\nclass Prime {\npublic:\n    vector<bool>\
+    \ pTable;\n    explicit Prime(int N = 1100000) : pTable(N + 1, true) { Eratosthenes(N\
     \ + 1); }\n\n    [[nodiscard]] vector<pair<lint, int>> factorize(lint n) {\n \
     \       vector<pair<lint, int>> res;\n        for (lint i = 2; i * i <= n; i++)\
     \ {\n            int cnt = 0;\n            while (n % i == 0) {\n            \
@@ -92,14 +81,18 @@ data:
     \ lint base : {2, 325, 9375, 28178, 450775, 9780504, 1795265022}) {\n        \
     \    rmint a = rmint(base).pow(d);\n            int i = s;\n            while\
     \ (a != 1 && a != -1 && a != 0 && i--) a *= a;\n            if (a != -1 && i !=\
-    \ s) return false;\n        }\n        return true;\n    }\n};\n#line 11 \"test/yosupo/enumerate_primes.test.cpp\"\
-    \n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
-    \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
-    \n    int N, A, B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt =\
-    \ 0;\n    vector<int> ans;\n    for (int i = 2; i <= N; i++) {\n        if (p.pTable[i])\
-    \ {\n            if ((cnt++ - B) % A == 0) ans.emplace_back(i);\n        }\n \
-    \   }\n\n    cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item\
-    \ : ans) {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
+    \ s) return false;\n        }\n        return true;\n    }\nprivate:\n    void\
+    \ Eratosthenes(lint N) {\n        for (lint i = 2; i * i < N; i++) {\n       \
+    \     if (pTable[i]) {\n                for (int j = 0; i * (j + 2) < N; j++)\
+    \ pTable[i * (j + 2)] = false;\n            }\n        }\n    }\n};\n#line 11\
+    \ \"test/yosupo/enumerate_primes.test.cpp\"\n\nstruct init {\n    init() {\n \
+    \       cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
+    \ << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N,\
+    \ A, B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt = 0;\n    vector<int>\
+    \ ans;\n    for (int i = 2; i <= N; i++) {\n        if (p.pTable[i]) {\n     \
+    \       if ((cnt++ - B) % A == 0) ans.emplace_back(i);\n        }\n    }\n\n \
+    \   cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item : ans)\
+    \ {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
     #include <iostream>\n#include <iomanip>\n#include <vector>\n\nusing namespace\
     \ std;\n\n#include \"../../src/Prime.hpp\"\n\nstruct init {\n    init() {\n  \
@@ -118,7 +111,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 22:05:14+09:00'
+  timestamp: '2021-02-04 09:18:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/enumerate_primes.test.cpp

@@ -21,7 +21,6 @@ data:
   attributes:
     links:
     - http://miller-rabin.appspot.com/
-    - https://cp-algorithms.com/algebra/prime-sieve-linear.html
   bundledCode: "#line 2 \"src/Prime.hpp\"\n\n#include <vector>\n\nusing namespace\
     \ std;\nusing lint = long long;\n\n#define RUNTIME_MODINT\n#line 2 \"src/Modint.hpp\"\
     \n\n#include <cassert>\n#include <iostream>\n#include <numeric>\n\nusing namespace\
@@ -63,19 +62,8 @@ data:
     \ + (n >> 16 & 0x0000ffff0000ffff);\n    n = (n & 0x00000000ffffffff) + (n >>\
     \ 32 & 0x00000000ffffffff);\n    return n;\n}\n#line 4 \"src/ctz.hpp\"\n\nusing\
     \ lint = long long;\n\ninline int ctz(lint n) {\n    return popcount(~n & (n -\
-    \ 1));\n}\n#line 12 \"src/Prime.hpp\"\n\nclass Prime {\n    vector<int> prime;\n\
-    \    vector<int> min_pf; // min_pf[i] = minimum prime factor of i\n    // linear\
-    \ sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n    void linearSieve(int\
-    \ N) {\n        min_pf[0] = min_pf[1] = -1;\n        for (int i = 2; i < N; i++)\
-    \ {\n            if (min_pf[i] == 0) {\n                prime.emplace_back(i);\n\
-    \                min_pf[i] = i;\n            }\n            for (int j : prime)\
-    \ {\n                if (j > min_pf[i] || i * j >= N) break;\n               \
-    \ min_pf[i * j] = j;\n            }\n        }\n    }\n\n    void Eratosthenes(lint\
-    \ N) {\n        for (lint i = 2; i * i < N; i++) {\n            if (pTable[i])\
-    \ {\n                for (int j = 0; i * (j + 2) < N; j++) pTable[i * (j + 2)]\
-    \ = false;\n            }\n        }\n    }\n\npublic:\n    vector<bool> pTable;\n\
-    \n    explicit Prime(int N, bool useLinear) : min_pf(N + 1) { linearSieve(N +\
-    \ 1); }\n    explicit Prime(int N = 1100000) : pTable(N + 1, true) { Eratosthenes(N\
+    \ 1));\n}\n#line 12 \"src/Prime.hpp\"\n\nclass Prime {\npublic:\n    vector<bool>\
+    \ pTable;\n    explicit Prime(int N = 1100000) : pTable(N + 1, true) { Eratosthenes(N\
     \ + 1); }\n\n    [[nodiscard]] vector<pair<lint, int>> factorize(lint n) {\n \
     \       vector<pair<lint, int>> res;\n        for (lint i = 2; i * i <= n; i++)\
     \ {\n            int cnt = 0;\n            while (n % i == 0) {\n            \
@@ -88,34 +76,30 @@ data:
     \ lint base : {2, 325, 9375, 28178, 450775, 9780504, 1795265022}) {\n        \
     \    rmint a = rmint(base).pow(d);\n            int i = s;\n            while\
     \ (a != 1 && a != -1 && a != 0 && i--) a *= a;\n            if (a != -1 && i !=\
-    \ s) return false;\n        }\n        return true;\n    }\n};\n"
+    \ s) return false;\n        }\n        return true;\n    }\nprivate:\n    void\
+    \ Eratosthenes(lint N) {\n        for (lint i = 2; i * i < N; i++) {\n       \
+    \     if (pTable[i]) {\n                for (int j = 0; i * (j + 2) < N; j++)\
+    \ pTable[i * (j + 2)] = false;\n            }\n        }\n    }\n};\n"
   code: "#pragma once\n\n#include <vector>\n\nusing namespace std;\nusing lint = long\
     \ long;\n\n#define RUNTIME_MODINT\n#include \"Modint.hpp\"\n\n#include \"ctz.hpp\"\
-    \n\nclass Prime {\n    vector<int> prime;\n    vector<int> min_pf; // min_pf[i]\
-    \ = minimum prime factor of i\n    // linear sieve https://cp-algorithms.com/algebra/prime-sieve-linear.html\n\
-    \    void linearSieve(int N) {\n        min_pf[0] = min_pf[1] = -1;\n        for\
-    \ (int i = 2; i < N; i++) {\n            if (min_pf[i] == 0) {\n             \
-    \   prime.emplace_back(i);\n                min_pf[i] = i;\n            }\n  \
-    \          for (int j : prime) {\n                if (j > min_pf[i] || i * j >=\
-    \ N) break;\n                min_pf[i * j] = j;\n            }\n        }\n  \
-    \  }\n\n    void Eratosthenes(lint N) {\n        for (lint i = 2; i * i < N; i++)\
-    \ {\n            if (pTable[i]) {\n                for (int j = 0; i * (j + 2)\
-    \ < N; j++) pTable[i * (j + 2)] = false;\n            }\n        }\n    }\n\n\
-    public:\n    vector<bool> pTable;\n\n    explicit Prime(int N, bool useLinear)\
-    \ : min_pf(N + 1) { linearSieve(N + 1); }\n    explicit Prime(int N = 1100000)\
-    \ : pTable(N + 1, true) { Eratosthenes(N + 1); }\n\n    [[nodiscard]] vector<pair<lint,\
-    \ int>> factorize(lint n) {\n        vector<pair<lint, int>> res;\n        for\
-    \ (lint i = 2; i * i <= n; i++) {\n            int cnt = 0;\n            while\
-    \ (n % i == 0) {\n                cnt++;\n                n /= i;\n          \
-    \  }\n            if (cnt) res.emplace_back(i, cnt);\n        }\n        if (n\
-    \ != 1) res.emplace_back(n, 1);\n\n        return res;\n    }\n\n    // Miller-Rabin\n\
-    \    [[nodiscard]] bool isPrime(lint n) {\n        if (n <= 1 || n % 2 == 0) return\
-    \ (n == 2);\n        const int s = ctz(n - 1);\n        const lint d = (n - 1)\
-    \ >> s;\n        // set runtime mod\n        RMOD = n;\n        // http://miller-rabin.appspot.com/\n\
-    \        for (const lint base : {2, 325, 9375, 28178, 450775, 9780504, 1795265022})\
-    \ {\n            rmint a = rmint(base).pow(d);\n            int i = s;\n     \
-    \       while (a != 1 && a != -1 && a != 0 && i--) a *= a;\n            if (a\
-    \ != -1 && i != s) return false;\n        }\n        return true;\n    }\n};\n"
+    \n\nclass Prime {\npublic:\n    vector<bool> pTable;\n    explicit Prime(int N\
+    \ = 1100000) : pTable(N + 1, true) { Eratosthenes(N + 1); }\n\n    [[nodiscard]]\
+    \ vector<pair<lint, int>> factorize(lint n) {\n        vector<pair<lint, int>>\
+    \ res;\n        for (lint i = 2; i * i <= n; i++) {\n            int cnt = 0;\n\
+    \            while (n % i == 0) {\n                cnt++;\n                n /=\
+    \ i;\n            }\n            if (cnt) res.emplace_back(i, cnt);\n        }\n\
+    \        if (n != 1) res.emplace_back(n, 1);\n\n        return res;\n    }\n\n\
+    \    // Miller-Rabin\n    [[nodiscard]] bool isPrime(lint n) {\n        if (n\
+    \ <= 1 || n % 2 == 0) return (n == 2);\n        const int s = ctz(n - 1);\n  \
+    \      const lint d = (n - 1) >> s;\n        // set runtime mod\n        RMOD\
+    \ = n;\n        // http://miller-rabin.appspot.com/\n        for (const lint base\
+    \ : {2, 325, 9375, 28178, 450775, 9780504, 1795265022}) {\n            rmint a\
+    \ = rmint(base).pow(d);\n            int i = s;\n            while (a != 1 &&\
+    \ a != -1 && a != 0 && i--) a *= a;\n            if (a != -1 && i != s) return\
+    \ false;\n        }\n        return true;\n    }\nprivate:\n    void Eratosthenes(lint\
+    \ N) {\n        for (lint i = 2; i * i < N; i++) {\n            if (pTable[i])\
+    \ {\n                for (int j = 0; i * (j + 2) < N; j++) pTable[i * (j + 2)]\
+    \ = false;\n            }\n        }\n    }\n};\n"
   dependsOn:
   - src/Modint.hpp
   - src/ctz.hpp
@@ -123,7 +107,7 @@ data:
   isVerificationFile: false
   path: src/Prime.hpp
   requiredBy: []
-  timestamp: '2021-01-31 22:05:14+09:00'
+  timestamp: '2021-02-04 09:18:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
