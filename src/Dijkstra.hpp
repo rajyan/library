@@ -17,7 +17,7 @@ vector<T> Dijkstra(const vector<vector<Edge<T>>> &edges, const int st) {
     vector<T> cost(V, inf);
     cost[st] = 0;
 
-    priority_queue <Edge<T>, vector<Edge<T>>, greater<Edge<T>>> pq;
+    priority_queue <Edge<T>, vector<Edge<T>>, greater<>> pq;
     pq.emplace(st, cost[st]);
 
     while (!pq.empty()) {
