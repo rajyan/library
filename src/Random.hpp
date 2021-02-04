@@ -11,10 +11,9 @@ using namespace std;
 using lint = long long;
 
 struct Random {
-
-    mt19937 mt;
     unsigned int seed;
-    explicit Random(unsigned int s = chrono::steady_clock::now().time_since_epoch().count()) : seed(s), mt(s) {}
+    mt19937 mt;
+    explicit Random(unsigned int s = chrono::steady_clock::now().time_since_epoch().count()) : seed(s), mt(seed) {}
 
     lint operator()(const lint &rand_min, const lint &rand_max) {
         uniform_int_distribution <lint> dist(rand_min, rand_max);
