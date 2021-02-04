@@ -1,8 +1,0 @@
-<template name="myrectanglesum" value="// 2d Cumulative Sum&#10;template&lt;class T&gt;&#10;class RecSum {&#10;private:&#10;    int H, W;&#10;    vector&lt;vector&lt;T&gt;&gt; data;&#10;&#10;public:&#10;    explicit RecSum(vector&lt;vector&lt;T&gt;&gt; const &amp;vec) : H(vec.size()), W(vec[0].size()), data(H + 1, vector&lt;T&gt;(W + 1, 0)) {&#10;        for (int row = 0; row &lt; H; row++) {&#10;            for (int col = 0; col &lt; W; col++) {&#10;                data[row + 1][col + 1] += data[row + 1][col] + data[row][col + 1] - data[row][col] + vec[row][col];&#10;            }&#10;        }&#10;    }&#10;&#10;    RecSum(int H, int W) : H(H), W(W), data(H + 1, vector&lt;T&gt;(W + 1, 0)) {}&#10;    void add(int x, int y, T z) { data[x + 1][y + 1] += z; }&#10;    void init() {&#10;        for (int row = 0; row &lt; H; row++) {&#10;            for (int col = 0; col &lt; W; col++) {&#10;                data[row + 1][col + 1] += data[row + 1][col] + data[row][col + 1] - data[row][col];&#10;            }&#10;        }&#10;    }&#10;&#10;    // [sx, gx) x [sy, gy)&#10;    T operator()(int sx, int sy, int gx, int gy) {&#10;        return data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy];&#10;    }&#10;};&#10;" description="" toReformat="false" toShortenFQNames="true">
-    <context>
-        <option name="OC_DECLARATION_C" value="true"/>
-        <option name="OC_DECLARATION_CPP" value="true"/>
-        <option name="OC_STATEMENT_C" value="true"/>
-        <option name="OC_STATEMENT_CPP" value="true"/>
-    </context>
-</template>
