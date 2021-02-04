@@ -30,8 +30,10 @@ struct Point2D {
     constexpr Point2D &operator-=(const Point2D &rhs) noexcept { return *this = *this - rhs; }
     constexpr Point2D &operator*=(const T &k) noexcept { return *this = *this * k; }
     constexpr Point2D &operator/=(const T &k) noexcept { return *this = *this / k; }
-    constexpr Point2D &operator--(int) noexcept { return *this -= Point2D(1, 1); };
-    constexpr Point2D &operator++(int) noexcept { return *this += Point2D(1, 1); };
+    constexpr Point2D &operator--() noexcept { return *this -= Point2D(1, 1); };
+    constexpr Point2D &operator++() noexcept { return *this += Point2D(1, 1); };
+    constexpr Point2D operator--(int) noexcept { Point2D res = *this; --*this; return res; };
+    constexpr Point2D operator++(int) noexcept { Point2D res = *this; ++*this; return res; };
     constexpr Point2D operator-() const noexcept { return {-x, -y}; }
 
     constexpr T operator*(const Point2D &rhs) const noexcept { return x * rhs.x + y * rhs.y; }
