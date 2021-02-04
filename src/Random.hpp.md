@@ -22,9 +22,9 @@ data:
     links: []
   bundledCode: "#line 2 \"src/Random.hpp\"\n\n#include <cassert>\n#include <algorithm>\n\
     #include <random>\n#include <chrono>\n#include <vector>\n#include <unordered_map>\n\
-    \nusing namespace std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937\
-    \ mt;\n    unsigned int seed;\n    explicit Random(unsigned int s = chrono::steady_clock::now().time_since_epoch().count())\
-    \ : seed(s), mt(s) {}\n\n    lint operator()(const lint &rand_min, const lint\
+    \nusing namespace std;\nusing lint = long long;\n\nstruct Random {\n    unsigned\
+    \ int seed;\n    mt19937 mt;\n    explicit Random(unsigned int s = chrono::steady_clock::now().time_since_epoch().count())\
+    \ : seed(s), mt(seed) {}\n\n    lint operator()(const lint &rand_min, const lint\
     \ &rand_max) {\n        uniform_int_distribution <lint> dist(rand_min, rand_max);\n\
     \        return dist(mt);\n    }\n    lint operator()(const lint &rand_max) {\
     \ return (*this)(0LL, rand_max); }\n\n    [[nodiscard]] vector<lint> uniq_vec(const\
@@ -47,9 +47,9 @@ data:
     \ }\n\n};\n"
   code: "#pragma once\n\n#include <cassert>\n#include <algorithm>\n#include <random>\n\
     #include <chrono>\n#include <vector>\n#include <unordered_map>\n\nusing namespace\
-    \ std;\nusing lint = long long;\n\nstruct Random {\n\n    mt19937 mt;\n    unsigned\
-    \ int seed;\n    explicit Random(unsigned int s = chrono::steady_clock::now().time_since_epoch().count())\
-    \ : seed(s), mt(s) {}\n\n    lint operator()(const lint &rand_min, const lint\
+    \ std;\nusing lint = long long;\n\nstruct Random {\n    unsigned int seed;\n \
+    \   mt19937 mt;\n    explicit Random(unsigned int s = chrono::steady_clock::now().time_since_epoch().count())\
+    \ : seed(s), mt(seed) {}\n\n    lint operator()(const lint &rand_min, const lint\
     \ &rand_max) {\n        uniform_int_distribution <lint> dist(rand_min, rand_max);\n\
     \        return dist(mt);\n    }\n    lint operator()(const lint &rand_max) {\
     \ return (*this)(0LL, rand_max); }\n\n    [[nodiscard]] vector<lint> uniq_vec(const\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: src/Random.hpp
   requiredBy: []
-  timestamp: '2021-02-04 09:18:49+09:00'
+  timestamp: '2021-02-04 23:15:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/own/Random_popcount.test.cpp

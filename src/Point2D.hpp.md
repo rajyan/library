@@ -42,19 +42,21 @@ data:
     \ Point2D &rhs) noexcept { return *this = *this - rhs; }\n    constexpr Point2D\
     \ &operator*=(const T &k) noexcept { return *this = *this * k; }\n    constexpr\
     \ Point2D &operator/=(const T &k) noexcept { return *this = *this / k; }\n   \
-    \ constexpr Point2D &operator--(int) noexcept { return *this -= Point2D(1, 1);\
-    \ };\n    constexpr Point2D &operator++(int) noexcept { return *this += Point2D(1,\
-    \ 1); };\n    constexpr Point2D operator-() const noexcept { return {-x, -y};\
-    \ }\n\n    constexpr T operator*(const Point2D &rhs) const noexcept { return x\
-    \ * rhs.x + y * rhs.y; }\n\n    [[nodiscard]] constexpr Point2D nor() const noexcept\
-    \ { return {y, -x}; }\n    [[nodiscard]] constexpr long double hypot() const noexcept\
-    \ { return ::hypotl(x, y); }\n    [[nodiscard]] constexpr bool inGrid(const T\
-    \ &H, const T &W) const noexcept { return 0 <= x && x < H && 0 <= y && y < W;\
-    \ }\n    template<class U>\n    [[nodiscard]] constexpr U &operator[](vector<vector<U>>\
-    \ &v) const noexcept { return v[x][y]; }\n\n    constexpr friend istream &operator>>(istream\
-    \ &is, Point2D &p) { return is >> p.x >> p.y; }\n    constexpr friend ostream\
-    \ &operator<<(ostream &os, const Point2D &p) { return os << p.x << ' ' << p.y;\
-    \ }\n};\n\nusing pnt = Point2D<lint>;\n"
+    \ constexpr Point2D &operator--() noexcept { return *this -= Point2D(1, 1); };\n\
+    \    constexpr Point2D &operator++() noexcept { return *this += Point2D(1, 1);\
+    \ };\n    constexpr Point2D operator--(int) noexcept { Point2D res = *this; --*this;\
+    \ return res; };\n    constexpr Point2D operator++(int) noexcept { Point2D res\
+    \ = *this; ++*this; return res; };\n    constexpr Point2D operator-() const noexcept\
+    \ { return {-x, -y}; }\n\n    constexpr T operator*(const Point2D &rhs) const\
+    \ noexcept { return x * rhs.x + y * rhs.y; }\n\n    [[nodiscard]] constexpr Point2D\
+    \ nor() const noexcept { return {y, -x}; }\n    [[nodiscard]] constexpr long double\
+    \ hypot() const noexcept { return ::hypotl(x, y); }\n    [[nodiscard]] constexpr\
+    \ bool inGrid(const T &H, const T &W) const noexcept { return 0 <= x && x < H\
+    \ && 0 <= y && y < W; }\n    template<class U>\n    [[nodiscard]] constexpr U\
+    \ &operator[](vector<vector<U>> &v) const noexcept { return v[x][y]; }\n\n   \
+    \ constexpr friend istream &operator>>(istream &is, Point2D &p) { return is >>\
+    \ p.x >> p.y; }\n    constexpr friend ostream &operator<<(ostream &os, const Point2D\
+    \ &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n"
   code: "#pragma once\n\n#include <cmath>\n#include <iostream>\n#include <vector>\n\
     \nusing namespace std;\nusing lint = long long;\n\ntemplate<class T>\nstruct Point2D\
     \ {\n    T x{}, y{};\n\n    constexpr Point2D() = default;\n    constexpr Point2D(const\
@@ -76,25 +78,27 @@ data:
     \ &operator-=(const Point2D &rhs) noexcept { return *this = *this - rhs; }\n \
     \   constexpr Point2D &operator*=(const T &k) noexcept { return *this = *this\
     \ * k; }\n    constexpr Point2D &operator/=(const T &k) noexcept { return *this\
-    \ = *this / k; }\n    constexpr Point2D &operator--(int) noexcept { return *this\
-    \ -= Point2D(1, 1); };\n    constexpr Point2D &operator++(int) noexcept { return\
-    \ *this += Point2D(1, 1); };\n    constexpr Point2D operator-() const noexcept\
-    \ { return {-x, -y}; }\n\n    constexpr T operator*(const Point2D &rhs) const\
-    \ noexcept { return x * rhs.x + y * rhs.y; }\n\n    [[nodiscard]] constexpr Point2D\
-    \ nor() const noexcept { return {y, -x}; }\n    [[nodiscard]] constexpr long double\
-    \ hypot() const noexcept { return ::hypotl(x, y); }\n    [[nodiscard]] constexpr\
-    \ bool inGrid(const T &H, const T &W) const noexcept { return 0 <= x && x < H\
-    \ && 0 <= y && y < W; }\n    template<class U>\n    [[nodiscard]] constexpr U\
-    \ &operator[](vector<vector<U>> &v) const noexcept { return v[x][y]; }\n\n   \
-    \ constexpr friend istream &operator>>(istream &is, Point2D &p) { return is >>\
-    \ p.x >> p.y; }\n    constexpr friend ostream &operator<<(ostream &os, const Point2D\
-    \ &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n"
+    \ = *this / k; }\n    constexpr Point2D &operator--() noexcept { return *this\
+    \ -= Point2D(1, 1); };\n    constexpr Point2D &operator++() noexcept { return\
+    \ *this += Point2D(1, 1); };\n    constexpr Point2D operator--(int) noexcept {\
+    \ Point2D res = *this; --*this; return res; };\n    constexpr Point2D operator++(int)\
+    \ noexcept { Point2D res = *this; ++*this; return res; };\n    constexpr Point2D\
+    \ operator-() const noexcept { return {-x, -y}; }\n\n    constexpr T operator*(const\
+    \ Point2D &rhs) const noexcept { return x * rhs.x + y * rhs.y; }\n\n    [[nodiscard]]\
+    \ constexpr Point2D nor() const noexcept { return {y, -x}; }\n    [[nodiscard]]\
+    \ constexpr long double hypot() const noexcept { return ::hypotl(x, y); }\n  \
+    \  [[nodiscard]] constexpr bool inGrid(const T &H, const T &W) const noexcept\
+    \ { return 0 <= x && x < H && 0 <= y && y < W; }\n    template<class U>\n    [[nodiscard]]\
+    \ constexpr U &operator[](vector<vector<U>> &v) const noexcept { return v[x][y];\
+    \ }\n\n    constexpr friend istream &operator>>(istream &is, Point2D &p) { return\
+    \ is >> p.x >> p.y; }\n    constexpr friend ostream &operator<<(ostream &os, const\
+    \ Point2D &p) { return os << p.x << ' ' << p.y; }\n};\n\nusing pnt = Point2D<lint>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Point2D.hpp
   requiredBy:
   - src/Matrix2D.hpp
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-02-04 23:15:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/891.test.cpp

@@ -26,18 +26,17 @@ data:
     \ < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
     \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
     \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
-    \ a{r.val}, b{Modulo}, u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b\
-    \ must be co-prime\");\n        while (b) {\n            lint t = a / b;\n   \
-    \         a -= t * b;\n            a ^= b, b ^= a, a ^= b;\n            u -= t\
-    \ * v;\n            u ^= v, v ^= u, u ^= v;\n        }\n        val = val * u\
-    \ % Modulo;\n        if (val < 0) val += Modulo;\n        return *this;\n    }\n\
-    \n    constexpr Mint operator+(const Mint &r) const noexcept { return Mint(*this)\
-    \ += r; }\n    constexpr Mint operator-(const Mint &r) const noexcept { return\
-    \ Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint &r) const noexcept\
-    \ { return Mint(*this) *= r; }\n    constexpr Mint operator/(const Mint &r) const\
-    \ noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-() const\
-    \ noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const Mint\
-    \ &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
+    \ a{r.val}, b{Modulo}, u{1}, v{0};\n        while (b) {\n            lint t =\
+    \ a / b;\n            a -= t * b;\n            a ^= b, b ^= a, a ^= b;\n     \
+    \       u -= t * v;\n            u ^= v, v ^= u, u ^= v;\n        }\n        assert(a\
+    \ == 1);\n        val = val * u % Modulo;\n        if (val < 0) val += Modulo;\n\
+    \        return *this;\n    }\n\n    constexpr Mint operator+(const Mint &r) const\
+    \ noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const Mint\
+    \ &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
+    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
+    \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
+    \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
     \ Mint &r) const noexcept { return !((*this) == r); }\n    constexpr bool operator<(const\
     \ Mint &r) const noexcept { return val < r.val; }\n\n    constexpr friend ostream\
     \ &operator<<(ostream &os, const Mint<Modulo> &x) noexcept { return os << x.val;\
@@ -63,7 +62,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_B_2.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 22:05:14+09:00'
+  timestamp: '2021-02-04 23:16:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_B_2.test.cpp

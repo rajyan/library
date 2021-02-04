@@ -33,14 +33,14 @@ data:
     \ *this;\n    }\n    constexpr Mint &operator*=(const Mint &r) noexcept {\n  \
     \      val = val * r.val % Modulo;\n        return *this;\n    }\n    constexpr\
     \ Mint &operator/=(const Mint &r) noexcept {\n        lint a{r.val}, b{Modulo},\
-    \ u{1}, v{0};\n        assert(gcd(a, b) == 1 && \"a and b must be co-prime\");\n\
-    \        while (b) {\n            lint t = a / b;\n            a -= t * b;\n \
-    \           a ^= b, b ^= a, a ^= b;\n            u -= t * v;\n            u ^=\
-    \ v, v ^= u, u ^= v;\n        }\n        val = val * u % Modulo;\n        if (val\
-    \ < 0) val += Modulo;\n        return *this;\n    }\n\n    constexpr Mint operator+(const\
-    \ Mint &r) const noexcept { return Mint(*this) += r; }\n    constexpr Mint operator-(const\
-    \ Mint &r) const noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const\
-    \ Mint &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
+    \ u{1}, v{0};\n        while (b) {\n            lint t = a / b;\n            a\
+    \ -= t * b;\n            a ^= b, b ^= a, a ^= b;\n            u -= t * v;\n  \
+    \          u ^= v, v ^= u, u ^= v;\n        }\n        assert(a == 1);\n     \
+    \   val = val * u % Modulo;\n        if (val < 0) val += Modulo;\n        return\
+    \ *this;\n    }\n\n    constexpr Mint operator+(const Mint &r) const noexcept\
+    \ { return Mint(*this) += r; }\n    constexpr Mint operator-(const Mint &r) const\
+    \ noexcept { return Mint(*this) -= r; }\n    constexpr Mint operator*(const Mint\
+    \ &r) const noexcept { return Mint(*this) *= r; }\n    constexpr Mint operator/(const\
     \ Mint &r) const noexcept { return Mint(*this) /= r; }\n\n    constexpr Mint operator-()\
     \ const noexcept { return Mint(-val); }\n\n    constexpr bool operator==(const\
     \ Mint &r) const noexcept { return val == r.val; }\n    constexpr bool operator!=(const\
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: src/Prime.hpp
   requiredBy: []
-  timestamp: '2021-02-04 09:18:49+09:00'
+  timestamp: '2021-02-04 23:16:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
