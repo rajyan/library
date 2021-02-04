@@ -30,13 +30,13 @@ int main() {
 		scanf("%c(%d,%d)\n", &type, &n, &k);
 
 		if (type == 'C') {
-			printf("%lld\n", F.Cmod(n, k));
+			printf("%lld\n", F.Cmod(n, k).val);
 		}
 		else if (type == 'P') {
-			printf("%lld\n", F.Pmod(n, k));
+			printf("%lld\n", F.Pmod(n, k).val);
 		}
 		else {
-			printf("%lld\n", F.Hmod(n, k));
+			printf("%lld\n", F.Hmod(n, k).val);
 		}
 	}
 
