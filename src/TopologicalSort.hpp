@@ -8,11 +8,6 @@
 using namespace std;
 
 class TopologicalSort {
-private:
-    int V;
-    vector<vector<int>> edges;
-    vector<int> used;
-
 public:
     explicit TopologicalSort(int n) : V(n), edges(n), used(n) {}
     explicit TopologicalSort(vector<vector<int>> &edges) : V(edges.size()), used(edges.size()) { this->edges = edges; }
@@ -54,4 +49,8 @@ public:
         return *max_element(used.begin(), used.end()) - 1;
     }
 
+private:
+    int V;
+    vector<vector<int>> edges;
+    vector<int> used;
 };

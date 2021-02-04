@@ -6,9 +6,6 @@ using namespace std;
 
 template<class T>
 class Compress {
-private:
-    vector<T> comp{};
-
 public:
     Compress() = default;
     explicit Compress(const vector<T> &vec) : comp(vec) { build(); }
@@ -28,4 +25,7 @@ public:
     [[nodiscard]] int get(const T &x) const { return lower_bound(comp.begin(), comp.end(), x) - begin(comp); }
 
     const T &operator[](const int k) const { return comp[k]; }
+
+private:
+    vector<T> comp{};
 };

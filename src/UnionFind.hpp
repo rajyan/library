@@ -5,8 +5,6 @@
 using namespace std;
 
 class UnionFind {
-private:
-    vector<int> data;
 public:
     explicit UnionFind(int size) : data(size, -1) {}
     [[nodiscard]] int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
@@ -24,4 +22,7 @@ public:
         }
         return false;
     }
+
+private:
+    vector<int> data;
 };

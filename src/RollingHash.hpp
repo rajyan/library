@@ -9,17 +9,6 @@ using namespace std;
 
 //// mod, base from https://gist.github.com/privet-kitty/295ac9202b7abb3039b493f8238bf40f
 class RollingHash {
-
-private:
-    static constexpr int prime = 2147483647;
-    static constexpr int base1 = 2147483634;
-    static constexpr int base2 = 2147483627;
-    using Mod = Mint<prime>;
-
-    vector<Mod> hash1, pow1;
-    vector<Mod> hash2, pow2;
-    int sz;
-
 public:
     explicit RollingHash(const string &s) : sz(s.size()) {
 
@@ -41,4 +30,14 @@ public:
         int res2 = (hash2[r] - hash2[l] * pow2[r - l]).val;
         return {res1, res2};
     }
+
+private:
+    static constexpr int prime = 2147483647;
+    static constexpr int base1 = 2147483634;
+    static constexpr int base2 = 2147483627;
+    using Mod = Mint<prime>;
+
+    vector<Mod> hash1, pow1;
+    vector<Mod> hash2, pow2;
+    int sz;
 };

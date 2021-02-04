@@ -7,9 +7,15 @@
 
 template<class T = mint>
 class Combination {
-private:
-    vector<T> fac, inv, finv;
+public:
+    explicit Combination(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
 
+    T operator()(int n, int k) {
+        if (n < k || k < 0) return 0LL;
+        return fac[n] * (finv[k] * finv[n - k]);
+    }
+
+private:
     void build(int N) {
         fac[0] = fac[1] = 1;
         inv[1] = 1;
@@ -22,12 +28,5 @@ private:
         }
     }
 
-public:
-    explicit Combination(int N = 110000) : fac(N + 1), inv(N + 1), finv(N + 1) { build(N + 1); }
-
-    T operator()(int n, int k) {
-        if (n < k || k < 0) return 0LL;
-        return fac[n] * (finv[k] * finv[n - k]);
-    }
-
+    vector<T> fac, inv, finv;
 };

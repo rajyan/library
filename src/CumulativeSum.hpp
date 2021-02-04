@@ -7,9 +7,6 @@ using namespace std;
 
 template<class T>
 class CuSum {
-private:
-    vector<T> cusum;
-
 public:
     explicit CuSum(vector<T> const &vec) : cusum(vec.size() + 1) {
         for (int i = 0; i < (int)vec.size(); i++) cusum[i + 1] = cusum[i] + vec[i];
@@ -29,5 +26,8 @@ public:
     // 0-indexed
     const T &operator[](int i) { return cusum[i + 1]; }
     T back() { return cusum.back(); }
+
+private:
+    vector<T> cusum;
 };
 

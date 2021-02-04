@@ -7,12 +7,30 @@
 using namespace std;
 
 class LCA {
+public:
+    explicit LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(64 - clz(N)), depth(N),
+                                                                  par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
+
+    int get_lca(int u, int v) {
+
+        if (depth[u] < depth[v]) swap(u, v);
+        u = ancestor(u, depth[u] - depth[v]);
+        if (u == v) return u;
+
+        for (int i = 64 - clz(depth[u]); i >= 0; i--) {
+            if (par[i][u] != par[i][v]) {
+                u = par[i][u];
+                v = par[i][v];
+            }
+        }
+        return par[0][u];
+    }
+
+    int dist(int u, int v) {
+        return depth[u] + depth[v] - 2 * depth[get_lca(u, v)];
+    }
+
 private:
-
-    int N, lg_N;
-    vector<int> depth;
-    vector<vector<int>> par;
-
     void build(const vector<vector<int>> &tree, int root) {
 
         auto dfs = [&](auto &&f, int now) -> void {
@@ -43,26 +61,7 @@ private:
         return now;
     }
 
-public:
-    explicit LCA(const vector<vector<int>> &tree, int root = 0) : N(tree.size()), lg_N(64 - clz(N)), depth(N),
-                                                                  par(lg_N + 1, vector<int>(N, -1)) { build(tree, root); }
-
-    int get_lca(int u, int v) {
-
-        if (depth[u] < depth[v]) swap(u, v);
-        u = ancestor(u, depth[u] - depth[v]);
-        if (u == v) return u;
-
-        for (int i = 64 - clz(depth[u]); i >= 0; i--) {
-            if (par[i][u] != par[i][v]) {
-                u = par[i][u];
-                v = par[i][v];
-            }
-        }
-        return par[0][u];
-    }
-
-    int dist(int u, int v) {
-        return depth[u] + depth[v] - 2 * depth[get_lca(u, v)];
-    }
+    int N, lg_N;
+    vector<int> depth;
+    vector<vector<int>> par;
 };
