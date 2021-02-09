@@ -2,7 +2,5 @@
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
-        <option name="OC_STATEMENT_C" value="true"/>
-        <option name="OC_STATEMENT_CPP" value="true"/>
     </context>
 </template>
