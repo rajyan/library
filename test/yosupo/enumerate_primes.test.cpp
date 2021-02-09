@@ -26,7 +26,7 @@ int main() {
     int cnt = 0;
     vector<int> ans;
     for (int i = 2; i <= N; i++) {
-        if (p.pTable[i]) {
+        if (p.isPrime(i)) {
             if ((cnt++ - B) % A == 0) ans.emplace_back(i);
         }
     }

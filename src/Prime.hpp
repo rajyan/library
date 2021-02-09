@@ -5,14 +5,11 @@
 using namespace std;
 using lint = long long;
 
-#define RUNTIME_MODINT
 #include "Modint.hpp"
-
 #include "ctz.hpp"
 
 class Prime {
 public:
-    vector<bool> pTable;
     explicit Prime(int N = 1100000) : pTable(N + 1, true) { Eratosthenes(N + 1); }
 
     [[nodiscard]] vector<pair<lint, int>> factorize(lint n) {
@@ -33,6 +30,7 @@ public:
     // Miller-Rabin
     [[nodiscard]] bool isPrime(lint n) {
         if (n <= 1 || n % 2 == 0) return (n == 2);
+        if (n < (int)pTable.size()) return pTable[n];
         const int s = ctz(n - 1);
         const lint d = (n - 1) >> s;
         // set runtime mod
@@ -54,4 +52,6 @@ private:
             }
         }
     }
+
+    vector<bool> pTable;
 };
