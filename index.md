@@ -109,6 +109,12 @@ data:
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/aoj/ALDS1_1_C.test.cpp
+      title: test/aoj/ALDS1_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ALDS1_1_C_2.test.cpp
+      title: test/aoj/ALDS1_1_C_2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_4_B.test.cpp
       title: test/aoj/ALDS1_4_B.test.cpp
     - icon: ':heavy_check_mark:'

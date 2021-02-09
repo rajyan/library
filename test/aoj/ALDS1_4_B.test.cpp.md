@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja
-  bundledCode: "#line 1 \"test/aoj/ALDS1_4_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja\"\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
+  bundledCode: "#line 1 \"test/aoj/ALDS1_4_B.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
     \n\n#line 2 \"src/bisearch.hpp\"\n\n#include <cmath>\n\nusing namespace std;\n\
     \ntemplate<class T, class F>\nT bisearch(T OK, T NG, F f) {\n    T ok = OK;\n\
     \    T ng = NG;\n\n    while (abs(ok - ng) > 1) {\n        auto mid = (ok + ng)\
@@ -29,7 +29,7 @@ data:
     \ i < q; i++) {\n        auto f = [&](int index) { return index < n && S[index]\
     \ <= T[i]; };\n        int index = bisearch(0, n, f);\n        ans += S[index]\
     \ == T[i];\n    }\n    \n    cout << ans << '\\n';\n\n    return 0;\n}\n"
-  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja\"\
+  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
     \n\n#include \"../../src/bisearch.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     #include <vector>\n\nusing namespace std;\nusing lint = long long;\n\nstruct init\
     \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_4_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-02-09 21:26:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_4_B.test.cpp

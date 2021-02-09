@@ -16,6 +16,12 @@ data:
     title: src/RollingHash.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_1_C.test.cpp
+    title: test/aoj/ALDS1_1_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_1_C_2.test.cpp
+    title: test/aoj/ALDS1_1_C_2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B_2.test.cpp
     title: test/aoj/NTL_1_B_2.test.cpp
   - icon: ':heavy_check_mark:'
@@ -128,6 +134,8 @@ data:
   - test/yukicoder/184.test.cpp
   - test/own/RuntimeModint_Basic.test.cpp
   - test/own/Modint_Basic.test.cpp
+  - test/aoj/ALDS1_1_C.test.cpp
+  - test/aoj/ALDS1_1_C_2.test.cpp
   - test/aoj/NTL_1_B_2.test.cpp
 documentation_of: src/Modint.hpp
 layout: document

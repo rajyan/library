@@ -20,21 +20,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/enumerate_primes
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
     links:
-    - https://judge.yosupo.jp/problem/enumerate_primes
-  bundledCode: "#line 1 \"test/yosupo/enumerate_primes.test.cpp\"\n\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n#include <iostream>\n\
-    #include <iomanip>\n#include <vector>\n\nusing namespace std;\n\n#line 2 \"src/Prime.hpp\"\
-    \n\n#line 4 \"src/Prime.hpp\"\n\nusing namespace std;\nusing lint = long long;\n\
-    \n#line 2 \"src/Modint.hpp\"\n\n#include <cassert>\n#line 5 \"src/Modint.hpp\"\
-    \n#include <numeric>\n\nusing namespace std;\nusing lint = long long;\n\ntemplate<const\
-    \ int &Modulo>\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint v = 0)\
-    \ noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr Mint\
-    \ &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if (val\
-    \ >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr Mint\
-    \ &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if (val\
-    \ < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
+  bundledCode: "#line 1 \"test/aoj/ALDS1_1_C.test.cpp\"\n\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
+    \n\n#line 2 \"src/Prime.hpp\"\n\n#include <vector>\n\nusing namespace std;\nusing\
+    \ lint = long long;\n\n#line 2 \"src/Modint.hpp\"\n\n#include <cassert>\n#include\
+    \ <iostream>\n#include <numeric>\n\nusing namespace std;\nusing lint = long long;\n\
+    \ntemplate<const int &Modulo>\nstruct Mint {\n\n    lint val;\n    constexpr Mint(lint\
+    \ v = 0) noexcept: val(v % Modulo) { if (val < 0) val += Modulo; }\n\n    constexpr\
+    \ Mint &operator+=(const Mint &r) noexcept {\n        val += r.val;\n        if\
+    \ (val >= Modulo) val -= Modulo;\n        return *this;\n    }\n    constexpr\
+    \ Mint &operator-=(const Mint &r) noexcept {\n        val -= r.val;\n        if\
+    \ (val < 0) val += Modulo;\n        return *this;\n    }\n    constexpr Mint &operator*=(const\
     \ Mint &r) noexcept {\n        val = val * r.val % Modulo;\n        return *this;\n\
     \    }\n    constexpr Mint &operator/=(const Mint &r) noexcept {\n        lint\
     \ a{r.val}, b{Modulo}, u{1}, v{0};\n        while (b) {\n            lint t =\
@@ -84,39 +82,37 @@ data:
     \    void Eratosthenes(lint N) {\n        for (lint i = 2; i * i < N; i++) {\n\
     \            if (pTable[i]) {\n                for (int j = 0; i * (j + 2) < N;\
     \ j++) pTable[i * (j + 2)] = false;\n            }\n        }\n    }\n\n    vector<bool>\
-    \ pTable;\n};\n#line 11 \"test/yosupo/enumerate_primes.test.cpp\"\n\nstruct init\
-    \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \ pTable;\n};\n#line 5 \"test/aoj/ALDS1_1_C.test.cpp\"\n\n#line 7 \"test/aoj/ALDS1_1_C.test.cpp\"\
+    \n#include <iomanip>\n#include <algorithm>\n\nusing namespace std;\nusing lint\
+    \ = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n   \
+    \     ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \    }\n} init_;\n\nint main() {\n\n    int n;\n    cin >> n;\n    vector<int>\
+    \ a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n\n    Prime p;\n    cout\
+    \ << count_if(a.begin(), a.end(), [&p](auto &e) { return p.isPrime(e); }) << '\\\
+    n';\n\n    return 0;\n}\n"
+  code: "\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
+    \n\n#include \"../../src/Prime.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
+    #include <algorithm>\n\nusing namespace std;\nusing lint = long long;\n\nstruct\
+    \ init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
-    \n    int N, A, B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt =\
-    \ 0;\n    vector<int> ans;\n    for (int i = 2; i <= N; i++) {\n        if (p.isPrime(i))\
-    \ {\n            if ((cnt++ - B) % A == 0) ans.emplace_back(i);\n        }\n \
-    \   }\n\n    cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item\
-    \ : ans) {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
-  code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
-    #include <iostream>\n#include <iomanip>\n#include <vector>\n\nusing namespace\
-    \ std;\n\n#include \"../../src/Prime.hpp\"\n\nstruct init {\n    init() {\n  \
-    \      cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout <<\
-    \ fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N, A,\
-    \ B;\n    cin >> N >> A >> B;\n\n    Prime p(N);\n    int cnt = 0;\n    vector<int>\
-    \ ans;\n    for (int i = 2; i <= N; i++) {\n        if (p.isPrime(i)) {\n    \
-    \        if ((cnt++ - B) % A == 0) ans.emplace_back(i);\n        }\n    }\n\n\
-    \    cout << cnt << ' ' << ans.size() << '\\n';\n    for (const auto &item : ans)\
-    \ {\n        cout << item << ' ';\n    }\n\n    return 0;\n}\n"
+    \n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n;\
+    \ i++) cin >> a[i];\n\n    Prime p;\n    cout << count_if(a.begin(), a.end(),\
+    \ [&p](auto &e) { return p.isPrime(e); }) << '\\n';\n\n    return 0;\n}\n"
   dependsOn:
   - src/Prime.hpp
   - src/Modint.hpp
   - src/ctz.hpp
   - src/popcount.hpp
   isVerificationFile: true
-  path: test/yosupo/enumerate_primes.test.cpp
+  path: test/aoj/ALDS1_1_C.test.cpp
   requiredBy: []
   timestamp: '2021-02-09 21:26:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/yosupo/enumerate_primes.test.cpp
+documentation_of: test/aoj/ALDS1_1_C.test.cpp
 layout: document
 redirect_from:
-- /verify/test/yosupo/enumerate_primes.test.cpp
-- /verify/test/yosupo/enumerate_primes.test.cpp.html
-title: test/yosupo/enumerate_primes.test.cpp
+- /verify/test/aoj/ALDS1_1_C.test.cpp
+- /verify/test/aoj/ALDS1_1_C.test.cpp.html
+title: test/aoj/ALDS1_1_C.test.cpp
 ---

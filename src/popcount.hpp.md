@@ -10,6 +10,12 @@ data:
     title: src/ctz.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_1_C.test.cpp
+    title: test/aoj/ALDS1_1_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_1_C_2.test.cpp
+    title: test/aoj/ALDS1_1_C_2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/own/Random_ctz.test.cpp
     title: test/own/Random_ctz.test.cpp
   - icon: ':heavy_check_mark:'
@@ -49,6 +55,8 @@ data:
   - test/yosupo/enumerate_primes.test.cpp
   - test/own/Random_popcount.test.cpp
   - test/own/Random_ctz.test.cpp
+  - test/aoj/ALDS1_1_C.test.cpp
+  - test/aoj/ALDS1_1_C_2.test.cpp
 documentation_of: src/popcount.hpp
 layout: document
 redirect_from:
