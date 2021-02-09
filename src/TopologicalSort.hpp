@@ -15,7 +15,6 @@ public:
     void add_edge(int from, int to) { edges[from].emplace_back(to); }
 
     vector<int> build() {
-
         vector<int> res, in(V);
         for (int i = 0; i < V; i++) for (const auto &e : edges[i]) in[e]++;
 
@@ -45,7 +44,6 @@ public:
     }
 
     [[nodiscard]] int longest_path() {
-        if (none_of(used.begin(), used.end(), [](int u) { return u > 0; })) build();
         return *max_element(used.begin(), used.end()) - 1;
     }
 
