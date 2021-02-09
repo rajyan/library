@@ -54,7 +54,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/Timer.hpp
       title: src/Timer.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/TopologicalSort.hpp
       title: src/TopologicalSort.hpp
     - icon: ':heavy_check_mark:'
@@ -201,6 +201,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/430.test.cpp
       title: test/yukicoder/430.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/497.test.cpp
+      title: test/yukicoder/497.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/599.test.cpp
       title: test/yukicoder/599.test.cpp
