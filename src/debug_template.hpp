@@ -7,10 +7,10 @@
 using namespace std;
 
 template<class T>
-void dump(const char *str, T &&h) { cerr << str << " = " << h << "\n"; };
+void dump(const char *str, T &&h) { cerr << str << " = " << str(h) << "\n"; };
 template<class Head, class... Tail>
 void dump(const char *str, Head &&h, Tail &&... t) {
     while (*str != ',') cerr << *str++;
-    cerr << " = " << h << "\n";
+    cerr << " = " << str(h) << "\n";
     dump(str + (*(str + 1) == ' ' ? 2 : 1), t...);
 }
