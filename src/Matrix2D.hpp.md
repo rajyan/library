@@ -113,8 +113,8 @@ data:
   timestamp: '2021-02-04 23:15:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/891.test.cpp
   - test/own/Matrix2D_Basic.test.cpp
+  - test/yukicoder/891.test.cpp
 documentation_of: src/Matrix2D.hpp
 layout: document
 redirect_from:

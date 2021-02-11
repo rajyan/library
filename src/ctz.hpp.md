@@ -47,9 +47,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/enumerate_primes.test.cpp
-  - test/own/Random_ctz.test.cpp
-  - test/aoj/ALDS1_1_C.test.cpp
   - test/aoj/ALDS1_1_C_2.test.cpp
+  - test/aoj/ALDS1_1_C.test.cpp
+  - test/own/Random_ctz.test.cpp
 documentation_of: src/ctz.hpp
 layout: document
 redirect_from:
