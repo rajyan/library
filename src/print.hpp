@@ -4,17 +4,18 @@
 
 using namespace std;
 
-template<typename T, typename = void_t<>>
-struct iterable: false_type {};
-template<typename T>
-struct iterable<T, void_t<decltype(declval<T>().begin(), declval<T>().end())>>: negation<is_same<T, string>> {};
-
 struct params { string d, l, r, lp, rp; };
 #ifdef _DEBUG
 params p_{",", "[", "]", "(", ")"};
 #else
 params p_{" ", "", "", "", ""};
 #endif
+
+template<typename T, typename = void_t<>>
+struct iterable: false_type {};
+template<typename T>
+struct iterable<T, void_t<decltype(declval<T>().begin(), declval<T>().end())>>: negation<is_same<T, string>> {};
+
 template<class T>
 enable_if_t<!iterable<T>::value, string> str(const T &v) {
     stringstream ss;
