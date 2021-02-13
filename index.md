@@ -40,6 +40,9 @@ data:
       path: src/Modint.hpp
       title: src/Modint.hpp
     - icon: ':heavy_check_mark:'
+      path: src/Monoid.hpp
+      title: src/Monoid.hpp
+    - icon: ':heavy_check_mark:'
       path: src/Point2D.hpp
       title: src/Point2D.hpp
     - icon: ':heavy_check_mark:'
@@ -51,6 +54,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/RollingHash.hpp
       title: src/RollingHash.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/SegmentTree.hpp
+      title: src/SegmentTree.hpp
     - icon: ':heavy_check_mark:'
       path: src/Timer.hpp
       title: src/Timer.hpp
@@ -184,6 +190,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/point_add_range_sum_2.test.cpp
+      title: test/yosupo/point_add_range_sum_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/static_range_sum.test.cpp
       title: test/yosupo/static_range_sum.test.cpp

@@ -29,23 +29,23 @@ data:
     \ &*prev(r.end()) ? p_.d : \"\");\n    return res + p_.r;\n}\n\ntemplate<class\
     \ T>\nvoid print(T &&o) {\n    cout << str(o) << '\\n';\n    exit(0);\n}\n#line\
     \ 6 \"src/debug_template.hpp\"\n\nusing namespace std;\n\ntemplate<class T>\n\
-    void dump(const char *str, T &&h) { cerr << str << \" = \" << str(h) << \"\\n\"\
-    ; };\ntemplate<class Head, class... Tail>\nvoid dump(const char *str, Head &&h,\
-    \ Tail &&... t) {\n    while (*str != ',') cerr << *str++;\n    cerr << \" = \"\
-    \ << str(h) << \"\\n\";\n    dump(str + (*(str + 1) == ' ' ? 2 : 1), t...);\n\
-    }\n"
+    void dump(const char *name, T &&h) { cerr << name << \" = \" << str(h) << \"\\\
+    n\"; };\ntemplate<class Head, class... Tail>\nvoid dump(const char *names, Head\
+    \ &&h, Tail &&... t) {\n    while (*names != ',') cerr << *names++;\n    cerr\
+    \ << \" = \" << str(h) << \"\\n\";\n    dump(names + (*(names + 1) == ' ' ? 2\
+    \ : 1), t...);\n}\n"
   code: "#define _CRT_SECURE_NO_WARNINGS\n\n#include <iostream>\n\n#include \"print.hpp\"\
-    \n\nusing namespace std;\n\ntemplate<class T>\nvoid dump(const char *str, T &&h)\
-    \ { cerr << str << \" = \" << str(h) << \"\\n\"; };\ntemplate<class Head, class...\
-    \ Tail>\nvoid dump(const char *str, Head &&h, Tail &&... t) {\n    while (*str\
-    \ != ',') cerr << *str++;\n    cerr << \" = \" << str(h) << \"\\n\";\n    dump(str\
-    \ + (*(str + 1) == ' ' ? 2 : 1), t...);\n}\n"
+    \n\nusing namespace std;\n\ntemplate<class T>\nvoid dump(const char *name, T &&h)\
+    \ { cerr << name << \" = \" << str(h) << \"\\n\"; };\ntemplate<class Head, class...\
+    \ Tail>\nvoid dump(const char *names, Head &&h, Tail &&... t) {\n    while (*names\
+    \ != ',') cerr << *names++;\n    cerr << \" = \" << str(h) << \"\\n\";\n    dump(names\
+    \ + (*(names + 1) == ' ' ? 2 : 1), t...);\n}\n"
   dependsOn:
   - src/print.hpp
   isVerificationFile: false
   path: src/debug_template.hpp
   requiredBy: []
-  timestamp: '2021-02-12 05:45:21+09:00'
+  timestamp: '2021-02-12 07:37:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/184.test.cpp
