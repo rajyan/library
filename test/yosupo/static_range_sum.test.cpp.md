@@ -25,9 +25,8 @@ data:
     \ T sum(int k) {\n        assert(0 <= k && k < cusum.size());\n        return\
     \ cusum[k];\n    }\n    // partial sum of 0-indexed [l, r)\n    [[nodiscard]]\
     \ T sum(int l, int r) {\n        assert(l <= r);\n        return sum(r) - sum(l);\n\
-    \    }\n    [[nodiscard]] T back() { return cusum.back(); }\n\nprivate:\n    vector<T>\
-    \ cusum;\n};\n\n#line 12 \"test/yosupo/static_range_sum.test.cpp\"\n\nstruct init\
-    \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \    }\n\nprivate:\n    vector<T> cusum;\n};\n\n#line 12 \"test/yosupo/static_range_sum.test.cpp\"\
+    \n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
     \n    int N, Q;\n    cin >> N >> Q;\n\n    vector<lint> a(N);\n    for (int i\
     \ = 0; i < N; i++) cin >> a[i];\n    CuSum<lint> cuA(a);\n\n    for (int i = 0;\
@@ -47,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-02-13 18:27:26+09:00'
+  timestamp: '2021-02-13 18:30:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/static_range_sum.test.cpp
