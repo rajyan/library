@@ -18,12 +18,12 @@ data:
     \n\n#line 2 \"src/FenwickTree.hpp\"\n\n#include <vector>\n\nusing namespace std;\n\
     \ntemplate<class T>\nclass FenwickTree {\npublic:\n    explicit FenwickTree(int\
     \ sz, T &&x = T{}) : n(sz), bit(n + 1) {\n        for (int i = 0; i < n; i++)\
-    \ add(i, x);\n    }\n\n    [[nodiscard]] T sum(int k) const {\n        T res =\
-    \ 0;\n        for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];\n      \
-    \  return res;\n    }\n    [[nodiscard]] T sum(int l, int r) const { return sum(r)\
-    \ - sum(l); }\n\n    void add(int k, const T &x) {\n        for (; k < n; k |=\
-    \ k + 1) bit[k] += x;\n    }\n    void set(int k, const T &x) { add(k, x - sum(k,\
-    \ k + 1)); }\nprivate:\n    int n;\n    vector<T> bit;\n};\n#line 5 \"test/aoj/DSL_2_B.test.cpp\"\
+    \ add(i, x);\n    }\n\n    void add(int k, const T &x) { for (; k < n; k |= k\
+    \ + 1) bit[k] += x; }\n    void set(int k, const T &x) { add(k, x - sum(k, k +\
+    \ 1)); }\n\n\n    [[nodiscard]] T sum(int k) const {\n        T res = 0;\n   \
+    \     for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];\n        return\
+    \ res;\n    }\n    [[nodiscard]] T sum(int l, int r) const { return sum(r) - sum(l);\
+    \ }\n\nprivate:\n    int n;\n    vector<T> bit;\n};\n#line 5 \"test/aoj/DSL_2_B.test.cpp\"\
     \n\n#include <iostream>\n#include <iomanip>\n#line 9 \"test/aoj/DSL_2_B.test.cpp\"\
     \n\nusing namespace std;\nusing lint = long long;\n\nstruct init {\n\tinit() {\n\
     \t\tcin.tie(nullptr); ios::sync_with_stdio(false);\n\t\tcout << fixed << setprecision(10);\n\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2021-02-04 09:18:49+09:00'
+  timestamp: '2021-02-13 18:27:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp
