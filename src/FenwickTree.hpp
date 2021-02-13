@@ -14,7 +14,6 @@ public:
     void add(int k, const T &x) { for (; k < n; k |= k + 1) bit[k] += x; }
     void set(int k, const T &x) { add(k, x - sum(k, k + 1)); }
 
-
     [[nodiscard]] T sum(int k) const {
         T res = 0;
         for (k--; k >= 0; k = (k & (k + 1)) - 1) res += bit[k];

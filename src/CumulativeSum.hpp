@@ -22,7 +22,6 @@ public:
         assert(l <= r);
         return sum(r) - sum(l);
     }
-    [[nodiscard]] T back() { return cusum.back(); }
 
 private:
     vector<T> cusum;
