@@ -57,7 +57,7 @@ data:
     \n\nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init()\
     \ {\n//        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n     \
     \   cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n  \
-    \  int N, Q;\n    cin >> N >> Q;\n\n    constexpr static Monoid<lint> monoid_add([](lint\
+    \  int N, Q;\n    cin >> N >> Q;\n\n    static Monoid<lint> monoid_add([](lint\
     \ l, lint r) { return l + r; });\n    SegmentTree<lint, monoid_add> sg(N);\n \
     \   for (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n      \
     \  sg.set(i, a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q, l,\
@@ -69,7 +69,7 @@ data:
     #include <vector>\n\nusing namespace std;\nusing lint = long long;\n\nstruct init\
     \ {\n    init() {\n//        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
     \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n\n    constexpr static Monoid<lint> monoid_add([](lint\
+    \n    int N, Q;\n    cin >> N >> Q;\n\n    static Monoid<lint> monoid_add([](lint\
     \ l, lint r) { return l + r; });\n    SegmentTree<lint, monoid_add> sg(N);\n \
     \   for (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n      \
     \  sg.set(i, a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q, l,\
@@ -83,7 +83,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-02-13 19:00:54+09:00'
+  timestamp: '2021-02-13 19:59:06+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum_2.test.cpp
