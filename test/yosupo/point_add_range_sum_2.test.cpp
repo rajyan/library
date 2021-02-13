@@ -23,15 +23,18 @@ int main() {
     int N, Q;
     cin >> N >> Q;
 
-    vector<lint> a(N);
-    for (int i = 0; i < N; i++) cin >> a[i];
+    SegmentTree<lint> sg(Monoid<lint>([](lint l, lint r) { return l + r; }), N);
+    for (int i = 0; i < N; i++) {
+        lint a;
+        cin >> a;
+        sg.set(i, a);
+    }
 
-    SegmentTree<lint> sg(Monoid<lint>([](lint l, lint r) { return l + r; }), a);
     for (int i = 0; i < Q; i++) {
         int q, l, r;
         cin >> q >> l >> r;
         if (q) {
-            cout << sg(l, r) << '\n';
+            cout << sg.sum(l, r) << '\n';
         }
         else {
             sg.add(l, r);

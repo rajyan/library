@@ -30,7 +30,7 @@ int main() {
     for (int i = 0; i < Q; i++) {
         int l, r;
         cin >> l >> r;
-        cout << cuA(l, r) << '\n';
+        cout << cuA.sum(l, r) << '\n';
     }
 
     return 0;

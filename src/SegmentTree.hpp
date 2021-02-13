@@ -34,7 +34,7 @@ public:
 
     void add(const int &k, const T &x) { set(k, get<T>(m.op(d[k + sz], x))); }
 
-    [[nodiscard]] T operator()(int l, int r) const {
+    [[nodiscard]] T sum(int l, int r) const {
         assert(l <= r);
         vt sml = m.identity(), smr = m.identity();
         l += sz, r += sz;
