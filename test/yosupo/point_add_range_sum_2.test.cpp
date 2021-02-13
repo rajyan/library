@@ -23,7 +23,8 @@ int main() {
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<lint> sg(Monoid<lint>([](lint l, lint r) { return l + r; }), N);
+    constexpr static Monoid<lint> monoid_add([](lint l, lint r) { return l + r; });
+    SegmentTree<lint, monoid_add> sg(N);
     for (int i = 0; i < N; i++) {
         lint a;
         cin >> a;

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <string>
 #include <unordered_map>
 
 using namespace std;

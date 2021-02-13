@@ -8,17 +8,15 @@
 
 using namespace std;
 
-template<class T>
+template<class T, const Monoid<T> &m>
 class SegmentTree {
 public:
-    SegmentTree(const Monoid<T> &m_, const int &n_)
-            : m(m_),
-              n(n_), lg(64 - clz(n)), sz(1 << lg),
+    explicit SegmentTree(const int &n_)
+            : n(n_), lg(64 - clz(n)), sz(1 << lg),
               d(2 * sz, m.identity()) {
     }
-    SegmentTree(const Monoid<T> &m_, const vector<T> &v)
-            : m(m_),
-              n((int)v.size()), lg(64 - clz(n)), sz(1 << lg),
+    explicit SegmentTree(const vector<T> &v)
+            : n((int)v.size()), lg(64 - clz(n)), sz(1 << lg),
               d(2 * sz, m.identity()) {
         for (int i = 0; i < n; i++) d[sz + i] = v[i];
         for (int i = sz - 1; i >= 0; i--) update(i);
@@ -54,7 +52,6 @@ public:
     }
 
 private:
-    Monoid<T> m;
     int n, lg, sz;;
     using vt = typename Monoid<T>::vt;
     vector<vt> d;
