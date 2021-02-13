@@ -14,13 +14,9 @@ public:
     constexpr explicit Monoid(op_t op_) : base_op(op_) {}
 
     [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {
-        if (a.index() == 1) {
-            if (b.index() == 1) {
-                return base_op(get<T>(a), get<T>(b));
-            }
-            else return a;
-        }
-        else return b;
+        if (a.index() == 1 && b.index() == 1) return base_op(get<T>(a), get<T>(b));
+        else if (a.index() == 0) return b;
+        else return a;
     };
     [[nodiscard]] constexpr Identity identity() const { return Identity{}; }
 
