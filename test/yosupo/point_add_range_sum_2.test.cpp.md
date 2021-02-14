@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/Monoid.hpp
     title: src/Monoid.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/clz.hpp
     title: src/clz.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -23,19 +23,25 @@ data:
   bundledCode: "#line 1 \"test/yosupo/point_add_range_sum_2.test.cpp\"\n\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#line 2 \"\
     src/SegmentTree.hpp\"\n\n#include <cassert>\n#include <vector>\n\n#line 2 \"src/Monoid.hpp\"\
-    \n\n#include <variant>\n\nusing namespace std;\n\ntemplate<class T>\nclass Monoid\
-    \ {\n    class Identity {};\n    using op_t = T (*)(T a, T b);\npublic:\n    using\
-    \ vt = variant<Identity, T>;\n\n    constexpr explicit Monoid(op_t op_) : base_op(op_)\
-    \ {}\n\n    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n\
-    \        if (a.index() == 1 && b.index() == 1) return base_op(get<T>(a), get<T>(b));\n\
-    \        else if (a.index() == 0) return b;\n        else return a;\n    };\n\
-    \    [[nodiscard]] constexpr Identity identity() const { return Identity{}; }\n\
-    \nprivate:\n    op_t base_op;\n};\n#line 2 \"src/clz.hpp\"\n\nusing lint = long\
-    \ long;\n\ninline int clz(lint x) {\n    union {\n        unsigned long long as_uint64;\n\
-    \        double as_double;\n    } data{};\n    data.as_double = (double)x + 0.5;\n\
-    \    int n = 1054 - (int)(data.as_uint64 >> 52);\n    return 32 + n;\n}\n#line\
-    \ 8 \"src/SegmentTree.hpp\"\n\nusing namespace std;\n\ntemplate<class T, const\
-    \ Monoid<T> &m>\nclass SegmentTree {\npublic:\n    explicit SegmentTree(const\
+    \n\n#include <variant>\n#include <algorithm>\n\nusing namespace std;\n\ntemplate<class\
+    \ T, T (*F)(T a, T b)>\nclass Monoid {\n    class Identity {};\n    using vt =\
+    \ variant<Identity, T>;\npublic:\n    [[nodiscard]] constexpr vt op(const vt &a,\
+    \ const vt &b) const {\n        if (a.index() == 1 && b.index() == 1) return F(get<T>(a),\
+    \ get<T>(b));\n        else if (a.index() == 0) return b;\n        else return\
+    \ a;\n    };\n    [[nodiscard]] constexpr vt identity() const { return Identity{};\
+    \ }\n    [[nodiscard]] constexpr T type() const { return T{}; }\n};\n\nconstexpr\
+    \ auto op_add = [](auto l, auto r) { return l + r; };\nconstexpr auto op_mul =\
+    \ [](auto l, auto r) { return l * r; };\nconstexpr auto op_max = [](auto l, auto\
+    \ r) { return max(l, r); };\nconstexpr auto op_min = [](auto l, auto r) { return\
+    \ min(l, r); };\n\ntemplate<class T>\nusing monoid_add = Monoid<T, op_add>;\n\
+    template<class T>\nusing monoid_mul = Monoid<T, op_mul>;\ntemplate<class T>\n\
+    using monoid_max = Monoid<T, op_max>;\ntemplate<class T>\nusing monoid_min = Monoid<T,\
+    \ op_min>;\n#line 2 \"src/clz.hpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
+    \ x) {\n    union {\n        unsigned long long as_uint64;\n        double as_double;\n\
+    \    } data{};\n    data.as_double = (double)x + 0.5;\n    int n = 1054 - (int)(data.as_uint64\
+    \ >> 52);\n    return 32 + n;\n}\n#line 8 \"src/SegmentTree.hpp\"\n\nusing namespace\
+    \ std;\n\ntemplate<class M>\nclass SegmentTree {\n    M m;\n    using T = decltype(m.type());\n\
+    \    using vt = decltype(m.op(T{}, T{}));\n\npublic:\n    explicit SegmentTree(const\
     \ int &n_)\n            : n(n_), lg(64 - clz(n)), sz(1 << lg),\n             \
     \ d(2 * sz, m.identity()) {\n    }\n    explicit SegmentTree(const vector<T> &v)\n\
     \            : n((int)v.size()), lg(64 - clz(n)), sz(1 << lg),\n             \
@@ -51,31 +57,28 @@ data:
     \ m.op(d[--r], smr);\n            l >>= 1;\n            r >>= 1;\n        }\n\
     \        return get<T>(m.op(sml, smr));\n    }\n\n    [[nodiscard]] T operator[](const\
     \ int &k) const {\n        assert(0 <= k && k < n);\n        return get<T>(d[k\
-    \ + sz]);\n    }\n\nprivate:\n    int n, lg, sz;;\n    using vt = typename Monoid<T>::vt;\n\
-    \    vector<vt> d;\n};\n#line 5 \"test/yosupo/point_add_range_sum_2.test.cpp\"\
-    \n\n#include <iostream>\n#include <iomanip>\n#line 9 \"test/yosupo/point_add_range_sum_2.test.cpp\"\
-    \n\nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init()\
-    \ {\n//        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n     \
-    \   cout << fixed << setprecision(10);\n    }\n} init_;\n\nconstexpr Monoid<lint>\
-    \ monoid_add([](lint l, lint r) { return l + r; });\n\nint main() {\n\n    int\
-    \ N, Q;\n    cin >> N >> Q;\n\n    SegmentTree<lint, monoid_add> sg(N);\n    for\
-    \ (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n        sg.set(i,\
-    \ a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n    \
-    \    cin >> q >> l >> r;\n        if (q) {\n            cout << sg.sum(l, r) <<\
-    \ '\\n';\n        }\n        else {\n            sg.add(l, r);\n        }\n  \
-    \  }\n\n    return 0;\n}\n"
+    \ + sz]);\n    }\n\nprivate:\n    int n, lg, sz;\n    vector<vt> d;\n};\n#line\
+    \ 5 \"test/yosupo/point_add_range_sum_2.test.cpp\"\n\n#include <iostream>\n#include\
+    \ <iomanip>\n#line 9 \"test/yosupo/point_add_range_sum_2.test.cpp\"\n\nusing namespace\
+    \ std;\nusing lint = long long;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n\
+    \        ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
+    \    }\n} init_;\n\nint main() {\n\n    int N, Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid_add<lint>>\
+    \ sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n\
+    \        sg.set(i, a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int\
+    \ q, l, r;\n        cin >> q >> l >> r;\n        if (q) {\n            cout <<\
+    \ sg.sum(l, r) << '\\n';\n        }\n        else {\n            sg.add(l, r);\n\
+    \        }\n    }\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\
     \n\n#include \"../../src/SegmentTree.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     #include <vector>\n\nusing namespace std;\nusing lint = long long;\n\nstruct init\
-    \ {\n    init() {\n//        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
-    \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nconstexpr Monoid<lint>\
-    \ monoid_add([](lint l, lint r) { return l + r; });\n\nint main() {\n\n    int\
-    \ N, Q;\n    cin >> N >> Q;\n\n    SegmentTree<lint, monoid_add> sg(N);\n    for\
-    \ (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n        sg.set(i,\
-    \ a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n    \
-    \    cin >> q >> l >> r;\n        if (q) {\n            cout << sg.sum(l, r) <<\
-    \ '\\n';\n        }\n        else {\n            sg.add(l, r);\n        }\n  \
-    \  }\n\n    return 0;\n}\n"
+    \ {\n    init() {\n        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n\
+    \        cout << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\
+    \n    int N, Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid_add<lint>> sg(N);\n\
+    \    for (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n     \
+    \   sg.set(i, a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q,\
+    \ l, r;\n        cin >> q >> l >> r;\n        if (q) {\n            cout << sg.sum(l,\
+    \ r) << '\\n';\n        }\n        else {\n            sg.add(l, r);\n       \
+    \ }\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - src/SegmentTree.hpp
   - src/Monoid.hpp
@@ -83,8 +86,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-02-14 09:11:29+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-02-14 12:11:43+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum_2.test.cpp
 layout: document
