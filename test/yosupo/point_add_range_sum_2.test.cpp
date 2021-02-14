@@ -18,12 +18,13 @@ struct init {
     }
 } init_;
 
+constexpr Monoid<lint> monoid_add([](lint l, lint r) { return l + r; });
+
 int main() {
 
     int N, Q;
     cin >> N >> Q;
 
-    static Monoid<lint> monoid_add([](lint l, lint r) { return l + r; });
     SegmentTree<lint, monoid_add> sg(N);
     for (int i = 0; i < N; i++) {
         lint a;
