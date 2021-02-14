@@ -24,7 +24,7 @@ data:
     #endif\n\n#include <cassert>\n#include <cstdio>\n#include <cmath>\n#include <iostream>\n\
     #include <iomanip>\n#include <string>\n#include <vector>\n#include <set>\n#include\
     \ <map>\n#include <unordered_map>\n#include <queue>\n#include <numeric>\n#include\
-    \ <algorithm>\n#include <bitset>\n#include <functional>\n\nusing namespace std;\n\
+    \ <algorithm>\n#include <bitset>\n#include <variant>\n\nusing namespace std;\n\
     using lint = long long;\nconstexpr int INF = 1010101010;\nconstexpr lint LINF\
     \ = 1LL << 60;\n\nstruct init {\n    init() {\n        cin.tie(nullptr);\n   \
     \     ios::sync_with_stdio(false);\n        cout << fixed << setprecision(10);\n\
@@ -33,7 +33,7 @@ data:
   isVerificationFile: false
   path: src/template.hpp
   requiredBy: []
-  timestamp: '2021-01-31 22:31:37+09:00'
+  timestamp: '2021-02-14 21:56:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/many_aplusb.test.cpp
