@@ -33,8 +33,8 @@ data:
   isVerificationFile: false
   path: src/Edge.hpp
   requiredBy:
-  - src/Dijkstra.hpp
   - src/BellmanFord.hpp
+  - src/Dijkstra.hpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
