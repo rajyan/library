@@ -8,8 +8,12 @@
 
 using namespace std;
 
-template<class T, const Monoid<T> &m>
+template<class M>
 class SegmentTree {
+    M m;
+    using T = decltype(m.type());
+    using vt = decltype(m.op(T{}, T{}));
+
 public:
     explicit SegmentTree(const int &n_)
             : n(n_), lg(64 - clz(n)), sz(1 << lg),
@@ -52,7 +56,6 @@ public:
     }
 
 private:
-    int n, lg, sz;;
-    using vt = typename Monoid<T>::vt;
+    int n, lg, sz;
     vector<vt> d;
 };

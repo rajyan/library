@@ -12,20 +12,18 @@ using lint = long long;
 
 struct init {
     init() {
-//        cin.tie(nullptr);
+        cin.tie(nullptr);
         ios::sync_with_stdio(false);
         cout << fixed << setprecision(10);
     }
 } init_;
-
-constexpr Monoid<lint> monoid_add([](lint l, lint r) { return l + r; });
 
 int main() {
 
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<lint, monoid_add> sg(N);
+    SegmentTree<monoid_add<lint>> sg(N);
     for (int i = 0; i < N; i++) {
         lint a;
         cin >> a;
