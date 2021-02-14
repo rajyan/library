@@ -39,7 +39,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/Modint.hpp
       title: src/Modint.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/Monoid.hpp
       title: src/Monoid.hpp
     - icon: ':heavy_check_mark:'
@@ -54,7 +54,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/RollingHash.hpp
       title: src/RollingHash.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/SegmentTree.hpp
       title: src/SegmentTree.hpp
     - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/chmin.hpp
       title: src/chmin.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/clz.hpp
       title: src/clz.hpp
     - icon: ':heavy_check_mark:'
@@ -190,7 +190,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum.test.cpp
       title: test/yosupo/point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo/point_add_range_sum_2.test.cpp
       title: test/yosupo/point_add_range_sum_2.test.cpp
     - icon: ':heavy_check_mark:'

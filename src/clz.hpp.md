@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/LowestCommonAncestor.hpp
     title: src/LowestCommonAncestor.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
   _extendedVerifiedWith:
@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo/lca.test.cpp
     title: test/yosupo/lca.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_range_sum_2.test.cpp
     title: test/yosupo/point_add_range_sum_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/clz.hpp\"\n\nusing lint = long long;\n\ninline int clz(lint\
@@ -38,7 +38,7 @@ data:
   - src/SegmentTree.hpp
   - src/LowestCommonAncestor.hpp
   timestamp: '2021-01-31 19:19:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/lca.test.cpp
   - test/yosupo/point_add_range_sum_2.test.cpp
