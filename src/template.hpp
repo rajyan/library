@@ -19,7 +19,7 @@
 #include <numeric>
 #include <algorithm>
 #include <bitset>
-#include <functional>
+#include <variant>
 
 using namespace std;
 using lint = long long;
