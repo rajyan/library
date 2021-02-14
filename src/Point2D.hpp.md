@@ -101,8 +101,8 @@ data:
   timestamp: '2021-02-04 23:15:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/own/Point2D_Basic.test.cpp
   - test/own/Matrix2D_Basic.test.cpp
+  - test/own/Point2D_Basic.test.cpp
   - test/yukicoder/891.test.cpp
 documentation_of: src/Point2D.hpp
 layout: document

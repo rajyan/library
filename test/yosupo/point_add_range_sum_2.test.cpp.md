@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/Monoid.hpp
     title: src/Monoid.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/clz.hpp
     title: src/clz.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -87,7 +87,7 @@ data:
   path: test/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
   timestamp: '2021-02-14 12:11:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum_2.test.cpp
 layout: document
