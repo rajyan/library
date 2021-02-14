@@ -10,10 +10,8 @@ using namespace std;
 
 template<class M>
 class SegmentTree {
-    M m;
-    using T = decltype(m.type());
-    using vt = decltype(m.op(T{}, T{}));
-
+    using T = typename M::type;
+    using vt = typename M::vt;
 public:
     explicit SegmentTree(const int &n_)
             : n(n_), lg(64 - clz(n)), sz(1 << lg),
@@ -27,13 +25,11 @@ public:
     }
 
     void update(const int &k) { d[k] = m.op(d[2 * k], d[2 * k + 1]); }
-
     void set(int k, const T &x) {
         assert(0 <= k && k < n);
         k += sz, d[k] = x;
         for (int i = 1; i <= lg; i++) update(k >> i);
     }
-
     void add(const int &k, const T &x) { set(k, get<T>(m.op(d[k + sz], x))); }
 
     [[nodiscard]] T sum(int l, int r) const {
@@ -49,13 +45,13 @@ public:
         }
         return get<T>(m.op(sml, smr));
     }
-
     [[nodiscard]] T operator[](const int &k) const {
         assert(0 <= k && k < n);
         return get<T>(d[k + sz]);
     }
 
 private:
+    M m;
     int n, lg, sz;
     vector<vt> d;
 };

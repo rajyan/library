@@ -8,15 +8,16 @@ using namespace std;
 template<class T, T (*F)(T a, T b)>
 class Monoid {
     class Identity {};
-    using vt = variant<Identity, T>;
 public:
+    using type = T;
+    using vt = variant<Identity, T>;
+
     [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {
         if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));
         else if (a.index() == 0) return b;
         else return a;
     };
     [[nodiscard]] constexpr vt identity() const { return Identity{}; }
-    [[nodiscard]] constexpr T type() const { return T{}; }
 };
 
 constexpr auto op_add = [](auto l, auto r) { return l + r; };
