@@ -22,7 +22,7 @@ int main() {
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<monoid_add<lint>> sg(N);
+    SegmentTree<monoid::add<lint>> sg(N);
     for (int i = 0; i < N; i++) {
         lint a;
         cin >> a;
@@ -33,7 +33,7 @@ int main() {
         int q, l, r;
         cin >> q >> l >> r;
         if (q) {
-            cout << get<lint>(sg.sum(l, r)) << '\n';
+            cout << sg.sum(l, r) << '\n';
         }
         else {
             sg.add(l, r);

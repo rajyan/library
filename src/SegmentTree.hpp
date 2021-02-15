@@ -24,12 +24,12 @@ public:
         for (int i = sz - 1; i >= 0; i--) update(i);
     }
 
-    void set(int k, const T &x) {
+    void set(int k, const vt &x) {
         assert(0 <= k && k < n);
         k += sz, d[k] = x;
         for (int i = 1; i <= lg; i++) update(k >> i);
     }
-    void add(const int &k, const T &x) { set(k, get<T>(m.op(d[k + sz], x))); }
+    void add(const int &k, const vt &x) { set(k, m.op(d[k + sz], x)); }
 
     [[nodiscard]] vt sum(int l, int r) const {
         assert(l <= r);
