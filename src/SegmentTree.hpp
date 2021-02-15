@@ -24,7 +24,6 @@ public:
         for (int i = sz - 1; i >= 0; i--) update(i);
     }
 
-    void update(const int &k) { d[k] = m.op(d[2 * k], d[2 * k + 1]); }
     void set(int k, const T &x) {
         assert(0 <= k && k < n);
         k += sz, d[k] = x;
@@ -32,7 +31,7 @@ public:
     }
     void add(const int &k, const T &x) { set(k, get<T>(m.op(d[k + sz], x))); }
 
-    [[nodiscard]] T sum(int l, int r) const {
+    [[nodiscard]] vt sum(int l, int r) const {
         assert(l <= r);
         vt sml = m.identity(), smr = m.identity();
         l += sz, r += sz;
@@ -43,15 +42,16 @@ public:
             l >>= 1;
             r >>= 1;
         }
-        return get<T>(m.op(sml, smr));
+        return m.op(sml, smr);
     }
-    [[nodiscard]] T operator[](const int &k) const {
+    [[nodiscard]] vt operator[](const int &k) const {
         assert(0 <= k && k < n);
-        return get<T>(d[k + sz]);
+        return d[k + sz];
     }
 
 private:
     M m;
     int n, lg, sz;
     vector<vt> d;
+    void update(const int &k) { d[k] = m.op(d[2 * k], d[2 * k + 1]); }
 };

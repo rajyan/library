@@ -5,7 +5,7 @@
 
 using namespace std;
 
-template<class T, T (*F)(T a, T b)>
+template<class T, T (*F)(T, T)>
 class Monoid {
     class Identity {};
 public:

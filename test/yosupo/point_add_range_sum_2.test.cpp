@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <iomanip>
-#include <vector>
 
 using namespace std;
 using lint = long long;
@@ -34,7 +33,7 @@ int main() {
         int q, l, r;
         cin >> q >> l >> r;
         if (q) {
-            cout << sg.sum(l, r) << '\n';
+            cout << get<lint>(sg.sum(l, r)) << '\n';
         }
         else {
             sg.add(l, r);
