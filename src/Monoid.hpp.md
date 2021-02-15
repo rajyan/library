@@ -2,52 +2,64 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yosupo/point_add_range_sum_2.test.cpp
     title: test/yosupo/point_add_range_sum_2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/Monoid.hpp\"\n\n#include <variant>\n#include <algorithm>\n\
-    \nusing namespace std;\n\ntemplate<class T, T (*F)(T, T)>\nclass Monoid {\n  \
-    \  class Identity {};\npublic:\n    using type = T;\n    using vt = variant<Identity,\
-    \ T>;\n\n    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n\
-    \        if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));\n\
-    \        else if (a.index() == 0) return b;\n        else return a;\n    };\n\
-    \    [[nodiscard]] constexpr vt identity() const { return Identity{}; }\n};\n\n\
-    constexpr auto op_add = [](auto l, auto r) { return l + r; };\nconstexpr auto\
-    \ op_mul = [](auto l, auto r) { return l * r; };\nconstexpr auto op_max = [](auto\
-    \ l, auto r) { return max(l, r); };\nconstexpr auto op_min = [](auto l, auto r)\
-    \ { return min(l, r); };\n\ntemplate<class T>\nusing monoid_add = Monoid<T, op_add>;\n\
-    template<class T>\nusing monoid_mul = Monoid<T, op_mul>;\ntemplate<class T>\n\
-    using monoid_max = Monoid<T, op_max>;\ntemplate<class T>\nusing monoid_min = Monoid<T,\
-    \ op_min>;\n"
+    \nusing namespace std;\n\ntemplate<class T, T (*F)(T, T), T (*e) = nullptr>\n\
+    class Monoid {\n    class Identity {};\n\npublic:\n    using type = T;\n    using\
+    \ vt = conditional_t<is_null_pointer_v<decltype(e)>, variant<Identity, T>, T>;\n\
+    \n    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n      \
+    \  if constexpr (e) return F(a, b);\n        else if (a.index() == 1 && b.index()\
+    \ == 1) return F(get<T>(a), get<T>(b));\n        else if (a.index() == 0) return\
+    \ b;\n        else return a;\n    };\n    [[nodiscard]] constexpr vt identity()\
+    \ const {\n        if constexpr (e) return *e;\n        else return Identity{};\n\
+    \    }\n};\n\nnamespace monoid {\n    constexpr auto op_add = [](auto l, auto\
+    \ r) { return l + r; };\n    constexpr auto op_mul = [](auto l, auto r) { return\
+    \ l * r; };\n    constexpr auto op_max = [](auto l, auto r) { return max(l, r);\
+    \ };\n    constexpr auto op_min = [](auto l, auto r) { return min(l, r); };\n\
+    \    template<class T> T e_add = T{};\n    template<class T> T e_mul = T{1};\n\
+    \    template<class T> T e_max = numeric_limits<T>::max();\n    template<class\
+    \ T> T e_min = numeric_limits<T>::min();\n    template<class T> using add = Monoid<T,\
+    \ monoid::op_add, &monoid::e_add<T>>;\n    template<class T> using mul = Monoid<T,\
+    \ monoid::op_mul, &monoid::e_mul<T>>;\n    template<class T> using max = Monoid<T,\
+    \ monoid::op_max, &monoid::e_max<T>>;\n    template<class T> using min = Monoid<T,\
+    \ monoid::op_min, &monoid::e_min<T>>;\n}\n"
   code: "#pragma once\n\n#include <variant>\n#include <algorithm>\n\nusing namespace\
-    \ std;\n\ntemplate<class T, T (*F)(T, T)>\nclass Monoid {\n    class Identity\
-    \ {};\npublic:\n    using type = T;\n    using vt = variant<Identity, T>;\n\n\
-    \    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n       \
+    \ std;\n\ntemplate<class T, T (*F)(T, T), T (*e) = nullptr>\nclass Monoid {\n\
+    \    class Identity {};\n\npublic:\n    using type = T;\n    using vt = conditional_t<is_null_pointer_v<decltype(e)>,\
+    \ variant<Identity, T>, T>;\n\n    [[nodiscard]] constexpr vt op(const vt &a,\
+    \ const vt &b) const {\n        if constexpr (e) return F(a, b);\n        else\
     \ if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));\n    \
     \    else if (a.index() == 0) return b;\n        else return a;\n    };\n    [[nodiscard]]\
-    \ constexpr vt identity() const { return Identity{}; }\n};\n\nconstexpr auto op_add\
-    \ = [](auto l, auto r) { return l + r; };\nconstexpr auto op_mul = [](auto l,\
-    \ auto r) { return l * r; };\nconstexpr auto op_max = [](auto l, auto r) { return\
-    \ max(l, r); };\nconstexpr auto op_min = [](auto l, auto r) { return min(l, r);\
-    \ };\n\ntemplate<class T>\nusing monoid_add = Monoid<T, op_add>;\ntemplate<class\
-    \ T>\nusing monoid_mul = Monoid<T, op_mul>;\ntemplate<class T>\nusing monoid_max\
-    \ = Monoid<T, op_max>;\ntemplate<class T>\nusing monoid_min = Monoid<T, op_min>;"
+    \ constexpr vt identity() const {\n        if constexpr (e) return *e;\n     \
+    \   else return Identity{};\n    }\n};\n\nnamespace monoid {\n    constexpr auto\
+    \ op_add = [](auto l, auto r) { return l + r; };\n    constexpr auto op_mul =\
+    \ [](auto l, auto r) { return l * r; };\n    constexpr auto op_max = [](auto l,\
+    \ auto r) { return max(l, r); };\n    constexpr auto op_min = [](auto l, auto\
+    \ r) { return min(l, r); };\n    template<class T> T e_add = T{};\n    template<class\
+    \ T> T e_mul = T{1};\n    template<class T> T e_max = numeric_limits<T>::max();\n\
+    \    template<class T> T e_min = numeric_limits<T>::min();\n    template<class\
+    \ T> using add = Monoid<T, monoid::op_add, &monoid::e_add<T>>;\n    template<class\
+    \ T> using mul = Monoid<T, monoid::op_mul, &monoid::e_mul<T>>;\n    template<class\
+    \ T> using max = Monoid<T, monoid::op_max, &monoid::e_max<T>>;\n    template<class\
+    \ T> using min = Monoid<T, monoid::op_min, &monoid::e_min<T>>;\n}"
   dependsOn: []
   isVerificationFile: false
   path: src/Monoid.hpp
   requiredBy:
   - src/SegmentTree.hpp
-  timestamp: '2021-02-15 09:39:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-02-15 14:05:20+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo/point_add_range_sum_2.test.cpp
 documentation_of: src/Monoid.hpp
