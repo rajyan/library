@@ -2,25 +2,26 @@
 
 #include <variant>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-template<class T, T (*F)(T, T), T (*e) = nullptr>
+template<class T, T (*F)(T, T), const T(*e) = nullptr>
 class Monoid {
     class Identity {};
-
+    constexpr static auto has_identity = !is_null_pointer_v<decltype(e)>;
 public:
     using type = T;
-    using vt = conditional_t<is_null_pointer_v<decltype(e)>, variant<Identity, T>, T>;
+    using vt = conditional_t<has_identity, T, variant<Identity, T>>;
 
     [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {
-        if constexpr (e) return F(a, b);
+        if constexpr (has_identity) return F(a, b);
         else if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));
         else if (a.index() == 0) return b;
         else return a;
     };
     [[nodiscard]] constexpr vt identity() const {
-        if constexpr (e) return *e;
+        if constexpr (has_identity) return *e;
         else return Identity{};
     }
 };
