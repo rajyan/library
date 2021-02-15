@@ -15,8 +15,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/Monoid.hpp\"\n\n#include <variant>\n#include <algorithm>\n\
-    \nusing namespace std;\n\ntemplate<class T, T (*F)(T a, T b)>\nclass Monoid {\n\
-    \    class Identity {};\npublic:\n    using type = T;\n    using vt = variant<Identity,\
+    \nusing namespace std;\n\ntemplate<class T, T (*F)(T, T)>\nclass Monoid {\n  \
+    \  class Identity {};\npublic:\n    using type = T;\n    using vt = variant<Identity,\
     \ T>;\n\n    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n\
     \        if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));\n\
     \        else if (a.index() == 0) return b;\n        else return a;\n    };\n\
@@ -29,7 +29,7 @@ data:
     using monoid_max = Monoid<T, op_max>;\ntemplate<class T>\nusing monoid_min = Monoid<T,\
     \ op_min>;\n"
   code: "#pragma once\n\n#include <variant>\n#include <algorithm>\n\nusing namespace\
-    \ std;\n\ntemplate<class T, T (*F)(T a, T b)>\nclass Monoid {\n    class Identity\
+    \ std;\n\ntemplate<class T, T (*F)(T, T)>\nclass Monoid {\n    class Identity\
     \ {};\npublic:\n    using type = T;\n    using vt = variant<Identity, T>;\n\n\
     \    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n       \
     \ if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));\n    \
@@ -46,7 +46,7 @@ data:
   path: src/Monoid.hpp
   requiredBy:
   - src/SegmentTree.hpp
-  timestamp: '2021-02-14 17:47:41+09:00'
+  timestamp: '2021-02-15 09:39:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_add_range_sum_2.test.cpp
