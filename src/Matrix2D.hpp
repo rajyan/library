@@ -7,7 +7,8 @@ struct Matrix2D {
     Point2D<T> r0{}, r1{};
 
     constexpr Matrix2D() = default;
-    constexpr Matrix2D(const Point2D<T> &r0, const Point2D<T> &r1) noexcept: r0(r0), r1(r1) {};
+    constexpr Matrix2D(const Point2D<T> &r0_, const Point2D<T> &r1_) noexcept: r0(r0_), r1(r1_) {};
+    constexpr explicit Matrix2D(const T &diag) noexcept: r0{diag, 0}, r1{0, diag} {}
 
     constexpr bool operator==(const Matrix2D &rhs) const noexcept { return r0 == rhs.r0 && r1 == rhs.r1; }
     constexpr bool operator!=(const Matrix2D &rhs) const noexcept { return !(*this == rhs); }
@@ -30,12 +31,9 @@ struct Matrix2D {
         return {{r0.x, r1.x},
                 {r0.y, r1.y}};
     }
-    [[nodiscard]] constexpr Matrix2D identity() const noexcept {
-        return {{1, 0},
-                {0, 1}};
-    }
+    [[nodiscard]] constexpr Matrix2D identity() const noexcept { return Matrix2D{T{1}}; }
     [[nodiscard]] constexpr Matrix2D pow(lint n) const noexcept {
-        Matrix2D res{Matrix2D().identity()}, tmp{*this};
+        Matrix2D res{Matrix2D{}.identity()}, tmp{*this};
         while (n > 0) {
             if (n & 1) res *= tmp;
             tmp *= tmp;
