@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo/point_add_range_sum_2.test.cpp
     title: test/yosupo/point_add_range_sum_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/Monoid.hpp\"\n\n#include <variant>\n#include <algorithm>\n\
@@ -54,14 +54,14 @@ data:
     \ T> using add = Monoid<T, monoid::op_add, &monoid::e_add<T>>;\n    template<class\
     \ T> using mul = Monoid<T, monoid::op_mul, &monoid::e_mul<T>>;\n    template<class\
     \ T> using max = Monoid<T, monoid::op_max, &monoid::e_max<T>>;\n    template<class\
-    \ T> using min = Monoid<T, monoid::op_min, &monoid::e_min<T>>;\n}"
+    \ T> using min = Monoid<T, monoid::op_min, &monoid::e_min<T>>;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Monoid.hpp
   requiredBy:
   - src/SegmentTree.hpp
-  timestamp: '2021-02-16 21:00:43+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-02-16 22:57:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo/point_add_range_sum_2.test.cpp
 documentation_of: src/Monoid.hpp
