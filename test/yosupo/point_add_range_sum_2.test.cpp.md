@@ -68,29 +68,29 @@ data:
     \n\n#line 7 \"test/yosupo/point_add_range_sum_2.test.cpp\"\n#include <iomanip>\n\
     \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
     \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
-    \ << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N,\
-    \ Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_with_identity(N);\n\
-    \    constexpr static auto f = [](auto l, auto r) { return l + r; };\n    SegmentTree<Monoid<lint,\
+    \ << fixed << setprecision(10);\n    }\n} init_;\n\nconstexpr auto f = [](auto\
+    \ l, auto r) { return l + r; };\n\nint main() {\n\n    int N, Q;\n    cin >> N\
+    \ >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_identity(N);\n    SegmentTree<Monoid<lint,\
     \ f>> sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin\
-    \ >> a;\n        sg_with_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n\
-    \    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >>\
-    \ l >> r;\n        if (q) {\n            assert(get<lint>(sg.sum(l, r)) == sg_with_identity.sum(l,\
+    \ >> a;\n        sg_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n    for\
+    \ (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >> l >> r;\n\
+    \        if (q) {\n            assert(get<lint>(sg.sum(l, r)) == sg_identity.sum(l,\
     \ r));\n            cout << get<lint>(sg.sum(l, r)) << '\\n';\n        }\n   \
-    \     else {\n            sg_with_identity.add(l, r);\n            sg.add(l, r);\n\
+    \     else {\n            sg_identity.add(l, r);\n            sg.add(l, r);\n\
     \        }\n    }\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\
     \n\n#include \"../../src/SegmentTree.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
     \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
-    \ << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N,\
-    \ Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_with_identity(N);\n\
-    \    constexpr static auto f = [](auto l, auto r) { return l + r; };\n    SegmentTree<Monoid<lint,\
+    \ << fixed << setprecision(10);\n    }\n} init_;\n\nconstexpr auto f = [](auto\
+    \ l, auto r) { return l + r; };\n\nint main() {\n\n    int N, Q;\n    cin >> N\
+    \ >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_identity(N);\n    SegmentTree<Monoid<lint,\
     \ f>> sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin\
-    \ >> a;\n        sg_with_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n\
-    \    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >>\
-    \ l >> r;\n        if (q) {\n            assert(get<lint>(sg.sum(l, r)) == sg_with_identity.sum(l,\
+    \ >> a;\n        sg_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n    for\
+    \ (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >> l >> r;\n\
+    \        if (q) {\n            assert(get<lint>(sg.sum(l, r)) == sg_identity.sum(l,\
     \ r));\n            cout << get<lint>(sg.sum(l, r)) << '\\n';\n        }\n   \
-    \     else {\n            sg_with_identity.add(l, r);\n            sg.add(l, r);\n\
+    \     else {\n            sg_identity.add(l, r);\n            sg.add(l, r);\n\
     \        }\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - src/SegmentTree.hpp
@@ -99,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-02-16 21:00:43+09:00'
+  timestamp: '2021-02-16 22:32:56+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum_2.test.cpp
