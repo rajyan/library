@@ -17,18 +17,19 @@ struct init {
     }
 } init_;
 
+constexpr auto f = [](auto l, auto r) { return l + r; };
+
 int main() {
 
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<monoid::add<lint>> sg_with_identity(N);
-    constexpr static auto f = [](auto l, auto r) { return l + r; };
+    SegmentTree<monoid::add<lint>> sg_identity(N);
     SegmentTree<Monoid<lint, f>> sg(N);
     for (int i = 0; i < N; i++) {
         lint a;
         cin >> a;
-        sg_with_identity.set(i, a);
+        sg_identity.set(i, a);
         sg.set(i, a);
     }
 
@@ -36,11 +37,11 @@ int main() {
         int q, l, r;
         cin >> q >> l >> r;
         if (q) {
-            assert(get<lint>(sg.sum(l, r)) == sg_with_identity.sum(l, r));
+            assert(get<lint>(sg.sum(l, r)) == sg_identity.sum(l, r));
             cout << get<lint>(sg.sum(l, r)) << '\n';
         }
         else {
-            sg_with_identity.add(l, r);
+            sg_identity.add(l, r);
             sg.add(l, r);
         }
     }
