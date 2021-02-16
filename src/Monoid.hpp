@@ -9,7 +9,7 @@ using namespace std;
 template<class T, T (*F)(T, T), const T(*e) = nullptr>
 class Monoid {
     class Identity {};
-    constexpr static auto has_identity = !is_null_pointer_v<decltype(e)>;
+    constexpr static auto has_identity = (e != nullptr);
 public:
     using type = T;
     using vt = conditional_t<has_identity, T, variant<Identity, T>>;
