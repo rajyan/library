@@ -12,13 +12,9 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     )
 else ()
     set(BOOST_ROOT "/mnt/c/boost_1_75_0/")
-    add_link_options(
-            -fsanitize=address,undefined
-    )
     add_compile_options(
             -Wall
             -Wextra
-            -fsanitize=address,undefined
             -D_GLIBCXX_DEBUG
             -D_DEBUG
             -O2
