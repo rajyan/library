@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/Monoid.hpp
     title: src/Monoid.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/clz.hpp
     title: src/clz.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -25,7 +25,7 @@ data:
     src/SegmentTree.hpp\"\n\n#include <cassert>\n#include <vector>\n\n#line 2 \"src/Monoid.hpp\"\
     \n\n#include <variant>\n#include <algorithm>\n#include <iostream>\n\nusing namespace\
     \ std;\n\ntemplate<class T, T (*F)(T, T), const T(*e) = nullptr>\nclass Monoid\
-    \ {\n    class Identity {};\n    constexpr static auto has_identity = !is_null_pointer_v<decltype(e)>;\n\
+    \ {\n    class Identity {};\n    constexpr static auto has_identity = (e != nullptr);\n\
     public:\n    using type = T;\n    using vt = conditional_t<has_identity, T, variant<Identity,\
     \ T>>;\n\n    [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {\n\
     \        if constexpr (has_identity) return F(a, b);\n        else if (a.index()\
@@ -69,23 +69,29 @@ data:
     \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
     \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
     \ << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N,\
-    \ Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid::add<lint>> sg(N);\n    for\
-    \ (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n        sg.set(i,\
-    \ a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n    \
-    \    cin >> q >> l >> r;\n        if (q) {\n            cout << sg.sum(l, r) <<\
-    \ '\\n';\n        }\n        else {\n            sg.add(l, r);\n        }\n  \
-    \  }\n\n    return 0;\n}\n"
+    \ Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_with_identity(N);\n\
+    \    constexpr static auto f = [](auto l, auto r) { return l + r; };\n    SegmentTree<Monoid<lint,\
+    \ f>> sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin\
+    \ >> a;\n        sg_with_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n\
+    \    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >>\
+    \ l >> r;\n        if (q) {\n            assert(get<lint>(sg.sum(l, r)) == sg_with_identity.sum(l,\
+    \ r));\n            cout << get<lint>(sg.sum(l, r)) << '\\n';\n        }\n   \
+    \     else {\n            sg_with_identity.add(l, r);\n            sg.add(l, r);\n\
+    \        }\n    }\n\n    return 0;\n}\n"
   code: "\n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\
     \n\n#include \"../../src/SegmentTree.hpp\"\n\n#include <iostream>\n#include <iomanip>\n\
     \nusing namespace std;\nusing lint = long long;\n\nstruct init {\n    init() {\n\
     \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
     \ << fixed << setprecision(10);\n    }\n} init_;\n\nint main() {\n\n    int N,\
-    \ Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid::add<lint>> sg(N);\n    for\
-    \ (int i = 0; i < N; i++) {\n        lint a;\n        cin >> a;\n        sg.set(i,\
-    \ a);\n    }\n\n    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n    \
-    \    cin >> q >> l >> r;\n        if (q) {\n            cout << sg.sum(l, r) <<\
-    \ '\\n';\n        }\n        else {\n            sg.add(l, r);\n        }\n  \
-    \  }\n\n    return 0;\n}\n"
+    \ Q;\n    cin >> N >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_with_identity(N);\n\
+    \    constexpr static auto f = [](auto l, auto r) { return l + r; };\n    SegmentTree<Monoid<lint,\
+    \ f>> sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin\
+    \ >> a;\n        sg_with_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n\
+    \    for (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >>\
+    \ l >> r;\n        if (q) {\n            assert(get<lint>(sg.sum(l, r)) == sg_with_identity.sum(l,\
+    \ r));\n            cout << get<lint>(sg.sum(l, r)) << '\\n';\n        }\n   \
+    \     else {\n            sg_with_identity.add(l, r);\n            sg.add(l, r);\n\
+    \        }\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - src/SegmentTree.hpp
   - src/Monoid.hpp
@@ -93,8 +99,8 @@ data:
   isVerificationFile: true
   path: test/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-02-15 23:19:47+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-02-16 21:00:43+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum_2.test.cpp
 layout: document
