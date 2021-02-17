@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/Monoid.hpp
     title: src/Monoid.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/SegmentTree.hpp
     title: src/SegmentTree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/clz.hpp
     title: src/clz.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -70,7 +70,7 @@ data:
     \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
     \ << fixed << setprecision(10);\n    }\n} init_;\n\nconstexpr auto f = [](auto\
     \ l, auto r) { return l + r; };\n\nint main() {\n\n    int N, Q;\n    cin >> N\
-    \ >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_identity(N);\n    SegmentTree<Monoid<lint,\
+    \ >> Q;\n\n    SegmentTree<monoid::Add<lint>> sg_identity(N);\n    SegmentTree<Monoid<lint,\
     \ f>> sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin\
     \ >> a;\n        sg_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n    for\
     \ (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >> l >> r;\n\
@@ -84,7 +84,7 @@ data:
     \        cin.tie(nullptr);\n        ios::sync_with_stdio(false);\n        cout\
     \ << fixed << setprecision(10);\n    }\n} init_;\n\nconstexpr auto f = [](auto\
     \ l, auto r) { return l + r; };\n\nint main() {\n\n    int N, Q;\n    cin >> N\
-    \ >> Q;\n\n    SegmentTree<monoid::add<lint>> sg_identity(N);\n    SegmentTree<Monoid<lint,\
+    \ >> Q;\n\n    SegmentTree<monoid::Add<lint>> sg_identity(N);\n    SegmentTree<Monoid<lint,\
     \ f>> sg(N);\n    for (int i = 0; i < N; i++) {\n        lint a;\n        cin\
     \ >> a;\n        sg_identity.set(i, a);\n        sg.set(i, a);\n    }\n\n    for\
     \ (int i = 0; i < Q; i++) {\n        int q, l, r;\n        cin >> q >> l >> r;\n\
@@ -100,7 +100,7 @@ data:
   path: test/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
   timestamp: '2021-02-17 10:37:25+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/point_add_range_sum_2.test.cpp
 layout: document
