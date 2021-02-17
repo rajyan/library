@@ -6,7 +6,7 @@
 
 using namespace std;
 
-template<class T, T (*F)(T, T), const T(*e) = nullptr>
+template<class T, T (*base_op)(T, T), const T(*e) = nullptr>
 class Monoid {
     class Identity {};
     constexpr static bool has_identity = (e != nullptr);
@@ -15,8 +15,8 @@ public:
     using vt = conditional_t<has_identity, T, variant<Identity, T>>;
 
     [[nodiscard]] constexpr vt op(const vt &a, const vt &b) const {
-        if constexpr (has_identity) return F(a, b);
-        else if (a.index() == 1 && b.index() == 1) return F(get<T>(a), get<T>(b));
+        if constexpr (has_identity) return base_op(a, b);
+        else if (a.index() == 1 && b.index() == 1) return base_op(get<T>(a), get<T>(b));
         else if (a.index() == 0) return b;
         else return a;
     };
