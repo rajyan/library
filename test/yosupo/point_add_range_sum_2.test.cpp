@@ -24,7 +24,7 @@ int main() {
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<monoid::add<lint>> sg_identity(N);
+    SegmentTree<monoid::Add<lint>> sg_identity(N);
     SegmentTree<Monoid<lint, f>> sg(N);
     for (int i = 0; i < N; i++) {
         lint a;

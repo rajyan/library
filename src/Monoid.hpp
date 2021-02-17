@@ -33,10 +33,10 @@ namespace monoid {
     constexpr auto op_min = [](auto l, auto r) { return min(l, r); };
     template<class T> T e_add = T{};
     template<class T> T e_mul = T{1};
-    template<class T> T e_max = numeric_limits<T>::max();
-    template<class T> T e_min = numeric_limits<T>::min();
-    template<class T> using add = Monoid<T, monoid::op_add, &monoid::e_add<T>>;
-    template<class T> using mul = Monoid<T, monoid::op_mul, &monoid::e_mul<T>>;
-    template<class T> using max = Monoid<T, monoid::op_max, &monoid::e_max<T>>;
-    template<class T> using min = Monoid<T, monoid::op_min, &monoid::e_min<T>>;
+    template<class T> T e_max = numeric_limits<T>::min();
+    template<class T> T e_min = numeric_limits<T>::max();
+    template<class T> using Add = Monoid<T, monoid::op_add, &monoid::e_add<T>>;
+    template<class T> using Mul = Monoid<T, monoid::op_mul, &monoid::e_mul<T>>;
+    template<class T> using Max = Monoid<T, monoid::op_max, &monoid::e_max<T>>;
+    template<class T> using Min = Monoid<T, monoid::op_min, &monoid::e_min<T>>;
 }
