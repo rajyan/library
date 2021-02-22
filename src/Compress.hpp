@@ -8,7 +8,7 @@ template<class T>
 class Compress {
 public:
     Compress() = default;
-    explicit Compress(const vector<T> &vec) : comp(vec) { build(); }
+    explicit Compress(vector<T> vec) : comp(move(vec)) { build(); }
 
     void add(const T &x) { comp.emplace_back(x); }
 

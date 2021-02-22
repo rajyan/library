@@ -9,8 +9,8 @@ using namespace std;
 
 class TopologicalSort {
 public:
-    explicit TopologicalSort(int n) : V(n), edges(n), used(n) {}
-    explicit TopologicalSort(vector<vector<int>> &edges) : V(edges.size()), used(edges.size()) { this->edges = edges; }
+    explicit TopologicalSort(int n) : edges(n), V(n), used(n) {}
+    explicit TopologicalSort(const vector<vector<int>> &edges_) : edges(edges_), V(edges.size()), used(V) { }
 
     void add_edge(int from, int to) { edges[from].emplace_back(to); }
 
@@ -48,7 +48,7 @@ public:
     }
 
 private:
-    int V;
     vector<vector<int>> edges;
+    int V;
     vector<int> used;
 };
