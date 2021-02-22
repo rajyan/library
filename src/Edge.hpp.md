@@ -22,20 +22,21 @@ data:
     links: []
   bundledCode: "#line 2 \"src/Edge.hpp\"\n\ntemplate<class T>\nstruct Edge {\n   \
     \ int from{}, to{};\n    T cost;\n    Edge() = default;\n    Edge(int to, T cost)\
-    \ : to(to), cost(cost) {}\n    Edge(int from, int to, T cost) : from(from), to(to),\
-    \ cost(cost) {}\n    bool operator>(const Edge &r) const { return this->cost >\
-    \ r.cost; }\n};\n"
+    \ : to(to), cost(move(cost)) {}\n    Edge(int from, int to, T cost) : from(from),\
+    \ to(to), cost(move(cost)) {}\n    bool operator>(const Edge &r) const { return\
+    \ this->cost > r.cost; }\n};\n"
   code: "#pragma once\n\ntemplate<class T>\nstruct Edge {\n    int from{}, to{};\n\
-    \    T cost;\n    Edge() = default;\n    Edge(int to, T cost) : to(to), cost(cost)\
-    \ {}\n    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}\n\
-    \    bool operator>(const Edge &r) const { return this->cost > r.cost; }\n};\n"
+    \    T cost;\n    Edge() = default;\n    Edge(int to, T cost) : to(to), cost(move(cost))\
+    \ {}\n    Edge(int from, int to, T cost) : from(from), to(to), cost(move(cost))\
+    \ {}\n    bool operator>(const Edge &r) const { return this->cost > r.cost; }\n\
+    };\n"
   dependsOn: []
   isVerificationFile: false
   path: src/Edge.hpp
   requiredBy:
   - src/BellmanFord.hpp
   - src/Dijkstra.hpp
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-02-22 09:25:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp

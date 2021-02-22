@@ -21,10 +21,10 @@ data:
     \n#line 2 \"src/chmin.hpp\"\n\ntemplate<class T>\ninline bool chmin(T &a, const\
     \ T b) { return a > b && (a = b, true); }\n#line 2 \"src/Edge.hpp\"\n\ntemplate<class\
     \ T>\nstruct Edge {\n    int from{}, to{};\n    T cost;\n    Edge() = default;\n\
-    \    Edge(int to, T cost) : to(to), cost(cost) {}\n    Edge(int from, int to,\
-    \ T cost) : from(from), to(to), cost(cost) {}\n    bool operator>(const Edge &r)\
-    \ const { return this->cost > r.cost; }\n};\n#line 8 \"src/BellmanFord.hpp\"\n\
-    \nusing namespace std;\n\ntemplate<class T>\nvector<T> BellmanFord(const vector<Edge<T>>\
+    \    Edge(int to, T cost) : to(to), cost(move(cost)) {}\n    Edge(int from, int\
+    \ to, T cost) : from(from), to(to), cost(move(cost)) {}\n    bool operator>(const\
+    \ Edge &r) const { return this->cost > r.cost; }\n};\n#line 8 \"src/BellmanFord.hpp\"\
+    \n\nusing namespace std;\n\ntemplate<class T>\nvector<T> BellmanFord(const vector<Edge<T>>\
     \ &edges, const int V, const int st) {\n\n    const T inf = numeric_limits<T>::max()\
     \ / 2;\n    vector<T> cost(V, inf);\n    cost[st] = 0;\n    for (int i = 0; i\
     \ < V - 1; i++) {\n        for (const auto &e : edges) {\n            if (cost[e.from]\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: src/BellmanFord.hpp
   requiredBy: []
-  timestamp: '2021-01-31 19:19:57+09:00'
+  timestamp: '2021-02-22 09:25:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp
