@@ -3,7 +3,7 @@ name: template
 on:
   push:
     paths:
-      - src
+      - 'src/**'
 
 jobs:
   template:
