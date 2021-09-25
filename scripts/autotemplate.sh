@@ -3,7 +3,7 @@
 tmp_file=${TMP_FILE:-'temp.hpp'}
 templates=${TEMPLATES:-'../library/templates'}
 base_file=${BASE_FILE:-'../library/templates/auto_template.xml'}
-config_dir=${CONFIG_DIR:-'../../AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
+#config_dir=${CONFIG_DIR:-'../../AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
 config_file=${CONFIG_DIR:-'C_C__.xml'}
 
 function format() {
@@ -58,4 +58,4 @@ for xml in "$templates"/*; do
 done
 templateSet+='</templateSet>'
 echo "$templateSet" > "$templates"/"$config_file"
-cp -v "$templates"/"$config_file" "$config_dir"/"$config_file"
+#cp -v "$templates"/"$config_file" "$config_dir"/"$config_file"
