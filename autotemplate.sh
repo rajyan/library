@@ -2,7 +2,7 @@
 
 tmp_file=${TMP_FILE:-'temp.hpp'}
 templates=${TEMPLATES:-'../library/templates'}
-base_file=${BASE_FILE:-'../library/templates/auto_template.xml'}
+base_file=${BASE_FILE:-'../library/template.xml'}
 #config_dir=${CONFIG_DIR:-'../../AppData/Roaming/JetBrains/CLion2020.3/jba_config/templates'}
 config_file=${CONFIG_DIR:-'C_C__.xml'}
 
