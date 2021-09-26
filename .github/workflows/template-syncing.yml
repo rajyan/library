@@ -1,4 +1,4 @@
-name: template
+name: template-syncing
 
 on: push
 jobs:
