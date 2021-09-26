@@ -12,11 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Delete live templates
-      run: git diff --cached --name-only --diff-filter=D | grep "src/.*\.hpp$" | sed -e "s/src/templates/g" -e "s/hpp$/xml/g" | xargs rm -f
-
-    - name: Delete renamed templates
-      run: git diff --cached | grep "rename from src/.*\.hpp$" | sed -e "s/rename from //g" -e "s/src/templates/g" -e "s/hpp$/xml/g" | xargs rm -f
+    - name: Remove live templates
+      run: rm -rf templates
 
     - name: Generate live templates
       run: find src/*.hpp -maxdepth 1 -print0 | xargs -0 scripts/autotemplate.sh
