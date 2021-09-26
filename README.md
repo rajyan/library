@@ -1,6 +1,8 @@
 # Library
 
-[![Actions Status](https://github.com/rajyan/library/workflows/verify/badge.svg)](https://github.com/rajyan/library/actions) 
+[![verify](https://github.com/rajyan/library/actions/workflows/verify.yml/badge.svg)](https://github.com/rajyan/library/actions/workflows/verify.yml)
+[![template-syncing](https://github.com/rajyan/library/actions/workflows/template-syncing.yml/badge.svg)](https://github.com/rajyan/library/actions/workflows/template-syncing.yml)
+
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://rajyan.github.io/library/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![C++](https://img.shields.io/badge/C++-17-purple)
@@ -17,17 +19,9 @@
 
 ## templates
 
-競技プログラミングのCLion用のLive Templateです。srcに合わせて自動で更新されるようにしています。  
-srcの内容は全てスニペットになっているのに加えて、競技プログラミングでよく使うコードの断片をスニペット化しています。  
-
-## scripts
-
-srcの内容からLive templateを生成したり、自動で更新したりするためのgit hooksなどが入っています。
+競技プログラミングのCLion用のLive Templateです。srcに合わせてActionsで自動で更新されるようにしています。  
+srcの内容は全てスニペットになっているのに加えて、競技プログラミングでよく使うコードの断片をスニペット化しています。
 
 ## test
 
 テストコードです。
-
-## snippets (deprecated)
-
-競技プログラミングのVisual Studio用のスニペットです。CLionに移行したため、現在は更新・メンテナンスされていません。

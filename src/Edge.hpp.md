@@ -39,8 +39,8 @@ data:
   timestamp: '2021-02-22 09:25:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_A.test.cpp
+  - test/aoj/GRL_1_B.test.cpp
 documentation_of: src/Edge.hpp
 layout: document
 redirect_from:

@@ -32,9 +32,9 @@ data:
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo/lca.test.cpp
   - test/own/Point2D_Basic.test.cpp
   - test/own/Matrix2D_Basic.test.cpp
-  - test/yosupo/lca.test.cpp
 documentation_of: src/makevec.hpp
 layout: document
 redirect_from:
