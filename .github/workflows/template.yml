@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Remove live templates
-      run: rm -rf templates
+      run: rm -rf templates/*
 
     - name: Generate live templates
       run: find src/*.hpp -maxdepth 1 -print0 | xargs -0 ./autotemplate.sh
