@@ -1,10 +1,6 @@
 name: template
 
-on:
-  push:
-    paths:
-      - 'src/**'
-
+on: push
 jobs:
   template:
     runs-on: ubuntu-20.04
