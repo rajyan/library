@@ -128,6 +128,11 @@
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
     </context>
+</template><template name="mydebugtemplate" value="#define _CRT_SECURE_NO_WARNINGS&#10;&#10;#include &lt;iostream&gt;&#10;&#10;#include &quot;print.hpp&quot;&#10;&#10;using namespace std;&#10;&#10;template&lt;class T&gt;&#10;void dump(const char *name, T &amp;&amp;h) { cerr &lt;&lt; name &lt;&lt; &quot; = &quot; &lt;&lt; str(h) &lt;&lt; &quot;\n&quot;; };&#10;template&lt;class Head, class... Tail&gt;&#10;void dump(const char *names, Head &amp;&amp;h, Tail &amp;&amp;... t) {&#10;    while (*names != ',') cerr &lt;&lt; *names++;&#10;    cerr &lt;&lt; &quot; = &quot; &lt;&lt; str(h) &lt;&lt; &quot;\n&quot;;&#10;    dump(names + (*(names + 1) == ' ' ? 2 : 1), t...);&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+    </context>
 </template><template name="mydivisor" value="template&lt;class T&gt;&#10;vector&lt;T&gt; divisor(const T n) {&#10;    vector&lt;T&gt; res;&#10;    for (T i = 1; i * i &lt;= n; i++) {&#10;        if (n % i == 0) {&#10;            res.emplace_back(i);&#10;            if (i * i != n) res.emplace_back(n / i);&#10;        }&#10;    }&#10;    sort(res.begin(), res.end());&#10;    return res;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
@@ -164,6 +169,11 @@
         <option name="OC_DECLARATION_CPP" value="true"/>
     </context>
 </template><template name="myslideminmax" value="template&lt;class T&gt;&#10;pair &lt;vector&lt;T&gt;, vector&lt;T&gt;&gt; slide_minmax(const vector&lt;T&gt; &amp;v, int k) {&#10;&#10;    deque&lt;int&gt; deq_min, deq_max;&#10;    vector&lt;T&gt; ret_min, ret_max;&#10;    for (int i = 0; i &lt; (int)v.size(); i++) {&#10;&#10;        while (!deq_min.empty() &amp;&amp; v[deq_min.back()] &gt;= v[i]) deq_min.pop_back();&#10;        while (!deq_max.empty() &amp;&amp; v[deq_max.back()] &lt;= v[i]) deq_max.pop_back();&#10;&#10;        deq_min.push_back(i);&#10;        deq_max.push_back(i);&#10;&#10;        if (i - k + 1 &gt;= 0) {&#10;            ret_min.emplace_back(v[deq_min.front()]);&#10;            ret_max.emplace_back(v[deq_max.front()]);&#10;            if (deq_min.front() == i - k + 1) deq_min.pop_front();&#10;            if (deq_max.front() == i - k + 1) deq_max.pop_front();&#10;        }&#10;&#10;    }&#10;    return {ret_min, ret_max};&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+        <option name="OC_DECLARATION_C" value="true"/>
+        <option name="OC_DECLARATION_CPP" value="true"/>
+    </context>
+</template><template name="mytemplate" value="#ifdef _DEBUG&#10;#include &quot;../../../library/src/debug_template.hpp&quot;&#10;#define DMP(...) dump(#__VA_ARGS__, __VA_ARGS__)&#10;#else&#10;#define DMP(...) ((void)0)&#10;#endif&#10;&#10;#include &lt;cassert&gt;&#10;#include &lt;cstdio&gt;&#10;#include &lt;cmath&gt;&#10;#include &lt;iostream&gt;&#10;#include &lt;iomanip&gt;&#10;#include &lt;string&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;set&gt;&#10;#include &lt;map&gt;&#10;#include &lt;unordered_map&gt;&#10;#include &lt;queue&gt;&#10;#include &lt;numeric&gt;&#10;#include &lt;algorithm&gt;&#10;#include &lt;bitset&gt;&#10;#include &lt;variant&gt;&#10;&#10;using namespace std;&#10;using lint = long long;&#10;constexpr int INF = 1010101010;&#10;constexpr lint LINF = 1LL &lt;&lt; 60;&#10;&#10;struct init {&#10;    init() {&#10;        cin.tie(nullptr);&#10;        ios::sync_with_stdio(false);&#10;        cout &lt;&lt; fixed &lt;&lt; setprecision(10);&#10;    }&#10;} init_;&#10;&#10;int main() {&#10;&#10;    return 0;&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
     <context>
         <option name="OC_DECLARATION_C" value="true"/>
         <option name="OC_DECLARATION_CPP" value="true"/>
