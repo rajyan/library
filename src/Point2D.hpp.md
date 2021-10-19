@@ -102,8 +102,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/891.test.cpp
-  - test/own/Point2D_Basic.test.cpp
   - test/own/Matrix2D_Basic.test.cpp
+  - test/own/Point2D_Basic.test.cpp
 documentation_of: src/Point2D.hpp
 layout: document
 redirect_from:
