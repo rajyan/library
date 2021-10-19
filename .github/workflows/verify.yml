@@ -1,7 +1,6 @@
 name: verify
 
 on: push
-
 jobs:
   verify:
     runs-on: ubuntu-20.04
