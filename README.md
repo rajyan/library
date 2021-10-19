@@ -1,7 +1,7 @@
 # Library
 
 [![verify](https://github.com/rajyan/library/actions/workflows/verify.yml/badge.svg)](https://github.com/rajyan/library/actions/workflows/verify.yml)
-[![template](https://github.com/rajyan/library/actions/workflows/template.yml/badge.svg)](https://github.com/rajyan/library/actions/workflows/template-syncing.yml)
+[![template](https://github.com/rajyan/library/actions/workflows/template.yml/badge.svg)](https://github.com/rajyan/library/actions/workflows/template.yml)
 
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://rajyan.github.io/library/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
