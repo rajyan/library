@@ -47,15 +47,15 @@ data:
   isVerificationFile: false
   path: src/popcount.hpp
   requiredBy:
-  - src/ctz.hpp
   - src/Prime.hpp
+  - src/ctz.hpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/own/Random_ctz.test.cpp
   - test/own/Random_popcount.test.cpp
-  - test/aoj/ALDS1_1_C.test.cpp
   - test/aoj/ALDS1_1_C_2.test.cpp
+  - test/aoj/ALDS1_1_C.test.cpp
   - test/yosupo/enumerate_primes.test.cpp
 documentation_of: src/popcount.hpp
 layout: document

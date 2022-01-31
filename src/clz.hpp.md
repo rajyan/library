@@ -35,8 +35,8 @@ data:
   isVerificationFile: false
   path: src/clz.hpp
   requiredBy:
-  - src/SegmentTree.hpp
   - src/LowestCommonAncestor.hpp
+  - src/SegmentTree.hpp
   timestamp: '2021-01-31 19:19:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
