@@ -117,9 +117,9 @@ data:
   timestamp: '2021-02-09 21:26:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/ALDS1_1_C_2.test.cpp
-  - test/aoj/ALDS1_1_C.test.cpp
   - test/yosupo/enumerate_primes.test.cpp
+  - test/aoj/ALDS1_1_C.test.cpp
+  - test/aoj/ALDS1_1_C_2.test.cpp
 documentation_of: src/Prime.hpp
 layout: document
 redirect_from:
