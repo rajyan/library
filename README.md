@@ -9,7 +9,7 @@
 
 競技プログラミング用のライブラリです。
 
-バグや改善点などありましたら、[@unagiunag](https://twitter.com/unagiunag) まで指摘していただけるとありがたいです。
+バグや改善点などありましたら、[@rajyan_k](https://twitter.com/rajyan_k) まで指摘していただけるとありがたいです。
 
 ## src
 
